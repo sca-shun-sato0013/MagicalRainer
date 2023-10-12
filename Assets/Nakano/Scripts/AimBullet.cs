@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// PlayerÇë_Ç¡Çƒî≠éÀÅ@í«îˆÇÕÇµÇ»Ç¢
+/// </summary>
 public class AimBullet : MonoBehaviour
 {
     GameObject player;
@@ -9,9 +12,8 @@ public class AimBullet : MonoBehaviour
     Vector3 bulletPos;
 
     Vector3 direction;
-    Vector3 dirNormal;
 
-    [SerializeField] float speed;
+    [SerializeField, Header("íeë¨")] float speed;
 
     void Start()
     {
@@ -20,14 +22,13 @@ public class AimBullet : MonoBehaviour
         playerPos = player.transform.position;
         bulletPos = this.transform.position;
 
-        direction = playerPos - bulletPos;
-        dirNormal = direction.normalized;
+        direction = (playerPos - bulletPos).normalized;
 
         Quaternion quaternion = Quaternion.LookRotation(direction);
     }
 
     void Update()
     {
-        transform.Translate(dirNormal * speed * Time.deltaTime);
+        transform.Translate(direction * speed * Time.deltaTime);
     }
 }
