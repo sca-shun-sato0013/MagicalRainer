@@ -3,32 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Playerを狙って発射　追尾はしない
+/// 自機を追尾する
 /// </summary>
-public class AimBullet : MonoBehaviour
+public class TrackingBullet : MonoBehaviour
 {
     GameObject player;
     Vector3 playerPos;
     Vector3 bulletPos;
-
     Vector3 direction;
+
+    [Header("追尾時間")] public float trackingTime;
+    float time;
 
     [HideInInspector] public float speed;
 
     void Start()
     {
-        //生成時に自身の位置とプレイヤーの位置を取得する
         player = GameObject.FindWithTag("Player");
-        playerPos = player.transform.position;
-        bulletPos = this.transform.position;
-
-        direction = (playerPos - bulletPos).normalized;
-
-        Quaternion quaternion = Quaternion.LookRotation(direction);
+        time = 0;
     }
 
     void Update()
     {
+        playerPos = player.transform.position;
+        bulletPos = this.transform.position;
+
+        time += Time.deltaTime;
+        if(time <= trackingTime)
+        {
+            direction = (playerPos - bulletPos).normalized;
+        }
+
         transform.Translate(direction * speed * Time.deltaTime);
     }
 }

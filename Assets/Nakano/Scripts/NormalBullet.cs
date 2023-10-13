@@ -7,8 +7,8 @@ using UnityEngine;
 /// </summary>
 public class NormalBullet : MonoBehaviour
 {
-    [SerializeField, Header("発射方向"), Tooltip("角度0のとき右へ、角度180のとき左へ\n角度は三角関数のイメージで")] float angle;
-    [SerializeField, Header("弾速")] float speed;
+    [Header("発射方向"), Tooltip("角度0のとき右へ、角度180のとき左へ\n角度は三角関数のイメージで")] public float angle;
+    [HideInInspector] public float speed;
     Vector3 direction;
 
     void Start()

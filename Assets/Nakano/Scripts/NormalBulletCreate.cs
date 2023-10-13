@@ -1,0 +1,50 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class NormalBulletCreate : MonoBehaviour
+{
+    [SerializeField] GameObject prefabs;
+    [SerializeField, Header("¶¬”")] int bulletNum;
+    [SerializeField, Header("ƒN[ƒ‹ƒ^ƒCƒ€")] float coolTime;
+    [SerializeField, Header("’e‘¬")] float speed;
+
+    [SerializeField, Header("Šp“x"), Tooltip("NormalBullets‚Åw’è‚µ‚½Šp“x‚æ‚è—Dæ‚³‚ê‚é")] float angle = 0;
+    [SerializeField, Header("•ûŒü”"), Tooltip("‘½•ûŒü’e‚ğ¶¬‚·‚éê‡‚É•ûŒü”‚ğw’è Šp“x‚Íİ’è‚µ‚Ä‚à–³ˆÓ–¡‚É‚È‚é “ü—Í‚Í1ˆÈã")] int way = 1;
+    [SerializeField, Header("Šp“x’²®"), Tooltip("‘½•ûŒü’e‚ÌŠp“x‚ğ’²®‚·‚é")] float adjustmentAngle = 0; 
+
+    NormalBullet normalBullet;
+
+    void Awake()
+    {
+        //‘¬“xİ’è
+        normalBullet = prefabs.GetComponent<NormalBullet>();
+        normalBullet.speed = speed;
+
+        if (way < 1) { way = 1; } //w’è‚³‚ê‚½way‚ª1–¢–‚Ì‚Æ‚«A1‚É‚·‚é
+
+        //‘½•ûŒü’e‚Ì‚Æ‚«A’e“¯m‚ÌŠÔ‚ÌŠp“x‚ğZo
+        if (way > 1) { angle = 360 / way; }
+        else { adjustmentAngle = 0; }
+
+        StartCoroutine(Create());
+    }
+
+    void Update()
+    {
+        
+    }
+
+    IEnumerator Create()
+    {
+        for (int i = 0; i < bulletNum; i++)
+        {
+            for (int j = 1; j <= way; j++)
+            {
+                GameObject obj = Instantiate(prefabs, this.transform.position, Quaternion.identity, gameObject.transform);
+                obj.GetComponent<NormalBullet>().angle = angle * j + adjustmentAngle;
+            }
+            yield return new WaitForSeconds(coolTime);
+        }
+    }
+}
