@@ -13,7 +13,7 @@ public class AimBullet : MonoBehaviour
 
     Vector3 direction;
 
-    [SerializeField, Header("’e‘¬")] float speed;
+    [HideInInspector] public float speed;
 
     void Start()
     {
