@@ -12,11 +12,16 @@ public class NormalBulletCreate : MonoBehaviour
     [SerializeField, Header("Šp“x"), Tooltip("NormalBullets‚Åw’è‚µ‚½Šp“x‚æ‚è—Dæ‚³‚ê‚é")] float angle = 0;
     [SerializeField, Header("•ûŒü”"), Tooltip("‘½•ûŒü’e‚ğ¶¬‚·‚éê‡‚É•ûŒü”‚ğw’è Šp“x‚Íİ’è‚µ‚Ä‚à–³ˆÓ–¡‚É‚È‚é “ü—Í‚Í1ˆÈã")] int way = 1;
     [SerializeField, Header("Šp“x’²®"), Tooltip("‘½•ûŒü’e‚ÌŠp“x‚ğ’²®‚·‚é")] float adjustmentAngle = 0; 
+    float parentAngle;
 
+    GameObject parent;
     NormalBullet normalBullet;
-
+    
     void Awake()
     {
+        parent = transform.parent.gameObject;
+        parentAngle = parent.GetComponent<Transform>().localEulerAngles.z;
+
         //‘¬“xİ’è
         normalBullet = prefabs.GetComponent<NormalBullet>();
         normalBullet.speed = speed;
@@ -41,8 +46,9 @@ public class NormalBulletCreate : MonoBehaviour
         {
             for (int j = 1; j <= way; j++)
             {
-                GameObject obj = Instantiate(prefabs, this.transform.position, Quaternion.identity, gameObject.transform);
-                obj.GetComponent<NormalBullet>().angle = angle * j + adjustmentAngle;
+                GameObject obj = Instantiate(prefabs, this.transform.position, Quaternion.identity);
+                parentAngle = parent.GetComponent<Transform>().localEulerAngles.z;
+                obj.GetComponent<NormalBullet>().angle = angle * j + adjustmentAngle + parentAngle;
             }
             yield return new WaitForSeconds(coolTime);
         }
