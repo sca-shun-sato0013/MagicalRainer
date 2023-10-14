@@ -23,8 +23,6 @@ public class AimBullet : MonoBehaviour
         bulletPos = this.transform.position;
 
         direction = (playerPos - bulletPos).normalized;
-
-        Quaternion quaternion = Quaternion.LookRotation(direction);
     }
 
     void Update()
