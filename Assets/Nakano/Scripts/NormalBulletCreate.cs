@@ -16,7 +16,9 @@ public class NormalBulletCreate : MonoBehaviour
 
     GameObject parent;
     NormalBullet normalBullet;
-    
+
+    public bool isCreate = false;
+
     void Awake()
     {
         parent = transform.parent.gameObject;
@@ -31,13 +33,15 @@ public class NormalBulletCreate : MonoBehaviour
         //‘½•ûŒü’e‚Ì‚Æ‚«A’e“¯Žm‚ÌŠÔ‚ÌŠp“x‚ðŽZo
         if (way > 1) { angle = 360 / way; }
         else { adjustmentAngle = 0; }
-
-        StartCoroutine(Create());
     }
 
     void Update()
     {
-        
+        if (isCreate)
+        {
+            isCreate = false;
+            StartCoroutine(Create());
+        }
     }
 
     IEnumerator Create()

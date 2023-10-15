@@ -17,6 +17,8 @@ public class LinerBulletCreate : MonoBehaviour
 
     NormalBullet normalBullet;
 
+    public bool isCreate = false;
+
     void Awake()
     {
         player = GameObject.FindWithTag("Player");
@@ -26,12 +28,15 @@ public class LinerBulletCreate : MonoBehaviour
         normalBullet.speed = speed;
 
         direction = (playerPos - transform.position).normalized;
-
-        StartCoroutine(Create());
     }
 
     void Update()
     {
+        if (isCreate)
+        {
+            isCreate = false;
+            StartCoroutine(Create());
+        }
         playerPos = player.transform.position;
         direction = (playerPos - transform.position).normalized;
     }
@@ -42,7 +47,7 @@ public class LinerBulletCreate : MonoBehaviour
         {
             for (int j = 0; j < way; j++)
             {
-                GameObject obj = Instantiate(prefabs, this.transform.position, Quaternion.identity, gameObject.transform);
+                GameObject obj = Instantiate(prefabs, this.transform.position, Quaternion.identity);
 
                 float a = angle;
                 if(way % 2 == 0)

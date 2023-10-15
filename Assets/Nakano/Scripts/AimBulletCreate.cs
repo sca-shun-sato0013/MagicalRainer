@@ -14,16 +14,21 @@ public class AimBulletCreate : MonoBehaviour
 
     AimBullet aimBullet;
 
+    public bool isCreate = false;
+
     void Awake()
     {
         aimBullet = prefabs.GetComponent<AimBullet>();
         aimBullet.speed = speed;
-
-        StartCoroutine(Create());
     }
 
     void Update()
     {
+        if(isCreate)
+        {
+            isCreate = false;
+            StartCoroutine(Create());
+        }
     }
 
     IEnumerator Create()
