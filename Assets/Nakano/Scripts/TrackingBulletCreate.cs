@@ -12,18 +12,22 @@ public class TrackingBulletCreate : MonoBehaviour
 
     TrackingBullet trackingBullet;
 
+    public bool isCreate = false;
+
     void Awake()
     {
         trackingBullet = prefabs.GetComponent<TrackingBullet>();
         trackingBullet.speed = speed;
         trackingBullet.trackingTime = trackingTime;
-
-        StartCoroutine(Create());
     }
 
     void Update()
     {
-        
+        if (isCreate)
+        {
+            isCreate = false;
+            StartCoroutine(Create());
+        }
     }
 
     IEnumerator Create()
