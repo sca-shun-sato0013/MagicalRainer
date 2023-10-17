@@ -18,7 +18,7 @@ public class TitleBackSelect : MonoBehaviour
     }
     public void OnClick()
     {
-        SceneManager.LoadScene("TitleScene");
+        SceneManager.LoadScene("Title");
         Debug.Log("ƒ^ƒCƒgƒ‹–ß‚é");
     }
 }
