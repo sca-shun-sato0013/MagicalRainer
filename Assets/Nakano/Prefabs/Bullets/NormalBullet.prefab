@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6751609604774742034}
   - component: {fileID: 2877348647689166029}
   - component: {fileID: 7499630468582952702}
+  - component: {fileID: -2558276188532083176}
   m_Layer: 0
   m_Name: NormalBullet
   m_TagString: Untagged
@@ -99,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 0
-  speed: 10
+  speed: 5
 --- !u!58 &7499630468582952702
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -135,3 +136,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 7.42
+--- !u!114 &-2558276188532083176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7103844777156200804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 006dea5d7ef9cc64ca9d20ed34dc4077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

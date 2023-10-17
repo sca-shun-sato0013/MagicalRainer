@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1568417931528068140}
   - component: {fileID: 6862283877742022294}
   - component: {fileID: -4932136242321811315}
+  - component: {fileID: 8458478236585930103}
   m_Layer: 0
   m_Name: AimBullets
   m_TagString: Untagged
@@ -134,3 +135,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 7.42
+--- !u!114 &8458478236585930103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3306050143180756325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 006dea5d7ef9cc64ca9d20ed34dc4077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

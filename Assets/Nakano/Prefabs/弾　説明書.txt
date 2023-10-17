@@ -1,14 +1,14 @@
 Nakano->Prefabs内にあるプレハブの説明書
 
 ◆Bullets：基本の弾の動き
-　├AimBullets：自機に向かって直線的に飛んでくる弾
-　├NormalBullets：Inspectorで設定した方向に飛ぶ弾　三角関数で言うと、角度=θのとき原点から斜辺の上を進んでいくイメージ
-　│　　　　　　　　NormalBulletsCreateで生成する場合、そちらで設定した角度が優先される
+　├AimBullets     ：自機に向かって直線的に飛んでくる弾
+　├NormalBullets  ：Inspectorで設定した方向に飛ぶ弾　三角関数で言うと、角度=θのとき原点から斜辺の上を進んでいくイメージ
+　│　　　　　　　　  NormalBulletsCreateで生成する場合、そちらで設定した角度が優先される
 　└TrackingBullets：自機を追尾する弾
 
-◆BulletsCreate：上記の『Bullets』を生成するScriptを組み込んだGameObject　設定を変更したい場合は新たにPrefabを作るのが良いと思われる
-　├AimBulletsCreate：AimBulletsを生成　生成数・クールタイムが変更可能
-　├NormalBulletsCreate：NormalBulletsを生成　生成数・クールタイムに加え、射出方向・多方向に飛ばす場合は方向数・多方向での射出方向の変更ができる
-　│　　多方向にする場合は射出角度は無視される 親オブジェクトのrotationに応じて角度が調整される
+◆BulletsCreate：上記の『Bullets』を生成するScriptを組み込んだGameObject 細かい使用方法はEnemySampleを参照
+　├AimBulletsCreate     ：AimBulletsを生成　生成数・クールタイムが変更可能
+　├NormalBulletsCreate  ：NormalBulletsを生成　生成数・クールタイムに加え、射出方向・多方向に飛ばす場合は方向数・多方向での射出方向の変更ができる
+　│　　                   多方向にする場合は射出角度は無視される 親オブジェクトのrotationに応じて角度が調整される
 　├TrackingBulletsCreate：TrackingBulletsを生成　生成数・クールタイムに加え、追尾時間の変更ができる
-　└LinerBulletCreate：プレイヤーに向かってライン状のNormalBulletsを生成
+　└LinerBulletCreate    ：プレイヤーに向かってライン状のNormalBulletsを生成
