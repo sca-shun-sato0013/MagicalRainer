@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4052621421416674245}
   - component: {fileID: 2777557638041637657}
   - component: {fileID: 6616585896622376081}
+  - component: {fileID: 450086651861339587}
   m_Layer: 0
   m_Name: BigNormalBullets
   m_TagString: Untagged
@@ -135,3 +136,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 7.42
+--- !u!114 &450086651861339587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6825312258603610605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 006dea5d7ef9cc64ca9d20ed34dc4077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
