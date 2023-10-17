@@ -58,3 +58,4 @@ MonoBehaviour:
   relayAjust: {x: 10, y: 10}
   targetAjust: {x: 20, y: -30}
   isCreate: 1
+  isReverse: 0

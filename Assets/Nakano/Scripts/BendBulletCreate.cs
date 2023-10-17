@@ -19,13 +19,22 @@ public class BendBulletCreate : MonoBehaviour
     BendBullet bendBullet;
 
     public bool isCreate = false;
+    [Header("‹t‰ñ“]‚É‚·‚é‚©‚Ç‚¤‚©")] public bool isReverse = false;
 
     private void Awake()
     {
         bendBullet = prefabs.GetComponent<BendBullet>();
         bendBullet.speed = speed;
-        bendBullet.relayAjust = relayAjust;
-        bendBullet.targetAjust = targetAjust;
+        if(!isReverse)
+        {
+            bendBullet.relayAjust = relayAjust;
+            bendBullet.targetAjust = targetAjust;
+        }
+        if(isReverse)
+        {
+            bendBullet.relayAjust = new Vector2(relayAjust.x * -1, relayAjust.y);
+            bendBullet.targetAjust = new Vector2(targetAjust.x * -1, targetAjust.y);
+        }
 
         if (way < 1) { way = 1; } //Žw’è‚³‚ê‚½way‚ª1–¢–ž‚Ì‚Æ‚«A1‚É‚·‚é
 
