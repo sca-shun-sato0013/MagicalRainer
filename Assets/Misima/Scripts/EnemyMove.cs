@@ -21,7 +21,7 @@ public class EnemyMove : MonoBehaviour
 
 
         leftBound = new Vector3(0,0,1);
-        rightBound = new Vector3(Screen.width,0,1);
+        rightBound = new Vector3(0, 0, 1);
         Debug.Log(leftBound);
         Debug.Log(rightBound);
     }
@@ -34,7 +34,9 @@ public class EnemyMove : MonoBehaviour
             // ìGÇç∂Ç…à⁄ìÆ
             //transform.Translate(Vector3.left * speed * Time.deltaTime);
            
-            transform.position = Vector2.MoveTowards(transform.position,new Vector2(1,transform.position.y),0.1f);
+            transform.position = Vector2.MoveTowards(transform.position,
+                                                     new Vector2(1,transform.position.y),
+                                                     0.1f);
         }
         else
         {
