@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 450086651861339587}
   m_Layer: 0
   m_Name: BigNormalBullets
-  m_TagString: Untagged
+  m_TagString: BigBullets
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 0
-  speed: 0
+  speed: 3
+  isReflect: 0
 --- !u!58 &6616585896622376081
 CircleCollider2D:
   m_ObjectHideFlags: 0

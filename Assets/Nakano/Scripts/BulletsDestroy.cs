@@ -14,12 +14,16 @@ public class BulletsDestroy : MonoBehaviour
 
     void Update()
     {
-        
+        var pos = this.transform.position;
+        if(pos.x < -20 || pos.x > 20 || pos.y < -20 || pos.y > 20)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     //âÊñ äOÇ…èoÇΩÇÁ
-    private void OnBecameInvisible()
-    {
-        Destroy(this.gameObject);
-    }
+    //private void OnBecameInvisible()
+    //{
+    //    Destroy(this.gameObject);
+    //}
 }

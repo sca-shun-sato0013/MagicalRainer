@@ -11,6 +11,8 @@ public class NormalBullet : MonoBehaviour
     [HideInInspector] public float speed;
     Vector3 direction;
 
+    public bool isReflect = false;
+
     void Start()
     {
         //角度を単位ベクトルに変える
@@ -29,5 +31,14 @@ public class NormalBullet : MonoBehaviour
     {
         var radian = angle * (Mathf.PI / 180);
         return new Vector3(Mathf.Cos(radian), Mathf.Sin(radian), 0).normalized;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "BigBullets" && isReflect)
+        {
+            direction *= -1;
+            isReflect = false;
+        }
     }
 }
