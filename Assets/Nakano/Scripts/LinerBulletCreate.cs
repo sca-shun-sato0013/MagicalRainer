@@ -47,7 +47,7 @@ public class LinerBulletCreate : MonoBehaviour
         {
             for (int j = 0; j < way; j++)
             {
-                GameObject obj = Instantiate(prefabs, this.transform.position, Quaternion.identity);
+                GameObject obj = Instantiate(prefabs, this.transform.position, Quaternion.identity, this.transform);
 
                 float a = angle;
                 if(way % 2 == 0)
