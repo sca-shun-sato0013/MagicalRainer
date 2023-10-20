@@ -7,6 +7,10 @@ using UnityEngine;
 /// </summary>
 public class BulletsDestroy : MonoBehaviour
 {
+    public bool isGather = false; //“G‚ÌˆÊ’u‚É’e‚ğW‚ß‚é‚©
+    public Vector3 enemyPos = new Vector3(0, 0, 0); //“G‚ÌˆÊ’u
+    public float dis = 0; //“G‚Æ‚Ì‹——£
+
     void Start()
     {
         
@@ -16,6 +20,11 @@ public class BulletsDestroy : MonoBehaviour
     {
         var pos = this.transform.position;
         if(pos.x < -20 || pos.x > 20 || pos.y < -20 || pos.y > 20)
+        {
+            Destroy(this.gameObject);
+        }
+
+        if (isGather && Vector3.Distance(this.transform.position, enemyPos) <= dis)
         {
             Destroy(this.gameObject);
         }
