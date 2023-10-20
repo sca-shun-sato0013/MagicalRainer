@@ -11,21 +11,21 @@ public class No1animetorStop : MonoBehaviour
     [SerializeField]
     private GameObject statusWindow;
 
-    [SerializeField] Animator anim;
+   // [SerializeField] Animator anim;
 
     //Animatorをanimという変数で定義する
 
     private void Start()
     {
         //変数animに、Animatorコンポーネントを設定する
-        anim = gameObject.GetComponent<Animator>();
+        //anim = gameObject.GetComponent<Animator>();
     }
 
     IEnumerator Stop()
     {
         GetComponent<Button>().interactable = false;
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
        // anim.SetBool("blRot", false);
 
         var isActive = Panel.activeInHierarchy; // Panelがアクティブか取得
@@ -44,7 +44,6 @@ public class No1animetorStop : MonoBehaviour
     public void OnClick()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        anim.SetBool("blRot", true);
         StartCoroutine(Stop());
 
    
@@ -67,7 +66,7 @@ public class No1animetorStop : MonoBehaviour
         else
         {
             GetComponent<Button>().interactable = true;
-            anim.Play("idle");
+           
         }
     }
 }
