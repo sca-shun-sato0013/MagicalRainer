@@ -52,7 +52,7 @@ public class RandomBulletsCreate : MonoBehaviour
         {
             for (int i = 0; i < bulletNum; i++)
             {
-                GameObject obj = Instantiate(prefabs, this.transform.position, Quaternion.identity, this.transform);
+                GameObject obj = Instantiate(prefabs, this.transform.position, Quaternion.identity);
                 var ranAngle = Random.Range(-angle / 2, angle / 2);
                 obj.GetComponent<NormalBullet>().angle = Mathf.Atan2(mainDirection.y, mainDirection.x) * Mathf.Rad2Deg + ranAngle;
                 var c = Random.Range(lowerLimit, upperLimit);

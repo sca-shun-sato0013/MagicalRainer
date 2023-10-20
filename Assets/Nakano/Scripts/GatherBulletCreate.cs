@@ -9,27 +9,19 @@ public class GatherBulletCreate : MonoBehaviour
     [SerializeField, Header("¶¬‰ñ”")] int createNum;
     [SerializeField, Header("ƒN[ƒ‹ƒ^ƒCƒ€")] float coolTime;
     [SerializeField, Header("’e‘¬")] float speed;
-
-    [SerializeField, Header("“G‚Æ‚Ì‹——£‚ªdisˆÈ‰º‚Ì‚Æ‚«’e‚ğíœ")] float dis;
     
     NormalBullet normalBullet;
-    BulletsDestroy bulletsDestroy;
 
     Vector3 direction;
     float range;
 
-    public bool isCreate = true;
+    public bool isCreate = false;
 
     void Awake()
     {
         normalBullet = prefabs.GetComponent<NormalBullet>();
         normalBullet.speed = speed;
         normalBullet.isReflect = true;
-
-        bulletsDestroy = prefabs.GetComponent<BulletsDestroy>();
-        bulletsDestroy.isGather = true;
-        bulletsDestroy.enemyPos = this.transform.position;
-        bulletsDestroy.dis = dis;
     }
 
     void Update()
@@ -72,7 +64,7 @@ public class GatherBulletCreate : MonoBehaviour
                             break;
                     }
 
-                    GameObject obj = Instantiate(prefabs, createPos, Quaternion.identity, this.transform);
+                    GameObject obj = Instantiate(prefabs, createPos, Quaternion.identity);
                     direction = (this.transform.position - obj.transform.position).normalized;
                     obj.GetComponent<NormalBullet>().angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
                 }

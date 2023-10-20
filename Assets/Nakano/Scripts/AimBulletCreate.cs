@@ -35,7 +35,7 @@ public class AimBulletCreate : MonoBehaviour
     {
         for (int i = 0; i < bulletNum; i++)
         {
-            Instantiate(prefabs, this.transform.position, Quaternion.identity, this.transform);
+            Instantiate(prefabs, this.transform.position, Quaternion.identity);
             yield return new WaitForSeconds(coolTime);
         }
     }

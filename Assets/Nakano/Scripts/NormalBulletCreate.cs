@@ -50,7 +50,7 @@ public class NormalBulletCreate : MonoBehaviour
         {
             for (int j = 1; j <= way; j++)
             {
-                GameObject obj = Instantiate(prefabs, this.transform.position, Quaternion.identity, this.transform);
+                GameObject obj = Instantiate(prefabs, this.transform.position, Quaternion.identity);
                 parentAngle = parent.GetComponent<Transform>().localEulerAngles.z;
                 obj.GetComponent<NormalBullet>().angle = angle * j + adjustmentAngle + parentAngle;
             }

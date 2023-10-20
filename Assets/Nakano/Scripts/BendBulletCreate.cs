@@ -58,7 +58,7 @@ public class BendBulletCreate : MonoBehaviour
         {
             for (int j = 1; j <= way; j++)
             {
-                GameObject obj = Instantiate(prefabs, this.transform.position, Quaternion.identity, this.transform);
+                GameObject obj = Instantiate(prefabs, this.transform.position, Quaternion.identity);
                 obj.GetComponent<BendBullet>().angle = angle * j + adjustmentAngle;
             }
             yield return new WaitForSeconds(coolTime);
