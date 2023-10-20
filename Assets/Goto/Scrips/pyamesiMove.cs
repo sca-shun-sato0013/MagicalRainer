@@ -10,13 +10,13 @@ public class pyamesiMove : MonoBehaviour
    
     [SerializeField] Animator MoveObject;
     private Animator anim;
-    //===== 初期処理 =====
+    
     void Start()
     {
         //変数animに、Animatorコンポーネントを設定する
         
         MoveObject = gameObject.GetComponent<Animator>();
-        MoveObject.speed = 0;
+       // MoveObject.speed = 0;
     }
 
     //===== 主処理 =====
@@ -36,7 +36,7 @@ public class pyamesiMove : MonoBehaviour
     {
 
         MoveObject.Play("New Animationzoro");
-        MoveObject.speed = 1;
+       // MoveObject.speed = 1;
 
         MoveObject.SetBool("Joy",true);
         Debug.Log("アニメーション再生");
