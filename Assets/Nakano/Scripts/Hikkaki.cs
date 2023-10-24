@@ -6,10 +6,6 @@ public class Hikkaki : MonoBehaviour
 {
     [SerializeField] GameObject prefabs;
 
-    [SerializeField, Header("上段　弾生成位置"), Tooltip("設定した座標からランダムに弾を生成する")] Vector3[] upPos;
-    [SerializeField, Header("中段　弾生成位置")] Vector3[] middlePos;
-    [SerializeField, Header("下段　弾生成位置")] Vector3[] downPos;
-
     [SerializeField, Header("上段　生成数")] int upNum;
     [SerializeField, Header("中段　生成数")] int middleNum;
     [SerializeField, Header("下段　生成数")] int downNum;
@@ -20,10 +16,36 @@ public class Hikkaki : MonoBehaviour
 
     public bool isCreate = false;
 
+    GameObject[] posEdit;
+    List<Vector3> upPosList = new();
+    List<Vector3> middlePosList = new();
+    List<Vector3> downPosList = new();
+
+    [SerializeField, Header("trueのとき位置調整モードになる")] private bool isEdit;
+
     void Awake()
     {
         normalBullet = prefabs.GetComponent<NormalBullet>();
         normalBullet.speed = speed;
+
+        posEdit = GameObject.FindGameObjectsWithTag("PosEdit");
+        foreach (GameObject obj in posEdit)
+        {
+            PositionEdit pos = obj.GetComponent<PositionEdit>();
+            if(pos.num == 1) //設定番号が1のときは上段
+            {
+                upPosList.Add(pos.gameObject.transform.position); //生成座標の配列に入れる
+            }
+            else if (pos.num == 2) //設定番号が2のときは中段
+            {
+                middlePosList.Add(pos.gameObject.transform.position);
+            }
+            else if (pos.num == 3) //設定番号が3のときは下段
+            {
+                downPosList.Add(pos.gameObject.transform.position);
+            }
+        }
+        
     }
 
     void Update()
@@ -39,21 +61,21 @@ public class Hikkaki : MonoBehaviour
     {
         for(int i = 0; i < upNum; i++)
         {
-            Vector3 pos = upPos[Random.Range(0, upPos.Length)];
+            Vector3 pos = upPosList[Random.Range(0, upPosList.Count)];
             GameObject obj = Instantiate(prefabs, pos, Quaternion.identity);
             obj.GetComponent<NormalBullet>().angle = Random.Range(0, 361);
         }
 
         for (int i = 0; i < middleNum; i++)
         {
-            Vector3 pos = middlePos[Random.Range(0, middlePos.Length)];
+            Vector3 pos = middlePosList[Random.Range(0, middlePosList.Count)];
             GameObject obj = Instantiate(prefabs, pos, Quaternion.identity);
             obj.GetComponent<NormalBullet>().angle = Random.Range(0, 361);
         }
 
         for (int i = 0; i < downNum; i++)
         {
-            Vector3 pos = downPos[Random.Range(0, downPos.Length)];
+            Vector3 pos = downPosList[Random.Range(0, downPosList.Count)];
             GameObject obj = Instantiate(prefabs, pos, Quaternion.identity);
             obj.GetComponent<NormalBullet>().angle = Random.Range(0, 361);
         }
