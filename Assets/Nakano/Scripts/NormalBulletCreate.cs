@@ -5,7 +5,8 @@ using UnityEngine;
 public class NormalBulletCreate : MonoBehaviour
 {
     [SerializeField] GameObject prefabs;
-    [SerializeField, Header("生成数")] int bulletNum;
+    [SerializeField, Header("生成時間")] float createTime;
+    //[SerializeField, Header("生成数")] int bulletNum;
     [SerializeField, Header("クールタイム")] float coolTime;
     [SerializeField, Header("弾速")] float speed;
 
@@ -18,6 +19,9 @@ public class NormalBulletCreate : MonoBehaviour
     NormalBullet normalBullet;
 
     public bool isCreate = false;
+
+    float t = 0;
+    bool isCount = false;
 
     void Awake()
     {
@@ -40,13 +44,20 @@ public class NormalBulletCreate : MonoBehaviour
         if (isCreate)
         {
             isCreate = false;
+            isCount = true;
+            t = 0;
             StartCoroutine(Create());
+        }
+
+        if(isCount)
+        {
+            t += Time.deltaTime;
         }
     }
 
     IEnumerator Create()
     {
-        for (int i = 0; i < bulletNum; i++)
+        while (t < createTime)
         {
             for (int j = 1; j <= way; j++)
             {
@@ -56,5 +67,6 @@ public class NormalBulletCreate : MonoBehaviour
             }
             yield return new WaitForSeconds(coolTime);
         }
+        isCount = false;
     }
 }

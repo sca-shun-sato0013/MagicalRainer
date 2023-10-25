@@ -5,7 +5,8 @@ using UnityEngine;
 public class LinerBulletCreate : MonoBehaviour
 {
     [SerializeField] GameObject prefabs;
-    [SerializeField, Header("生成数")] int bulletNum;
+    [SerializeField, Header("生成時間")] float createTime;
+    //[SerializeField, Header("生成数")] int bulletNum;
     [SerializeField, Header("クールタイム")] float coolTime;
     [SerializeField, Header("方向数"), Tooltip("多方向弾を生成する場合に方向数を指定 入力は1以上")] int way = 1;
     [SerializeField, Header("角度")] float angle;
@@ -18,6 +19,10 @@ public class LinerBulletCreate : MonoBehaviour
     NormalBullet normalBullet;
 
     public bool isCreate = false;
+
+    float t = 0;
+    bool isCount = false;
+
 
     void Awake()
     {
@@ -35,15 +40,22 @@ public class LinerBulletCreate : MonoBehaviour
         if (isCreate)
         {
             isCreate = false;
+            isCount = true;
+            t = 0;
             StartCoroutine(Create());
         }
         playerPos = player.transform.position;
         direction = (playerPos - transform.position).normalized;
+
+        if (isCount)
+        {
+            t += Time.deltaTime;
+        }
     }
 
     IEnumerator Create()
     {
-        for (int i = 0; i < bulletNum; i++)
+        while (t < createTime)
         {
             for (int j = 0; j < way; j++)
             {
@@ -63,5 +75,6 @@ public class LinerBulletCreate : MonoBehaviour
             }
             yield return new WaitForSeconds(coolTime);
         }
+        isCount = false;
     }
 }
