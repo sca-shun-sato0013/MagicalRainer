@@ -5,7 +5,8 @@ using UnityEngine;
 public class BendBulletCreate : MonoBehaviour
 {
     [SerializeField] GameObject prefabs;
-    [SerializeField, Header("¶¬”")] int bulletNum;
+    [SerializeField, Header("¶¬ŠÔ")] float createTime;
+    //[SerializeField, Header("¶¬”")] int bulletNum;
     [SerializeField, Header("ƒN[ƒ‹ƒ^ƒCƒ€")] float coolTime;
     [SerializeField, Header("’e‘¬@y’ˆÓz‘¼‚ÆˆÙ‚È‚è’l‚ª‚‚¢‚Ù‚Ç’á‘¬‰»")] float speed;
 
@@ -20,6 +21,9 @@ public class BendBulletCreate : MonoBehaviour
 
     public bool isCreate = false;
     [Header("‹t‰ñ“]‚É‚·‚é‚©‚Ç‚¤‚©")] public bool isReverse = false;
+
+    float t = 0;
+    bool isCount = false;
 
     private void Awake()
     {
@@ -48,13 +52,20 @@ public class BendBulletCreate : MonoBehaviour
         if (isCreate)
         {
             isCreate = false;
+            isCount = true;
+            t = 0;
             StartCoroutine(Create());
+        }
+
+        if (isCount)
+        {
+            t += Time.deltaTime;
         }
     }
 
     IEnumerator Create()
     {
-        for (int i = 0; i < bulletNum; i++)
+        while (t < createTime)
         {
             for (int j = 1; j <= way; j++)
             {
@@ -63,5 +74,6 @@ public class BendBulletCreate : MonoBehaviour
             }
             yield return new WaitForSeconds(coolTime);
         }
+        isCount = false;
     }
 }

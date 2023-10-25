@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class Hikkaki : MonoBehaviour
 {
@@ -21,31 +24,17 @@ public class Hikkaki : MonoBehaviour
     List<Vector3> middlePosList = new();
     List<Vector3> downPosList = new();
 
-    [SerializeField, Header("trueのとき位置調整モードになる")] private bool isEdit;
+    CSVController csvController = new();
 
     void Awake()
     {
         normalBullet = prefabs.GetComponent<NormalBullet>();
         normalBullet.speed = speed;
+    }
 
-        posEdit = GameObject.FindGameObjectsWithTag("PosEdit");
-        foreach (GameObject obj in posEdit)
-        {
-            PositionEdit pos = obj.GetComponent<PositionEdit>();
-            if(pos.num == 1) //設定番号が1のときは上段
-            {
-                upPosList.Add(pos.gameObject.transform.position); //生成座標の配列に入れる
-            }
-            else if (pos.num == 2) //設定番号が2のときは中段
-            {
-                middlePosList.Add(pos.gameObject.transform.position);
-            }
-            else if (pos.num == 3) //設定番号が3のときは下段
-            {
-                downPosList.Add(pos.gameObject.transform.position);
-            }
-        }
-        
+    private void Start()
+    {
+        //DataLoad();
     }
 
     void Update()
@@ -54,6 +43,32 @@ public class Hikkaki : MonoBehaviour
         {
             isCreate = false;
             StartCoroutine(Create());
+        }
+    }
+
+    void DataLoad()
+    {
+        var split = new List<string>();
+        var s = csvController.loadPositionData();
+        var lineSplit = s.text.Split("\n"); //行ごとに分割
+        for(var i = 0; i < lineSplit.Length; i++)
+        {
+            var line = lineSplit[i].Split(",");
+
+            switch(int.Parse(line[0]))
+            {
+                case 1:
+                    upPosList.Add(new Vector3(float.Parse(line[1]), float.Parse(line[2]), float.Parse(line[3])));
+                    break;
+                case 2:
+                    middlePosList.Add(new Vector3(float.Parse(line[1]), float.Parse(line[2]), float.Parse(line[3])));
+                    break;
+                case 3:
+                    downPosList.Add(new Vector3(float.Parse(line[1]), float.Parse(line[2]), float.Parse(line[3])));
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
