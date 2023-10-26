@@ -2,38 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
 
+/// <summary>
+/// 座標をCSVファイルに書きこむ
+/// </summary>
 public class CSVController : MonoBehaviour
 {
     [SerializeField, Header("trueのとき位置調整モードになり、座標データを書き出す")] private bool isEdit = false;
+    [SerializeField, Header("CSVファイルを作るフォルダのパス")] string path = "/Nakano/PositionData/hikkaki.csv";
 
     GameObject[] posEdit;
-
-    [SerializeField, Header("座標が入っているcsvを指定")] private AssetReference csvData;
-    TextAsset text = null;
 
     private void Awake()
     {
         if (isEdit)
         {
-            if(File.Exists(Application.dataPath + "/Nakano/PositionData/hikkaki.csv"))
+            if(File.Exists(Application.dataPath + path))
             {
-                File.Delete(Application.dataPath + "/Nakano/PositionData/hikkaki.csv");
+                StreamWriter writer;
+
+                string s2 = "";
+
+                string fileName = Application.dataPath + path;
+                writer = new StreamWriter(fileName, false);
+                writer.WriteLine(s2);
+                writer.Flush();
+                writer.Close();
             }
             
             posEdit = GameObject.FindGameObjectsWithTag("PosEdit");
             foreach (GameObject obj in posEdit)
             {
                 PositionEdit pos = obj.GetComponent<PositionEdit>();
-                savePosition("/Nakano/PositionData/hikkaki.csv", pos.num, pos.gameObject.transform.position);
+                savePosition(path, pos.num, pos.gameObject.transform.position);
             }
-        }
-        else
-        {
-            AsyncOperationHandle handle = csvData.LoadAssetAsync<TextAsset>();
-            handle.Completed += OnCompletedHandler;
         }
     }
 
@@ -55,30 +57,5 @@ public class CSVController : MonoBehaviour
         writer.WriteLine(s2);
         writer.Flush();
         writer.Close();
-    }
-
-    /// <summary>
-    /// ロードしたファイル内のテキストデータを別スクリプトに与える
-    /// </summary>
-    /// <returns></returns>
-    public TextAsset loadPositionData()
-    {
-        return text;
-    }
-
-    private void OnCompletedHandler(AsyncOperationHandle obj)
-    {
-        if (obj.Status == AsyncOperationStatus.Succeeded)
-        {
-            TextAsset loadedCsv = csvData.Asset as TextAsset;
-            if (loadedCsv != null)
-            {
-                text = loadedCsv;
-            }
-        }
-        else
-        {
-            Debug.LogError($"AssetReference {csvData.RuntimeKey} failed to load.");
-        }
     }
 }
