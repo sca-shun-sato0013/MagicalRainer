@@ -19,27 +19,30 @@ public class Hikkaki : MonoBehaviour
 
     public bool isCreate = false;
 
-    GameObject[] posEdit;
     List<Vector3> upPosList = new();
     List<Vector3> middlePosList = new();
     List<Vector3> downPosList = new();
 
-    CSVController csvController = new();
+    [SerializeField, Header("À•W‚ª“ü‚Á‚Ä‚¢‚écsv‚ğw’è")] private AssetReference csvData;
+    TextAsset text = null;
+    bool isInput = false;
 
     void Awake()
     {
         normalBullet = prefabs.GetComponent<NormalBullet>();
         normalBullet.speed = speed;
+
+        AsyncOperationHandle handle = csvData.LoadAssetAsync<TextAsset>();
+        handle.Completed += OnCompletedHandler;
     }
 
     private void Start()
     {
-        //DataLoad();
     }
 
     void Update()
     {
-        if(isCreate)
+        if (isCreate && isInput)
         {
             isCreate = false;
             StartCoroutine(Create());
@@ -49,26 +52,46 @@ public class Hikkaki : MonoBehaviour
     void DataLoad()
     {
         var split = new List<string>();
-        var s = csvController.loadPositionData();
+        var s = text;
         var lineSplit = s.text.Split("\n"); //s‚²‚Æ‚É•ªŠ„
         for(var i = 0; i < lineSplit.Length; i++)
         {
             var line = lineSplit[i].Split(",");
 
-            switch(int.Parse(line[0]))
+            if(line[0] != "" && line[0] != null)
             {
-                case 1:
-                    upPosList.Add(new Vector3(float.Parse(line[1]), float.Parse(line[2]), float.Parse(line[3])));
-                    break;
-                case 2:
-                    middlePosList.Add(new Vector3(float.Parse(line[1]), float.Parse(line[2]), float.Parse(line[3])));
-                    break;
-                case 3:
-                    downPosList.Add(new Vector3(float.Parse(line[1]), float.Parse(line[2]), float.Parse(line[3])));
-                    break;
-                default:
-                    break;
+                switch (int.Parse(line[0]))
+                {
+                    case 1:
+                        upPosList.Add(new Vector3(float.Parse(line[1]), float.Parse(line[2]), float.Parse(line[3])));
+                        break;
+                    case 2:
+                        middlePosList.Add(new Vector3(float.Parse(line[1]), float.Parse(line[2]), float.Parse(line[3])));
+                        break;
+                    case 3:
+                        downPosList.Add(new Vector3(float.Parse(line[1]), float.Parse(line[2]), float.Parse(line[3])));
+                        break;
+                }
             }
+        }
+
+        isInput = true;
+    }
+
+    private void OnCompletedHandler(AsyncOperationHandle obj)
+    {
+        if (obj.Status == AsyncOperationStatus.Succeeded)
+        {
+            TextAsset loadedCsv = csvData.Asset as TextAsset;
+            if (loadedCsv != null)
+            {
+                text = loadedCsv;
+                DataLoad();
+            }
+        }
+        else
+        {
+            Debug.LogError($"AssetReference {csvData.RuntimeKey} failed to load.");
         }
     }
 
