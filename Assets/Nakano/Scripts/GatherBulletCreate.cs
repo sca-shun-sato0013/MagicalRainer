@@ -6,8 +6,9 @@ public class GatherBulletCreate : MonoBehaviour
 {
     [SerializeField] GameObject prefabs;
     [SerializeField, Header("一辺の生成数")] int bulletNum;
-    [SerializeField, Header("生成回数")] int createNum;
-    [SerializeField, Header("クールタイム")] float coolTime;
+    [SerializeField, Header("生成時間")] float createTime;
+    //[SerializeField, Header("生成回数")] int createNum;
+    [SerializeField, Header("クールタイム"), Tooltip("短いほど密度が上がる")] float coolTime;
     [SerializeField, Header("弾速")] float speed;
 
     [SerializeField, Header("敵との距離がdis以下のとき弾を削除")] float dis;
@@ -19,6 +20,9 @@ public class GatherBulletCreate : MonoBehaviour
     float range;
 
     public bool isCreate = false;
+
+    float t = 0;
+    bool isCount = false;
 
     void Awake()
     {
@@ -37,13 +41,20 @@ public class GatherBulletCreate : MonoBehaviour
         if (isCreate)
         {
             isCreate = false;
+            isCount = true;
+            t = 0;
             StartCoroutine(Create());
+        }
+
+        if (isCount)
+        {
+            t += Time.deltaTime;
         }
     }
 
     IEnumerator Create()
     {
-        for(int k = 0; k < createNum; k++)
+        while (t < createTime)
         {
             for (int j = 0; j < 4; j++)
             {
@@ -79,5 +90,6 @@ public class GatherBulletCreate : MonoBehaviour
             }
             yield return new WaitForSeconds(coolTime);
         }
+        isCount = false;
     }
 }

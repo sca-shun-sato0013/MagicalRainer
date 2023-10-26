@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7965387680443945330}
   - component: {fileID: 856109111958037742}
+  - component: {fileID: 6859792709637494289}
   m_Layer: 0
   m_Name: Hikkaki
   m_TagString: Untagged
@@ -45,41 +46,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs: {fileID: 7103844777156200804, guid: 8bee0360e9f884640889fcec68793724, type: 3}
-  upPos:
-  - {x: -3, y: 1.5, z: 0}
-  - {x: -1.5, y: 1, z: 0}
-  - {x: 0, y: 1.5, z: 0}
-  - {x: 1.5, y: 1, z: 0}
-  - {x: 3, y: 1.5, z: 0}
-  - {x: -2, y: 1.5, z: 0}
-  - {x: 2, y: 1.5, z: 0}
-  - {x: -2, y: 1, z: 0}
-  - {x: 2, y: 1, z: 0}
-  - {x: -2, y: 1, z: 0}
-  middlePos:
-  - {x: -3, y: 0.5, z: 0}
-  - {x: -1.5, y: 0, z: 0}
-  - {x: 0, y: 0.5, z: 0}
-  - {x: 1.5, y: 0, z: 0}
-  - {x: 3, y: 0.5, z: 0}
-  - {x: -2, y: 0.5, z: 0}
-  - {x: 2, y: 0.5, z: 0}
-  - {x: -2, y: 0, z: 0}
-  - {x: 2, y: 0, z: 0}
-  - {x: -2, y: 0, z: 0}
-  downPos:
-  - {x: -3, y: -0.5, z: 0}
-  - {x: -1.5, y: -1, z: 0}
-  - {x: 0, y: -0.5, z: 0}
-  - {x: 1.5, y: -1, z: 0}
-  - {x: 3, y: -0.5, z: 0}
-  - {x: -2, y: -0.5, z: 0}
-  - {x: 2, y: -0.5, z: 0}
-  - {x: -2, y: -1, z: 0}
-  - {x: 2, y: -1, z: 0}
-  - {x: -2, y: -1, z: 0}
   upNum: 30
   middleNum: 30
   downNum: 30
   speed: 5
   isCreate: 1
+  csvData:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+--- !u!114 &6859792709637494289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7705313970934912404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5d28dea583dcd945b30268e10750366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEdit: 0
+  csvData:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0

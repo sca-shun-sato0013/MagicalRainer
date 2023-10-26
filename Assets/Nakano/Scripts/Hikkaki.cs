@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class Hikkaki : MonoBehaviour
 {
@@ -16,44 +19,79 @@ public class Hikkaki : MonoBehaviour
 
     public bool isCreate = false;
 
-    GameObject[] posEdit;
     List<Vector3> upPosList = new();
     List<Vector3> middlePosList = new();
     List<Vector3> downPosList = new();
 
-    [SerializeField, Header("trueのとき位置調整モードになる")] private bool isEdit;
+    [SerializeField, Header("座標が入っているcsvを指定")] private AssetReference csvData;
+    TextAsset text = null;
+    bool isInput = false;
 
     void Awake()
     {
         normalBullet = prefabs.GetComponent<NormalBullet>();
         normalBullet.speed = speed;
 
-        posEdit = GameObject.FindGameObjectsWithTag("PosEdit");
-        foreach (GameObject obj in posEdit)
-        {
-            PositionEdit pos = obj.GetComponent<PositionEdit>();
-            if(pos.num == 1) //設定番号が1のときは上段
-            {
-                upPosList.Add(pos.gameObject.transform.position); //生成座標の配列に入れる
-            }
-            else if (pos.num == 2) //設定番号が2のときは中段
-            {
-                middlePosList.Add(pos.gameObject.transform.position);
-            }
-            else if (pos.num == 3) //設定番号が3のときは下段
-            {
-                downPosList.Add(pos.gameObject.transform.position);
-            }
-        }
-        
+        AsyncOperationHandle handle = csvData.LoadAssetAsync<TextAsset>();
+        handle.Completed += OnCompletedHandler;
+    }
+
+    private void Start()
+    {
     }
 
     void Update()
     {
-        if(isCreate)
+        if (isCreate && isInput)
         {
             isCreate = false;
             StartCoroutine(Create());
+        }
+    }
+
+    void DataLoad()
+    {
+        var split = new List<string>();
+        var s = text;
+        var lineSplit = s.text.Split("\n"); //行ごとに分割
+        for(var i = 0; i < lineSplit.Length; i++)
+        {
+            var line = lineSplit[i].Split(",");
+
+            if(line[0] != "" && line[0] != null)
+            {
+                switch (int.Parse(line[0]))
+                {
+                    case 1:
+                        upPosList.Add(new Vector3(float.Parse(line[1]), float.Parse(line[2]), float.Parse(line[3])));
+                        break;
+                    case 2:
+                        middlePosList.Add(new Vector3(float.Parse(line[1]), float.Parse(line[2]), float.Parse(line[3])));
+                        break;
+                    case 3:
+                        downPosList.Add(new Vector3(float.Parse(line[1]), float.Parse(line[2]), float.Parse(line[3])));
+                        break;
+                }
+            }
+        }
+
+        isInput = true;
+    }
+
+    private void OnCompletedHandler(AsyncOperationHandle obj)
+    {
+        if (obj.Status == AsyncOperationStatus.Succeeded)
+        {
+            TextAsset loadedCsv = csvData.Asset as TextAsset;
+            if (loadedCsv != null)
+            {
+                text = loadedCsv;
+                DataLoad();
+            }
+        }
+        else
+        {
+            Debug.LogError($"AssetReference {csvData.RuntimeKey} failed to load.");
         }
     }
 

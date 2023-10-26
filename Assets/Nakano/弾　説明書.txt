@@ -8,7 +8,7 @@ Nakano->Prefabs内にあるプレハブの説明書
 
 ◆BulletsCreate：上記の『Bullets』を生成するScriptを組み込んだGameObject 細かい使用方法はEnemySampleを参照
 　├AimBulletsCreate     ：AimBulletsを生成　生成数・クールタイムが変更可能
-　├NormalBulletsCreate  ：NormalBulletsを生成　生成数・クールタイムに加え、射出方向・多方向に飛ばす場合は方向数・多方向での射出方向の変更ができる
+　├NormalBulletsCreate  ：NormalBulletsを生成　生成時間・クールタイムに加え、射出方向・多方向に飛ばす場合は方向数・多方向での射出方向の変更ができる
 　│　　                   多方向にする場合は射出角度は無視される 親オブジェクトのrotationに応じて角度が調整される
 　├TrackingBulletsCreate：TrackingBulletsを生成　生成数・クールタイムに加え、追尾時間の変更ができる
 　├LinerBulletCreate    ：プレイヤーに向かってライン状のNormalBulletsを生成

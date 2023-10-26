@@ -13,6 +13,8 @@ public class NormalBullet : MonoBehaviour
 
     public bool isReflect = false;
 
+    [HideInInspector] public int num = 0;
+
     void Start()
     {
         //角度を単位ベクトルに変える
