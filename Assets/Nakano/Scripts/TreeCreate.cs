@@ -142,7 +142,7 @@ public class TreeCreate : MonoBehaviour
                                 break;
                         }
 
-                        Vector3 position = pos + this.gameObject.transform.position + ajustmentPos;
+                        Vector3 position = pos + this.gameObject.transform.position - ajustmentPos;
                         Vector3 position2 = new Vector3(position.x * dir.x , position.y * dir.y, 0);
 
                         GameObject obj = Instantiate(prefabs, position2, Quaternion.identity, this.transform);
@@ -163,25 +163,35 @@ public class TreeCreate : MonoBehaviour
     {
         for (int i = posList[posList.Count - 1].num; i > 0; i--)
         {
-            foreach (var o in bullets)
+            if(bullets != null)
             {
-                if(o.GetComponent<NormalBullet>().num == i)
+                foreach (var o in bullets)
                 {
-                    if(isFall)
+                    if(o)
                     {
-                        float ajustAngle = o.GetComponent<Transform>().rotation.z;
-                        o.GetComponent<NormalBullet>().angle = -90 + ajustAngle + this.transform.rotation.z;
-                        o.GetComponent<NormalBullet>().speed = fallSpeed;
-                        o.gameObject.transform.parent = null;
-                    }
-                    else
-                    {
-                        Destroy(o);
+                        if (o.GetComponent<NormalBullet>().num == i)
+                        {
+                            if (isFall)
+                            {
+                                o.gameObject.transform.parent = null;
+                                Vector3 rotate = o.GetComponent<Transform>().localEulerAngles;
+                                rotate = new Vector3(0, 0, 0);
+                                o.GetComponent<Transform>().localEulerAngles = rotate;
+                                o.GetComponent<NormalBullet>().angle = -90;
+                                o.GetComponent<NormalBullet>().speed = fallSpeed;
+                            }
+                            else
+                            {
+                                Destroy(o);
+                            }
+                        }
                     }
                 }
             }
-
+            
             yield return new WaitForSeconds(crumbleCoolTime);
         }
+
+        yield return null;
     }
 }

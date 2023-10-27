@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs: {fileID: 5213349497257978508, guid: e96c1385039da1649ac18272bc12b0d5, type: 3}
+  sprite: {fileID: 21300000, guid: fe34258ae8d80274eae11fb5740c0d2c, type: 3}
   bulletNum: 10
   coolTime: 0.1
   speed: 10
