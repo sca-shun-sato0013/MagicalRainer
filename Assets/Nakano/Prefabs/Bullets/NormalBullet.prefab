@@ -100,8 +100,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 0
-  speed: 10
+  speed: 0
   isReflect: 0
+  num: 0
 --- !u!58 &7499630468582952702
 CircleCollider2D:
   m_ObjectHideFlags: 0

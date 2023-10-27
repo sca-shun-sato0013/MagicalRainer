@@ -5,6 +5,7 @@ using UnityEngine;
 public class GatherBulletCreate : MonoBehaviour
 {
     [SerializeField] GameObject prefabs;
+    [SerializeField, Header("’e‚Ì‰æ‘œ")] Sprite sprite;
     [SerializeField, Header("ˆê•Ó‚Ì¶¬”")] int bulletNum;
     [SerializeField, Header("¶¬ŠÔ")] float createTime;
     //[SerializeField, Header("¶¬‰ñ”")] int createNum;
@@ -29,6 +30,8 @@ public class GatherBulletCreate : MonoBehaviour
         normalBullet = prefabs.GetComponent<NormalBullet>();
         normalBullet.speed = speed;
         normalBullet.isReflect = true;
+
+        prefabs.GetComponent<SpriteRenderer>().sprite = sprite;
 
         bulletsDestroy = prefabs.GetComponent<BulletsDestroy>();
         bulletsDestroy.isGather = true;

@@ -23,6 +23,8 @@ public class NormalBullet : MonoBehaviour
 
     void Update()
     {
+        //角度を単位ベクトルに変える
+        direction = AngleToVector3(angle);
         transform.Translate(direction * speed * Time.deltaTime);
     }
 

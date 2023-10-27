@@ -5,6 +5,7 @@ using UnityEngine;
 public class TrackingBulletCreate : MonoBehaviour
 {
     [SerializeField] GameObject prefabs;
+    [SerializeField, Header("弾の画像")] Sprite sprite;
     [SerializeField, Header("生成数")] int bulletNum;
     [SerializeField, Header("クールタイム")] float coolTime;
     [SerializeField, Header("弾速")] float speed;
@@ -19,6 +20,8 @@ public class TrackingBulletCreate : MonoBehaviour
         trackingBullet = prefabs.GetComponent<TrackingBullet>();
         trackingBullet.speed = speed;
         trackingBullet.trackingTime = trackingTime;
+
+        prefabs.GetComponent<SpriteRenderer>().sprite = sprite;
     }
 
     void Update()
