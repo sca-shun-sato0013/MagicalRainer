@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 0
-  speed: 0
+  speed: 5
   isReflect: 0
   num: 0
 --- !u!58 &7499630468582952702

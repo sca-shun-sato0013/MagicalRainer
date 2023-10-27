@@ -61,7 +61,8 @@ public class Hikkaki : MonoBehaviour
         {
             var line = lineSplit[i].Split(",");
 
-            if(line[0] != "" && line[0] != null)
+            int n = 0;
+            if (int.TryParse(line[0], out n))
             {
                 switch (int.Parse(line[0]))
                 {
