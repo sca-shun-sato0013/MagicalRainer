@@ -8,6 +8,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 public class Hikkaki : MonoBehaviour
 {
     [SerializeField] GameObject prefabs;
+    [SerializeField, Header("弾の画像")] Sprite sprite;
 
     [SerializeField, Header("上段　生成数")] int upNum;
     [SerializeField, Header("中段　生成数")] int middleNum;
@@ -31,6 +32,8 @@ public class Hikkaki : MonoBehaviour
     {
         normalBullet = prefabs.GetComponent<NormalBullet>();
         normalBullet.speed = speed;
+
+        prefabs.GetComponent<SpriteRenderer>().sprite = sprite;
 
         AsyncOperationHandle handle = csvData.LoadAssetAsync<TextAsset>();
         handle.Completed += OnCompletedHandler;

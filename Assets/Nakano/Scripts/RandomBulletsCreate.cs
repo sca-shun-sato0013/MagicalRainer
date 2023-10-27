@@ -8,6 +8,7 @@ using UnityEngine;
 public class RandomBulletsCreate : MonoBehaviour
 {
     [SerializeField] GameObject prefabs;
+    [SerializeField, Header("弾の画像")] Sprite sprite;
     [SerializeField, Header("生成数")] int bulletNum;
     [SerializeField, Header("生成回数")] int createNum;
     [SerializeField, Header("一回生成時のクールタイム上限")] float upperLimit;
@@ -31,6 +32,8 @@ public class RandomBulletsCreate : MonoBehaviour
 
         normalBullet = prefabs.GetComponent<NormalBullet>();
         normalBullet.speed = speed;
+
+        prefabs.GetComponent<SpriteRenderer>().sprite = sprite;
 
         mainDirection = (playerPos - transform.position).normalized;
     }

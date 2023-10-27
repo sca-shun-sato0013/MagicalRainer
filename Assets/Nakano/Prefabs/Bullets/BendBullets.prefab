@@ -75,12 +75,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fe34258ae8d80274eae11fb5740c0d2c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 07aa7c7905b63a24fa18bf988c7907cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 14.84, y: 14.84}
+  m_Size: {x: 7.68, y: 7.68}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -98,10 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98ce65d72a2879347b8fcc8e83324c6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  relayAjust: {x: 5, y: 7}
-  targetAjust: {x: 8, y: -20}
+  relayAjust: {x: 5, y: 5}
+  targetAjust: {x: 20, y: -40}
   angle: 270
-  speed: 1
+  speed: 5
 --- !u!114 &2655613311614025397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,3 +114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006dea5d7ef9cc64ca9d20ed34dc4077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGather: 0
+  enemyPos: {x: 0, y: 0, z: 0}
+  dis: 0

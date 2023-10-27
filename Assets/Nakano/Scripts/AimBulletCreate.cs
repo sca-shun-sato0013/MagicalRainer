@@ -8,6 +8,7 @@ using UnityEngine;
 public class AimBulletCreate : MonoBehaviour
 {
     [SerializeField] GameObject prefabs;
+    [SerializeField, Header("弾の画像")] Sprite sprite;
     [SerializeField, Header("生成数")] int bulletNum;
     [SerializeField, Header("クールタイム")] float coolTime;
     [SerializeField, Header("弾速")] float speed;
@@ -20,6 +21,7 @@ public class AimBulletCreate : MonoBehaviour
     {
         aimBullet = prefabs.GetComponent<AimBullet>();
         aimBullet.speed = speed;
+        prefabs.GetComponent<SpriteRenderer>().sprite = sprite;
     }
 
     void Update()
