@@ -17577,6 +17577,21 @@ PrefabInstance:
       propertyPath: way
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3935341627399285558, guid: dcc548ac67c0deb48981acb7a30c152c,
+        type: 3}
+      propertyPath: fallSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935341627399285558, guid: dcc548ac67c0deb48981acb7a30c152c,
+        type: 3}
+      propertyPath: crumbleCoolTime
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935341627399285558, guid: dcc548ac67c0deb48981acb7a30c152c,
+        type: 3}
+      propertyPath: fallProbability
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
