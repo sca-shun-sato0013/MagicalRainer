@@ -21,7 +21,8 @@ public class TreeCreate : MonoBehaviour
     [SerializeField, Header("一周にかかる時間（秒）")] float rotateTime;
 
     [SerializeField, Header("崩壊していくときのクールタイム")] float crumbleCoolTime;
-    [SerializeField, Header("崩れていくとき、落下していくかどうか")] bool isFall;
+    [SerializeField, Header("落下する確率")] int fallProbability;
+    /*[SerializeField, Header("崩れていくとき、落下していくかどうか")]*/ bool isFall;
     [SerializeField, Header("崩れながら落下していく場合の落下スピード")] float fallSpeed;
 
     NormalBullet normalBullet;
@@ -171,6 +172,10 @@ public class TreeCreate : MonoBehaviour
                     {
                         if (o.GetComponent<NormalBullet>().num == i)
                         {
+                            var ran = Random.Range(0, 100);
+                            if(ran < fallProbability) { isFall = true; }
+                            else { isFall = false; }
+
                             if (isFall)
                             {
                                 o.gameObject.transform.parent = null;
