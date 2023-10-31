@@ -22,8 +22,13 @@ public class TreeCreate : MonoBehaviour
 
     [SerializeField, Header("崩壊していくときのクールタイム")] float crumbleCoolTime;
     [SerializeField, Header("落下する確率")] int fallProbability;
-    /*[SerializeField, Header("崩れていくとき、落下していくかどうか")]*/ bool isFall;
+    bool isFall;
     [SerializeField, Header("崩れながら落下していく場合の落下スピード")] float fallSpeed;
+
+    [SerializeField, Header("生成回数"), Tooltip("createNum回目の生成時は生成後回転せずに崩壊")] int createNum;
+    int count = 0;
+
+    [SerializeField, Header("逆回転するかどうか")] bool isReverse;
 
     NormalBullet normalBullet;
 
@@ -56,19 +61,27 @@ public class TreeCreate : MonoBehaviour
     {
         if (isCreate && isInput)
         {
+            count++;
             isCreate = false;
             StartCoroutine(Create());
         }
 
         if(isRotate)
         {
-            transform.Rotate(0, 0, (360f / rotateTime) * Time.deltaTime * -1);
-
-            if(isCrumble)
+            if(!isReverse)
             {
-                isCrumble = false;
-                StartCoroutine(Crumble());
+                transform.Rotate(0, 0, (360f / rotateTime) * Time.deltaTime * -1);
             }
+            else
+            {
+                transform.Rotate(0, 0, (360f / rotateTime) * Time.deltaTime * 1);
+            }
+        }
+
+        if (isCrumble)
+        {
+            isCrumble = false;
+            StartCoroutine(Crumble());
         }
     }
 
@@ -130,16 +143,20 @@ public class TreeCreate : MonoBehaviour
                         switch (w)
                         {
                             case 1:
-                                dir = new Vector3(1, 1, 0);
+                                if (isReverse) { dir = new Vector3(1, -1, 0); }
+                                else dir = new Vector3(1, 1, 0);
                                 break;
                             case 2:
-                                dir = new Vector3(-1, -1, 0);
+                                if(isReverse) { dir = new Vector3(-1, 1, 0); }
+                                else dir = new Vector3(-1, -1, 0);
                                 break;
                             case 3:
-                                dir = new Vector3(-1, 1, 0);
+                                if(isReverse) { dir = new Vector3(1, -1, 0); }
+                                else dir = new Vector3(-1, 1, 0);
                                 break;
                             case 4:
-                                dir = new Vector3(1, -1, 0);
+                                if(isReverse) { dir = new Vector3(-1, 1, 0); }
+                                else dir = new Vector3(1, -1, 0);
                                 break;
                         }
 
@@ -156,8 +173,17 @@ public class TreeCreate : MonoBehaviour
             yield return new WaitForSeconds(coolTime);
         }
 
-        isRotate = true;
-        isCrumble = true;
+        if(count <= createNum)
+        {
+            isRotate = true;
+            isCrumble = true;
+        }
+        else
+        {
+            isRotate = false;
+            fallProbability = 100;
+            isCrumble = true;
+        }
     }
 
     IEnumerator Crumble()
@@ -197,6 +223,7 @@ public class TreeCreate : MonoBehaviour
             yield return new WaitForSeconds(crumbleCoolTime);
         }
 
+        isRotate = false;
         yield return null;
     }
 }

@@ -1083,6 +1083,7 @@ RectTransform:
   - {fileID: 1391877212}
   - {fileID: 1853220567}
   - {fileID: 1454847939}
+  - {fileID: 937427171}
   - {fileID: 329468987}
   - {fileID: 556091728}
   m_Father: {fileID: 0}
@@ -8438,6 +8439,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &937427171 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2566976170172864864, guid: dcc548ac67c0deb48981acb7a30c152c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1513897684}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &948495879
 GameObject:
   m_ObjectHideFlags: 0
@@ -12437,6 +12444,120 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1513897684
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 121045520}
+    m_Modifications:
+    - target: {fileID: 2566976170172864864, guid: dcc548ac67c0deb48981acb7a30c152c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -960
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566976170172864864, guid: dcc548ac67c0deb48981acb7a30c152c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -540
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566976170172864864, guid: dcc548ac67c0deb48981acb7a30c152c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566976170172864864, guid: dcc548ac67c0deb48981acb7a30c152c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566976170172864864, guid: dcc548ac67c0deb48981acb7a30c152c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566976170172864864, guid: dcc548ac67c0deb48981acb7a30c152c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566976170172864864, guid: dcc548ac67c0deb48981acb7a30c152c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566976170172864864, guid: dcc548ac67c0deb48981acb7a30c152c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566976170172864864, guid: dcc548ac67c0deb48981acb7a30c152c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566976170172864864, guid: dcc548ac67c0deb48981acb7a30c152c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3572933700290447052, guid: dcc548ac67c0deb48981acb7a30c152c,
+        type: 3}
+      propertyPath: m_Name
+      value: Tree (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3572933700290447052, guid: dcc548ac67c0deb48981acb7a30c152c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935341627399285558, guid: dcc548ac67c0deb48981acb7a30c152c,
+        type: 3}
+      propertyPath: way
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935341627399285558, guid: dcc548ac67c0deb48981acb7a30c152c,
+        type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f523184ce8bdee84e845b4e61716e802,
+        type: 3}
+    - target: {fileID: 3935341627399285558, guid: dcc548ac67c0deb48981acb7a30c152c,
+        type: 3}
+      propertyPath: createNum
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935341627399285558, guid: dcc548ac67c0deb48981acb7a30c152c,
+        type: 3}
+      propertyPath: fallSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935341627399285558, guid: dcc548ac67c0deb48981acb7a30c152c,
+        type: 3}
+      propertyPath: isReverse
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935341627399285558, guid: dcc548ac67c0deb48981acb7a30c152c,
+        type: 3}
+      propertyPath: rotateTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935341627399285558, guid: dcc548ac67c0deb48981acb7a30c152c,
+        type: 3}
+      propertyPath: crumbleCoolTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935341627399285558, guid: dcc548ac67c0deb48981acb7a30c152c,
+        type: 3}
+      propertyPath: fallProbability
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dcc548ac67c0deb48981acb7a30c152c, type: 3}
 --- !u!1 &1516832249
 GameObject:
   m_ObjectHideFlags: 0
@@ -17579,18 +17700,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3935341627399285558, guid: dcc548ac67c0deb48981acb7a30c152c,
         type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f523184ce8bdee84e845b4e61716e802,
+        type: 3}
+    - target: {fileID: 3935341627399285558, guid: dcc548ac67c0deb48981acb7a30c152c,
+        type: 3}
+      propertyPath: createNum
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935341627399285558, guid: dcc548ac67c0deb48981acb7a30c152c,
+        type: 3}
       propertyPath: fallSpeed
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3935341627399285558, guid: dcc548ac67c0deb48981acb7a30c152c,
         type: 3}
+      propertyPath: isReverse
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935341627399285558, guid: dcc548ac67c0deb48981acb7a30c152c,
+        type: 3}
+      propertyPath: rotateTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935341627399285558, guid: dcc548ac67c0deb48981acb7a30c152c,
+        type: 3}
       propertyPath: crumbleCoolTime
-      value: 0.3
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3935341627399285558, guid: dcc548ac67c0deb48981acb7a30c152c,
         type: 3}
       propertyPath: fallProbability
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
