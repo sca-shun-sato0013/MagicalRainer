@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/oyama/Title.unity
     guid: 804fec00d4a157348a62269a221c80b9
+  - enabled: 1
+    path: Assets/Sasaki/Scenes/ResultScene.unity
+    guid: 079505c4e21e6554cb9c759346140dbf
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: f7b72f9d20e84b24db79920ef1569c9b,
       type: 2}
