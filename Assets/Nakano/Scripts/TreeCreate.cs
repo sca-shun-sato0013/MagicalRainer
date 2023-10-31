@@ -173,12 +173,12 @@ public class TreeCreate : MonoBehaviour
             yield return new WaitForSeconds(coolTime);
         }
 
-        if(count <= createNum)
+        if(count < createNum)
         {
             isRotate = true;
             isCrumble = true;
         }
-        else
+        else if (count >= createNum)
         {
             isRotate = false;
             fallProbability = 100;
