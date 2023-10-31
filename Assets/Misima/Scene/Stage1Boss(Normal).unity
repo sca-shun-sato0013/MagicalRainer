@@ -792,7 +792,7 @@ GameObject:
   - component: {fileID: 1460606772}
   - component: {fileID: 1460606771}
   m_Layer: 5
-  m_Name: Boss(Normal)
+  m_Name: Boss1(Normal)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
