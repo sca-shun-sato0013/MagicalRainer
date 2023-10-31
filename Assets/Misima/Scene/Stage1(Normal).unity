@@ -519,6 +519,7 @@ GameObject:
   - component: {fileID: 659983761}
   - component: {fileID: 659983760}
   - component: {fileID: 659983762}
+  - component: {fileID: 659983763}
   m_Layer: 5
   m_Name: Image_Enemy1
   m_TagString: Untagged
@@ -604,6 +605,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &659983763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659983758}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caecdd2a2e87deb42b86945aeb0844ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabs: {fileID: 7103844777156200804, guid: 8bee0360e9f884640889fcec68793724, type: 3}
+  sprite: {fileID: 0}
+  bulletNum: 3
+  coolTime: 0.7
+  speed: 2
+  angle: 0
+  way: 3
+  distance: 2
+  isCreate: 0
 --- !u!1 &664827968
 GameObject:
   m_ObjectHideFlags: 0
