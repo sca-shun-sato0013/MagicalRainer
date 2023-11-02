@@ -86,19 +86,19 @@ public class PlayerController : MonoBehaviour
     private void PlayerMove()
     {
         gameObject.transform.position = pPos;
-        if (Input.GetKey(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             pPos.y += speed * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             pPos.y -= speed * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             pPos.x -= speed * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             pPos.x += speed * Time.deltaTime;
         }

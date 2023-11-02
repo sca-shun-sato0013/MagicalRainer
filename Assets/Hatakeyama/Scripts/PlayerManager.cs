@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+
     public static Canvas canvas;
     public enum GameStat
     {
@@ -26,11 +27,13 @@ public class PlayerManager : MonoBehaviour
         startPos = new Vector3(canvas.pixelRect.width/2, -600+canvas.pixelRect.height/2, 0);
         game_stat = GameStat.START;
         isPlayerBroken = true;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (isPlayerBroken)
         {
             Instantiate(Player, startPos, Quaternion.identity, transform);
