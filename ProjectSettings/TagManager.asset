@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - BigBullets
   - PosEdit
+  - NullUI
   layers:
   - Default
   - TransparentFX
