@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class NormalBulletCreate : MonoBehaviour
 {
-    [SerializeField] GameObject prefabs;
-    [SerializeField, Header("弾の画像")] Sprite sprite;
+    [SerializeField, Header("NormalBullet")] GameObject prefabs;
     [SerializeField, Header("生成時間")] float createTime;
     //[SerializeField, Header("生成数")] int bulletNum;
     [SerializeField, Header("クールタイム")] float coolTime;
@@ -28,7 +27,6 @@ public class NormalBulletCreate : MonoBehaviour
     {
         parent = transform.parent.gameObject;
         parentAngle = parent.GetComponent<Transform>().localEulerAngles.z;
-        prefabs.GetComponent<SpriteRenderer>().sprite = sprite;
 
         //速度設定
         normalBullet = prefabs.GetComponent<NormalBullet>();
