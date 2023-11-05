@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class ColumnBulletCreate : MonoBehaviour
 {
-    [SerializeField] GameObject prefabs;
-    [SerializeField, Header("弾の画像")] Sprite sprite;
+    [SerializeField, Header("NormalBullet")] GameObject prefabs;
     [SerializeField, Header("生成数")] int bulletNum;
     [SerializeField, Header("クールタイム")] float coolTime;
     [SerializeField, Header("弾速")] float speed;
@@ -22,8 +21,6 @@ public class ColumnBulletCreate : MonoBehaviour
     {
         normalBullet = prefabs.GetComponent<NormalBullet>();
         normalBullet.speed = speed;
-
-        prefabs.GetComponent<SpriteRenderer>().sprite = sprite;
 
         if (way < 1) { way = 1; } //指定されたwayが1未満のとき、1にする
 

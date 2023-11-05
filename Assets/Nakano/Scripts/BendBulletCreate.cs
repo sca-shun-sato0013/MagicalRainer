@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class BendBulletCreate : MonoBehaviour
 {
-    [SerializeField] GameObject prefabs;
-    [SerializeField, Header("弾の画像")] Sprite sprite;
+    [SerializeField, Header("BendBullet")] GameObject prefabs;
     [SerializeField, Header("生成時間")] float createTime;
     //[SerializeField, Header("生成数")] int bulletNum;
     [SerializeField, Header("クールタイム")] float coolTime;
@@ -30,8 +29,6 @@ public class BendBulletCreate : MonoBehaviour
     {
         bendBullet = prefabs.GetComponent<BendBullet>();
         bendBullet.speed = speed;
-
-        prefabs.GetComponent<SpriteRenderer>().sprite = sprite;
 
         if (!isReverse)
         {

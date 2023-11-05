@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class LinerBulletCreate : MonoBehaviour
 {
-    [SerializeField] GameObject prefabs;
-    [SerializeField, Header("弾の画像")] Sprite sprite;
+    [SerializeField, Header("NormalBullet")] GameObject prefabs;
     [SerializeField, Header("生成時間")] float createTime;
     //[SerializeField, Header("生成数")] int bulletNum;
     [SerializeField, Header("クールタイム")] float coolTime;
@@ -29,8 +28,6 @@ public class LinerBulletCreate : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
         playerPos = player.transform.position;
-
-        prefabs.GetComponent<SpriteRenderer>().sprite = sprite;
 
         normalBullet = prefabs.GetComponent<NormalBullet>();
         normalBullet.speed = speed;

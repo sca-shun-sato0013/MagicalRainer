@@ -12,8 +12,7 @@ public class Data
 
 public class TreeCreate : MonoBehaviour
 {
-    [SerializeField] GameObject prefabs;
-    [SerializeField, Header("弾の画像")] Sprite sprite;
+    [SerializeField, Header("NormalBullet")] GameObject prefabs;
     [SerializeField, Header("クールタイム")] float coolTime;
     [SerializeField, Header("方向数"), Tooltip("生成する方向数を入力 入力は1以上")] int way = 1;
     [SerializeField, Header("生成座標調整")] Vector3 ajustmentPos;
@@ -48,8 +47,6 @@ public class TreeCreate : MonoBehaviour
     {
         normalBullet = prefabs.GetComponent<NormalBullet>();
         normalBullet.speed = 0;
-
-        prefabs.GetComponent<SpriteRenderer>().sprite = sprite;
 
         if (way < 1) { way = 1; } //指定されたwayが1未満のとき、1にする
 
