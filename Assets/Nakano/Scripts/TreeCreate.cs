@@ -84,7 +84,6 @@ public class TreeCreate : MonoBehaviour
 
     void DataLoad()
     {
-        var split = new List<string>();
         var s = text;
         var lineSplit = s.text.Split("\n"); //s‚²‚Æ‚É•ªŠ„
         for (var i = 0; i < lineSplit.Length; i++)

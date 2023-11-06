@@ -27,6 +27,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4a5907a741cfea24aaccc23be84cbeb1
+    m_Address: Assets/Nakano/Tips
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ed1ac22397660ac4aa9f7746985fb50d, type: 2}
   m_SchemaSet:
