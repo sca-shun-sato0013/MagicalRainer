@@ -7,6 +7,7 @@ using UnityEngine;
 /// </summary>
 public class AimBulletCreate : MonoBehaviour
 {
+    [SerializeField] Canvas canvas;
     [SerializeField, Header("AimBullet")] GameObject prefabs;
     [SerializeField, Header("生成数")] int bulletNum;
     [SerializeField, Header("クールタイム")] float coolTime;
@@ -16,15 +17,22 @@ public class AimBulletCreate : MonoBehaviour
 
     public bool isCreate = false;
 
+    RectTransform rt;
+    Vector3 pos;
+
     void Awake()
     {
         aimBullet = prefabs.GetComponent<AimBullet>();
         aimBullet.speed = speed;
+
+        rt = transform.parent.GetComponent<RectTransform>();
     }
 
     void Update()
     {
-        if(isCreate)
+        pos = GetWorldPositionFromRectPosition(rt);
+
+        if (isCreate)
         {
             isCreate = false;
             StartCoroutine(Create());
@@ -35,8 +43,22 @@ public class AimBulletCreate : MonoBehaviour
     {
         for (int i = 0; i < bulletNum; i++)
         {
-            Instantiate(prefabs, this.transform.position, Quaternion.identity);
+            Instantiate(prefabs, this.transform.localPosition + pos, Quaternion.identity);
             yield return new WaitForSeconds(coolTime);
         }
+    }
+
+    private Vector3 GetWorldPositionFromRectPosition(RectTransform rect)
+    {
+        //UI座標からスクリーン座標に変換
+        Vector2 screenPos = RectTransformUtility.WorldToScreenPoint(canvas.worldCamera, rect.position);
+
+        //ワールド座標
+        Vector3 result = Vector3.zero;
+
+        //スクリーン座標→ワールド座標に変換
+        RectTransformUtility.ScreenPointToWorldPointInRectangle(rect, screenPos, canvas.worldCamera, out result);
+
+        return result;
     }
 }
