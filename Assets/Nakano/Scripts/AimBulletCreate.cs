@@ -15,6 +15,8 @@ public class AimBulletCreate : MonoBehaviour
     AimBullet aimBullet;
 
     public bool isCreate = false;
+    bool tmp = false;
+    int count = 0;
 
     Canvas canvas;
     RectTransform rt;
@@ -36,7 +38,17 @@ public class AimBulletCreate : MonoBehaviour
 
         if (isCreate)
         {
-            isCreate = false;
+            //isCreate = false;
+            count++;
+            if(count == 1)
+            {
+                tmp = true;
+            }
+        }
+
+        if(tmp)
+        {
+            tmp = false;
             StartCoroutine(Create());
         }
     }
