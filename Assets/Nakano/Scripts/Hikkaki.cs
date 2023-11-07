@@ -18,6 +18,8 @@ public class Hikkaki : MonoBehaviour
     NormalBullet normalBullet;
 
     public bool isCreate = false;
+    bool tmp = false;
+    int count = 0;
 
     List<Vector3> upPosList = new();
     List<Vector3> middlePosList = new();
@@ -45,6 +47,16 @@ public class Hikkaki : MonoBehaviour
         if (isCreate && isInput)
         {
             isCreate = false;
+            count++;
+            if (count == 1)
+            {
+                tmp = true;
+            }
+        }
+
+        if (tmp)
+        {
+            tmp = false;
             StartCoroutine(Create());
         }
     }
