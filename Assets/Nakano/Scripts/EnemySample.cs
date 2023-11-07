@@ -24,10 +24,16 @@ public class EnemySample : MonoBehaviour
     void Start()
     {
         //éŒ¾‚µ‚½Script‚ğGetComponent‚ÅbulletsCreate‚©‚çæ“¾
-        aim = bulletsCreate.GetComponent<AimBulletCreate>();
+        //aim = bulletsCreate.GetComponent<AimBulletCreate>();
+        //normal = bulletsCreate.GetComponent<NormalBulletCreate>();
+        //tracking = bulletsCreate.GetComponent<TrackingBulletCreate>();
+        liner = bulletsCreate.GetComponent<LinerBulletCreate>();
 
         //isCreate‰Šú‰»
-        aim.isCreate = false;
+        //aim.isCreate = false;
+        //normal.isCreate = false;
+        //tracking.isCreate = false;
+        liner.isCreate = false;
 
         isTmp = true;
     }
@@ -42,7 +48,10 @@ public class EnemySample : MonoBehaviour
         //—á‚Æ‚µ‚Ä“Á’è‚ÌˆÊ’u‚Ü‚Ås‚Á‚½‚ç’e‚ğ¶¬
         if(isTmp)
         {
-            aim.isCreate = true; //’e‚ğ¶¬‚·‚éScript‚ÌisCreate‚ğtrue‚É@isCreate‚ªtrue‚Ì‚Æ‚«‚Éİ’è‚µ‚½’e”‚ğ¶¬‚µ‚Ü‚·
+            //aim.isCreate = true; //’e‚ğ¶¬‚·‚éScript‚ÌisCreate‚ğtrue‚É@isCreate‚ªtrue‚Ì‚Æ‚«‚Éİ’è‚µ‚½’e”‚ğ¶¬‚µ‚Ü‚·
+            //normal.isCreate = true;
+            //tracking.isCreate = true;
+            liner.isCreate = true;
             isTmp = false;
         }
     }

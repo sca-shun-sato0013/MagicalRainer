@@ -24,6 +24,11 @@ public class GatherBulletCreate : MonoBehaviour
     float t = 0;
     bool isCount = false;
 
+    Canvas canvas;
+    RectTransform rt;
+    Vector3 pos;
+    TransformChange tc = new();
+
     void Awake()
     {
         normalBullet = prefabs.GetComponent<NormalBullet>();
@@ -34,10 +39,15 @@ public class GatherBulletCreate : MonoBehaviour
         bulletsDestroy.isGather = true;
         bulletsDestroy.enemyPos = this.transform.position;
         bulletsDestroy.dis = dis;
+
+        canvas = GameObject.FindWithTag("Canvas").GetComponent<Canvas>();
+        rt = GetComponent<RectTransform>();
     }
 
     void Update()
     {
+        pos = tc.PositionChange(rt, canvas);
+
         if (isCreate)
         {
             isCreate = false;
@@ -60,31 +70,31 @@ public class GatherBulletCreate : MonoBehaviour
             {
                 for (int i = 0; i < bulletNum; i++)
                 {
-                    Vector3 createPos = new Vector3(0, 0, 0);
+                    Vector3 createPos = new Vector3(0, 0, 90);
                     switch (j)
                     {
                         case 0:
-                            createPos.x = Random.Range(-15, 16);
-                            createPos.y = Random.Range(11, 12);
+                            createPos.x = Random.Range(-110, 110);
+                            createPos.y = Random.Range(70, 80);
                             break;
                         case 1:
-                            createPos.x = Random.Range(-15, 16);
-                            createPos.y = Random.Range(-15, -12);
+                            createPos.x = Random.Range(-110, 110);
+                            createPos.y = Random.Range(-80, -70);
                             break;
                         case 2:
-                            createPos.x = Random.Range(-15, -12);
-                            createPos.y = Random.Range(-11, 12);
+                            createPos.x = Random.Range(-110, -100);
+                            createPos.y = Random.Range(-80, 80);
                             break;
                         case 3:
-                            createPos.x = Random.Range(11, 12);
-                            createPos.y = Random.Range(-11, 12);
+                            createPos.x = Random.Range(100, 110);
+                            createPos.y = Random.Range(-80, 80);
                             break;
                         default:
                             break;
                     }
 
                     GameObject obj = Instantiate(prefabs, createPos, Quaternion.identity);
-                    direction = (this.transform.position - obj.transform.position).normalized;
+                    direction = (pos - obj.transform.position).normalized;
                     obj.GetComponent<NormalBullet>().angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
                 }
             }

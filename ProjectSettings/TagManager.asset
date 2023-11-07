@@ -9,6 +9,7 @@ TagManager:
   - PosEdit
   - NullUI
   - Canvas
+  - Bullets
   layers:
   - Default
   - TransparentFX

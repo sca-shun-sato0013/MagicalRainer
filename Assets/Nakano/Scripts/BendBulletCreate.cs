@@ -14,8 +14,8 @@ public class BendBulletCreate : MonoBehaviour
     [SerializeField, Header("方向数"), Tooltip("多方向弾を生成する場合に方向数を指定 角度は設定しても無意味になる 入力は1以上")] int way = 1;
     [SerializeField, Header("角度調整"), Tooltip("多方向弾の角度を調整する")] float adjustmentAngle = 0;
 
-    [SerializeField, Header("角度調整"), Tooltip("ベジェ曲線の高さを調整")] Vector2 relayAjust;
-    [SerializeField, Header("到達地点調整"), Tooltip("ベジェ曲線の最終位置を調整")] Vector2 targetAjust;
+    [SerializeField, Header("角度調整"), Tooltip("ベジェ曲線の高さを調整")] Vector2 relayAjust = new Vector2(100, 300);
+    [SerializeField, Header("到達地点調整"), Tooltip("ベジェ曲線の最終位置を調整")] Vector2 targetAjust = new Vector2(200, -900);
 
     BendBullet bendBullet;
 
@@ -24,6 +24,11 @@ public class BendBulletCreate : MonoBehaviour
 
     float t = 0;
     bool isCount = false;
+
+    Canvas canvas;
+    RectTransform rt;
+    Vector3 pos;
+    TransformChange tc = new();
 
     private void Awake()
     {
@@ -46,10 +51,15 @@ public class BendBulletCreate : MonoBehaviour
         //多方向弾のとき、弾同士の間の角度を算出
         if (way > 1) { angle = 360 / way; }
         else { adjustmentAngle = 0; }
+
+        canvas = GameObject.FindWithTag("Canvas").GetComponent<Canvas>();
+        rt = GetComponent<RectTransform>();
     }
 
     void Update()
     {
+        pos = tc.PositionChange(rt, canvas);
+
         if (isCreate)
         {
             isCreate = false;
@@ -70,7 +80,7 @@ public class BendBulletCreate : MonoBehaviour
         {
             for (int j = 1; j <= way; j++)
             {
-                GameObject obj = Instantiate(prefabs, this.transform.position, Quaternion.identity);
+                GameObject obj = Instantiate(prefabs, pos, Quaternion.identity);
                 obj.GetComponent<BendBullet>().angle = angle * j + adjustmentAngle;
             }
             yield return new WaitForSeconds(coolTime);

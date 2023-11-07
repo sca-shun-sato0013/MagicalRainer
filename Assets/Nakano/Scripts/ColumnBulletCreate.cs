@@ -17,6 +17,11 @@ public class ColumnBulletCreate : MonoBehaviour
 
     public bool isCreate = false;
 
+    Canvas canvas;
+    RectTransform rt;
+    Vector3 pos;
+    TransformChange tc = new();
+
     void Start()
     {
         normalBullet = prefabs.GetComponent<NormalBullet>();
@@ -24,10 +29,14 @@ public class ColumnBulletCreate : MonoBehaviour
 
         if (way < 1) { way = 1; } //Žw’è‚³‚ê‚½way‚ª1–¢–ž‚Ì‚Æ‚«A1‚É‚·‚é
 
+        canvas = GameObject.FindWithTag("Canvas").GetComponent<Canvas>();
+        rt = GetComponent<RectTransform>();
     }
 
     void Update()
     {
+        pos = tc.PositionChange(rt, canvas);
+
         if (isCreate)
         {
             isCreate = false;
@@ -43,7 +52,7 @@ public class ColumnBulletCreate : MonoBehaviour
             {
                 for (int j = 0 - ((int)way / 2); j <= (way - ((int)way / 2) - 1); j++)
                 {
-                    GameObject obj = Instantiate(prefabs, this.transform.position + new Vector3(j * distance, 0, 0), Quaternion.identity);
+                    GameObject obj = Instantiate(prefabs, pos + new Vector3(j * distance, 0, 0), Quaternion.identity);
                     obj.GetComponent<NormalBullet>().angle = angle;
                 }
             }
@@ -53,12 +62,12 @@ public class ColumnBulletCreate : MonoBehaviour
                 {
                     if(j < 0)
                     {
-                        GameObject obj = Instantiate(prefabs, this.transform.position + new Vector3((j + 0.5f) * distance, 0, 0), Quaternion.identity);
+                        GameObject obj = Instantiate(prefabs, pos + new Vector3((j + 0.5f) * distance, 0, 0), Quaternion.identity);
                         obj.GetComponent<NormalBullet>().angle = angle;
                     }
                     else if(j >= 0)
                     {
-                        GameObject obj = Instantiate(prefabs, this.transform.position + new Vector3((j - 0.5f) * distance, 0, 0), Quaternion.identity);
+                        GameObject obj = Instantiate(prefabs, pos + new Vector3((j - 0.5f) * distance, 0, 0), Quaternion.identity);
                         obj.GetComponent<NormalBullet>().angle = angle;
                     }
                 }

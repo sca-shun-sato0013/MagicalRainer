@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TrackingBulletCreate : MonoBehaviour
 {
+    Canvas canvas;
     [SerializeField, Header("TrackingBullet")] GameObject prefabs;
     [SerializeField, Header("生成数")] int bulletNum;
     [SerializeField, Header("クールタイム")] float coolTime;
@@ -14,15 +15,26 @@ public class TrackingBulletCreate : MonoBehaviour
 
     public bool isCreate = false;
 
+    RectTransform rt;
+    Vector3 pos;
+
+    TransformChange tc = new();
+
     void Awake()
     {
+        canvas = GameObject.FindWithTag("Canvas").GetComponent<Canvas>();
+
         trackingBullet = prefabs.GetComponent<TrackingBullet>();
         trackingBullet.speed = speed;
         trackingBullet.trackingTime = trackingTime;
+
+        rt = GetComponent<RectTransform>();
     }
 
     void Update()
     {
+        pos = tc.PositionChange(rt, canvas);
+
         if (isCreate)
         {
             isCreate = false;
@@ -34,7 +46,7 @@ public class TrackingBulletCreate : MonoBehaviour
     {
         for (int i = 0; i < bulletNum; i++)
         {
-            Instantiate(prefabs, this.transform.position, Quaternion.identity);
+            Instantiate(prefabs, pos, Quaternion.identity);
             yield return new WaitForSeconds(coolTime);
         }
     }

@@ -38,10 +38,17 @@ public class TreeCreate : MonoBehaviour
     bool isRotate = false;
     bool isCrumble = false;
 
+    GameObject center;
+
     //データ関係
     [SerializeField, Header("座標が入っているcsvを指定")] private AssetReference csvData;
     TextAsset text = null;
     bool isInput = false;
+
+    Canvas canvas;
+    RectTransform rt;
+    Vector3 pos;
+    TransformChange tc = new();
 
     private void Awake()
     {
@@ -52,10 +59,15 @@ public class TreeCreate : MonoBehaviour
 
         AsyncOperationHandle handle = csvData.LoadAssetAsync<TextAsset>();
         handle.Completed += OnCompletedHandler;
+
+        canvas = GameObject.FindWithTag("Canvas").GetComponent<Canvas>();
+        rt = GetComponent<RectTransform>();
     }
 
     void Update()
     {
+        pos = tc.PositionChange(rt, canvas);
+
         if (isCreate && isInput)
         {
             count++;
@@ -67,11 +79,11 @@ public class TreeCreate : MonoBehaviour
         {
             if(!isReverse)
             {
-                transform.Rotate(0, 0, (360f / rotateTime) * Time.deltaTime * -1);
+                center.transform.Rotate(0, 0, (360f / rotateTime) * Time.deltaTime * -1);
             }
             else
             {
-                transform.Rotate(0, 0, (360f / rotateTime) * Time.deltaTime * 1);
+                center.transform.Rotate(0, 0, (360f / rotateTime) * Time.deltaTime * 1);
             }
         }
 
@@ -125,13 +137,14 @@ public class TreeCreate : MonoBehaviour
 
     IEnumerator Create()
     {
+        center = Instantiate(prefabs, pos, Quaternion.identity);
         for (int i = 1; i <= posList[posList.Count - 1].num; i++)
         {
             foreach(var data in posList)
             {
                 if(data.num == i)
                 {
-                    Vector3 pos = data.pos;
+                    Vector3 p = data.pos * 10;
                     for(int w = 1; w <= way; w++)
                     {
                         Vector3 dir = new Vector3(1, 1, 0);
@@ -156,10 +169,11 @@ public class TreeCreate : MonoBehaviour
                                 break;
                         }
 
-                        Vector3 position = pos + this.gameObject.transform.position - ajustmentPos;
-                        Vector3 position2 = new Vector3(position.x * dir.x , position.y * dir.y, 0);
+                        Vector3 position = p + pos - ajustmentPos;
+                        Vector3 position2 = new Vector3(position.x * dir.x , position.y * dir.y, 90);
 
-                        GameObject obj = Instantiate(prefabs, position2, Quaternion.identity, this.transform);
+                        GameObject obj = Instantiate(prefabs, position2, Quaternion.identity, center.transform);
+                        obj.transform.localScale = new Vector3(1, 1, 1);
                         obj.GetComponent<NormalBullet>().num = data.num;
                         bullets.Add(obj);
                     }
@@ -219,6 +233,7 @@ public class TreeCreate : MonoBehaviour
             yield return new WaitForSeconds(crumbleCoolTime);
         }
 
+        Destroy(center);
         isRotate = false;
         yield return null;
     }

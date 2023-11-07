@@ -30,4 +30,12 @@ public class PlayerSample : MonoBehaviour
             transform.Translate(Vector3.down * 10 * Time.deltaTime);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.tag == "Bullets")
+        {
+            Debug.Log("damage");
+        }
+    }
 }

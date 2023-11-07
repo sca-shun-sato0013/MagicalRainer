@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// w’è‚µ‚½Šp“x‚Ì”ÍˆÍ“à‚Åƒ‰ƒ“ƒ_ƒ€‚É’e‚ğ¶¬‚µ‚Ü‚·
 /// </summary>
-public class RandomBulletsCreate : MonoBehaviour
+public class RandomBulletCreate : MonoBehaviour
 {
     [SerializeField, Header("NormalBullet")] GameObject prefabs;
     [SerializeField, Header("¶¬”")] int bulletNum;
@@ -24,6 +24,11 @@ public class RandomBulletsCreate : MonoBehaviour
 
     public bool isCreate = false;
 
+    Canvas canvas;
+    RectTransform rt;
+    Vector3 pos;
+    TransformChange tc = new();
+
     void Start()
     {
         player = GameObject.FindWithTag("Player");
@@ -33,10 +38,15 @@ public class RandomBulletsCreate : MonoBehaviour
         normalBullet.speed = speed;
 
         mainDirection = (playerPos - transform.position).normalized;
+
+        canvas = GameObject.FindWithTag("Canvas").GetComponent<Canvas>();
+        rt = GetComponent<RectTransform>();
     }
 
     void Update()
     {
+        pos = tc.PositionChange(rt, canvas);
+
         if (isCreate)
         {
             isCreate = false;
@@ -52,7 +62,7 @@ public class RandomBulletsCreate : MonoBehaviour
         {
             for (int i = 0; i < bulletNum; i++)
             {
-                GameObject obj = Instantiate(prefabs, this.transform.position, Quaternion.identity);
+                GameObject obj = Instantiate(prefabs, pos, Quaternion.identity);
                 var ranAngle = Random.Range(-angle / 2, angle / 2);
                 obj.GetComponent<NormalBullet>().angle = Mathf.Atan2(mainDirection.y, mainDirection.x) * Mathf.Rad2Deg + ranAngle;
                 var c = Random.Range(lowerLimit, upperLimit);
