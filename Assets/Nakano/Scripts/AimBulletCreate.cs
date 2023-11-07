@@ -16,15 +16,25 @@ public class AimBulletCreate : MonoBehaviour
 
     public bool isCreate = false;
 
+    Canvas canvas;
+    RectTransform rt;
+    Vector3 pos;
+    TransformChange tc = new();
+
     void Awake()
     {
         aimBullet = prefabs.GetComponent<AimBullet>();
         aimBullet.speed = speed;
+
+        canvas = GameObject.FindWithTag("Canvas").GetComponent<Canvas>();
+        rt = GetComponent<RectTransform>();
     }
 
     void Update()
     {
-        if(isCreate)
+        pos = tc.PositionChange(rt, canvas);
+
+        if (isCreate)
         {
             isCreate = false;
             StartCoroutine(Create());
@@ -35,7 +45,7 @@ public class AimBulletCreate : MonoBehaviour
     {
         for (int i = 0; i < bulletNum; i++)
         {
-            Instantiate(prefabs, this.transform.position, Quaternion.identity);
+            Instantiate(prefabs, pos, Quaternion.identity);
             yield return new WaitForSeconds(coolTime);
         }
     }

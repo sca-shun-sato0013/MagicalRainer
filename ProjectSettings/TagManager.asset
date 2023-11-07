@@ -8,6 +8,8 @@ TagManager:
   - BigBullets
   - PosEdit
   - NullUI
+  - Canvas
+  - Bullets
   layers:
   - Default
   - TransparentFX

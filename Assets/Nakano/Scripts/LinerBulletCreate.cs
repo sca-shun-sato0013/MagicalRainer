@@ -23,6 +23,10 @@ public class LinerBulletCreate : MonoBehaviour
     float t = 0;
     bool isCount = false;
 
+    Canvas canvas;
+    RectTransform rt;
+    Vector3 pos;
+    TransformChange tc = new();
 
     void Awake()
     {
@@ -33,10 +37,15 @@ public class LinerBulletCreate : MonoBehaviour
         normalBullet.speed = speed;
 
         direction = (playerPos - transform.position).normalized;
+
+        canvas = GameObject.FindWithTag("Canvas").GetComponent<Canvas>();
+        rt = GetComponent<RectTransform>();
     }
 
     void Update()
     {
+        pos = tc.PositionChange(rt, canvas);
+
         if (isCreate)
         {
             isCreate = false;
@@ -59,7 +68,7 @@ public class LinerBulletCreate : MonoBehaviour
         {
             for (int j = 0; j < way; j++)
             {
-                GameObject obj = Instantiate(prefabs, this.transform.position, Quaternion.identity);
+                GameObject obj = Instantiate(prefabs, pos, Quaternion.identity);
 
                 float a = angle;
                 if(way % 2 == 0)

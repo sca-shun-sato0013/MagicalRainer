@@ -24,10 +24,18 @@ public class EnemySample : MonoBehaviour
     void Start()
     {
         //éŒ¾‚µ‚½Script‚ğGetComponent‚ÅbulletsCreate‚©‚çæ“¾
+        //aim = bulletsCreate.GetComponent<AimBulletCreate>();
+        //normal = bulletsCreate.GetComponent<NormalBulletCreate>();
+        //tracking = bulletsCreate.GetComponent<TrackingBulletCreate>();
         liner = bulletsCreate.GetComponent<LinerBulletCreate>();
 
         //isCreate‰Šú‰»
+        //aim.isCreate = false;
+        //normal.isCreate = false;
+        //tracking.isCreate = false;
         liner.isCreate = false;
+
+        isTmp = true;
     }
 
     void Update()
@@ -35,12 +43,15 @@ public class EnemySample : MonoBehaviour
         //this.transform.Rotate(0f, 0f, 1.0f);
 
         //ˆÚ“®
-        this.transform.Translate(Vector3.right * 5 * Time.deltaTime);
+        //this.transform.Translate(Vector3.right * 5 * Time.deltaTime);
         
         //—á‚Æ‚µ‚Ä“Á’è‚ÌˆÊ’u‚Ü‚Ås‚Á‚½‚ç’e‚ğ¶¬
-        if(transform.localPosition.x >= -960 && isTmp)
+        if(isTmp)
         {
-            liner.isCreate = true; //’e‚ğ¶¬‚·‚éScript‚ÌisCreate‚ğtrue‚É@isCreate‚ªtrue‚Ì‚Æ‚«‚Éİ’è‚µ‚½’e”‚ğ¶¬‚µ‚Ü‚·
+            //aim.isCreate = true; //’e‚ğ¶¬‚·‚éScript‚ÌisCreate‚ğtrue‚É@isCreate‚ªtrue‚Ì‚Æ‚«‚Éİ’è‚µ‚½’e”‚ğ¶¬‚µ‚Ü‚·
+            //normal.isCreate = true;
+            //tracking.isCreate = true;
+            liner.isCreate = true;
             isTmp = false;
         }
     }

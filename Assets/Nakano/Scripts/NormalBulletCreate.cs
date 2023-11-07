@@ -23,6 +23,11 @@ public class NormalBulletCreate : MonoBehaviour
     float t = 0;
     bool isCount = false;
 
+    Canvas canvas;
+    RectTransform rt;
+    Vector3 pos;
+    TransformChange tc = new();
+
     void Awake()
     {
         parent = transform.parent.gameObject;
@@ -37,10 +42,15 @@ public class NormalBulletCreate : MonoBehaviour
         //‘½•ûŒü’e‚Ì‚Æ‚«A’e“¯Žm‚ÌŠÔ‚ÌŠp“x‚ðŽZo
         if (way > 1) { angle = 360 / way; }
         else { adjustmentAngle = 0; }
+
+        canvas = GameObject.FindWithTag("Canvas").GetComponent<Canvas>();
+        rt = GetComponent<RectTransform>();
     }
 
     void Update()
     {
+        pos = tc.PositionChange(rt, canvas);
+
         if (isCreate)
         {
             isCreate = false;
@@ -61,8 +71,8 @@ public class NormalBulletCreate : MonoBehaviour
         {
             for (int j = 1; j <= way; j++)
             {
-                GameObject obj = Instantiate(prefabs, this.transform.position, Quaternion.identity);
-                parentAngle = parent.GetComponent<Transform>().localEulerAngles.z;
+                GameObject obj = Instantiate(prefabs, pos, Quaternion.identity);
+                parentAngle = parent.GetComponent<RectTransform>().rotation.z;
                 obj.GetComponent<NormalBullet>().angle = angle * j + adjustmentAngle + parentAngle;
             }
             yield return new WaitForSeconds(coolTime);

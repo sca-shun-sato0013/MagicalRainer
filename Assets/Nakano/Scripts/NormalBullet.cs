@@ -37,7 +37,7 @@ public class NormalBullet : MonoBehaviour
         return new Vector3(Mathf.Cos(radian), Mathf.Sin(radian), 0).normalized;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "BigBullets" && isReflect)
         {
