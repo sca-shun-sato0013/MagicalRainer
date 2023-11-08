@@ -36,9 +36,9 @@ public class AimBulletCreate : MonoBehaviour
     {
         pos = tc.PositionChange(rt, canvas);
 
+        if(!isCreate) { count = 0;}
         if (isCreate)
         {
-            //isCreate = false;
             count++;
             if(count == 1)
             {

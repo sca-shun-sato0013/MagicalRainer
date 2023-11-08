@@ -24,6 +24,8 @@ public class BendBulletCreate : MonoBehaviour
 
     float t = 0;
     bool isCount = false;
+    bool tmp = false;
+    int count = 0;
 
     Canvas canvas;
     RectTransform rt;
@@ -60,9 +62,19 @@ public class BendBulletCreate : MonoBehaviour
     {
         pos = tc.PositionChange(rt, canvas);
 
+        if (!isCreate) { count = 0; }
         if (isCreate)
         {
-            isCreate = false;
+            count++;
+            if (count == 1)
+            {
+                tmp = true;
+            }
+        }
+
+        if (tmp)
+        {
+            tmp = false;
             isCount = true;
             t = 0;
             StartCoroutine(Create());
