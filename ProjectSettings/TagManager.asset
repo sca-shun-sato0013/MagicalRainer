@@ -10,6 +10,7 @@ TagManager:
   - NullUI
   - Canvas
   - Bullets
+  - Mirror
   layers:
   - Default
   - TransparentFX

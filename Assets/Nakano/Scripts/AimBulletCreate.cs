@@ -21,10 +21,11 @@ public class AimBulletCreate : MonoBehaviour
     Canvas canvas;
     RectTransform rt;
     Vector3 pos;
-    TransformChange tc = new();
+    TransformChange tc;
 
     void Awake()
     {
+        tc = gameObject.AddComponent<TransformChange>();
         aimBullet = prefabs.GetComponent<AimBullet>();
         aimBullet.speed = speed;
 

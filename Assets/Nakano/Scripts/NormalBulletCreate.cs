@@ -6,7 +6,10 @@ public class NormalBulletCreate : MonoBehaviour
 {
     [SerializeField, Header("NormalBullet")] GameObject prefabs;
     [SerializeField, Header("生成時間")] float createTime;
-    //[SerializeField, Header("生成数")] int bulletNum;
+
+    [SerializeField, Header("生成数で処理したい場合はtrueにする")] bool isNum;
+    [SerializeField, Header("生成数")] int bulletNum;
+
     [SerializeField, Header("クールタイム")] float coolTime;
     [SerializeField, Header("弾速")] float speed;
 
@@ -28,10 +31,11 @@ public class NormalBulletCreate : MonoBehaviour
     Canvas canvas;
     RectTransform rt;
     Vector3 pos;
-    TransformChange tc = new();
+    TransformChange tc;
 
     void Awake()
     {
+        tc = gameObject.AddComponent<TransformChange>();
         parent = transform.parent.gameObject;
         parentAngle = parent.GetComponent<Transform>().localEulerAngles.z;
 
@@ -79,16 +83,34 @@ public class NormalBulletCreate : MonoBehaviour
 
     IEnumerator Create()
     {
-        while (t < createTime)
+        if(!isNum)
         {
-            for (int j = 1; j <= way; j++)
+            while (t < createTime)
             {
-                GameObject obj = Instantiate(prefabs, pos, Quaternion.identity);
-                parentAngle = parent.GetComponent<RectTransform>().rotation.z;
-                obj.GetComponent<NormalBullet>().angle = angle * j + adjustmentAngle + parentAngle;
+                for (int j = 1; j <= way; j++)
+                {
+                    GameObject obj = Instantiate(prefabs, pos, Quaternion.identity);
+                    parentAngle = parent.GetComponent<RectTransform>().rotation.z;
+                    obj.GetComponent<NormalBullet>().angle = angle * j + adjustmentAngle + parentAngle;
+                }
+                yield return new WaitForSeconds(coolTime);
             }
-            yield return new WaitForSeconds(coolTime);
         }
+        
+        if(isNum)
+        {
+            for (int i = 0; i < bulletNum; i++)
+            {
+                for (int j = 1; j <= way; j++)
+                {
+                    GameObject obj = Instantiate(prefabs, pos, Quaternion.identity);
+                    parentAngle = parent.GetComponent<RectTransform>().rotation.z;
+                    obj.GetComponent<NormalBullet>().angle = angle * j + adjustmentAngle + parentAngle;
+                }
+                yield return new WaitForSeconds(coolTime);
+            }
+        }
+
         isCount = false;
     }
 }

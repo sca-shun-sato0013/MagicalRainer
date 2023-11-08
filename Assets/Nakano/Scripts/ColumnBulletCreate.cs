@@ -22,10 +22,11 @@ public class ColumnBulletCreate : MonoBehaviour
     Canvas canvas;
     RectTransform rt;
     Vector3 pos;
-    TransformChange tc = new();
+    TransformChange tc;
 
     void Start()
     {
+        tc = gameObject.AddComponent<TransformChange>();
         normalBullet = prefabs.GetComponent<NormalBullet>();
         normalBullet.speed = speed;
 
@@ -64,7 +65,7 @@ public class ColumnBulletCreate : MonoBehaviour
             {
                 for (int j = 0 - ((int)way / 2); j <= (way - ((int)way / 2) - 1); j++)
                 {
-                    GameObject obj = Instantiate(prefabs, pos + new Vector3(j * distance, 0, 0), Quaternion.identity);
+                    GameObject obj = Instantiate(prefabs, pos + Quaternion.Euler(0, 0, angle - 90) * new Vector3(j * distance, 0, 0), Quaternion.identity);
                     obj.GetComponent<NormalBullet>().angle = angle;
                 }
             }
@@ -74,12 +75,12 @@ public class ColumnBulletCreate : MonoBehaviour
                 {
                     if(j < 0)
                     {
-                        GameObject obj = Instantiate(prefabs, pos + new Vector3((j + 0.5f) * distance, 0, 0), Quaternion.identity);
+                        GameObject obj = Instantiate(prefabs, (pos + Quaternion.Euler(0, 0, angle - 90) * new Vector3((j + 0.5f) * distance, 0, 0)), Quaternion.identity);
                         obj.GetComponent<NormalBullet>().angle = angle;
                     }
                     else if(j >= 0)
                     {
-                        GameObject obj = Instantiate(prefabs, pos + new Vector3((j - 0.5f) * distance, 0, 0), Quaternion.identity);
+                        GameObject obj = Instantiate(prefabs, (pos + Quaternion.Euler(0, 0, angle - 90) * new Vector3((j - 0.5f) * distance, 0, 0)), Quaternion.identity);
                         obj.GetComponent<NormalBullet>().angle = angle;
                     }
                 }

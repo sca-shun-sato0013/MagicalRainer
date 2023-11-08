@@ -13,9 +13,10 @@ public class Data
 public class TreeCreate : MonoBehaviour
 {
     [SerializeField, Header("NormalBullet")] GameObject prefabs;
+    [SerializeField, Header("生成回数"), Tooltip("createNum回目の生成時は生成後回転せずに崩壊")] int createNum;
+    int count = 0;
     [SerializeField, Header("クールタイム")] float coolTime;
     [SerializeField, Header("方向数"), Tooltip("生成する方向数を入力 入力は1以上")] int way = 1;
-    [SerializeField, Header("生成座標調整")] Vector3 ajustmentPos;
 
     [SerializeField, Header("一周にかかる時間（秒）")] float rotateTime;
 
@@ -24,8 +25,6 @@ public class TreeCreate : MonoBehaviour
     bool isFall;
     [SerializeField, Header("崩れながら落下していく場合の落下スピード")] float fallSpeed;
 
-    [SerializeField, Header("生成回数"), Tooltip("createNum回目の生成時は生成後回転せずに崩壊")] int createNum;
-    int count = 0;
 
     [SerializeField, Header("逆回転するかどうか")] bool isReverse;
 
@@ -51,10 +50,11 @@ public class TreeCreate : MonoBehaviour
     Canvas canvas;
     RectTransform rt;
     Vector3 pos;
-    TransformChange tc = new();
+    TransformChange tc;
 
     private void Awake()
     {
+        tc = gameObject.AddComponent<TransformChange>();
         normalBullet = prefabs.GetComponent<NormalBullet>();
         normalBullet.speed = 0;
 
@@ -84,12 +84,11 @@ public class TreeCreate : MonoBehaviour
         if (tmp)
         {
             count++;
-            StartCoroutine(Create());
             tmp = false;
             StartCoroutine(Create());
         }
 
-        if (isRotate)
+        if (isRotate && center)
         {
             if(!isReverse)
             {
@@ -167,26 +166,29 @@ public class TreeCreate : MonoBehaviour
                         {
                             case 1:
                                 if (isReverse) { dir = new Vector3(1, -1, 0); }
-                                else dir = new Vector3(1, 1, 0);
+                                else
+                                    { dir = new Vector3(1, 1, 0); }
                                 break;
                             case 2:
                                 if(isReverse) { dir = new Vector3(-1, 1, 0); }
-                                else dir = new Vector3(-1, -1, 0);
+                                else
+                                { dir = new Vector3(-1, -1, 0); }
                                 break;
                             case 3:
                                 if(isReverse) { dir = new Vector3(1, -1, 0); }
-                                else dir = new Vector3(-1, 1, 0);
+                                else
+                                { dir = new Vector3(-1, 1, 0); }
                                 break;
                             case 4:
                                 if(isReverse) { dir = new Vector3(-1, 1, 0); }
-                                else dir = new Vector3(1, -1, 0);
+                                else { dir = new Vector3(1, -1, 0); }
                                 break;
                         }
 
-                        Vector3 position = p + pos - ajustmentPos;
-                        Vector3 position2 = new Vector3(position.x * dir.x , position.y * dir.y, 90);
+                        Vector3 position = p;
+                        Vector3 position2 = new Vector3(position.x * dir.x , position.y * dir.y, 0);
 
-                        GameObject obj = Instantiate(prefabs, position2, Quaternion.identity, center.transform);
+                        GameObject obj = Instantiate(prefabs, position2 + pos, Quaternion.identity, center.transform);
                         obj.transform.localScale = new Vector3(1, 1, 1);
                         obj.GetComponent<NormalBullet>().num = data.num;
                         bullets.Add(obj);
@@ -196,8 +198,9 @@ public class TreeCreate : MonoBehaviour
 
             yield return new WaitForSeconds(coolTime);
         }
+ 
 
-        if(count < createNum)
+        if (count < createNum)
         {
             isRotate = true;
             isCrumble = true;
@@ -244,10 +247,10 @@ public class TreeCreate : MonoBehaviour
                 }
             }
             
+            if(i <= 1) { Destroy(center); }
             yield return new WaitForSeconds(crumbleCoolTime);
         }
 
-        Destroy(center);
         isRotate = false;
         yield return null;
     }

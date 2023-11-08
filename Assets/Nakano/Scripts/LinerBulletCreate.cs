@@ -28,10 +28,11 @@ public class LinerBulletCreate : MonoBehaviour
     Canvas canvas;
     RectTransform rt;
     Vector3 pos;
-    TransformChange tc = new();
+    TransformChange tc;
 
     void Awake()
     {
+        tc = gameObject.AddComponent<TransformChange>();
         player = GameObject.FindWithTag("Player");
         playerPos = player.transform.position;
 

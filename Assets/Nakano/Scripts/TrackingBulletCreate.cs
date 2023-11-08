@@ -20,10 +20,11 @@ public class TrackingBulletCreate : MonoBehaviour
     RectTransform rt;
     Vector3 pos;
 
-    TransformChange tc = new();
+    TransformChange tc;
 
     void Awake()
     {
+        tc = gameObject.AddComponent<TransformChange>();
         canvas = GameObject.FindWithTag("Canvas").GetComponent<Canvas>();
 
         trackingBullet = prefabs.GetComponent<TrackingBullet>();
@@ -41,7 +42,11 @@ public class TrackingBulletCreate : MonoBehaviour
         if (isCreate)
         {
             isCreate = false;
-            StartCoroutine(Create());
+            count++;
+            if(count == 1)
+            {
+                tmp = true;
+            }
         }
 
         if (tmp)
