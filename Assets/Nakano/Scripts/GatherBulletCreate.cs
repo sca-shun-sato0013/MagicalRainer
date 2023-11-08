@@ -29,10 +29,11 @@ public class GatherBulletCreate : MonoBehaviour
     Canvas canvas;
     RectTransform rt;
     Vector3 pos;
-    TransformChange tc = new();
+    TransformChange tc;
 
     void Awake()
     {
+        tc = gameObject.AddComponent<TransformChange>();
         normalBullet = prefabs.GetComponent<NormalBullet>();
         normalBullet.speed = speed;
         normalBullet.isReflect = true;

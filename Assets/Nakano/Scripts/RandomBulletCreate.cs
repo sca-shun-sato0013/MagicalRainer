@@ -9,10 +9,6 @@ public class RandomBulletCreate : MonoBehaviour
 {
     [SerializeField, Header("NormalBullet")] GameObject prefabs;
     [SerializeField, Header("生成数")] int bulletNum;
-    [SerializeField, Header("生成回数")] int createNum;
-    [SerializeField, Header("一回生成時のクールタイム上限")] float upperLimit;
-    [SerializeField, Header("一回生成時のクールタイム下限")] float lowerLimit;
-    [SerializeField, Header("クールタイム")] float coolTime;
     [SerializeField, Header("角度"), Tooltip("弾の正面から左右にangle/2の範囲にランダム生成する")] float angle;
     [SerializeField, Header("弾速")] float speed;
 
@@ -29,10 +25,11 @@ public class RandomBulletCreate : MonoBehaviour
     Canvas canvas;
     RectTransform rt;
     Vector3 pos;
-    TransformChange tc = new();
+    TransformChange tc;
 
     void Start()
     {
+        tc = gameObject.AddComponent<TransformChange>();
         player = GameObject.FindWithTag("Player");
         playerPos = player.transform.position;
 
@@ -71,18 +68,13 @@ public class RandomBulletCreate : MonoBehaviour
 
     IEnumerator Create()
     {
-        for (int j = 0; j < createNum; j++)
+        for (int i = 0; i < bulletNum; i++)
         {
-            for (int i = 0; i < bulletNum; i++)
-            {
-                GameObject obj = Instantiate(prefabs, pos, Quaternion.identity);
-                var ranAngle = Random.Range(-angle / 2, angle / 2);
-                obj.GetComponent<NormalBullet>().angle = Mathf.Atan2(mainDirection.y, mainDirection.x) * Mathf.Rad2Deg + ranAngle;
-                var c = Random.Range(lowerLimit, upperLimit);
-                yield return new WaitForSeconds(c);
-            }
-
-            yield return new WaitForSeconds(coolTime);
+            GameObject obj = Instantiate(prefabs, pos, Quaternion.identity);
+            var ranAngle = Random.Range(-angle / 2, angle / 2);
+            obj.GetComponent<NormalBullet>().angle = Mathf.Atan2(mainDirection.y, mainDirection.x) * Mathf.Rad2Deg + ranAngle;
         }
+
+        yield return null;
     }
 }

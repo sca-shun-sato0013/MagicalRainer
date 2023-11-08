@@ -15,6 +15,11 @@ public class NormalBullet : MonoBehaviour
 
     [HideInInspector] public int num = 0;
 
+    bool isAim = false;
+    GameObject player;
+    Vector3 playerPos;
+    Vector3 bulletPos;
+
     void Start()
     {
         //角度を単位ベクトルに変える
@@ -23,9 +28,17 @@ public class NormalBullet : MonoBehaviour
 
     void Update()
     {
-        //角度を単位ベクトルに変える
-        direction = AngleToVector3(angle);
-        transform.Translate(direction * speed * Time.deltaTime);
+        if(!isAim)
+        {
+            //角度を単位ベクトルに変える
+            direction = AngleToVector3(angle);
+            transform.Translate(direction * speed * Time.deltaTime);
+        }
+
+        else if(isAim)
+        {
+            transform.Translate(direction * speed * Time.deltaTime);
+        }
     }
 
     /// <summary>
@@ -43,6 +56,16 @@ public class NormalBullet : MonoBehaviour
         {
             direction *= -1;
             isReflect = false;
+        }
+
+        if(collision.gameObject.tag == "Mirror")
+        {
+            isAim = true;
+            player = GameObject.FindWithTag("Player");
+            playerPos = player.transform.position;
+            bulletPos = this.transform.position;
+
+            direction = (playerPos - bulletPos).normalized;
         }
     }
 }

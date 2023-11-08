@@ -30,10 +30,11 @@ public class BendBulletCreate : MonoBehaviour
     Canvas canvas;
     RectTransform rt;
     Vector3 pos;
-    TransformChange tc = new();
+    TransformChange tc;
 
     private void Awake()
     {
+        tc = gameObject.AddComponent<TransformChange>();
         bendBullet = prefabs.GetComponent<BendBullet>();
         bendBullet.speed = speed;
 
