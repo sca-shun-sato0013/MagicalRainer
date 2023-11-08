@@ -23,6 +23,8 @@ public class RandomBulletCreate : MonoBehaviour
     NormalBullet normalBullet;
 
     public bool isCreate = false;
+    bool tmp = false;
+    int count = 0;
 
     Canvas canvas;
     RectTransform rt;
@@ -47,11 +49,22 @@ public class RandomBulletCreate : MonoBehaviour
     {
         pos = tc.PositionChange(rt, canvas);
 
+        if (!isCreate) { count = 0; }
         if (isCreate)
         {
-            isCreate = false;
+            count++;
+            if (count == 1)
+            {
+                tmp = true;
+            }
+        }
+
+        if (tmp)
+        {
+            tmp = false;
             StartCoroutine(Create());
         }
+
         playerPos = player.transform.position;
         mainDirection = (playerPos - transform.position).normalized;
     }

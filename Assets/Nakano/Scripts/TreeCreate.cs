@@ -35,6 +35,9 @@ public class TreeCreate : MonoBehaviour
     List<GameObject> bullets = new();
 
     public bool isCreate = false;
+    bool tmp = false;
+    int tmpCount = 0;
+
     bool isRotate = false;
     bool isCrumble = false;
 
@@ -68,14 +71,25 @@ public class TreeCreate : MonoBehaviour
     {
         pos = tc.PositionChange(rt, canvas);
 
+        if(!isCreate) { tmpCount = 0; }
         if (isCreate && isInput)
         {
+            tmpCount++;
+            if (tmpCount == 1)
+            {
+                tmp = true;
+            }
+        }
+
+        if (tmp)
+        {
             count++;
-            isCreate = false;
+            StartCoroutine(Create());
+            tmp = false;
             StartCoroutine(Create());
         }
 
-        if(isRotate)
+        if (isRotate)
         {
             if(!isReverse)
             {

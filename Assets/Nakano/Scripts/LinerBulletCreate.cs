@@ -19,6 +19,8 @@ public class LinerBulletCreate : MonoBehaviour
     NormalBullet normalBullet;
 
     public bool isCreate = false;
+    bool tmp = false;
+    int count = 0;
 
     float t = 0;
     bool isCount = false;
@@ -46,13 +48,24 @@ public class LinerBulletCreate : MonoBehaviour
     {
         pos = tc.PositionChange(rt, canvas);
 
+        if (!isCreate) { count = 0; }
         if (isCreate)
         {
-            isCreate = false;
+            count++;
+            if (count == 1)
+            {
+                tmp = true;
+            }
+        }
+
+        if (tmp)
+        {
+            tmp = false;
             isCount = true;
             t = 0;
             StartCoroutine(Create());
         }
+
         playerPos = player.transform.position;
         direction = (playerPos - transform.position).normalized;
 

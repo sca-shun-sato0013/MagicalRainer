@@ -14,6 +14,8 @@ public class TrackingBulletCreate : MonoBehaviour
     TrackingBullet trackingBullet;
 
     public bool isCreate = false;
+    bool tmp = false;
+    int count = 0;
 
     RectTransform rt;
     Vector3 pos;
@@ -35,9 +37,16 @@ public class TrackingBulletCreate : MonoBehaviour
     {
         pos = tc.PositionChange(rt, canvas);
 
+        if (!isCreate) { count = 0; }
         if (isCreate)
         {
             isCreate = false;
+            StartCoroutine(Create());
+        }
+
+        if (tmp)
+        {
+            tmp = false;
             StartCoroutine(Create());
         }
     }

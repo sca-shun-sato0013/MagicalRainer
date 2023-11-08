@@ -19,6 +19,8 @@ public class NormalBulletCreate : MonoBehaviour
     NormalBullet normalBullet;
 
     public bool isCreate = false;
+    bool tmp = false;
+    int count = 0;
 
     float t = 0;
     bool isCount = false;
@@ -51,11 +53,21 @@ public class NormalBulletCreate : MonoBehaviour
     {
         pos = tc.PositionChange(rt, canvas);
 
+        if (!isCreate) { count = 0; }
         if (isCreate)
         {
-            isCreate = false;
+            count++;
+            if (count == 1)
+            {
+                tmp = true;
+            }
+        }
+
+        if (tmp)
+        {
             isCount = true;
             t = 0;
+            tmp = false;
             StartCoroutine(Create());
         }
 
