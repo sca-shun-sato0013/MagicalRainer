@@ -15,9 +15,9 @@ public class buttonblink : MonoBehaviour
     // 点滅の速さを設定(60の場合，30フレームごとに色が変わる)
     public int MAX_COUNT = 60;
 
+
     // 点滅色の設定
     public List<Color> colors = new List<Color>() { new Color(1, 1, 1, 1), new Color(1, 1, 1, 0) };
-
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +26,9 @@ public class buttonblink : MonoBehaviour
         button = GetComponent<Button>();
         //カウンタの初期値を0に設定
         cnt = 0;
+
+        button = GetComponent<Button>();
+        button.onClick.AddListener(() => Debug.Log("test"));
     }
 
     // Update is called once per frame
