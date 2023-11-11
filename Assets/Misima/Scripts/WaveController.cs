@@ -21,7 +21,7 @@ public class WaveController : MonoBehaviour
         }
         else 
         { 
-        PlayNextWave();
+            PlayNextWave();
         }
     }
 
@@ -35,7 +35,7 @@ public class WaveController : MonoBehaviour
         }
         else
         {
-
+            Debug.Log("All waves completed!");
         }
     }
 }
