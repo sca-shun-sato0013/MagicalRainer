@@ -582,7 +582,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 513930665}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -594,7 +594,7 @@ RectTransform:
   - {fileID: 1627510616}
   - {fileID: 1964415132}
   - {fileID: 1919626001}
-  m_Father: {fileID: 1984708623}
+  m_Father: {fileID: 1966602996}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -690,7 +690,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 585879017}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -702,7 +702,7 @@ RectTransform:
   - {fileID: 1422848507}
   - {fileID: 688573034}
   - {fileID: 139559592}
-  m_Father: {fileID: 1984708623}
+  m_Father: {fileID: 1966602996}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -802,7 +802,7 @@ MonoBehaviour:
   bulletNum: 3
   coolTime: 5
   speed: 5
-  isCreate: 0
+  isCreate: 1
 --- !u!1 &636738906
 GameObject:
   m_ObjectHideFlags: 0
@@ -1293,7 +1293,7 @@ MonoBehaviour:
   bulletNum: 3
   coolTime: 5
   speed: 5
-  isCreate: 0
+  isCreate: 1
 --- !u!1 &688138068
 GameObject:
   m_ObjectHideFlags: 0
@@ -1665,7 +1665,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 886242334}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1677,7 +1677,7 @@ RectTransform:
   - {fileID: 1295873477}
   - {fileID: 1769693908}
   - {fileID: 1533484892}
-  m_Father: {fileID: 1984708623}
+  m_Father: {fileID: 1966602996}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1854,7 +1854,7 @@ MonoBehaviour:
   bulletNum: 3
   coolTime: 5
   speed: 5
-  isCreate: 0
+  isCreate: 1
 --- !u!1 &1134444448
 GameObject:
   m_ObjectHideFlags: 0
@@ -2988,7 +2988,7 @@ MonoBehaviour:
   bulletNum: 3
   coolTime: 5
   speed: 5
-  isCreate: 0
+  isCreate: 1
 --- !u!1 &1524457656
 GameObject:
   m_ObjectHideFlags: 0
@@ -3214,7 +3214,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557030088}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3226,7 +3226,7 @@ RectTransform:
   - {fileID: 1134444449}
   - {fileID: 707788373}
   - {fileID: 1184064120}
-  m_Father: {fileID: 1984708623}
+  m_Father: {fileID: 1966602996}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3350,7 +3350,7 @@ MonoBehaviour:
   bulletNum: 3
   coolTime: 5
   speed: 5
-  isCreate: 0
+  isCreate: 1
 --- !u!1 &1612536020
 GameObject:
   m_ObjectHideFlags: 0
@@ -3705,7 +3705,7 @@ MonoBehaviour:
   bulletNum: 3
   coolTime: 5
   speed: 5
-  isCreate: 0
+  isCreate: 1
 --- !u!1 &1743419915
 GameObject:
   m_ObjectHideFlags: 0
@@ -4518,7 +4518,11 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 585879018}
+  - {fileID: 886242335}
+  - {fileID: 1557030089}
+  - {fileID: 513930666}
   m_Father: {fileID: 1984708623}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4654,10 +4658,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 585879018}
-  - {fileID: 886242335}
-  - {fileID: 1557030089}
-  - {fileID: 513930666}
   - {fileID: 1966602996}
   - {fileID: 636738907}
   m_Father: {fileID: 0}

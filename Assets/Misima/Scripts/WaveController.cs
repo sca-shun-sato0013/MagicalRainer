@@ -17,7 +17,7 @@ public class WaveController : MonoBehaviour
         playableDirector = GetComponent<PlayableDirector>();
         if (playableDirector == null)
         {
-            Debug.LogError("No PlayableDirector component found on the WaveController game object.");
+            //Debug.LogError("No PlayableDirector component found on the WaveController game object.");
         }
         else 
         { 
