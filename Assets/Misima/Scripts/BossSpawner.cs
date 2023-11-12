@@ -4,18 +4,26 @@ using UnityEngine;
 
 public class BossSpawner : MonoBehaviour
 {
-    public GameObject EnemyPrefab;
-    public float spawnInterval = 2.0f; 
-    public float spawnRadius = 5.0f; 
-
-
-     void Update()
+    [SerializeField] private GameObject[] enemyPrefabs;
+    [SerializeField] private Transform LeftTop;
+    [SerializeField] private Transform RightBottom;
+    private float minX, maxX, minY, maxY;
+    private void Start()
     {
-        float randomX = Random.Range(-10f,10f);
-        float randomY = Random.Range(-10f,10f);
-
-        Vector2 randomPosition = new Vector2(randomX,randomY);
-
-        Instantiate(EnemyPrefab,randomPosition,Quaternion.identity);
+        minX = LeftTop.position.x;
+        maxX = RightBottom.position.x;
+        minY = RightBottom.position.y;
+        maxY = LeftTop.position.y;
+        StartCoroutine(SpawnEnemy());
+    }
+    private IEnumerator SpawnEnemy()
+    {
+        for (int i = 0; i < 100; i++)
+        {
+            Vector2 position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
+            GameObject enemy = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
+            Instantiate(enemy, position, Quaternion.identity, transform);
+            yield return new WaitForSeconds(1.0f);
+        }
     }
 }
