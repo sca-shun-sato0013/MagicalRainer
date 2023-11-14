@@ -13,9 +13,9 @@ public class UIManager : MonoBehaviour
     private int hp;
     private int sp;
 
-    [SerializeField] private int [] setSkills=new int[4];
-    [SerializeField] private Image[] skills =new Image[6];
-
+    [SerializeField] private int [] setSkillsNumber=new int[4];
+    [SerializeField] private Image[] skillImage =new Image[6];
+    private Image[] setSkills=new Image[4];
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
         sp = 0;
         for(int i = 0; i < 4; ++i)
         {
-            Instantiate(skills[setSkills[i]],new Vector3(250+150*i, 450, 0),Quaternion.identity,transform);
+            setSkills[i]=Instantiate(skillImage[setSkillsNumber[i]],new Vector3(350+150*i+canvas.pixelRect.width/2,450+canvas.pixelRect.height/2,0),Quaternion.identity,transform);
         }
     }
 
@@ -59,6 +59,18 @@ public class UIManager : MonoBehaviour
 
             else if(Input.GetKeyDown(KeyCode.Alpha4))
             skillFour();
+
+            for(int i = 0; i < setSkillsNumber.Length; ++i)
+            {
+                setSkills[setSkillsNumber[i]].color=new Color(1,1,1);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < setSkillsNumber.Length; ++i)
+            {
+                setSkills[setSkillsNumber[i]].color = new Color(0.5f, 0.5f, 0.5f);
+            }
         }
     }
 

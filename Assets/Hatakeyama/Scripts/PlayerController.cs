@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     public static bool playStartFlag;
     public static bool damageFlag;
     private float waitDethEffect = 1.0f;
+
+    public static Vector3 pos;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        pos=transform.position;
         switch (game_stat)
         {
             case GameStat.START:
