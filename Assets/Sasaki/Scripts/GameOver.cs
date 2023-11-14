@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Result : MonoBehaviour
+public class GameOver : MonoBehaviour
 {
     [SerializeField, Header("生存タイム")] private Text timeText;
-    [SerializeField, Header("タイムボーナス")] private Text TimeBonusText;
-    [SerializeField,Header("スコア")] private Text scoreText;
+    [SerializeField, Header("スコア")] private Text scoreText;
     [SerializeField, Header("HP")] private Text hpText;
     [SerializeField, Header("トータススコア")] private Text TotalScoreText;
 
-    private float bonus;
     private float totalScore;
     float minutes = 0f;
     float seconds = 0f;
@@ -20,10 +18,7 @@ public class Result : MonoBehaviour
     void Start()
     {
         Timer();
-        bonus = 1.0f;
-        BonusScore();
-        TimeBonusText.text = "×" + bonus.ToString("f1");
-        scoreText.text ="" + GlobalVariables.Score;
+        scoreText.text = "" + GlobalVariables.Score;
         hpText.text = "" + GlobalVariables.HP;
         TotalScore();
         TotalScoreText.text = "" + (int)totalScore;
@@ -47,14 +42,8 @@ public class Result : MonoBehaviour
         //表示
         timeText.text = ($"{minutes.ToString("00")}:{seconds.ToString("00")}:{comma.ToString("00")}");
     }
-    void BonusScore()
-    {
-        float BS = GlobalVariables.AliveTime / 60;
-        BS = Mathf.Floor(BS);
-        bonus = BS / 10 + 1;
-    }
     void TotalScore()
     {
-        totalScore = ((minutes * 60 + seconds) + comma / 100)* 100 * bonus + GlobalVariables.Score + GlobalVariables.HP;
+        totalScore = ((minutes * 60 + seconds) + comma / 100) * 100 + GlobalVariables.Score + GlobalVariables.HP;
     }
 }
