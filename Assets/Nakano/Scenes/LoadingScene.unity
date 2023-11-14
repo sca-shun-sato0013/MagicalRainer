@@ -216,7 +216,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &124427503
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1203,7 +1203,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &623465752
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1867,7 +1867,7 @@ MonoBehaviour:
   enemyPosX: 1670
   bg1: {fileID: 2017180680}
   bg2: {fileID: 1584859967}
-  crossFadeSpeed: 0.001
+  crossFadeSpeed: 0.01
   fadeOut: {fileID: 1359943355}
   lastWindow: {fileID: 1979913199}
 --- !u!4 &1544570012
@@ -2343,7 +2343,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!224 &1797089751
 RectTransform:
@@ -2399,7 +2399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1808224848
 RectTransform:
   m_ObjectHideFlags: 0
