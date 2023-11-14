@@ -15,6 +15,7 @@ public class Loading : MonoBehaviour
     [SerializeField] float charaSpeed;
     [SerializeField] float charaPosX;
     bool isCharaMove = false;
+    [SerializeField] Animator charaAnim;
 
     [Header("敵")]
     [SerializeField] GameObject Enemy;
@@ -23,9 +24,20 @@ public class Loading : MonoBehaviour
 
     [SerializeField] GameObject bg1, bg2;
 
+    [Header("フェード")]
+    [SerializeField, Header("クロスフェードの速度")] float crossFadeSpeed;
+    [SerializeField] GameObject fadeOut;
+    HorizonFade fade;
+
+    CanvasGroup loadingWindow;
+    [SerializeField, Header("遷移前に表示しているCanvas")] CanvasGroup lastWindow;
+
     void Start()
     {
-       LoadingUI.SetActive(false);
+        LoadingUI.SetActive(false);
+        fade = fadeOut.GetComponent<HorizonFade>();
+
+        loadingWindow = LoadingUI.GetComponent<CanvasGroup>();
     }
 
     private void FixedUpdate()
@@ -39,6 +51,17 @@ public class Loading : MonoBehaviour
     public void LoadNextScene()
     {
         LoadingUI.SetActive(true);
+        StartCoroutine(CrossFade());
+    }
+
+    IEnumerator CrossFade()
+    {
+        while(loadingWindow.alpha <= 1)
+        {
+            loadingWindow.alpha += crossFadeSpeed;
+            lastWindow.alpha -= crossFadeSpeed;
+            yield return null;
+        }
         StartCoroutine(LoadScene());
     }
 
@@ -84,8 +107,14 @@ public class Loading : MonoBehaviour
 
             if (Character.transform.position.x >= charaPosX)
             {
-                //フェード処理追加位置
-                async.allowSceneActivation = true;
+                charaAnim.SetBool("Stop", true);
+                //フェード処理
+                fade.FadeOutStart();
+
+                if(fade.FadeOutEnd)
+                {
+                    async.allowSceneActivation = true;
+                }
             }
         }
     }

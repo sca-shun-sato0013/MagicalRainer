@@ -11,6 +11,28 @@ public class HorizonFade : MonoBehaviour
     bool isFadeOut = false;
     bool isFadeIn = false;
 
+    bool fadeOutEnd = false;
+    bool fadeInEnd = false;
+
+    int fadeOutCount = 0;
+    int fadeInCount = 0;
+
+    /// <summary>
+    /// フェードアウト終了したかどうかのフラグ
+    /// </summary>
+    public bool FadeOutEnd
+    {
+        get { return fadeOutEnd;}
+    }
+
+    /// <summary>
+    /// フェードイン終了したかどうかのフラグ
+    /// </summary>
+    public bool FadeInEnd
+    {
+        get { return fadeInEnd; }
+    }
+
     void Start()
     {
         rt = unMask.GetComponent<RectTransform>();
@@ -18,23 +40,9 @@ public class HorizonFade : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            rt.localPosition = new Vector3(0, 0, 0);
-            isFadeOut = true;
-            isFadeIn = false;
-        }
-
         if (isFadeOut)
         {
             FadeOut();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            rt.localPosition = new Vector3(-2000, 0, 0);
-            isFadeIn = true;
-            isFadeOut = false;
         }
 
         if (isFadeIn)
@@ -53,6 +61,9 @@ public class HorizonFade : MonoBehaviour
         {
             rt.localPosition = new Vector3(2000, 0, 0);
             isFadeOut = false;
+            isFadeIn = false;
+            
+            fadeOutEnd = true;
         }
     }
 
@@ -66,6 +77,40 @@ public class HorizonFade : MonoBehaviour
         {
             rt.localPosition = new Vector3(0, 0, 0);
             isFadeIn = false;
+            isFadeOut = false;
+            this.gameObject.SetActive(false);
+
+            fadeInEnd = true;
+        }
+    }
+
+    public void FadeOutStart()
+    {
+        this.gameObject.SetActive(true);
+
+        if (fadeOutCount == 0)
+        {
+            rt.localPosition = new Vector3(0, 0, 0);
+            isFadeOut = true;
+            isFadeIn = false;
+
+            fadeOutEnd = false;
+            fadeOutCount++;
+        }
+    }
+
+    public void FadeInStart()
+    {
+        this.gameObject.SetActive(true);
+
+        if (fadeInCount == 0)
+        {
+            rt.localPosition = new Vector3(-2000, 0, 0);
+            isFadeIn = true;
+            isFadeOut = false;
+
+            fadeInEnd = false;
+            fadeInCount++;
         }
     }
 }
