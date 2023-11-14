@@ -52,6 +52,7 @@ public class Loading : MonoBehaviour
     {
         LoadingUI.SetActive(true);
         StartCoroutine(CrossFade());
+        StartCoroutine(LoadScene());
     }
 
     IEnumerator CrossFade()
@@ -62,7 +63,6 @@ public class Loading : MonoBehaviour
             lastWindow.alpha -= crossFadeSpeed;
             yield return null;
         }
-        StartCoroutine(LoadScene());
     }
 
     IEnumerator LoadScene()
