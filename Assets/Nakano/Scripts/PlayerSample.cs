@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerSample : MonoBehaviour
 {
+    [SerializeField] float speed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,19 +17,19 @@ public class PlayerSample : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.D))
         {
-            transform.Translate(Vector3.right * 10 * Time.deltaTime);
+            transform.Translate(Vector3.right * speed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(Vector3.left * 10 * Time.deltaTime);
+            transform.Translate(Vector3.left * speed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.W))
         {
-            transform.Translate(Vector3.up * 10 * Time.deltaTime);
+            transform.Translate(Vector3.up * speed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(Vector3.down * 10 * Time.deltaTime);
+            transform.Translate(Vector3.down * speed * Time.deltaTime);
         }
     }
 
@@ -35,7 +37,7 @@ public class PlayerSample : MonoBehaviour
     {
         if(other.gameObject.tag == "Bullets")
         {
-            Debug.Log("damage");
+            //Debug.Log("damage");
         }
     }
 }

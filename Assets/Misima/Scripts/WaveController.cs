@@ -7,14 +7,18 @@ using UnityEngine.Timeline;
 public class WaveController : MonoBehaviour
 {
     public TimelineAsset[] waveTimelines;
+    public GameObject[] waveObject;
 
     private PlayableDirector playableDirector;
     private int currentWaveIndex = 0;
 
+    public int CurrentWaveIndex { get { return currentWaveIndex; } }
+
     // Start is called before the first frame update
     void Start()
     {
-        playableDirector = GetComponent<PlayableDirector>();
+        //playableDirector = GetComponent<PlayableDirector>();
+        playableDirector = waveObject[0].GetComponent<PlayableDirector>();
         if (playableDirector == null)
         {
             //Debug.LogError("No PlayableDirector component found on the WaveController game object.");
@@ -29,7 +33,8 @@ public class WaveController : MonoBehaviour
     {
         if(currentWaveIndex < waveTimelines.Length)
         {
-            playableDirector.playableAsset = waveTimelines[currentWaveIndex];
+            //playableDirector.playableAsset = waveTimelines[currentWaveIndex];
+            playableDirector = waveObject[currentWaveIndex].GetComponent<PlayableDirector>();
             playableDirector.Play();
             currentWaveIndex++;
         }

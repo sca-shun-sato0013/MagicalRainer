@@ -19,7 +19,7 @@ public class BulletsDestroy : MonoBehaviour
     void Update()
     {
         var pos = this.transform.position;
-        if(pos.x < -970 || pos.x > 970 || pos.y < -550 || pos.y > 550)
+        if(pos.x < -150 || pos.x > 150 || pos.y < -150 || pos.y > 150)
         {
             Destroy(this.gameObject);
         }

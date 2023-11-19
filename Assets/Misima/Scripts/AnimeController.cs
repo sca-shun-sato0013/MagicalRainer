@@ -10,6 +10,8 @@ public class AnimeController : MonoBehaviour
 
     private int playCount = 0;
 
+    public WaveController waveController;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,10 @@ public class AnimeController : MonoBehaviour
         if(playCount < maxPlayCount)
         {
             PlayableDirector.Play();
+        }
+        else if(playCount >= maxPlayCount && waveController.CurrentWaveIndex <= 3)
+        {
+            waveController.PlayNextWave(); 
         }
     }
 }
