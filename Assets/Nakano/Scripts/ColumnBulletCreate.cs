@@ -5,7 +5,7 @@ using UnityEngine;
 public class ColumnBulletCreate : MonoBehaviour
 {
     [SerializeField, Header("NormalBullet")] GameObject prefabs;
-    [SerializeField, Header("生成数")] int bulletNum;
+    [SerializeField, Header("一度の生成数")] int bulletNum;
     [SerializeField, Header("クールタイム")] float coolTime;
     [SerializeField, Header("弾速")] float speed;
 
