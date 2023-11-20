@@ -9473,7 +9473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayableDirector: {fileID: 674244655}
-  maxPlayCount: 3
+  maxPlayCount: 2
   waveController: {fileID: 2106834037}
 --- !u!1 &1678327470
 GameObject:
