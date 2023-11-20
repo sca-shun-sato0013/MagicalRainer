@@ -6,7 +6,7 @@ using UnityEngine.Timeline;
 
 public class WaveController : MonoBehaviour
 {
-    public TimelineAsset[] waveTimelines;
+    //public TimelineAsset[] waveTimelines;
     public GameObject[] waveObject;
 
     private PlayableDirector playableDirector;
@@ -31,7 +31,7 @@ public class WaveController : MonoBehaviour
 
     public void PlayNextWave()
     {
-        if(currentWaveIndex < waveTimelines.Length)
+        if(currentWaveIndex < waveObject.Length)
         {
             //playableDirector.playableAsset = waveTimelines[currentWaveIndex];
             playableDirector = waveObject[currentWaveIndex].GetComponent<PlayableDirector>();
