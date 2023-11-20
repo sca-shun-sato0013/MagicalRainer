@@ -90,7 +90,7 @@ public class NormalBulletCreate : MonoBehaviour
                 for (int j = 1; j <= way; j++)
                 {
                     GameObject obj = Instantiate(prefabs, pos, Quaternion.identity);
-                    parentAngle = parent.GetComponent<RectTransform>().rotation.z;
+                    parentAngle = parent.GetComponent<RectTransform>().localEulerAngles.z;
                     obj.GetComponent<NormalBullet>().angle = angle * j + adjustmentAngle + parentAngle;
                 }
                 yield return new WaitForSeconds(coolTime);
@@ -104,7 +104,7 @@ public class NormalBulletCreate : MonoBehaviour
                 for (int j = 1; j <= way; j++)
                 {
                     GameObject obj = Instantiate(prefabs, pos, Quaternion.identity);
-                    parentAngle = parent.GetComponent<RectTransform>().rotation.z;
+                    parentAngle = parent.GetComponent<RectTransform>().localEulerAngles.z;
                     obj.GetComponent<NormalBullet>().angle = angle * j + adjustmentAngle + parentAngle;
                 }
                 yield return new WaitForSeconds(coolTime);
