@@ -32,7 +32,7 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         HPGauge.fillAmount = (float)hp / maxHP;
-        SPText.text = sp / 10 + "/10";
+        //SPText.text = sp / 10 + "/10";
         if (sp < 100)
         {
             SPGauge.fillAmount = (float)(sp % 10) / 10;

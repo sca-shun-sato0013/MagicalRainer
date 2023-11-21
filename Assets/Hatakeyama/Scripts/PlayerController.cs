@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using static PlayerManager;
 using UnityEngine.UI;
+using Spine.Unity;
+using Spine;
 
 public class PlayerController : MonoBehaviour
 {
+    SkeletonAnimation anim=default;
+
     private Image image;
     private Vector3 pPos;
     [SerializeField] private float speed = 0.0f;
@@ -22,18 +26,20 @@ public class PlayerController : MonoBehaviour
         pPos = gameObject.transform.position;
         playStartFlag = false;
         damageFlag = false;
+
+        anim = GetComponent<SkeletonAnimation>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        pos=transform.position;
+        pos =transform.position;
         switch (game_stat)
         {
             case GameStat.START:
                 {
-                    image.color = new Color(1, 0, 0,1);
-                    if (pPos.y <= -460.0f + canvas.pixelRect.height / 2)
+                    //image.color = new Color(1, 0, 0,1);
+                    if (pPos.y <= -460.0f + canvas.pixelRect.height / 2-100)
                     {
                         gameObject.transform.position = pPos;
                         pPos.y += startSpeed * Time.deltaTime;
@@ -47,7 +53,7 @@ public class PlayerController : MonoBehaviour
 
             case GameStat.PLAY:
                 {
-                    image.color = new Color(1, 1, 1,1);
+                    //image.color = new Color(1, 1, 1,1);
                     isNewGame = false;
                     PlayerMove();
                     if (Input.GetKeyDown(KeyCode.Return))
@@ -59,7 +65,7 @@ public class PlayerController : MonoBehaviour
 
             case GameStat.DETH:
                 {
-                    image.color = new Color(0, 0, 0,1);
+                    //image.color = new Color(0, 0, 0,1);
                     waitDethEffect -= Time.deltaTime;
                     if (waitDethEffect<=0)
                     {
@@ -71,7 +77,7 @@ public class PlayerController : MonoBehaviour
 
             case GameStat.REPOP:
                 {
-                    image.color = new Color(1, 0, 0,0.5f);
+                    //image.color = new Color(1, 0, 0,0.5f);
                     if (pPos.y <= -460.0f + canvas.pixelRect.height/2)
                     {
                         gameObject.transform.position = pPos;
@@ -100,10 +106,16 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             pPos.x -= speed * Time.deltaTime;
+            anim.AnimationName = "move left";
         }
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             pPos.x += speed * Time.deltaTime;
+            anim.AnimationName = "move right";
+        }
+        if (!Input.anyKey)
+        {
+            anim.AnimationName = "nomaol";
         }
     }
 
