@@ -9,7 +9,7 @@ public class NewBehaviourScript : MonoBehaviour
     void Start()
     {
         GlobalVariables.HP = 2;
-        GlobalVariables.AliveTime = 230f;
+        GlobalVariables.AliveTime = 360.0f;
     }
 
     // Update is called once per frame
