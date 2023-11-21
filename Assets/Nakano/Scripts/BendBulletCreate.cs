@@ -6,7 +6,10 @@ public class BendBulletCreate : MonoBehaviour
 {
     [SerializeField, Header("BendBullet")] GameObject prefabs;
     [SerializeField, Header("生成時間")] float createTime;
-    //[SerializeField, Header("生成数")] int bulletNum;
+
+    [SerializeField, Header("生成数で処理したい場合はtrueにする")] bool isNum;
+    [SerializeField, Header("生成数")] int bulletNum;
+
     [SerializeField, Header("クールタイム")] float coolTime;
     [SerializeField, Header("弾速　【注意】他と異なり値が高いほど低速化")] float speed;
 
@@ -61,6 +64,13 @@ public class BendBulletCreate : MonoBehaviour
 
     void Update()
     {
+        if (isReverse)
+        {
+            bendBullet.relayAjust = new Vector2(relayAjust.x * -1, relayAjust.y);
+            bendBullet.targetAjust = new Vector2(targetAjust.x * -1, targetAjust.y);
+            isReverse = false;
+        }
+
         pos = tc.PositionChange(rt, canvas);
 
         if (!isCreate) { count = 0; }
@@ -89,15 +99,32 @@ public class BendBulletCreate : MonoBehaviour
 
     IEnumerator Create()
     {
-        while (t < createTime)
+        if(!isNum)
         {
-            for (int j = 1; j <= way; j++)
+            while (t < createTime)
             {
-                GameObject obj = Instantiate(prefabs, pos, Quaternion.identity);
-                obj.GetComponent<BendBullet>().angle = angle * j + adjustmentAngle;
+                for (int j = 1; j <= way; j++)
+                {
+                    GameObject obj = Instantiate(prefabs, pos, Quaternion.identity);
+                    obj.GetComponent<BendBullet>().angle = angle * j + adjustmentAngle;
+                }
+                yield return new WaitForSeconds(coolTime);
             }
-            yield return new WaitForSeconds(coolTime);
         }
+        
+        if(isNum)
+        {
+            for(int i = 0; i < bulletNum; i++)
+            {
+                for (int j = 1; j <= way; j++)
+                {
+                    GameObject obj = Instantiate(prefabs, pos, Quaternion.identity);
+                    obj.GetComponent<BendBullet>().angle = angle * j + adjustmentAngle;
+                }
+                yield return new WaitForSeconds(coolTime);
+            }
+        }
+
         isCount = false;
     }
 }

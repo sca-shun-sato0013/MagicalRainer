@@ -12,6 +12,7 @@ public class NormalBullet : MonoBehaviour
     Vector3 direction;
 
     public bool isReflect = false;
+    bool reflect = false;
 
     [HideInInspector] public int num = 0;
 
@@ -28,14 +29,21 @@ public class NormalBullet : MonoBehaviour
 
     void Update()
     {
-        if(!isAim)
+        if (!isAim)
         {
             //角度を単位ベクトルに変える
             direction = AngleToVector3(angle);
-            transform.Translate(direction * speed * Time.deltaTime);
+            if(reflect)
+            {
+                transform.Translate(-direction * speed * Time.deltaTime);
+            }
+            else
+            {
+                transform.Translate(direction * speed * Time.deltaTime);
+            }
         }
 
-        else if(isAim)
+        else
         {
             transform.Translate(direction * speed * Time.deltaTime);
         }
@@ -54,7 +62,7 @@ public class NormalBullet : MonoBehaviour
     {
         if(collision.gameObject.tag == "BigBullets" && isReflect)
         {
-            direction *= -1;
+            reflect = true;
             isReflect = false;
         }
 

@@ -44,20 +44,24 @@ public class Hikkaki : MonoBehaviour
 
     void Update()
     {
-        if (isCreate && isInput)
+        if(isInput)
         {
-            isCreate = false;
-            count++;
-            if (count == 1)
+            if (isCreate)
             {
-                tmp = true;
+                isCreate = false;
+                count++;
+                if (count == 1)
+                {
+                    tmp = true;
+                }
             }
-        }
+            else { count = 0; }
 
-        if (tmp)
-        {
-            tmp = false;
-            StartCoroutine(Create());
+            if (tmp)
+            {
+                tmp = false;
+                StartCoroutine(Create());
+            }
         }
     }
 

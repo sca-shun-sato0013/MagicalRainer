@@ -40,7 +40,7 @@ public class GatherBulletCreate : MonoBehaviour
 
         bulletsDestroy = prefabs.GetComponent<BulletsDestroy>();
         bulletsDestroy.isGather = true;
-        bulletsDestroy.enemyPos = this.transform.position;
+        bulletsDestroy.enemyPos = new Vector3(0, 38, 90);
         bulletsDestroy.dis = dis;
 
         canvas = GameObject.FindWithTag("Canvas").GetComponent<Canvas>();
