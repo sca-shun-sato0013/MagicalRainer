@@ -8,6 +8,7 @@ public class BossSpawner : MonoBehaviour
     [SerializeField] private Transform LeftTop;
     [SerializeField] private Transform RightBottom;
     private float minX, maxX, minY, maxY;
+
     private void Start()
     {
         minX = LeftTop.position.x;
@@ -16,6 +17,7 @@ public class BossSpawner : MonoBehaviour
         maxY = LeftTop.position.y;
         StartCoroutine(SpawnEnemy());
     }
+
     private IEnumerator SpawnEnemy()
     {
         for (int i = 0; i < 100; i++)
