@@ -14,7 +14,6 @@ public class BossSpawn : MonoBehaviour
 
     public void BossWarp()
     {
-        Debug.Log("boss");
         int n = Random.Range(0, bossSpawnPos.Length);
         this.transform.localPosition = bossSpawnPos[n];
     }

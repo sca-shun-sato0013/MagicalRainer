@@ -587,7 +587,7 @@ MonoBehaviour:
   speed: 40
   angle: 0
   way: 20
-  adjustmentAngle: 0
+  adjustmentAngle: 10
   isCreate: 0
 --- !u!1 &822213717
 GameObject:
@@ -697,7 +697,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &866178126
 RectTransform:
   m_ObjectHideFlags: 0
@@ -864,7 +864,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1123301925
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1121,7 +1121,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1290527432}
-  - component: {fileID: 1290527433}
   - component: {fileID: 1290527434}
   m_Layer: 5
   m_Name: Rondam
@@ -1153,23 +1152,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1290527433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1290527431}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a044634986d43d54db64fac87a08d022, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Train:
-  - {fileID: 1348115966}
-  - {fileID: 361617778}
-  - {fileID: 375461792}
-  - {fileID: 1719784483}
 --- !u!95 &1290527434
 Animator:
   serializedVersion: 5
@@ -1336,7 +1318,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 23005f3dd338a3c40a084287e44eb858, type: 2}
-  m_InitialState: 0
+  m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
