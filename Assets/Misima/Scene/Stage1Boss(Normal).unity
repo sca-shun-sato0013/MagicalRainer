@@ -530,6 +530,8 @@ MonoBehaviour:
   angle: -90
   way: 2
   distance: 5
+  isAll: 0
+  dis: 5
   isCreate: 0
 --- !u!1 &652513247
 GameObject:
@@ -697,7 +699,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &866178126
 RectTransform:
   m_ObjectHideFlags: 0
@@ -864,7 +866,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1123301925
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1377,7 +1379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 3306050143180756325, guid: 7fafc8eb12700ce4693c150da79d80cc, type: 3}
+  prefabs: {fileID: 9057108274092344068, guid: ebd519200239a5740b310a26b9248b0b, type: 3}
   bulletNum: 3
   coolTime: 0.2
   speed: 50
@@ -1529,7 +1531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 3306050143180756325, guid: 7fafc8eb12700ce4693c150da79d80cc, type: 3}
+  prefabs: {fileID: 9057108274092344068, guid: ebd519200239a5740b310a26b9248b0b, type: 3}
   bulletNum: 3
   coolTime: 0.2
   speed: 50
@@ -2088,14 +2090,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossSpawnPos:
   - {x: 480, y: 350, z: 0}
-  - {x: 480, y: -350, z: 0}
+  - {x: 480, y: -150, z: 0}
   - {x: -480, y: 350, z: 0}
-  - {x: -480, y: -350, z: 0}
+  - {x: -480, y: -150, z: 0}
   bulletsObj:
   - {fileID: 1348115966}
   - {fileID: 361617778}
   - {fileID: 375461792}
   - {fileID: 1719784483}
+  pos:
+  - bubblesPos: a4fcffff9cffffff64000000b8010000
+  - bubblesPos: 640000005c03000064000000b8010000
+  - bubblesPos: a4fcffff9cffffff48feffff9cffffff
+  - bubblesPos: 640000005c03000048feffff9cffffff
 --- !u!1 &1841269364
 GameObject:
   m_ObjectHideFlags: 0
@@ -2242,7 +2249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 3306050143180756325, guid: 7fafc8eb12700ce4693c150da79d80cc, type: 3}
+  prefabs: {fileID: 9057108274092344068, guid: ebd519200239a5740b310a26b9248b0b, type: 3}
   bulletNum: 3
   coolTime: 0.2
   speed: 50

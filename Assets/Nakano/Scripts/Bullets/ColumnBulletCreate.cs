@@ -13,6 +13,9 @@ public class ColumnBulletCreate : MonoBehaviour
     [SerializeField, Header("c—ñ”"), Tooltip("‰¡‚É‰½ŒÂ•À‚Ô‚©(c—ñ‚ğ‰½ŒÂì‚é‚©) “ü—Í‚Í1ˆÈã")] int way = 1;
     [SerializeField, Header("c—ñ“¯m‚Ì‹——£")] float distance;
 
+    [SerializeField, Header("‘S’e“¯¶¬")] bool isAll = false;
+    [SerializeField, Header("‘S’e“¯¶¬‚Ì’eŠÔ‚Ì‹——£ ƒN[ƒ‹ƒ^ƒCƒ€‚Ì‘ã‚í‚è")] float dis;
+
     NormalBullet normalBullet;
 
     public bool isCreate = false;
@@ -59,34 +62,39 @@ public class ColumnBulletCreate : MonoBehaviour
 
     IEnumerator Create()
     {
+        float d = 0;
         for (int i = 0; i < bulletNum; i++)
         {
-            if(way % 2 == 1)
+            if (way % 2 == 1)
             {
                 for (int j = 0 - ((int)way / 2); j <= (way - ((int)way / 2) - 1); j++)
                 {
-                    GameObject obj = Instantiate(prefabs, pos + Quaternion.Euler(0, 0, angle - 90) * new Vector3(j * distance, 0, 0), Quaternion.identity);
+                    GameObject obj = Instantiate(prefabs, pos + Quaternion.Euler(0, 0, angle - 90) * new Vector3(j * distance, d, 0), Quaternion.identity);
                     obj.GetComponent<NormalBullet>().angle = angle;
                 }
             }
-            else if(way % 2 == 0)
+            else if (way % 2 == 0)
             {
                 for (int j = 0 - ((int)way / 2); j <= (way - ((int)way / 2)); j++)
                 {
-                    if(j < 0)
+                    if (j < 0)
                     {
-                        GameObject obj = Instantiate(prefabs, (pos + Quaternion.Euler(0, 0, angle - 90) * new Vector3((j + 0.5f) * distance, 0, 0)), Quaternion.identity);
+                        GameObject obj = Instantiate(prefabs, (pos + Quaternion.Euler(0, 0, angle - 90) * new Vector3((j + 0.5f) * distance, d, 0)), Quaternion.identity);
                         obj.GetComponent<NormalBullet>().angle = angle;
                     }
-                    else if(j >= 0)
+                    else if (j >= 0)
                     {
-                        GameObject obj = Instantiate(prefabs, (pos + Quaternion.Euler(0, 0, angle - 90) * new Vector3((j - 0.5f) * distance, 0, 0)), Quaternion.identity);
+                        GameObject obj = Instantiate(prefabs, (pos + Quaternion.Euler(0, 0, angle - 90) * new Vector3((j - 0.5f) * distance, d, 0)), Quaternion.identity);
                         obj.GetComponent<NormalBullet>().angle = angle;
                     }
                 }
             }
-            
-            yield return new WaitForSeconds(coolTime);
+
+            if(!isAll)
+            {
+                yield return new WaitForSeconds(coolTime);
+            }
+            else { d += dis; }
         }
     }
 }
