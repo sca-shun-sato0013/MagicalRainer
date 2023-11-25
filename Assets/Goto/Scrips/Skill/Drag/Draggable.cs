@@ -28,6 +28,11 @@ public class Draggable : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
     public bool moveCopyObj = false;
     private GameObject copyObj = null;
 
+    //private SkillDefine skillDefine;
+
+    [SerializeField]
+    string SkillName;
+
 
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -71,7 +76,12 @@ public class Draggable : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
                 // ドロップ可能エリアにこのオブジェクトが含まれる場合
                 //onDropSuccess.Invoke(area, resetPos()); // 引数1：ドロップしたエリア、引数2：位置をもとに戻す関数
                 isSuccess = true;
+                if(SkillName== "Stargazer")
+                {
+
+                }
                 Debug.Log("d");
+                
             }
         }
 
