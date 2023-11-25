@@ -42,7 +42,7 @@ public class Result : MonoBehaviour
     }
     private void Update()
     {
-        if (t < GlobalVariables.AliveTime)
+        if (t <= GlobalVariables.AliveTime)
         {
             Timer();
             t++;
