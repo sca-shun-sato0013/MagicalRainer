@@ -471,9 +471,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs: {fileID: 6620885009067390718, guid: 8d54cd0493b9c1b4bad3bc2f39ed368f, type: 3}
-  bulletNum: 10
+  bulletNum: 3
   angle: 70
-  speed: 50
+  speed: 30
   isCreate: 0
 --- !u!1 &95918004
 GameObject:
@@ -859,7 +859,7 @@ MonoBehaviour:
   bulletNum: 5
   coolTime: 0.2
   speed: 50
-  trackingTime: 2.5
+  trackingTime: 1.5
   isCreate: 0
 --- !u!1 &159652097
 GameObject:
@@ -1011,7 +1011,7 @@ MonoBehaviour:
   bulletNum: 5
   coolTime: 0.2
   speed: 50
-  trackingTime: 2.5
+  trackingTime: 1.5
   isCreate: 0
 --- !u!1 &181371530
 GameObject:
@@ -1262,7 +1262,7 @@ MonoBehaviour:
   bulletNum: 5
   coolTime: 0.2
   speed: 50
-  trackingTime: 2.5
+  trackingTime: 1.5
   isCreate: 0
 --- !u!1 &232940451
 GameObject:
@@ -1411,9 +1411,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs: {fileID: 6620885009067390718, guid: 8d54cd0493b9c1b4bad3bc2f39ed368f, type: 3}
-  bulletNum: 10
+  bulletNum: 3
   angle: 70
-  speed: 50
+  speed: 30
   isCreate: 0
 --- !u!1 &244241136
 GameObject:
@@ -1517,9 +1517,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs: {fileID: 6620885009067390718, guid: 8d54cd0493b9c1b4bad3bc2f39ed368f, type: 3}
-  bulletNum: 10
+  bulletNum: 3
   angle: 70
-  speed: 50
+  speed: 30
   isCreate: 0
 --- !u!1 &261365479
 GameObject:
@@ -1668,9 +1668,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs: {fileID: 6620885009067390718, guid: 8d54cd0493b9c1b4bad3bc2f39ed368f, type: 3}
-  bulletNum: 10
+  bulletNum: 3
   angle: 70
-  speed: 50
+  speed: 30
   isCreate: 0
 --- !u!1 &302534026
 GameObject:
@@ -1777,7 +1777,7 @@ MonoBehaviour:
   bulletNum: 5
   coolTime: 0.2
   speed: 50
-  trackingTime: 2.5
+  trackingTime: 1.5
   isCreate: 0
 --- !u!1 &322202240
 GameObject:
@@ -1879,9 +1879,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs: {fileID: 6620885009067390718, guid: 8d54cd0493b9c1b4bad3bc2f39ed368f, type: 3}
-  bulletNum: 10
+  bulletNum: 3
   angle: 70
-  speed: 50
+  speed: 30
   isCreate: 0
 --- !u!1 &366660169
 GameObject:
@@ -2030,9 +2030,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs: {fileID: 6620885009067390718, guid: 8d54cd0493b9c1b4bad3bc2f39ed368f, type: 3}
-  bulletNum: 10
+  bulletNum: 3
   angle: 70
-  speed: 50
+  speed: 30
   isCreate: 0
 --- !u!1 &402062898
 GameObject:
@@ -2279,9 +2279,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs: {fileID: 6620885009067390718, guid: 8d54cd0493b9c1b4bad3bc2f39ed368f, type: 3}
-  bulletNum: 10
+  bulletNum: 3
   angle: 70
-  speed: 50
+  speed: 30
   isCreate: 0
 --- !u!1 &461337215
 GameObject:
@@ -2514,7 +2514,7 @@ MonoBehaviour:
   bulletNum: 5
   coolTime: 0.2
   speed: 50
-  trackingTime: 2.5
+  trackingTime: 1.5
   isCreate: 0
 --- !u!1 &498732716
 GameObject:
@@ -3621,9 +3621,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs: {fileID: 6620885009067390718, guid: 8d54cd0493b9c1b4bad3bc2f39ed368f, type: 3}
-  bulletNum: 10
+  bulletNum: 3
   angle: 70
-  speed: 50
+  speed: 30
   isCreate: 0
 --- !u!1 &775776817
 GameObject:
@@ -4125,9 +4125,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs: {fileID: 6620885009067390718, guid: 8d54cd0493b9c1b4bad3bc2f39ed368f, type: 3}
-  bulletNum: 10
+  bulletNum: 3
   angle: 70
-  speed: 50
+  speed: 30
   isCreate: 0
 --- !u!1 &922749193
 GameObject:
@@ -4276,9 +4276,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs: {fileID: 6620885009067390718, guid: 8d54cd0493b9c1b4bad3bc2f39ed368f, type: 3}
-  bulletNum: 10
+  bulletNum: 3
   angle: 70
-  speed: 50
+  speed: 30
   isCreate: 0
 --- !u!1 &931222671
 GameObject:
@@ -5891,9 +5891,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs: {fileID: 6620885009067390718, guid: 8d54cd0493b9c1b4bad3bc2f39ed368f, type: 3}
-  bulletNum: 10
+  bulletNum: 3
   angle: 70
-  speed: 50
+  speed: 30
   isCreate: 0
 --- !u!1 &1139319036
 GameObject:
@@ -6860,9 +6860,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs: {fileID: 6620885009067390718, guid: 8d54cd0493b9c1b4bad3bc2f39ed368f, type: 3}
-  bulletNum: 10
+  bulletNum: 3
   angle: 70
-  speed: 50
+  speed: 30
   isCreate: 0
 --- !u!1 &1449821934
 GameObject:
@@ -7076,9 +7076,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs: {fileID: 6620885009067390718, guid: 8d54cd0493b9c1b4bad3bc2f39ed368f, type: 3}
-  bulletNum: 10
+  bulletNum: 3
   angle: 70
-  speed: 50
+  speed: 30
   isCreate: 0
 --- !u!1 &1471311286
 GameObject:
@@ -7129,9 +7129,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs: {fileID: 6620885009067390718, guid: 8d54cd0493b9c1b4bad3bc2f39ed368f, type: 3}
-  bulletNum: 10
+  bulletNum: 3
   angle: 70
-  speed: 50
+  speed: 30
   isCreate: 0
 --- !u!1 &1476823326
 GameObject:
@@ -7182,9 +7182,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs: {fileID: 6620885009067390718, guid: 8d54cd0493b9c1b4bad3bc2f39ed368f, type: 3}
-  bulletNum: 10
+  bulletNum: 3
   angle: 70
-  speed: 50
+  speed: 30
   isCreate: 0
 --- !u!1 &1477379398
 GameObject:
@@ -7725,9 +7725,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs: {fileID: 6620885009067390718, guid: 8d54cd0493b9c1b4bad3bc2f39ed368f, type: 3}
-  bulletNum: 10
+  bulletNum: 3
   angle: 70
-  speed: 50
+  speed: 30
   isCreate: 0
 --- !u!1 &1584094913
 GameObject:
@@ -8552,7 +8552,7 @@ MonoBehaviour:
   bulletNum: 5
   coolTime: 0.2
   speed: 50
-  trackingTime: 2.5
+  trackingTime: 1.5
   isCreate: 0
 --- !u!1 &1697192045
 GameObject:
@@ -8799,9 +8799,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs: {fileID: 6620885009067390718, guid: 8d54cd0493b9c1b4bad3bc2f39ed368f, type: 3}
-  bulletNum: 10
+  bulletNum: 3
   angle: 70
-  speed: 50
+  speed: 30
   isCreate: 0
 --- !u!1 &1721393590
 GameObject:
@@ -9064,9 +9064,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs: {fileID: 6620885009067390718, guid: 8d54cd0493b9c1b4bad3bc2f39ed368f, type: 3}
-  bulletNum: 10
+  bulletNum: 3
   angle: 70
-  speed: 50
+  speed: 30
   isCreate: 0
 --- !u!1 &1876920433
 GameObject:
@@ -9517,9 +9517,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs: {fileID: 6620885009067390718, guid: 8d54cd0493b9c1b4bad3bc2f39ed368f, type: 3}
-  bulletNum: 10
+  bulletNum: 3
   angle: 70
-  speed: 50
+  speed: 30
   isCreate: 0
 --- !u!1 &1939509407
 GameObject:
@@ -10231,9 +10231,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs: {fileID: 6620885009067390718, guid: 8d54cd0493b9c1b4bad3bc2f39ed368f, type: 3}
-  bulletNum: 10
+  bulletNum: 3
   angle: 70
-  speed: 50
+  speed: 30
   isCreate: 0
 --- !u!1 &2114449458
 GameObject:

@@ -13,13 +13,12 @@ public class BulletsDestroy : MonoBehaviour
 
     void Start()
     {
-        
     }
 
     void Update()
     {
         var pos = this.transform.position;
-        if(pos.x < -150 || pos.x > 150 || pos.y < -150 || pos.y > 150)
+        if (pos.x < -150 || pos.x > 150 || pos.y < -150 || pos.y > 150)
         {
             Destroy(this.gameObject);
         }

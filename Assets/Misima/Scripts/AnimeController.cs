@@ -31,7 +31,7 @@ public class AnimeController : MonoBehaviour
         {
             PlayableDirector.Play();
         }
-        else if(playCount >= maxPlayCount && waveController.CurrentWaveIndex <= 3)
+        else if(playCount >= maxPlayCount && !waveController.WaveCompleted)
         {
             waveController.PlayNextWave(); 
         }
