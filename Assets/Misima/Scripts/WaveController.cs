@@ -11,8 +11,9 @@ public class WaveController : MonoBehaviour
 
     private PlayableDirector playableDirector;
     private int currentWaveIndex = 0;
+    bool waveCompleted = false;
 
-    public int CurrentWaveIndex { get { return currentWaveIndex; } }
+    public bool WaveCompleted { get { return waveCompleted; } }
 
     // Start is called before the first frame update
     void Start()
@@ -29,11 +30,24 @@ public class WaveController : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if(currentWaveIndex >= waveObject.Length) { waveCompleted = true; }
+        else { waveCompleted = false; }
+    }
+
     public void PlayNextWave()
     {
-        if(currentWaveIndex < waveObject.Length)
+        if(!waveCompleted)
         {
             //playableDirector.playableAsset = waveTimelines[currentWaveIndex];
+
+            if(currentWaveIndex > 0)
+            {
+                playableDirector = waveObject[currentWaveIndex - 1].GetComponent<PlayableDirector>();
+                playableDirector.Stop();
+            }
+            
             playableDirector = waveObject[currentWaveIndex].GetComponent<PlayableDirector>();
             playableDirector.Play();
             currentWaveIndex++;
