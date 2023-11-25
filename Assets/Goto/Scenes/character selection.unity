@@ -7685,6 +7685,7 @@ MonoBehaviour:
   - {fileID: 471903569}
   - {fileID: 1290761879}
   moveCopyObj: 0
+  SkillName: 
 --- !u!114 &962238710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7704,6 +7705,7 @@ MonoBehaviour:
   - {fileID: 471903569}
   - {fileID: 1290761879}
   moveCopyObj: 0
+  SkillName: 
 --- !u!1 &967210143
 GameObject:
   m_ObjectHideFlags: 0
@@ -7870,6 +7872,7 @@ GameObject:
   - component: {fileID: 989337238}
   - component: {fileID: 989337237}
   - component: {fileID: 989337239}
+  - component: {fileID: 989337240}
   m_Layer: 0
   m_Name: SkillManager
   m_TagString: Untagged
@@ -7916,6 +7919,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99ef8bda996d17140af085553738be47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &989337240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989337236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0779136188782b48b232cfba34f265b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillSet1: 0
+  skillSet2: 0
+  skillSet3: 0
+  skillSet4: 0
 --- !u!1 &998269890
 GameObject:
   m_ObjectHideFlags: 0
@@ -10262,6 +10281,7 @@ MonoBehaviour:
   - {fileID: 471903569}
   - {fileID: 172595090}
   moveCopyObj: 0
+  SkillName: 
 --- !u!114 &1276319905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10281,6 +10301,7 @@ MonoBehaviour:
   - {fileID: 471903569}
   - {fileID: 172595090}
   moveCopyObj: 0
+  SkillName: 
 --- !u!1 &1280173600
 GameObject:
   m_ObjectHideFlags: 0
@@ -12616,6 +12637,7 @@ MonoBehaviour:
   - {fileID: 471903569}
   - {fileID: 1168139157}
   moveCopyObj: 0
+  SkillName: 
 --- !u!114 &1540962741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12635,6 +12657,7 @@ MonoBehaviour:
   - {fileID: 471903569}
   - {fileID: 1168139157}
   moveCopyObj: 0
+  SkillName: 
 --- !u!1 &1552615080
 GameObject:
   m_ObjectHideFlags: 0
@@ -13053,6 +13076,7 @@ MonoBehaviour:
   - {fileID: 471903569}
   - {fileID: 2050795486}
   moveCopyObj: 0
+  SkillName: 
 --- !u!114 &1599714627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13072,6 +13096,7 @@ MonoBehaviour:
   - {fileID: 471903569}
   - {fileID: 2050795486}
   moveCopyObj: 1
+  SkillName: Stargazer
 --- !u!61 &1599714628
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13277,6 +13302,7 @@ MonoBehaviour:
   - {fileID: 471903569}
   - {fileID: 1330565314}
   moveCopyObj: 0
+  SkillName: 
 --- !u!114 &1603401688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13296,6 +13322,7 @@ MonoBehaviour:
   - {fileID: 471903569}
   - {fileID: 1330565314}
   moveCopyObj: 0
+  SkillName: 
 --- !u!1 &1623854222
 GameObject:
   m_ObjectHideFlags: 0
@@ -15782,6 +15809,7 @@ MonoBehaviour:
   - {fileID: 471903569}
   - {fileID: 21562686}
   moveCopyObj: 0
+  SkillName: 
 --- !u!114 &1977656273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15801,6 +15829,7 @@ MonoBehaviour:
   - {fileID: 471903569}
   - {fileID: 21562686}
   moveCopyObj: 0
+  SkillName: 
 --- !u!1 &1986801752
 GameObject:
   m_ObjectHideFlags: 0
