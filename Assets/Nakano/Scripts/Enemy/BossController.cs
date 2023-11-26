@@ -13,9 +13,8 @@ public class BossController : MonoBehaviour
     float hp;
     float hpRatio = 1;
 
-    [SerializeField, Header("HPバー")] Image hpBarFrame;
     [SerializeField, Header("HPバーの中身")] Image hpBar;
-    [SerializeField, Header("ボスの名前")] Text bossName;
+    [SerializeField, Header("BossのUI")] Animator bossUIAnim;
 
     public float BossHp
     {
@@ -34,18 +33,17 @@ public class BossController : MonoBehaviour
     [SerializeField, Header("ボス登場からボス戦WAVE１開始までの時間")] float entryTime;
 
     [SerializeField, Header("初期位置に戻るスピード")] float moveSpeed;
-    [SerializeField, Header("各フェーズ初期位置")] Vector3[] pos;
+    [SerializeField, Header("各フェーズ初期位置")] GameObject[] pos;
+    bool isPosIni = false;
 
-    Vector3 nowPos;
+    [SerializeField] GameObject[] wave;
 
+    int wave4AttackCount = 1;
+ 
     void Start()
     {
         hp = defaultHp;
         hpBar.fillAmount = 1;
-
-        bossName.enabled = false;
-        hpBar.enabled = false;
-        hpBarFrame.enabled = false;
 
         StartCoroutine(BossReach());
     }
@@ -66,7 +64,58 @@ public class BossController : MonoBehaviour
             hp -= 10;
         }
 
-        if(hp <= 0 && !end) { hp = 0; end = true; WaveChange(); }
+        if(Input.GetKeyDown(KeyCode.V))
+        {
+            Time.timeScale = 0;
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            Time.timeScale = 1;
+        }
+
+        //HPが一定以下になったら初期位置に戻る
+        if (isPosIni)
+        {
+            director.Stop();
+            TimelineAsset timelineAsset = director.playableAsset as TimelineAsset;
+            director.ClearGenericBinding(timelineAsset.GetOutputTrack(currentTrackIndex));
+
+            GameObject p;
+            switch (currentTrackIndex)
+            {
+                case 1:
+                    p = pos[0];
+                    break;
+                case 2:
+                    p = pos[1];
+                    break;
+                case 3:
+                    p = pos[2];
+                    break;
+                case 4:
+                    p = pos[3];
+                    break;
+                case 5:
+                    p = pos[3];
+                    break;
+                default:
+                    p = pos[0];
+                    break;
+            }
+
+            if(Vector3.Distance(bossObj.transform.localPosition, p.transform.localPosition) > 1)
+            {
+                Vector3 dir = (p.transform.localPosition - bossObj.transform.localPosition).normalized;
+
+                Vector3 pos = bossObj.transform.localPosition;
+                pos.x += dir.x;
+                pos.y += dir.y;
+                bossObj.transform.localPosition = pos;
+            }
+
+            else { bossObj.transform.localPosition = p.transform.localPosition; SetBossBinding(); isPosIni = false; }
+        }
     }
 
     IEnumerator BossReach()
@@ -75,14 +124,16 @@ public class BossController : MonoBehaviour
 
         yield return new WaitForSeconds(5f);
 
-        bossName.enabled = true;
-        hpBar.enabled = true;
-        hpBarFrame.enabled = true;
-
         TimelineAsset timelineAsset = director.playableAsset as TimelineAsset;
         director.SetGenericBinding(timelineAsset.GetOutputTrack(currentTrackIndex), bossObj);
         director.Stop();
         director.Play();
+
+        yield return new WaitForSeconds(1f);
+
+        bossUIAnim.SetBool("Entry", true);
+
+        //ここらへんにストーリー
 
         yield return new  WaitForSeconds(entryTime);
 
@@ -96,69 +147,25 @@ public class BossController : MonoBehaviour
         hpBar.fillAmount = hpRatio;
 
         //残りHpに応じてWAVE変更
-        if (hpRatio <= 0.75f && !wave2) { wave2 = true; WaveChange(); nowPos = bossObj.transform.localPosition; }
-        else if (hpRatio <= 0.5f && !wave3) { wave3 = true; WaveChange(); nowPos = bossObj.transform.localPosition; }
-        else if (hpRatio <= 0.25f && !wave4) { wave4 = true; WaveChange(); nowPos = bossObj.transform.localPosition; }
+        if (hpRatio <= 0.75f && !wave2) { wave2 = true; WaveChange(); wave[0].SetActive(false); }
+        else if (hpRatio <= 0.5f && !wave3) { wave3 = true; WaveChange(); wave[1].SetActive(false); }
+        else if (hpRatio <= 0.25f && !wave4) { wave4 = true; WaveChange(); wave[2].SetActive(false); }
+        else if (hp <= 0 && !end) { hp = 0; end = true; WaveChange(); wave[3].SetActive(false); }
     }
 
+    //現在のWAVEが終了したら繰り返す Signalで呼び出し
     public void AnimationReplay()
     {
-        if(currentTrackIndex % 2 == 0 && currentTrackIndex < 9)
+        if(currentTrackIndex <= 5)
         {
             director.Play();
         }
     }
 
-    public void WaitEnd()
-    {
-        if (currentTrackIndex % 2 == 1 && currentTrackIndex != 1)
-        {
-            SetBossBinding();
-        }
-    }
-
-    public void Position()
-    {
-        StartCoroutine(PosInitialize());
-    }
-
-    IEnumerator PosInitialize()
-    {
-        Vector3 p;
-        switch(currentTrackIndex)
-        {
-            case 3:
-                p = pos[0];
-                break;
-            case 5:
-                p = pos[1];
-                break;
-            case 7:
-                p = pos[2];
-                break;
-            default:
-                p = new Vector3(0,0,0);
-                break;
-        }
-
-        if (currentTrackIndex % 2 == 1 && currentTrackIndex != 1)
-        {
-            director.Stop();
-            while (Vector3.Distance(bossObj.transform.localPosition, p) >= 10)
-            {
-                Vector3 dir = (p - bossObj.transform.localPosition).normalized;
-                bossObj.transform.Translate(dir * moveSpeed);
-                yield return null;
-            }
-
-            SetBossBinding();
-        }
-    }
-
+    //WAVE移行
     void WaveChange()
     {
-        //waveController.PlayNextWave();
-        SetBossBinding();
+        isPosIni = true;
         screenInitialize = true;
     }
 
@@ -178,6 +185,7 @@ public class BossController : MonoBehaviour
         }
     }
 
+    //Timeline編集
     void SetBossBinding()
     {
         TimelineAsset timelineAsset = director.playableAsset as TimelineAsset;
@@ -185,7 +193,7 @@ public class BossController : MonoBehaviour
         // 現在カメラが設定されているTrackのBindingをリセット
         director.ClearGenericBinding(timelineAsset.GetOutputTrack(currentTrackIndex));
 
-        if(currentTrackIndex < 9)
+        if(currentTrackIndex < 5)
         {
             currentTrackIndex++;
         }
@@ -195,5 +203,19 @@ public class BossController : MonoBehaviour
         // CinemachineTrackの状態をリセット
         director.Stop();
         director.Play();
+    }
+
+    //Stage2 Boss Wave4 HP減少 Signalで呼び出し
+    public void Stage2_Wave4()
+    {
+        if(currentTrackIndex == 5)
+        {
+            if(wave4AttackCount == 5)
+            {
+                hp -= (defaultHp * 0.04f);
+            }
+            else { hp -= (defaultHp * 0.05f); }
+            wave4AttackCount++;
+        }
     }
 }
