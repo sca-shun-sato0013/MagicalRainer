@@ -6,7 +6,7 @@ public class EnemyDestroy : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("PlayerBullets")) //タグ要変更
+        if(collision.CompareTag("PlayerBullet")) //タグ要変更
         {
             Destroy(this);
         }

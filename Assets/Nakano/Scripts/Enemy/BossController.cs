@@ -48,7 +48,9 @@ public class BossController : MonoBehaviour
 
     //Stage2用
     int wave4AttackCount = 1;
- 
+
+    public int BossWaveNum { get { return currentTrackIndex - 1; } }
+
     void Start()
     {
         hpBar.sprite = hpBars[0];
@@ -56,6 +58,11 @@ public class BossController : MonoBehaviour
         hpBar.fillAmount = 1;
 
         StartCoroutine(BossReach());
+
+        wave[0].SetActive(true);
+        wave[1].SetActive(false);
+        wave[2].SetActive(false);
+        wave[3].SetActive(false);
     }
 
     void Update()
@@ -121,6 +128,7 @@ public class BossController : MonoBehaviour
     //ボス戦移行
     IEnumerator BossReach()
     {
+        //WAVEが全て終わったら
         //yield return new WaitUntil(() => waveController.WaveCompleted);
 
         yield return new WaitForSeconds(5f);
@@ -155,10 +163,34 @@ public class BossController : MonoBehaviour
         else if(hpRatio < 1.0f / 3.0f) { hpBar.sprite = hpBars[2]; }
 
         //残りHpに応じてWAVE変更
-        if (hpRatio <= hpLimit[0] && !wave2) { wave2 = true; WaveChange(); wave[0].SetActive(false); }
-        else if (hpRatio <= hpLimit[1] && !wave3) { wave3 = true; WaveChange(); wave[1].SetActive(false); }
-        else if (hpRatio <= hpLimit[2] && !wave4) { wave4 = true; WaveChange(); wave[2].SetActive(false); }
-        else if (hp <= 0 && !end) { hp = 0; end = true; WaveChange(); wave[3].SetActive(false); }
+        if (hpRatio <= hpLimit[0] && !wave2)
+        {
+            wave2 = true;
+            wave[1].SetActive(true);
+            wave[0].SetActive(false);
+            WaveChange(); 
+        }
+        else if (hpRatio <= hpLimit[1] && !wave3) 
+        { 
+            wave3 = true; 
+            wave[2].SetActive(true);
+            wave[1].SetActive(false); 
+            WaveChange();
+        }
+        else if (hpRatio <= hpLimit[2] && !wave4) 
+        { 
+            wave4 = true;
+            wave[3].SetActive(true);
+            wave[2].SetActive(false);
+            WaveChange(); 
+        }
+        else if (hp <= 0 && !end) 
+        { 
+            hp = 0; 
+            end = true;
+            wave[3].SetActive(false);
+            WaveChange(); 
+        }
     }
 
     //現在のWAVEが終了したら繰り返す Signalで呼び出し

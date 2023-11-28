@@ -4482,6 +4482,7 @@ MonoBehaviour:
   - {fileID: 886242334}
   - {fileID: 1557030088}
   - {fileID: 513930665}
+  mainGameController: {fileID: 0}
 --- !u!320 &1966602998
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -4489,10 +4490,10 @@ PlayableDirector:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1966602995}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 0}
-  m_InitialState: 0
+  m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0

@@ -1972,7 +1972,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 38647f1c1cbec8d4b88ea97f5146dc79, type: 2}
-  m_InitialState: 0
+  m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -1986,6 +1986,14 @@ PlayableDirector:
   - key: {fileID: 1752495704153119449, guid: 38647f1c1cbec8d4b88ea97f5146dc79, type: 2}
     value: {fileID: 0}
   - key: {fileID: 1971418245994238799, guid: 38647f1c1cbec8d4b88ea97f5146dc79, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -8874587391360222956, guid: 38647f1c1cbec8d4b88ea97f5146dc79, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -3297662928589367701, guid: 38647f1c1cbec8d4b88ea97f5146dc79, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -325868605209045193, guid: 38647f1c1cbec8d4b88ea97f5146dc79, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 7277982876753197874, guid: 38647f1c1cbec8d4b88ea97f5146dc79, type: 2}
     value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
@@ -4379,6 +4387,7 @@ GameObject:
   - component: {fileID: 602649126}
   - component: {fileID: 602649125}
   - component: {fileID: 602649124}
+  - component: {fileID: 602649127}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4460,6 +4469,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &602649127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602649123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!1001 &615323297
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11626,7 +11679,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1875487148}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e88988001c523194b991386e864625b6, type: 3}
   m_Name: 

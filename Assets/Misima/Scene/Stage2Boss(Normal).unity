@@ -739,6 +739,7 @@ MonoBehaviour:
   - {fileID: 162687060}
   - {fileID: 1551206880}
   - {fileID: 1405106937}
+  mainGameController: {fileID: 0}
 --- !u!1 &1205994783
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,6 +951,16 @@ PlayableDirector:
     value: {fileID: 580696771}
   - key: {fileID: 5242612084637613344, guid: 38647f1c1cbec8d4b88ea97f5146dc79, type: 2}
     value: {fileID: 580696773}
+  - key: {fileID: 1971418245994238799, guid: 38647f1c1cbec8d4b88ea97f5146dc79, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -9167443923347964834, guid: 38647f1c1cbec8d4b88ea97f5146dc79, type: 2}
+    value: {fileID: 580696773}
+  - key: {fileID: -8874587391360222956, guid: 38647f1c1cbec8d4b88ea97f5146dc79, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -3297662928589367701, guid: 38647f1c1cbec8d4b88ea97f5146dc79, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -325868605209045193, guid: 38647f1c1cbec8d4b88ea97f5146dc79, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1405106937
