@@ -15,6 +15,9 @@ public class BossController : MonoBehaviour
 
     [SerializeField, Header("HPバーの中身")] Image hpBar;
     [SerializeField, Header("BossのUI")] Animator bossUIAnim;
+    [SerializeField, Header("HP減少時の減少スピード")] float decreaseSpeed;
+
+    [SerializeField] Sprite[] hpBars;
 
     public float BossHp
     {
@@ -33,15 +36,22 @@ public class BossController : MonoBehaviour
     [SerializeField, Header("ボス登場からボス戦WAVE１開始までの時間")] float entryTime;
 
     [SerializeField, Header("初期位置に戻るスピード")] float moveSpeed;
-    [SerializeField, Header("各フェーズ初期位置")] GameObject[] pos;
+    [SerializeField, Header("各WAVE初期位置")] GameObject[] pos;
     bool isPosIni = false;
+
+    [SerializeField, Header("各WAVE移行するときの残HP割合"), Tooltip("Element0が0.75の場合、残HPが75％以下でWAVE2に移行する")] float[] hpLimit; 
 
     [SerializeField] GameObject[] wave;
 
+    //Stage1用
+    
+
+    //Stage2用
     int wave4AttackCount = 1;
  
     void Start()
     {
+        hpBar.sprite = hpBars[0];
         hp = defaultHp;
         hpBar.fillAmount = 1;
 
@@ -62,16 +72,6 @@ public class BossController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
             hp -= 10;
-        }
-
-        if(Input.GetKeyDown(KeyCode.V))
-        {
-            Time.timeScale = 0;
-        }
-
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            Time.timeScale = 1;
         }
 
         //HPが一定以下になったら初期位置に戻る
@@ -118,12 +118,14 @@ public class BossController : MonoBehaviour
         }
     }
 
+    //ボス戦移行
     IEnumerator BossReach()
     {
         //yield return new WaitUntil(() => waveController.WaveCompleted);
 
         yield return new WaitForSeconds(5f);
 
+        //登場
         TimelineAsset timelineAsset = director.playableAsset as TimelineAsset;
         director.SetGenericBinding(timelineAsset.GetOutputTrack(currentTrackIndex), bossObj);
         director.Stop();
@@ -131,6 +133,7 @@ public class BossController : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
+        //ボスのUI登場
         bossUIAnim.SetBool("Entry", true);
 
         //ここらへんにストーリー
@@ -140,16 +143,21 @@ public class BossController : MonoBehaviour
         SetBossBinding();
     }
 
-    //HP演出
+    //HP関連
     void HpDirection()
     {
         hpRatio = hp / defaultHp;
-        hpBar.fillAmount = hpRatio;
+        if(hpBar.fillAmount > hpRatio) { hpBar.fillAmount -= decreaseSpeed * Time.deltaTime; }
+        else { hpBar.fillAmount = hpRatio; }
+
+        if(hpRatio >= 2.0f / 3.0f) { hpBar.sprite = hpBars[0]; }
+        else if (hpRatio >= 1.0f / 3.0f && hpRatio < 2.0f / 3.0f) { hpBar.sprite = hpBars[1]; }
+        else if(hpRatio < 1.0f / 3.0f) { hpBar.sprite = hpBars[2]; }
 
         //残りHpに応じてWAVE変更
-        if (hpRatio <= 0.75f && !wave2) { wave2 = true; WaveChange(); wave[0].SetActive(false); }
-        else if (hpRatio <= 0.5f && !wave3) { wave3 = true; WaveChange(); wave[1].SetActive(false); }
-        else if (hpRatio <= 0.25f && !wave4) { wave4 = true; WaveChange(); wave[2].SetActive(false); }
+        if (hpRatio <= hpLimit[0] && !wave2) { wave2 = true; WaveChange(); wave[0].SetActive(false); }
+        else if (hpRatio <= hpLimit[1] && !wave3) { wave3 = true; WaveChange(); wave[1].SetActive(false); }
+        else if (hpRatio <= hpLimit[2] && !wave4) { wave4 = true; WaveChange(); wave[2].SetActive(false); }
         else if (hp <= 0 && !end) { hp = 0; end = true; WaveChange(); wave[3].SetActive(false); }
     }
 
@@ -210,11 +218,14 @@ public class BossController : MonoBehaviour
     {
         if(currentTrackIndex == 5)
         {
-            if(wave4AttackCount == 5)
-            {
-                hp -= (defaultHp * 0.04f);
-            }
-            else { hp -= (defaultHp * 0.05f); }
+            //if(wave4AttackCount == 5)
+            //{
+            //    hp = (defaultHp * 0.04f);
+            //}
+            //else { hp -= (defaultHp * 0.05f); }
+
+            hp -= (defaultHp * 0.05f);
+
             wave4AttackCount++;
         }
     }

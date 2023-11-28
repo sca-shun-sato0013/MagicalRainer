@@ -35,9 +35,13 @@ public class PlayerSample : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Bullets")
-        {
-            //Debug.Log("damage");
-        }
+        //if(other.gameObject.tag == "Bullets")
+        //{
+        //    var obj = other.gameObject.GetComponent<EnemyAttack>();
+        //    if(obj)
+        //    {
+        //        Debug.Log(obj.Attack);
+        //    }
+        //}
     }
 }
