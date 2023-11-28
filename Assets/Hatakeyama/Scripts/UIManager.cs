@@ -12,19 +12,21 @@ public class UIManager : MonoBehaviour
     [SerializeField] private int maxHP;
     private int hp;
     private int sp;
+    public static int skillGaugePoint;
 
     [SerializeField] private int [] setSkillsNumber=new int[4];
-    [SerializeField] private Image[] skillImage =new Image[6];
-    private Image[] setSkills=new Image[4];
+    [SerializeField] private Sprite[] skillSprite =new Sprite[6];
+    [SerializeField] private Image[] setSkills=new Image[4];
 
     // Start is called before the first frame update
     void Start()
     {
         hp = maxHP;
         sp = 0;
+        skillGaugePoint = 0;
         for(int i = 0; i < 4; ++i)
         {
-            setSkills[i]=Instantiate(skillImage[setSkillsNumber[i]],new Vector3(350+150*i+canvas.pixelRect.width/2,450+canvas.pixelRect.height/2,0),Quaternion.identity,transform);
+            setSkills[i].sprite = skillSprite[setSkillsNumber[i]];
         }
     }
 
@@ -32,13 +34,23 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         HPGauge.fillAmount = (float)hp / maxHP;
-        //SPText.text = sp / 10 + "/10";
-        if (sp < 100)
+        //sp = (int)(skillGaugePoint / 100.0f);
+        SPText.text = sp + "/10";
+        if (sp < 10)
         {
-            SPGauge.fillAmount = (float)(sp % 10) / 10;
+            if (SPGauge.fillAmount < (float)skillGaugePoint / 100)
+            {
+                SPGauge.fillAmount += 0.01f;
+            }
+            if (SPGauge.fillAmount >= 1.0f)
+            {
+                skillGaugePoint = 0;
+                SPGauge.fillAmount = 0;
+                sp += 1;
+            }
             if (Input.GetKeyDown(KeyCode.RightShift))
             {
-                sp += 1;
+                skillGaugePoint += 10;
             }
         }
         else
@@ -46,7 +58,7 @@ public class UIManager : MonoBehaviour
             SPGauge.fillAmount = 1;
         }
 
-        if (sp >= 40)
+        if (sp >= 4)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             skillOne();
@@ -69,28 +81,28 @@ public class UIManager : MonoBehaviour
         {
             for (int i = 0; i < setSkillsNumber.Length; ++i)
             {
-                setSkills[setSkillsNumber[i]].color = new Color(0.5f, 0.5f, 0.5f);
+                setSkills[i].color = new Color(0.5f, 0.5f, 0.5f);
             }
         }
     }
 
     void skillOne()
     {
-        sp-=40;
+        sp-=4;
     }
 
     void skillTow()
     {
-        sp-=40;
+        sp-=4;
     }
 
     void skillThree()
     {
-        sp-=40;
+        sp-=4;
     }
 
     void skillFour()
     {
-        sp-=40;
+        sp-=4;
     }
 }
