@@ -44,6 +44,6 @@ public class MainGameController : MonoBehaviour
 
         //背景スクロールが終わったら
 
-
+        waveDirection.SetTrigger("Out");
     }
 }

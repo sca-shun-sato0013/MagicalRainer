@@ -35,10 +35,10 @@ public class PlayerSample : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //if(other.gameObject.tag == "Bullets")
+        //if (other.gameObject.tag == "Bullets")
         //{
         //    var obj = other.gameObject.GetComponent<EnemyAttack>();
-        //    if(obj)
+        //    if (obj)
         //    {
         //        Debug.Log(obj.Attack);
         //    }
