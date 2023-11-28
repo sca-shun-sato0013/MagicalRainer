@@ -20,7 +20,7 @@ public class PlayerManager : MonoBehaviour
     public static bool isPlayerBroken;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         canvas = GetComponent<Canvas>();
         isNewGame = true;
@@ -28,31 +28,16 @@ public class PlayerManager : MonoBehaviour
         game_stat = GameStat.START;
         isPlayerBroken = true;
 
+        Instantiate(Player, startPos, Quaternion.identity, transform);
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (isPlayerBroken)
-        {
-            Instantiate(Player, startPos, Quaternion.identity, transform);
-            isPlayerBroken = false;
-        }
-        if (PlayerController.playStartFlag)
+        if (game_stat==GameStat.START)
         {
             game_stat = GameStat.PLAY;
-        }
-        else
-        {
-            if (isNewGame)
-            {
-                game_stat = GameStat.START;
-            }
-            else
-            {
-                game_stat = GameStat.REPOP;
-            }
         }
         if (PlayerController.damageFlag)
         {

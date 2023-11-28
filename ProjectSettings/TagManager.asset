@@ -11,6 +11,7 @@ TagManager:
   - Canvas
   - Bullets
   - Mirror
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX
