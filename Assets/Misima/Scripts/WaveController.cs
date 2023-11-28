@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
+using UnityEngine.UI;
 
 public class WaveController : MonoBehaviour
 {
@@ -13,7 +14,11 @@ public class WaveController : MonoBehaviour
     private int currentWaveIndex = 0;
     bool waveCompleted = false;
 
+    [SerializeField] MainGameController mainGameController;
+
     public bool WaveCompleted { get { return waveCompleted; } }
+
+    public int WaveNum { get { return currentWaveIndex + 1; } }
 
     // Start is called before the first frame update
     void Start()
@@ -40,14 +45,11 @@ public class WaveController : MonoBehaviour
     {
         if(!waveCompleted)
         {
-            //playableDirector.playableAsset = waveTimelines[currentWaveIndex];
+            mainGameController.WaveDirection(); //WAVEà⁄çsââèoçƒê∂
 
-            if(currentWaveIndex > 0)
-            {
-                playableDirector = waveObject[currentWaveIndex - 1].GetComponent<PlayableDirector>();
-                playableDirector.Stop();
-            }
+            //playableDirector.playableAsset = waveTimelines[currentWaveIndex];
             
+            //éüÇÃWAVEÇ…à⁄çs
             playableDirector = waveObject[currentWaveIndex].GetComponent<PlayableDirector>();
             playableDirector.Play();
             currentWaveIndex++;

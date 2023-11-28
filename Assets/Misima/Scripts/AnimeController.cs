@@ -33,7 +33,7 @@ public class AnimeController : MonoBehaviour
         }
         else if(playCount >= maxPlayCount && !waveController.WaveCompleted)
         {
-            waveController.PlayNextWave(); 
+            waveController.PlayNextWave(); //ˆê’è‰ñ”Ä¶‚µ‚½‚çŸ‚ÌWAVE‚ÉˆÚs‚·‚é
         }
     }
 }
