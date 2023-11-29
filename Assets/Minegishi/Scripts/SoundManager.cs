@@ -48,7 +48,7 @@ public class SoundManager : MonoBehaviour
     public void SetAudioMixerSE(float value)
     {
         //5’iŠK•â³
-        value /= 100;
+        value /= 5;
         //-80`0‚É•ÏŠ·
         var volume = Mathf.Clamp(Mathf.Log10(value) * 20f, -80, 0f);
         //audioMixer‚É‘ã“ü
