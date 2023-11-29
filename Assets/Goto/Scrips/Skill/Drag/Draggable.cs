@@ -78,7 +78,10 @@ public class Draggable : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
                 isSuccess = true;
                 if(SkillName== "Stargazer")
                 {
+                    SkillDefine skill = GameObject.Find("SkillManager").GetComponent<SkillDefine>();
+                   
 
+                    Debug.Log("a");
                 }
                 Debug.Log("d");
                 
