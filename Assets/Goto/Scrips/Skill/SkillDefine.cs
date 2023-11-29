@@ -2,6 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Skill
+{
+    _None,
+    Stargazer,
+    Pentagram,
+    Energyfunnel,
+    Mysticfield,
+    Skill5,
+    Skill6,
+}
 public class SkillDefine : MonoBehaviour
 {
     [SerializeField]
@@ -29,16 +39,7 @@ public class SkillDefine : MonoBehaviour
     {
         set { skillSet4 = value; }
     }
-    public enum Skill
-    {
-        _None,
-        Stargazer,
-        Pentagram,
-        Energyfunnel,
-        Mysticfield,
-        Skill5,
-        Skill6,
-    }
+   
 
     public static Dictionary<Skill, string> dic_SkillName = new Dictionary<Skill, string>()
     {
