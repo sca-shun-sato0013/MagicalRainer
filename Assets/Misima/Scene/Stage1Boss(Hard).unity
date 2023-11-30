@@ -1287,6 +1287,7 @@ MonoBehaviour:
   - bubblesPos: a4fcffff9cffffff48feffff9cffffff
   - bubblesPos: 64000000e001000048feffff9cffffff
   - bubblesPos: e00100005c03000048feffff9cffffff
+  bossController: {fileID: 0}
 --- !u!114 &597734554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1524,7 +1525,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &768932692
 RectTransform:
   m_ObjectHideFlags: 0
