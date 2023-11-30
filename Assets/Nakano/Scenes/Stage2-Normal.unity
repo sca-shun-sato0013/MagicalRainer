@@ -1971,8 +1971,8 @@ PlayableDirector:
   m_GameObject: {fileID: 184548115}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 38647f1c1cbec8d4b88ea97f5146dc79, type: 2}
-  m_InitialState: 1
+  m_PlayableAsset: {fileID: 11400000, guid: 80a0fc7760e53384d9c65525b76dd3ae, type: 2}
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -1985,15 +1985,25 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 1752495704153119449, guid: 38647f1c1cbec8d4b88ea97f5146dc79, type: 2}
     value: {fileID: 0}
-  - key: {fileID: 1971418245994238799, guid: 38647f1c1cbec8d4b88ea97f5146dc79, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 0}
-  - key: {fileID: -8874587391360222956, guid: 38647f1c1cbec8d4b88ea97f5146dc79, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 0}
-  - key: {fileID: -3297662928589367701, guid: 38647f1c1cbec8d4b88ea97f5146dc79, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 0}
-  - key: {fileID: -325868605209045193, guid: 38647f1c1cbec8d4b88ea97f5146dc79, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 0}
   - key: {fileID: 7277982876753197874, guid: 38647f1c1cbec8d4b88ea97f5146dc79, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 8742966361955600162, guid: 80a0fc7760e53384d9c65525b76dd3ae, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 1079936769734049719, guid: 80a0fc7760e53384d9c65525b76dd3ae, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 5092619499124126437, guid: 80a0fc7760e53384d9c65525b76dd3ae, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 8177538153492325765, guid: 80a0fc7760e53384d9c65525b76dd3ae, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 5592656828042800930, guid: 80a0fc7760e53384d9c65525b76dd3ae, type: 2}
     value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
@@ -2009,6 +2019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f32c0644fde084747b3dbe6376d6caa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stageNum: 2
   bossObj: {fileID: 1839213464}
   defaultHp: 100
   hpBar: {fileID: 1199519290}
@@ -2036,6 +2047,7 @@ MonoBehaviour:
   - {fileID: 1069998716}
   - {fileID: 101278479}
   - {fileID: 598661665}
+  bossClone: []
 --- !u!114 &184548119
 MonoBehaviour:
   m_ObjectHideFlags: 0

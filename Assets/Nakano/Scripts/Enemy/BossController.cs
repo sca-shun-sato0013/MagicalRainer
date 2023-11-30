@@ -7,6 +7,8 @@ using UnityEngine.Timeline;
 
 public class BossController : MonoBehaviour
 {
+    [SerializeField] int stageNum;
+
     [SerializeField] GameObject bossObj;
 
     [SerializeField, Header("初期HP")] float defaultHp;
@@ -44,7 +46,7 @@ public class BossController : MonoBehaviour
     [SerializeField] GameObject[] wave;
 
     //Stage1用
-    
+    [SerializeField, Header("ボスの分身")] GameObject[] bossClone;
 
     //Stage2用
     int wave4AttackCount = 1;
@@ -63,6 +65,14 @@ public class BossController : MonoBehaviour
         wave[1].SetActive(false);
         wave[2].SetActive(false);
         wave[3].SetActive(false);
+
+        if(stageNum == 1)
+        {
+            foreach (var b in bossClone)
+            {
+                b.SetActive(false);
+            }
+        }
     }
 
     void Update()
@@ -78,7 +88,12 @@ public class BossController : MonoBehaviour
         //Debug
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            hp -= 10;
+            hp -= 200;
+        }
+
+        if(Input.GetKeyDown(KeyCode.Return))
+        {
+            AnimationReplay();
         }
 
         //HPが一定以下になったら初期位置に戻る
@@ -121,7 +136,17 @@ public class BossController : MonoBehaviour
                 bossObj.transform.localPosition = pos;
             }
 
-            else { bossObj.transform.localPosition = p.transform.localPosition; SetBossBinding(); isPosIni = false; }
+            else 
+            {
+                bossObj.transform.localPosition = p.transform.localPosition;
+                SetBossBinding(); 
+                isPosIni = false;
+
+                if (stageNum == 1 && currentTrackIndex == 5)
+                {
+                    BossClone();
+                }
+            }
         }
     }
 
@@ -129,9 +154,9 @@ public class BossController : MonoBehaviour
     IEnumerator BossReach()
     {
         //WAVEが全て終わったら
-        //yield return new WaitUntil(() => waveController.WaveCompleted);
+        yield return new WaitUntil(() => waveController.WaveCompleted);
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
 
         //登場
         TimelineAsset timelineAsset = director.playableAsset as TimelineAsset;
@@ -198,6 +223,7 @@ public class BossController : MonoBehaviour
     {
         if(currentTrackIndex <= 5)
         {
+            director.Stop();
             director.Play();
         }
     }
@@ -241,6 +267,25 @@ public class BossController : MonoBehaviour
         // 新しいTrackのBindingにカメラを設定
         director.SetGenericBinding(timelineAsset.GetOutputTrack(currentTrackIndex), bossObj);
         // CinemachineTrackの状態をリセット
+        director.Stop();
+        director.Play();
+    }
+
+    //Stage1 Boss Wave4 ボス分身
+    void BossClone()
+    {
+        foreach (var b in bossClone)
+        {
+            b.SetActive(true);
+        }
+
+        TimelineAsset timelineAsset = director.playableAsset as TimelineAsset;
+
+        for (int i = 0; i < bossClone.Length; i++)
+        {
+            director.SetGenericBinding(timelineAsset.GetOutputTrack(i + 6), bossClone[i]);
+        }
+
         director.Stop();
         director.Play();
     }

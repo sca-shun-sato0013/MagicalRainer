@@ -35,15 +35,9 @@ public class WaveController : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if(currentWaveIndex >= waveObject.Length) { waveCompleted = true; }
-        else { waveCompleted = false; }
-    }
-
     public void PlayNextWave()
     {
-        if(!waveCompleted)
+        if(currentWaveIndex < waveObject.Length)
         {
             mainGameController.WaveDirection(); //WAVEˆÚs‰‰oÄ¶
 
@@ -57,6 +51,7 @@ public class WaveController : MonoBehaviour
         else
         {
             Debug.Log("All waves completed!");
+            waveCompleted = true;
         }
     }
 }
