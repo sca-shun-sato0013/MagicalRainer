@@ -20,7 +20,6 @@ public class FadeInSample : MonoBehaviour
 
         if(fade.FadeInEnd)
         {
-            Debug.Log("ƒQ[ƒ€ŠJn");
         }
     }
 }
