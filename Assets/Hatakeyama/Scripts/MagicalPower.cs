@@ -24,7 +24,7 @@ public class MagicalPower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distance = Mathf.Abs(Vector3.Magnitude(transform.position - player.transform.position-playerHight));
+        if(player!=null) distance = Mathf.Abs(Vector3.Magnitude(transform.position - player.transform.position-playerHight));
         if (distance <= vacuumR)
         {
             transform.Translate(Vector3.Normalize(player.transform.position - (transform.position-playerHight)) * speed * Time.deltaTime);
