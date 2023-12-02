@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6484363038853776950}
   - component: {fileID: 7231667051806239982}
   - component: {fileID: 7902763008915342947}
+  - component: {fileID: 921477764669621234}
   m_Layer: 0
   m_Name: Spine GameObject (mine character 1 spine)
   m_TagString: Player
@@ -142,3 +143,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 500
+  invisibleTime: 1
+--- !u!222 &921477764669621234
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8250880843757860378}
+  m_CullTransparentMesh: 1

@@ -10,8 +10,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Image SPGauge;
     [SerializeField] private Text SPText;
     [SerializeField] private int maxHP;
-    private int hp;
-    private int sp;
+    public static int HP;
+    private float tmpHP;
+    private int SP;
     public static int skillGaugePoint;
 
     [SerializeField] private int [] setSkillsNumber=new int[4];
@@ -21,8 +22,9 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hp = maxHP;
-        sp = 0;
+        HP = maxHP;
+        tmpHP=HP;
+        SP = 0;
         skillGaugePoint = 0;
         for(int i = 0; i < 4; ++i)
         {
@@ -33,20 +35,19 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HPGauge.fillAmount = (float)hp / maxHP;
-        //sp = (int)(skillGaugePoint / 100.0f);
-        SPText.text = sp + "/10";
-        if (sp < 10)
+        HPGauge.fillAmount = tmpHP / maxHP;
+        SPText.text = SP + "/10";
+        if (SP < 10)
         {
             if (SPGauge.fillAmount < (float)skillGaugePoint / 100)
             {
-                SPGauge.fillAmount += 0.01f;
+                SPGauge.fillAmount += Time.deltaTime;
             }
             if (SPGauge.fillAmount >= 1.0f)
             {
-                skillGaugePoint = 0;
+                skillGaugePoint -= 100;
                 SPGauge.fillAmount = 0;
-                sp += 1;
+                SP += 1;
             }
             if (Input.GetKeyDown(KeyCode.RightShift))
             {
@@ -58,7 +59,16 @@ public class UIManager : MonoBehaviour
             SPGauge.fillAmount = 1;
         }
 
-        if (sp >= 4)
+        if (tmpHP > HP)
+        {
+            tmpHP-=maxHP/10*Time.deltaTime;
+        }
+        else
+        {
+            tmpHP=HP;
+        }
+
+        if (SP >= 4)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             skillOne();
@@ -88,21 +98,21 @@ public class UIManager : MonoBehaviour
 
     void skillOne()
     {
-        sp-=4;
+        SP-=4;
     }
 
     void skillTow()
     {
-        sp-=4;
+        SP-=4;
     }
 
     void skillThree()
     {
-        sp-=4;
+        SP-=4;
     }
 
     void skillFour()
     {
-        sp-=4;
+        SP-=4;
     }
 }
