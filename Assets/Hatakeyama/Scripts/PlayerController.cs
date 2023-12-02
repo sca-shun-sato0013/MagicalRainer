@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public static bool playStartFlag;
     public static bool damageFlag;
     private float waitDethEffect = 1.0f;
+    [SerializeField] private float invisibleTime;
 
     public static Vector3 pos;
     // Start is called before the first frame update
@@ -45,10 +46,13 @@ public class PlayerController : MonoBehaviour
                 {
                     isNewGame = false;
                     PlayerMove();
-                    if(Input.GetKey(KeyCode.LeftShift)) 
-                    if (Input.GetKeyDown(KeyCode.Return))
+                    if (!damageFlag)
                     {
-                        damageFlag = true;
+                        if (Input.GetKeyDown(KeyCode.LeftShift))
+                        {
+                            UIManager.HP -= 10;
+                            StartCoroutine(Invisible());
+                        }
                     }
                 }
                 break;
@@ -58,15 +62,8 @@ public class PlayerController : MonoBehaviour
                     waitDethEffect -= Time.deltaTime;
                     if (waitDethEffect<=0)
                     {
-                        isPlayerBroken = true;
                         Destroy(gameObject);
                     }
-                }
-                break;
-
-            case GameStat.REPOP:
-                {
-
                 }
                 break;
         }
@@ -97,10 +94,17 @@ public class PlayerController : MonoBehaviour
             pPos.x += moveSpeed * Time.deltaTime;
             anim.AnimationName = "move right";
         }
-        if (!Input.anyKey)
+        if (!Input.anyKey||(Input.GetKey(KeyCode.A)&&Input.GetKey(KeyCode.D)))
         {
             anim.AnimationName = "nomaol";
         }
     }
 
+    IEnumerator Invisible()
+    {
+        Debug.Log("–³“G");
+        damageFlag=true;
+        yield return new WaitForSeconds(invisibleTime);
+        damageFlag=false;
+    }
 }

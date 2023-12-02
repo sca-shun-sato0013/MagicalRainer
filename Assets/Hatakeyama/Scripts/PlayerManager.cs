@@ -11,7 +11,7 @@ public class PlayerManager : MonoBehaviour
         START = 0,
         PLAY,
         DETH,
-        REPOP
+        //REPOP
     }
     [SerializeField]private GameObject Player;
     public static GameStat game_stat;
@@ -39,7 +39,7 @@ public class PlayerManager : MonoBehaviour
         {
             game_stat = GameStat.PLAY;
         }
-        if (PlayerController.damageFlag)
+        if (UIManager.HP<=0)
         {
             game_stat = GameStat.DETH;
         }

@@ -5,7 +5,8 @@ using static PlayerManager;
 
 public class BulletManager : MonoBehaviour
 {
-    [SerializeField,Range(1,2)] private int player;
+    [SerializeField]
+    private bool isPlayerOne;
     public int onePushCount;
     public float longPushTime;
     [SerializeField] private float interval;
