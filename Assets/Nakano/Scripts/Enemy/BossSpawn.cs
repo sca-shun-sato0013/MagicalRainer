@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// Stage1 Boss WAVE3 É{ÉXÇÃèuä‘à⁄ìÆ
+/// </summary>
 public class BossSpawn : MonoBehaviour
 {
     [SerializeField] Vector3[] bossSpawnPos;

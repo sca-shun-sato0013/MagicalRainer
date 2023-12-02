@@ -45,6 +45,10 @@ public class BossController : MonoBehaviour
 
     [SerializeField] GameObject[] wave;
 
+    [SerializeField, Header("ボス タイムライン数")] int timelineNum = 5;
+
+    bool toWave1 = false, toWave2 = false, toWave3 = false, toWave4 = false; //残HP以外のWAVE移行条件用 条件達成時にtrueにしてWave移行する
+
     //Stage1用
     [SerializeField, Header("ボスの分身")] GameObject[] bossClone;
 
@@ -78,15 +82,10 @@ public class BossController : MonoBehaviour
     void Update()
     {
         HpDirection();
-
-        if (screenInitialize)
-        {
-            ScreenInitialize();
-            screenInitialize = false;
-        }
+        ScreenInitialize();
 
         //Debug
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             hp -= 200;
         }
@@ -129,11 +128,9 @@ public class BossController : MonoBehaviour
             if(Vector3.Distance(bossObj.transform.localPosition, p.transform.localPosition) > 1)
             {
                 Vector3 dir = (p.transform.localPosition - bossObj.transform.localPosition).normalized;
+                dir.z = 0;
 
-                Vector3 pos = bossObj.transform.localPosition;
-                pos.x += dir.x;
-                pos.y += dir.y;
-                bossObj.transform.localPosition = pos;
+                bossObj.transform.Translate(dir * moveSpeed * Time.deltaTime);
             }
 
             else 
@@ -142,6 +139,7 @@ public class BossController : MonoBehaviour
                 SetBossBinding(); 
                 isPosIni = false;
 
+                //Stage1 Boss Wave4
                 if (stageNum == 1 && currentTrackIndex == 5)
                 {
                     BossClone();
@@ -221,8 +219,23 @@ public class BossController : MonoBehaviour
     //現在のWAVEが終了したら繰り返す Signalで呼び出し
     public void AnimationReplay()
     {
-        if(currentTrackIndex <= 5)
+        if(currentTrackIndex <= timelineNum)
         {
+            director.Stop();
+            director.Play();
+        }
+
+        //Stage1 Boss Wave4 ボスの分身が移動完了したらそれ以降動かなくなる(弾は発射する)
+        if(stageNum == 1 && currentTrackIndex == 5)
+        {
+            TimelineAsset timelineAsset = director.playableAsset as TimelineAsset;
+
+            for (int i = 0; i < bossClone.Length; i++)
+            {
+                director.ClearGenericBinding(timelineAsset.GetOutputTrack(i + 6));
+                director.SetGenericBinding(timelineAsset.GetOutputTrack(i + 6 + bossClone.Length), bossClone[i]);
+            }
+
             director.Stop();
             director.Play();
         }
@@ -238,16 +251,20 @@ public class BossController : MonoBehaviour
     //画面から弾を全削除 
     void ScreenInitialize()
     {
-        GameObject[] bullets = GameObject.FindGameObjectsWithTag("Bullets");
-        foreach (var b in bullets)
+        if (screenInitialize)
         {
-            Destroy(b);
-        }
+            GameObject[] bullets = GameObject.FindGameObjectsWithTag("Bullets");
+            foreach (var b in bullets)
+            {
+                Destroy(b);
+            }
 
-        GameObject[] bigBullets = GameObject.FindGameObjectsWithTag("BigBullets");
-        foreach (var b in bigBullets)
-        {
-            Destroy(b);
+            GameObject[] bigBullets = GameObject.FindGameObjectsWithTag("BigBullets");
+            foreach (var b in bigBullets)
+            {
+                Destroy(b);
+            }
+            screenInitialize = false;
         }
     }
 
@@ -259,7 +276,7 @@ public class BossController : MonoBehaviour
         // 現在カメラが設定されているTrackのBindingをリセット
         director.ClearGenericBinding(timelineAsset.GetOutputTrack(currentTrackIndex));
 
-        if(currentTrackIndex < 5)
+        if(currentTrackIndex < timelineNum)
         {
             currentTrackIndex++;
         }

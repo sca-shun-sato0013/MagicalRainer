@@ -43,15 +43,22 @@ public class WaveController : MonoBehaviour
 
             //playableDirector.playableAsset = waveTimelines[currentWaveIndex];
             
-            //Ÿ‚ÌWAVE‚ÉˆÚs
-            playableDirector = waveObject[currentWaveIndex].GetComponent<PlayableDirector>();
-            playableDirector.Play();
-            currentWaveIndex++;
+            StartCoroutine(WaveChange());
         }
         else
         {
             Debug.Log("All waves completed!");
             waveCompleted = true;
         }
+    }
+
+    IEnumerator WaveChange()
+    {
+        yield return new WaitUntil(() => mainGameController.WaveDirectionEnd);
+
+        //Ÿ‚ÌWAVE‚ÉˆÚs
+        playableDirector = waveObject[currentWaveIndex].GetComponent<PlayableDirector>();
+        playableDirector.Play();
+        currentWaveIndex++;
     }
 }
