@@ -40,6 +40,7 @@ public class BossSpawn : MonoBehaviour
     {
         if (bossController.BossWaveNum == 3)
         {
+            bossController.BubbleCount++;
             for (int i = 0; i < bulletsObj.Length; i++)
             {
                 BubblesPos b = pos[i];

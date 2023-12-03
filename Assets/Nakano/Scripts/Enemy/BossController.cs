@@ -7,6 +7,8 @@ using UnityEngine.Timeline;
 
 public class BossController : MonoBehaviour
 {
+    [SerializeField] MainGameController mainGameController;
+
     [SerializeField] int stageNum;
 
     [SerializeField] GameObject bossObj;
@@ -16,8 +18,9 @@ public class BossController : MonoBehaviour
     float hpRatio = 1;
 
     [SerializeField, Header("HPバーの中身")] Image hpBar;
+    [SerializeField, Header("BossのUI")] GameObject bossUI;
     [SerializeField, Header("BossのUI")] Animator bossUIAnim;
-    [SerializeField, Header("HP減少時の減少スピード")] float decreaseSpeed;
+    [SerializeField, Header("HP減少時の減少時間"), Tooltip("(decreaseTime)秒でHPが減少し終わる")] float decreaseTime;
 
     [SerializeField] Sprite[] hpBars;
 
@@ -47,15 +50,28 @@ public class BossController : MonoBehaviour
 
     [SerializeField, Header("ボス タイムライン数")] int timelineNum = 5;
 
-    bool toWave1 = false, toWave2 = false, toWave3 = false, toWave4 = false; //残HP以外のWAVE移行条件用 条件達成時にtrueにしてWave移行する
+    bool toWave2 = false, toWave3 = false, toWave4 = false; //残HP以外のWAVE移行条件用 条件達成時にtrueにしてWave移行する
 
     //Stage1用
     [SerializeField, Header("ボスの分身")] GameObject[] bossClone;
+    float wave2Time = 0; //Wave2 時間計測
+    int wave3Count = 0; //Wave3 攻撃回数計測
+    public int BubbleCount { get { return wave3Count; } set { wave3Count= value; } }
+
+    [SerializeField, Tooltip("ボスのHPが全体の(cloneDestroyHP)%減少したとき分身が一体消える")] float cloneDestroyHP;
+    float wave4NowHP = 0;
+    int wave4CloneDestroyCount = 0;
 
     //Stage2用
     int wave4AttackCount = 1;
 
     public int BossWaveNum { get { return currentTrackIndex - 1; } }
+
+    public float BossHP
+    {
+        get { return hp; }
+        set { hp = value; }
+    }
 
     void Start()
     {
@@ -70,13 +86,7 @@ public class BossController : MonoBehaviour
         wave[2].SetActive(false);
         wave[3].SetActive(false);
 
-        if(stageNum == 1)
-        {
-            foreach (var b in bossClone)
-            {
-                b.SetActive(false);
-            }
-        }
+        BossCondition();
     }
 
     void Update()
@@ -84,15 +94,13 @@ public class BossController : MonoBehaviour
         HpDirection();
         ScreenInitialize();
 
+        Stage1WaveChange();
+        //Stage1のHP以外のWAVE移行条件判定用 他ステージでもHP以外のWAVE移行条件を加える場合、switch文で纏めるのが良いかも
+
         //Debug
         if (Input.GetKeyDown(KeyCode.Space))
         {
             hp -= 200;
-        }
-
-        if(Input.GetKeyDown(KeyCode.Return))
-        {
-            AnimationReplay();
         }
 
         //HPが一定以下になったら初期位置に戻る
@@ -117,9 +125,6 @@ public class BossController : MonoBehaviour
                 case 4:
                     p = pos[3];
                     break;
-                case 5:
-                    p = pos[3];
-                    break;
                 default:
                     p = pos[0];
                     break;
@@ -140,7 +145,7 @@ public class BossController : MonoBehaviour
                 isPosIni = false;
 
                 //Stage1 Boss Wave4
-                if (stageNum == 1 && currentTrackIndex == 5)
+                if (stageNum == 1 && currentTrackIndex == 5 && hp > 0)
                 {
                     BossClone();
                 }
@@ -174,45 +179,50 @@ public class BossController : MonoBehaviour
         SetBossBinding();
     }
 
-    //HP関連
+    //HP描画 HPに応じたWAVE移行
     void HpDirection()
     {
+        //HP減少描画
         hpRatio = hp / defaultHp;
-        if(hpBar.fillAmount > hpRatio) { hpBar.fillAmount -= decreaseSpeed * Time.deltaTime; }
+        if(hpBar.fillAmount > hpRatio) { hpBar.fillAmount -= (hpBar.fillAmount - hpRatio) / decreaseTime * Time.deltaTime; }
         else { hpBar.fillAmount = hpRatio; }
 
+        //HPに応じて画像変更
         if(hpRatio >= 2.0f / 3.0f) { hpBar.sprite = hpBars[0]; }
         else if (hpRatio >= 1.0f / 3.0f && hpRatio < 2.0f / 3.0f) { hpBar.sprite = hpBars[1]; }
         else if(hpRatio < 1.0f / 3.0f) { hpBar.sprite = hpBars[2]; }
 
-        //残りHpに応じてWAVE変更
-        if (hpRatio <= hpLimit[0] && !wave2)
+        //残りHpに応じてWAVE変更 wave2やwave3などのフラグはWaveChange()を一度だけ呼び出すためのもの
+        if (hpRatio <= hpLimit[0] && !wave2 && toWave2)
         {
             wave2 = true;
             wave[1].SetActive(true);
             wave[0].SetActive(false);
             WaveChange(); 
         }
-        else if (hpRatio <= hpLimit[1] && !wave3) 
+        else if (hpRatio <= hpLimit[1] && !wave3 && toWave3) 
         { 
             wave3 = true; 
             wave[2].SetActive(true);
             wave[1].SetActive(false); 
             WaveChange();
         }
-        else if (hpRatio <= hpLimit[2] && !wave4) 
+        else if (hpRatio <= hpLimit[2] && !wave4 && toWave4) 
         { 
             wave4 = true;
             wave[3].SetActive(true);
             wave[2].SetActive(false);
-            WaveChange(); 
+            WaveChange();
+
+            if(stageNum == 1) { wave4NowHP = hp; }
         }
         else if (hp <= 0 && !end) 
         { 
             hp = 0; 
             end = true;
             wave[3].SetActive(false);
-            WaveChange(); 
+            WaveChange();
+            StartCoroutine(ClearDirection());
         }
     }
 
@@ -288,6 +298,53 @@ public class BossController : MonoBehaviour
         director.Play();
     }
 
+    IEnumerator ClearDirection()
+    {
+        //爆破エフェクト表示　Particle
+
+        yield return new WaitForSeconds(1);
+
+        //ボス非表示
+        bossObj.SetActive(false);
+        
+        foreach(var b in bossClone)
+        {
+            b.SetActive(false);
+        }
+
+        yield return new WaitForSeconds(1);
+
+        //HPゲージ非表示
+        bossUI.SetActive(false);
+
+        yield return new WaitForSeconds(1);
+
+        mainGameController.GameClearDirection();
+    }
+
+    //Stage毎に初期化するもの WAVE移行条件の初期化
+    void BossCondition()
+    {
+        if (stageNum == 1)
+        {
+            foreach (var b in bossClone)
+            {
+                b.SetActive(false);
+            }
+
+            toWave2 = true;
+            toWave3 = false;
+            toWave4 = false;
+        }
+
+        if (stageNum == 2)
+        {
+            toWave2 = true;
+            toWave3 = true;
+            toWave4 = true;
+        }
+    }
+
     //Stage1 Boss Wave4 ボス分身
     void BossClone()
     {
@@ -305,6 +362,38 @@ public class BossController : MonoBehaviour
 
         director.Stop();
         director.Play();
+    }
+
+    void Stage1WaveChange()
+    {
+        if(stageNum == 1)
+        {
+            if(currentTrackIndex == 3)
+            {
+                wave2Time += Time.deltaTime;
+
+                if(wave2Time >= 30) { toWave3 = true; }
+            }
+
+            if(currentTrackIndex == 4)
+            {
+                if(wave3Count >= 4)
+                {
+                    toWave4 = true;
+                }
+            }
+
+            if(currentTrackIndex == 5)
+            {
+                if(wave4NowHP - hp >= cloneDestroyHP / 100 * defaultHp)
+                {
+                    //消失演出を再生
+                    bossClone[bossClone.Length - wave4CloneDestroyCount - 1].SetActive(false);
+                    wave4CloneDestroyCount++;
+                    wave4NowHP = hp;
+                }
+            }
+        }
     }
 
     //Stage2 Boss Wave4 HP減少 Signalで呼び出し
