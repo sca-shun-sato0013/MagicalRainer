@@ -1554,7 +1554,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &386772425
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1590,16 +1590,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e88988001c523194b991386e864625b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveTimelines:
-  - {fileID: 11400000, guid: 0b0f9a5106107d84b8a95384470972cd, type: 2}
-  - {fileID: 11400000, guid: 9f1b0c1f1c0b0c246a4b194329f50d95, type: 2}
-  - {fileID: 11400000, guid: 06dd2356ac5c6c54aa2709f7006219c3, type: 2}
-  - {fileID: 11400000, guid: a87ccac2b0dc2c44bb9f7195ad98775a, type: 2}
   waveObject:
   - {fileID: 591684215}
   - {fileID: 364248977}
   - {fileID: 1087334355}
   - {fileID: 1048316415}
+  mainGameController: {fileID: 0}
 --- !u!1 &399714163
 GameObject:
   m_ObjectHideFlags: 0
@@ -7628,7 +7624,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1774805709
 RectTransform:
   m_ObjectHideFlags: 0

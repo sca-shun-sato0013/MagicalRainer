@@ -20,7 +20,7 @@ public class BossController : MonoBehaviour
     [SerializeField, Header("HPバーの中身")] Image hpBar;
     [SerializeField, Header("BossのUI")] GameObject bossUI;
     [SerializeField, Header("BossのUI")] Animator bossUIAnim;
-    [SerializeField, Header("HP減少時の減少時間"), Tooltip("(decreaseTime)秒でHPが減少し終わる")] float decreaseTime;
+    [SerializeField, Header("HP減少時の減少完了までの時間"), Tooltip("(decreaseTime)秒でHPが減少し終わる")] float decreaseTime = 0.2f;
 
     [SerializeField] Sprite[] hpBars;
 
@@ -54,6 +54,7 @@ public class BossController : MonoBehaviour
 
     //Stage1用
     [SerializeField, Header("ボスの分身")] GameObject[] bossClone;
+    [SerializeField, Header("鏡")] Animator mirror;
     float wave2Time = 0; //Wave2 時間計測
     int wave3Count = 0; //Wave3 攻撃回数計測
     public int BubbleCount { get { return wave3Count; } set { wave3Count= value; } }
@@ -132,6 +133,21 @@ public class BossController : MonoBehaviour
 
             if(Vector3.Distance(bossObj.transform.localPosition, p.transform.localPosition) > 1)
             {
+                if (stageNum == 1 && currentTrackIndex == 1 && mirror != null)
+                {
+                    if (mirror.GetCurrentAnimatorStateInfo(0).IsName("Mirror_Defalut"))
+                    {
+                        mirror.SetTrigger("In");
+                    }
+                }
+                if (stageNum == 1 && currentTrackIndex == 2 && mirror != null)
+                {
+                    if (mirror.GetCurrentAnimatorStateInfo(0).IsName("Mirror_In"))
+                    {
+                        mirror.SetTrigger("Out");
+                    }
+                }
+
                 Vector3 dir = (p.transform.localPosition - bossObj.transform.localPosition).normalized;
                 dir.z = 0;
 
@@ -141,7 +157,11 @@ public class BossController : MonoBehaviour
             else 
             {
                 bossObj.transform.localPosition = p.transform.localPosition;
-                SetBossBinding(); 
+                //SetBossBinding(); 
+
+                mainGameController.WaveDirection(false, currentTrackIndex); //WAVE移行演出再生
+                StartCoroutine(WaveChangeDirection(currentTrackIndex));
+
                 isPosIni = false;
 
                 //Stage1 Boss Wave4
@@ -176,7 +196,10 @@ public class BossController : MonoBehaviour
 
         yield return new  WaitForSeconds(entryTime);
 
-        SetBossBinding();
+        yield return new WaitUntil(() => mainGameController.WaveDirectionEnd);
+
+        //SetBossBinding();
+        WaveChange();
     }
 
     //HP描画 HPに応じたWAVE移行
@@ -196,22 +219,22 @@ public class BossController : MonoBehaviour
         if (hpRatio <= hpLimit[0] && !wave2 && toWave2)
         {
             wave2 = true;
-            wave[1].SetActive(true);
-            wave[0].SetActive(false);
+            //wave[1].SetActive(true);
+            //wave[0].SetActive(false);
             WaveChange(); 
         }
         else if (hpRatio <= hpLimit[1] && !wave3 && toWave3) 
         { 
             wave3 = true; 
-            wave[2].SetActive(true);
-            wave[1].SetActive(false); 
+            //wave[2].SetActive(true);
+            //wave[1].SetActive(false); 
             WaveChange();
         }
         else if (hpRatio <= hpLimit[2] && !wave4 && toWave4) 
         { 
             wave4 = true;
-            wave[3].SetActive(true);
-            wave[2].SetActive(false);
+            //wave[3].SetActive(true);
+            //wave[2].SetActive(false);
             WaveChange();
 
             if(stageNum == 1) { wave4NowHP = hp; }
@@ -220,7 +243,7 @@ public class BossController : MonoBehaviour
         { 
             hp = 0; 
             end = true;
-            wave[3].SetActive(false);
+            //wave[3].SetActive(false);
             WaveChange();
             StartCoroutine(ClearDirection());
         }
@@ -298,6 +321,18 @@ public class BossController : MonoBehaviour
         director.Play();
     }
 
+    //WAVE移行演出が終わってから敵が動く
+    IEnumerator WaveChangeDirection(int waveObjNum)
+    {
+        if (waveObjNum > 1) wave[waveObjNum - 2].SetActive(false);
+
+        yield return new WaitUntil(() => mainGameController.WaveDirectionEnd);
+
+        wave[waveObjNum - 1].SetActive(true);
+
+        SetBossBinding();
+    }
+
     IEnumerator ClearDirection()
     {
         //爆破エフェクト表示　Particle
@@ -368,11 +403,11 @@ public class BossController : MonoBehaviour
     {
         if(stageNum == 1)
         {
-            if(currentTrackIndex == 3)
+            if (currentTrackIndex == 3)
             {
                 wave2Time += Time.deltaTime;
 
-                if(wave2Time >= 30) { toWave3 = true; }
+                if(wave2Time >= 20) { toWave3 = true; }
             }
 
             if(currentTrackIndex == 4)
