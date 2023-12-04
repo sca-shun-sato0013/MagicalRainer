@@ -39,7 +39,7 @@ public class ColumnBulletCreate : MonoBehaviour
         rt = GetComponent<RectTransform>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         pos = tc.PositionChange(rt, canvas);
 

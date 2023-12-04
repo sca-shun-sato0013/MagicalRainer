@@ -1516,7 +1516,6 @@ GameObject:
   - component: {fileID: 424956552}
   - component: {fileID: 424956551}
   - component: {fileID: 424956549}
-  - component: {fileID: 424956550}
   m_Layer: 5
   m_Name: Image_Enemy1
   m_TagString: Untagged
@@ -1545,21 +1544,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &424956550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 424956548}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals: []
-    m_Events: []
 --- !u!114 &424956551
 MonoBehaviour:
   m_ObjectHideFlags: 0

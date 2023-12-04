@@ -57,24 +57,24 @@ public class MainGameController : MonoBehaviour
     {
     }
 
-    public void WaveDirection()
+    public void WaveDirection(bool bgScroll, int WaveNumber)
     {
         waveDirectionEnd = false;
-        waveDirectionText.text = "WAVE" + (waveController.WaveNum).ToString();
+        waveDirectionText.text = "WAVE" + (WaveNumber).ToString();
 
         //「WAVE」のテキストを画面内へ
         waveDirection.SetTrigger("In");
 
-        StartCoroutine(WaveWait());
+        StartCoroutine(WaveWait(bgScroll));
     }
 
-    IEnumerator WaveWait()
+    IEnumerator WaveWait(bool bgScroll)
     {
         //「WAVE」のテキストが中央にくるまで待つ
         yield return new WaitUntil(() => waveDirection.GetCurrentAnimatorStateInfo(0).IsName("WaveDirection_Center"));
 
         //背景移動
-        if (waveController.WaveNum != 1)
+        if (waveController.WaveNum != 1 && bgScroll)
         {
             bg1.MoveTime = 2;
             bg1.MoveDistance = -70;

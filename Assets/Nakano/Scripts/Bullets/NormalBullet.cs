@@ -16,7 +16,7 @@ public class NormalBullet : MonoBehaviour
 
     [HideInInspector] public int num = 0;
 
-    bool isAim = false;
+    public bool isAim = false;
     GameObject player;
     Vector3 playerPos;
     Vector3 bulletPos;

@@ -39,7 +39,7 @@ public class WaveController : MonoBehaviour
     {
         if(currentWaveIndex < waveObject.Length)
         {
-            mainGameController.WaveDirection(); //WAVE移行演出再生
+            mainGameController.WaveDirection(true, WaveNum); //WAVE移行演出再生
 
             //playableDirector.playableAsset = waveTimelines[currentWaveIndex];
             
