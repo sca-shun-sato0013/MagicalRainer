@@ -64,6 +64,7 @@ public class HorizonFade : MonoBehaviour
             isFadeIn = false;
             
             fadeOutEnd = true;
+            fadeOutCount = 0;
         }
     }
 
@@ -78,9 +79,11 @@ public class HorizonFade : MonoBehaviour
             rt.localPosition = new Vector3(0, 0, 0);
             isFadeIn = false;
             isFadeOut = false;
-            this.gameObject.SetActive(false);
 
             fadeInEnd = true;
+            fadeInCount = 0;
+
+            this.gameObject.SetActive(false);
         }
     }
 
@@ -102,7 +105,6 @@ public class HorizonFade : MonoBehaviour
     public void FadeInStart()
     {
         this.gameObject.SetActive(true);
-
         if (fadeInCount == 0)
         {
             rt.localPosition = new Vector3(-2000, 0, 0);

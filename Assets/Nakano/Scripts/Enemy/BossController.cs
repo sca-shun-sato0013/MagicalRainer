@@ -191,7 +191,7 @@ public class BossController : MonoBehaviour
         //ボスのUI登場
         bossUIAnim.SetBool("Entry", true);
 
-        //ここらへんにストーリー
+        //ここらへんにストーリー追加？
 
         yield return new  WaitForSeconds(entryTime);
 
