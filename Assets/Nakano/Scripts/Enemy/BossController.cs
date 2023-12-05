@@ -65,6 +65,7 @@ public class BossController : MonoBehaviour
 
     //Stage2用
     int wave4AttackCount = 1;
+    [SerializeField] Animator scarDirection;
 
     public int BossWaveNum { get { return currentTrackIndex - 1; } }
 
@@ -107,6 +108,8 @@ public class BossController : MonoBehaviour
         //HPが一定以下になったら初期位置に戻る
         if (isPosIni)
         {
+            if (currentTrackIndex > 1) wave[currentTrackIndex - 2].SetActive(false);
+
             director.Stop();
             TimelineAsset timelineAsset = director.playableAsset as TimelineAsset;
             director.ClearGenericBinding(timelineAsset.GetOutputTrack(currentTrackIndex));
@@ -157,18 +160,14 @@ public class BossController : MonoBehaviour
             else 
             {
                 bossObj.transform.localPosition = p.transform.localPosition;
-                //SetBossBinding(); 
 
-                mainGameController.WaveDirection(false, currentTrackIndex); //WAVE移行演出再生
-                StartCoroutine(WaveChangeDirection(currentTrackIndex));
+                if(currentTrackIndex <= 4)
+                {
+                    mainGameController.WaveDirection(false, currentTrackIndex); //WAVE移行演出再生
+                    StartCoroutine(WaveChangeDirection(currentTrackIndex));
+                }
 
                 isPosIni = false;
-
-                //Stage1 Boss Wave4
-                if (stageNum == 1 && currentTrackIndex == 5 && hp > 0)
-                {
-                    BossClone();
-                }
             }
         }
     }
@@ -219,22 +218,16 @@ public class BossController : MonoBehaviour
         if (hpRatio <= hpLimit[0] && !wave2 && toWave2)
         {
             wave2 = true;
-            //wave[1].SetActive(true);
-            //wave[0].SetActive(false);
             WaveChange(); 
         }
         else if (hpRatio <= hpLimit[1] && !wave3 && toWave3) 
         { 
             wave3 = true; 
-            //wave[2].SetActive(true);
-            //wave[1].SetActive(false); 
             WaveChange();
         }
         else if (hpRatio <= hpLimit[2] && !wave4 && toWave4) 
         { 
             wave4 = true;
-            //wave[3].SetActive(true);
-            //wave[2].SetActive(false);
             WaveChange();
 
             if(stageNum == 1) { wave4NowHP = hp; }
@@ -243,7 +236,6 @@ public class BossController : MonoBehaviour
         { 
             hp = 0; 
             end = true;
-            //wave[3].SetActive(false);
             WaveChange();
             StartCoroutine(ClearDirection());
         }
@@ -327,6 +319,12 @@ public class BossController : MonoBehaviour
         if (waveObjNum > 1) wave[waveObjNum - 2].SetActive(false);
 
         yield return new WaitUntil(() => mainGameController.WaveDirectionEnd);
+
+        //Stage1 Boss Wave4
+        if (stageNum == 1 && currentTrackIndex == 4 && hp > 0)
+        {
+            BossClone();
+        }
 
         wave[waveObjNum - 1].SetActive(true);
 
@@ -423,7 +421,7 @@ public class BossController : MonoBehaviour
                 if(wave4NowHP - hp >= cloneDestroyHP / 100 * defaultHp)
                 {
                     //消失演出を再生
-                    bossClone[bossClone.Length - wave4CloneDestroyCount - 1].SetActive(false);
+                    if(bossClone.Length - wave4CloneDestroyCount - 1 >= 0) bossClone[bossClone.Length - wave4CloneDestroyCount - 1].SetActive(false);
                     wave4CloneDestroyCount++;
                     wave4NowHP = hp;
                 }
@@ -431,10 +429,19 @@ public class BossController : MonoBehaviour
         }
     }
 
+    //ひっかき傷のエフェクト表示 Signal
+    public void ScarDirection()
+    {
+        if(currentTrackIndex == 3)
+        {
+            scarDirection.SetTrigger("Scar");
+        }
+    }
+
     //Stage2 Boss Wave4 HP減少 Signalで呼び出し
     public void Stage2_Wave4()
     {
-        if(currentTrackIndex == 5)
+        if(stageNum == 2 && currentTrackIndex == 5)
         {
             //if(wave4AttackCount == 5)
             //{
