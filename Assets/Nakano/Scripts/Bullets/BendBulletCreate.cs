@@ -70,6 +70,11 @@ public class BendBulletCreate : MonoBehaviour
             bendBullet.targetAjust = new Vector2(targetAjust.x * -1, targetAjust.y);
             isReverse = false;
         }
+        else
+        {
+            bendBullet.relayAjust = new Vector2(relayAjust.x, relayAjust.y);
+            bendBullet.targetAjust = new Vector2(targetAjust.x, targetAjust.y);
+        }
 
         pos = tc.PositionChange(rt, canvas);
 
