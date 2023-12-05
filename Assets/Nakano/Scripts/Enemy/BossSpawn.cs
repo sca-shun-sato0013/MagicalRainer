@@ -33,7 +33,6 @@ public class BossSpawn : MonoBehaviour
             int n = Random.Range(0, bossSpawnPos.Length);
             this.transform.localPosition = bossSpawnPos[n];
         }
-        
     }
 
     public void BubblesSpawn()

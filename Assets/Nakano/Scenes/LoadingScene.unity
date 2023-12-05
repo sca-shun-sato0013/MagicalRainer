@@ -216,7 +216,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &124427503
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1128,7 +1128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &623465752
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2546,6 +2546,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CircleFade
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552364832004420580, guid: 7a6086a1caa3c324cae8d9813b5c2d4e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
