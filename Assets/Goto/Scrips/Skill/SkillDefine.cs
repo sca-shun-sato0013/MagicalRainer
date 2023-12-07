@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Skill
+public  enum Skill
 {
     _None,
     Stargazer,
@@ -14,14 +14,14 @@ public enum Skill
 }
 public class SkillDefine : MonoBehaviour
 {
-    [SerializeField]
-    private Skill skillSet1;
-    [SerializeField]
-    private Skill skillSet2;
-    [SerializeField]
-    private Skill skillSet3;
-    [SerializeField]
-    private Skill skillSet4;
+    
+   public static Skill skillSet1;
+  
+    public static Skill skillSet2;
+   
+    public static Skill skillSet3;
+   
+    public static Skill  skillSet4;
 
     public Skill SkiilStase1
     {
