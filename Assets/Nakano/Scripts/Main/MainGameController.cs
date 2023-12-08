@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class MainGameController : MonoBehaviour
 {
+    [SerializeField] int stageNum;
+    enum Level {Easy, Normal, Hard, Galaxy};
+    [SerializeField] Level level;
+
     [SerializeField] HorizonFade fade;
     [SerializeField] WaveController waveController;
     [SerializeField, Header("ゲーム開始演出")] Animator startDirection;
@@ -101,12 +105,51 @@ public class MainGameController : MonoBehaviour
         endDirectionText.text = "Game Clear";
         endDirection.SetTrigger("End");
 
-        StartCoroutine(ToResult());
+        StartCoroutine(ToNextScene());
     }
 
-    IEnumerator ToResult()
+    IEnumerator ToNextScene()
     {
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("ResultScene");
+
+        fade.FadeOutStart();
+
+        yield return new WaitUntil(() => fade.FadeOutEnd);
+
+        switch (stageNum)
+        {
+            case 1:
+                switch (level)
+                {
+                    case Level.Easy:
+                        break;
+                    case Level.Normal:
+                        SceneManager.LoadScene("Stage2-Normal");
+                        break;
+                    case Level.Hard:
+                        SceneManager.LoadScene("Stage2-Hard");
+                        break;
+                    case Level.Galaxy:
+                        break;
+                }
+                break;
+            case 2:
+                //リザルトWindow表示
+                break;
+        }
+    }
+
+    public void GameOverDirection()
+    {
+        endDirectionText.text = "Game Over";
+        endDirection.SetTrigger("End");
+
+        StartCoroutine(ToNextScene());
+    }
+
+    IEnumerator GameOver()
+    {
+        yield return new WaitForSeconds(3);
+        //ゲームオーバーWindow表示
     }
 }

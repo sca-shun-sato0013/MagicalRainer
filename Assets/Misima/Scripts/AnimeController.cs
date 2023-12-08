@@ -12,6 +12,8 @@ public class AnimeController : MonoBehaviour
 
     public WaveController waveController;
 
+    float coolTime = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,11 +31,21 @@ public class AnimeController : MonoBehaviour
         playCount++;
         if(playCount < maxPlayCount)
         {
-            PlayableDirector.Play();
+            if (this.gameObject.activeSelf)
+            {
+                StartCoroutine(CoolTime());
+            }
         }
         else if(playCount >= maxPlayCount && !waveController.WaveCompleted)
         {
             waveController.PlayNextWave(); //ˆê’è‰ñ”Ä¶‚µ‚½‚çŸ‚ÌWAVE‚ÉˆÚs‚·‚é
         }
+    }
+
+    IEnumerator CoolTime()
+    {
+        yield return new WaitForSeconds(coolTime);
+
+        PlayableDirector.Play();
     }
 }
