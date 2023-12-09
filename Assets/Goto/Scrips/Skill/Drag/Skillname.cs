@@ -31,21 +31,21 @@ public class Skillname : MonoBehaviour
         SkillDefine skill = GameObject.Find("SkillManager").GetComponent<SkillDefine>();
         if(skillset=="1")
         {
-            skill.SkiilStase1 = (Skill)int.Parse(skillname);
+            skill.SkillSets[0] = (Skill)int.Parse(skillname);
             Debug.Log(skillname);
         }
         if (skillset == "2")
         {
-            skill.SkillStase2 = (Skill)int.Parse(skillname);
+            skill.SkillSets[1] = (Skill)int.Parse(skillname);
             Debug.Log(skillname);
         }
         if (skillset == "3")
         {
-            skill.SkillStase3 = (Skill)int.Parse(skillname);
+            skill.SkillSets[2] = (Skill)int.Parse(skillname);
         }
         if (skillset == "4")
         {
-            skill.SkillStase4 = (Skill)int.Parse(skillname);
+            skill.SkillSets[3] = (Skill)int.Parse(skillname);
         }
 
 

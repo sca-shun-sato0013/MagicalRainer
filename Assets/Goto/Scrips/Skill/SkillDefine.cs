@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public  enum Skill
 {
     _None,
@@ -15,30 +16,23 @@ public  enum Skill
 public class SkillDefine : MonoBehaviour
 {
     
-   public static Skill skillSet1;
-  
-    public static Skill skillSet2;
-   
-    public static Skill skillSet3;
-   
-    public static Skill  skillSet4;
+    public static Skill [] skillSets =new Skill[4];
+    
 
-    public Skill SkiilStase1
+ //  public static Skill skillSet1;
+  
+  //  public static Skill skillSet2;
+   
+  //  public static Skill skillSet3;
+   
+  //  public static Skill  skillSet4;
+
+    public Skill [] SkillSets
     {
-        set { skillSet1 = value; }
+        get { return skillSets;}
+        set { skillSets = value; }
     }
-    public Skill SkillStase2
-    {
-        set { skillSet2 = value; }
-    }
-    public Skill SkillStase3
-    {
-        set { skillSet3 = value; }
-    }
-    public Skill SkillStase4
-    {
-        set { skillSet4 = value; }
-    }
+   
    
 
     public static Dictionary<Skill, string> dic_SkillName = new Dictionary<Skill, string>()
@@ -56,7 +50,11 @@ public class SkillDefine : MonoBehaviour
     {
         Skill skill= Skill._None;
         Debug.Log(skill);
-        skillSet1 = Skill._None;
+
+        for(int i = 0; i < skillSets.Length; i++)
+        {
+            skillSets[i] = Skill._None;
+        }
     }
 
     void SkillChange()
@@ -66,6 +64,11 @@ public class SkillDefine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+      //  Debug.Log("slot1"+skillSets[0]);
+       // Debug.Log("slot2"+skillSets[1]);
+       // Debug.Log("slot3"+skillSets[2]);
+       // Debug.Log("slot4"+skillSets[3]);
+
         SkillChange();
     }
  
