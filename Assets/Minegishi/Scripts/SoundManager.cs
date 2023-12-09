@@ -10,6 +10,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] Slider masterSlider;
     [SerializeField] Slider bgmSlider;
     [SerializeField] Slider seSlider;
+    internal static object instance;
 
     void Start()
     {
