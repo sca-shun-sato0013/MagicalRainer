@@ -467,6 +467,7 @@ MonoBehaviour:
   maxHP: 100
   setSkillsNumber: 00000000010000000200000003000000
   skillSprite:
+  - {fileID: 21300000, guid: 641764f94f852b24e8d41252bda743f4, type: 3}
   - {fileID: 21300000, guid: 5e3c4095438cc0b46a9d68bced5c9117, type: 3}
   - {fileID: 21300000, guid: a667bbc9a1e5f91428520a91f95784ef, type: 3}
   - {fileID: 21300000, guid: 31193e5c5ba9fc946823a97c40203b69, type: 3}
