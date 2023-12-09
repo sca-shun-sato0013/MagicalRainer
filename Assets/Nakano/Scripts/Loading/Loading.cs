@@ -10,7 +10,7 @@ public class Loading : MonoBehaviour
     AsyncOperation async;
     bool isLoad = false;
 
-    [SerializeField] string NextSceneName;
+    string NextSceneName;
 
     [Header("éÂêlåˆ")]
     [SerializeField] GameObject Character;
@@ -69,6 +69,16 @@ public class Loading : MonoBehaviour
 
     IEnumerator LoadScene()
     {
+        switch (Difficultylevel.difficulty)
+        {
+            case "Normal":
+                NextSceneName = "Stage1-Normal";
+                break;
+            case "Hard":
+                NextSceneName = "Stage1-Hard";
+                break;
+        }
+
         async = SceneManager.LoadSceneAsync(NextSceneName);
         async.allowSceneActivation = false;
 
