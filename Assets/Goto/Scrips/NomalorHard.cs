@@ -14,17 +14,17 @@ public class NomalorHard : MonoBehaviour
     
     public void OnClick()
     {
-    
-    //    switch (Difficultylevel.difficulty)
-    //   {
-    //      case "Hard":
-    //            SceneManager.LoadScene("Hard");
-    //            Debug.Log("ハードにいく");
-    //         break;
-    //        case "Normal":
-    //            SceneManager.LoadScene("Normal");
-    //            Debug.Log("ノーマルにいく");
-    //            break;
-    //    }
+
+        //switch (Difficultylevel.difficulty)
+        //{
+        //    case "Hard":
+        //        SceneManager.LoadScene("Hard");
+        //        Debug.Log("ハードにいく");
+        //        break;
+        //    case "Normal":
+        //        SceneManager.LoadScene("Normal");
+        //        Debug.Log("ノーマルにいく");
+        //        break;
+        //}
     }
 }
