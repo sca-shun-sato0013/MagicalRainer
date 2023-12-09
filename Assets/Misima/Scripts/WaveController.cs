@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
 using UnityEngine.UI;
+using static PlayerManager;
+using static TimeScoreCounter;
 
 public class WaveController : MonoBehaviour
 {
@@ -55,7 +57,7 @@ public class WaveController : MonoBehaviour
     IEnumerator WaveChange()
     {
         yield return new WaitUntil(() => mainGameController.WaveDirectionEnd);
-
+        
         //Ÿ‚ÌWAVE‚ÉˆÚs
         playableDirector = waveObject[currentWaveIndex].GetComponent<PlayableDirector>();
         playableDirector.Play();

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using static PlayerManager;
+using static TimeScoreCounter;
 
 public class MainGameController : MonoBehaviour
 {
@@ -24,6 +26,9 @@ public class MainGameController : MonoBehaviour
     
     [SerializeField, Header("背景")] BackGround bg1, bg2;
 
+    [SerializeField, Header("タイム")] Text timer;
+    [SerializeField, Header("スコア")] Text score;
+
     public bool WaveDirectionEnd
     {
         get { return waveDirectionEnd;}
@@ -31,6 +36,8 @@ public class MainGameController : MonoBehaviour
 
     IEnumerator GameStart()
     {
+        timeCountState = TimeCountState.PAUSE;
+
         //フェードが終わったら
         yield return new WaitUntil(() => fade.FadeInEnd);
 
@@ -48,6 +55,8 @@ public class MainGameController : MonoBehaviour
 
         yield return new WaitUntil(() => startDirection.GetCurrentAnimatorStateInfo(0).IsName("StartDirection_End"));
         waveController.enabled = true;
+
+        timeCountState = TimeCountState.COUNT;
     }
     
     void Start()
@@ -59,10 +68,22 @@ public class MainGameController : MonoBehaviour
 
     void Update()
     {
+        if (game_stat == GameStat.DETH)
+        {
+            GameOverDirection();
+        }
+
+        timer.text = elapsedTime.ToString("f2");
     }
 
+    /// <summary>
+    /// WAVE移行演出再生 bgScroll -> 背景の移動をするか　WaveNumber -> 何番目のWAVEか
+    /// </summary>
+    /// <param name="bgScroll"></param>
+    /// <param name="WaveNumber"></param>
     public void WaveDirection(bool bgScroll, int WaveNumber)
     {
+        timeCountState = TimeCountState.PAUSE;
         waveDirectionEnd = false;
         waveDirectionText.text = "WAVE" + (WaveNumber).ToString();
 
@@ -70,6 +91,8 @@ public class MainGameController : MonoBehaviour
         waveDirection.SetTrigger("In");
 
         StartCoroutine(WaveWait(bgScroll));
+
+        //プレイヤーの動きを止める
     }
 
     IEnumerator WaveWait(bool bgScroll)
@@ -98,6 +121,9 @@ public class MainGameController : MonoBehaviour
 
         //敵移動開始
         waveDirectionEnd = true;
+
+        //プレイヤー挙動再開
+        timeCountState = TimeCountState.COUNT;
     }
 
     public void GameClearDirection()
@@ -124,10 +150,11 @@ public class MainGameController : MonoBehaviour
                     case Level.Easy:
                         break;
                     case Level.Normal:
-                        SceneManager.LoadScene("Stage2-Normal");
+                        SceneManager.LoadScene("ResultScene");
+                        //SceneManager.LoadScene("Stage2-Normal");
                         break;
                     case Level.Hard:
-                        SceneManager.LoadScene("Stage2-Hard");
+                        //SceneManager.LoadScene("Stage2-Hard");
                         break;
                     case Level.Galaxy:
                         break;
@@ -139,17 +166,18 @@ public class MainGameController : MonoBehaviour
         }
     }
 
-    public void GameOverDirection()
+    void GameOverDirection()
     {
+        timeCountState = TimeCountState.STOP;
         endDirectionText.text = "Game Over";
         endDirection.SetTrigger("End");
 
-        StartCoroutine(ToNextScene());
+        StartCoroutine(GameOver());
     }
 
     IEnumerator GameOver()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         //ゲームオーバーWindow表示
     }
 }

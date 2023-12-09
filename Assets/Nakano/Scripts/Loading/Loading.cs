@@ -10,6 +10,8 @@ public class Loading : MonoBehaviour
     AsyncOperation async;
     bool isLoad = false;
 
+    [SerializeField] string NextSceneName;
+
     [Header("éÂêlåˆ")]
     [SerializeField] GameObject Character;
     [SerializeField] float charaSpeed;
@@ -67,7 +69,7 @@ public class Loading : MonoBehaviour
 
     IEnumerator LoadScene()
     {
-        async = SceneManager.LoadSceneAsync("BulletScene");
+        async = SceneManager.LoadSceneAsync(NextSceneName);
         async.allowSceneActivation = false;
 
         while (async.progress < 0.9f)
