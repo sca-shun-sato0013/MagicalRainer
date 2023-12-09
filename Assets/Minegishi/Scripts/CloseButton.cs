@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CloseButton : MonoBehaviour
 {
@@ -20,5 +21,6 @@ public class CloseButton : MonoBehaviour
     {
         Debug.Log("•Â‚¶‚é");
         canvas.SetActive(false);
+        //SceneManager.LoadScene("testScene");
     }
 }

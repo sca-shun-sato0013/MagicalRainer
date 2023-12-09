@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Goto/Scenes/Nomal.unity
     guid: 87b51a8aa7ade2e4cb62ad5c878b025b
+  - enabled: 1
+    path: Assets/Minegishi/Scenes/testScene.unity
+    guid: 73b4db90f58456342b9a74d4e8d5bb11
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: f7b72f9d20e84b24db79920ef1569c9b,
       type: 2}
