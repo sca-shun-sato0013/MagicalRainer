@@ -19,6 +19,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float invisibleTime;
 
     public static Vector3 pos;
+
+    [SerializeField] private Material playerMaterial;
+    private float playerAlpha=1.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +37,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         pos =transform.position;
+        playerMaterial.SetFloat("_Range", playerAlpha);
         switch (game_stat)
         {
             case GameStat.START:
@@ -94,6 +98,7 @@ public class PlayerController : MonoBehaviour
             pPos.x += moveSpeed * Time.deltaTime;
             anim.AnimationName = "move right";
         }
+
         if (!Input.anyKey||(Input.GetKey(KeyCode.A)&&Input.GetKey(KeyCode.D)))
         {
             anim.AnimationName = "nomaol";
@@ -103,8 +108,10 @@ public class PlayerController : MonoBehaviour
     IEnumerator Invisible()
     {
         Debug.Log("–³“G");
+        playerAlpha=0.5f;
         damageFlag=true;
         yield return new WaitForSeconds(invisibleTime);
+        playerAlpha=1.0f;
         damageFlag=false;
     }
 }

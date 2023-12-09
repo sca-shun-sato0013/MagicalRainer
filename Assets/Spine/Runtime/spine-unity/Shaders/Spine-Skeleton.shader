@@ -1,5 +1,7 @@
 Shader "Spine/Skeleton" {
 	Properties {
+		_BaseColor("Base Color",Color) = (1,1,1,1)
+		_Range("Range", Range(0.0, 1.0)) = 0.0
 		_Cutoff ("Shadow alpha cutoff", Range(0,1)) = 0.1
 		[NoScaleOffset] _MainTex ("Main Texture", 2D) = "black" {}
 		[Toggle(_STRAIGHT_ALPHA_INPUT)] _StraightAlphaInput("Straight Alpha Texture", Int) = 0
@@ -42,6 +44,7 @@ Shader "Spine/Skeleton" {
 			#include "UnityCG.cginc"
 			#include "CGIncludes/Spine-Common.cginc"
 			sampler2D _MainTex;
+			sampler2D _SubTex;
 
 			struct VertexInput {
 				float4 vertex : POSITION;
@@ -63,14 +66,18 @@ Shader "Spine/Skeleton" {
 				return o;
 			}
 
+			float4 _BaseColor;
+			float _Range;
+
 			float4 frag (VertexOutput i) : SV_Target {
 				float4 texColor = tex2D(_MainTex, i.uv);
 
 				#if defined(_STRAIGHT_ALPHA_INPUT)
 				texColor.rgb *= texColor.a;
 				#endif
-
-				return (texColor * i.vertexColor);
+				
+				_BaseColor.a = _Range;
+				return (texColor * i.vertexColor) * _BaseColor.a;
 			}
 			ENDCG
 		}
