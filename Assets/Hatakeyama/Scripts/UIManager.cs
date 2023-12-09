@@ -61,7 +61,7 @@ public class UIManager : MonoBehaviour
 
         if (tmpHP > HP)
         {
-            tmpHP-=maxHP/10*Time.deltaTime;
+            tmpHP-=maxHP/10*Time.deltaTime*2.0f;
         }
         else
         {
