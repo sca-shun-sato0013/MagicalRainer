@@ -28,13 +28,17 @@ public class UIManager : MonoBehaviour
         skillGaugePoint = 0;
         for(int i = 0; i < 4; ++i)
         {
-            setSkills[i].sprite = skillSprite[setSkillsNumber[i]];
+            //setSkillsNumber[i]=(int)SkillDefine.skillSets[i];
+            setSkills[i].sprite= skillSprite[(int)SkillDefine.skillSets[i]];
+            //setSkills[i].sprite = skillSprite[setSkillsNumber[i]];
         }
     }
 
     // Update is called once per frame
     void Update()
     {
+
+
         HPGauge.fillAmount = tmpHP / maxHP;
         SPText.text = SP + "/10";
         if (SP < 10)
@@ -61,7 +65,7 @@ public class UIManager : MonoBehaviour
 
         if (tmpHP > HP)
         {
-            tmpHP-=maxHP/10*Time.deltaTime;
+            tmpHP-=maxHP/10*Time.deltaTime*2.0f;
         }
         else
         {
