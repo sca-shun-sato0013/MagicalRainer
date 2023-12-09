@@ -29,12 +29,12 @@ public class csvReader : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) // マウス左ボタンがクリックされたら
         {
             //NameText.text = csvData[i][0]; // インデックスiの0番目の要素を名前テキストUIに表示する
-            LogText.text = csvData[i][1]; // インデックスiの1番目の要素をセリフ・地の文テキストUIに表示する
+           // LogText.text = csvData[i][1]; // インデックスiの1番目の要素をセリフ・地の文テキストUIに表示する
 
-            if (i < csvData.Count - 1) // インデックスiがCSVデータの要素数未満の場合
-            {
-                i++; // インデックスをインクリメントする
-            }
+           // if (i < csvData.Count - 1) // インデックスiがCSVデータの要素数未満の場合
+         //   {
+         // /      i++; // インデックスをインクリメントする
+          //  }
         }
     }
 }

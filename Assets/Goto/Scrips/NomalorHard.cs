@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class NomalorHard : MonoBehaviour
 {
-    public string levelName;
+    //public string levelName;
     void Start()
     {
 
@@ -15,14 +15,14 @@ public class NomalorHard : MonoBehaviour
     public void OnClick()
     {
     
-        switch (levelName)
+        switch (Difficultylevel.difficulty)
         {
             case "Hard":
                 SceneManager.LoadScene("Hard");
                 Debug.Log("ハードにいく");
                 break;
-            case "Nomal":
-                SceneManager.LoadScene("Nomal");
+            case "Normal":
+                SceneManager.LoadScene("Normal");
                 Debug.Log("ノーマルにいく");
                 break;
         }
