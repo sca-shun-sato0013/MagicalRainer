@@ -64,6 +64,7 @@ public class PlayerController : MonoBehaviour
             case GameStat.DETH:
                 {
                     waitDethEffect -= Time.deltaTime;
+
                     if (waitDethEffect<=0)
                     {
                         Destroy(gameObject);
@@ -107,7 +108,6 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Invisible()
     {
-        Debug.Log("–³“G");
         playerAlpha=0.5f;
         damageFlag=true;
         yield return new WaitForSeconds(invisibleTime);
