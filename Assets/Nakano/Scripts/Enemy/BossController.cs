@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
+using static TimeScoreCounter;
 
 public class BossController : MonoBehaviour
 {
@@ -178,6 +179,8 @@ public class BossController : MonoBehaviour
         //WAVEが全て終わったら
         yield return new WaitUntil(() => waveController.WaveCompleted);
 
+        timeCountState = TimeCountState.PAUSE;
+
         yield return new WaitForSeconds(3f);
 
         //登場
@@ -271,6 +274,7 @@ public class BossController : MonoBehaviour
     {
         isPosIni = true;
         screenInitialize = true;
+        timeCountState = TimeCountState.PAUSE;
     }
 
     //画面から弾を全削除 
@@ -320,6 +324,8 @@ public class BossController : MonoBehaviour
 
         yield return new WaitUntil(() => mainGameController.WaveDirectionEnd);
 
+        timeCountState = TimeCountState.COUNT;
+
         //Stage1 Boss Wave4
         if (stageNum == 1 && currentTrackIndex == 4 && hp > 0)
         {
@@ -333,6 +339,9 @@ public class BossController : MonoBehaviour
 
     IEnumerator ClearDirection()
     {
+        //時間計測停止
+        timeCountState = TimeCountState.STOP;
+
         //爆破エフェクト表示　Particle
 
         yield return new WaitForSeconds(1);
