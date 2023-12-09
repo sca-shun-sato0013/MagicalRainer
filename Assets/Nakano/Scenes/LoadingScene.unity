@@ -1556,6 +1556,11 @@ PrefabInstance:
       propertyPath: lastWindow
       value: 
       objectReference: {fileID: 1979913199}
+    - target: {fileID: 781425334717239264, guid: 182e870b5ddda3840a7fe2d130d960cd,
+        type: 3}
+      propertyPath: NextSceneName
+      value: BulletsScene
+      objectReference: {fileID: 0}
     - target: {fileID: 1329991252889586546, guid: 182e870b5ddda3840a7fe2d130d960cd,
         type: 3}
       propertyPath: m_Pivot.x

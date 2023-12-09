@@ -9,8 +9,7 @@ using static TimeScoreCounter;
 public class MainGameController : MonoBehaviour
 {
     [SerializeField] int stageNum;
-    enum Level {Easy, Normal, Hard, Galaxy};
-    [SerializeField] Level level;
+    string level;
 
     [SerializeField] HorizonFade fade;
     [SerializeField] WaveController waveController;
@@ -64,6 +63,8 @@ public class MainGameController : MonoBehaviour
         waveController.enabled = false;
         fade.FadeInStart();
         StartCoroutine(GameStart());
+
+        level = Difficultylevel.difficulty;
     }
 
     void Update()
@@ -147,16 +148,16 @@ public class MainGameController : MonoBehaviour
             case 1:
                 switch (level)
                 {
-                    case Level.Easy:
+                    case "Easy":
                         break;
-                    case Level.Normal:
+                    case "Normal":
                         SceneManager.LoadScene("ResultScene");
                         //SceneManager.LoadScene("Stage2-Normal");
                         break;
-                    case Level.Hard:
+                    case "Hard":
                         //SceneManager.LoadScene("Stage2-Hard");
                         break;
-                    case Level.Galaxy:
+                    case "Galaxy":
                         break;
                 }
                 break;
