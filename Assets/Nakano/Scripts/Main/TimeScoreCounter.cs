@@ -23,7 +23,6 @@ public class TimeScoreCounter : MonoBehaviour
         {
             case TimeCountState.COUNT:
                 elapsedTime += Time.deltaTime;
-                Debug.Log(elapsedTime);
                 break;
             case TimeCountState.PAUSE:
                 break;
