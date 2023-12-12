@@ -34,12 +34,16 @@ public class Loading : MonoBehaviour
     CanvasGroup loadingWindow;
     [SerializeField, Header("遷移前に表示しているCanvas")] CanvasGroup lastWindow;
 
+    bool isChange = true;
+
     void Start()
     {
         LoadingUI.SetActive(false);
         fade = fadeOut.GetComponent<HorizonFade>();
 
         loadingWindow = LoadingUI.GetComponent<CanvasGroup>();
+
+        NextSceneName = "Stage1-Normal";
     }
 
     private void FixedUpdate()
@@ -120,14 +124,21 @@ public class Loading : MonoBehaviour
             if (Character.transform.position.x >= charaPosX)
             {
                 charaAnim.SetBool("Stop", true);
-                //フェード処理
-                fade.FadeOutStart();
-
-                if(fade.FadeOutEnd)
+                if(isChange)
                 {
-                    async.allowSceneActivation = true;
+                    isChange = false;
+                    //フェード処理
+                    fade.FadeOutStart();
+
+                    StartCoroutine(SceneChange());
                 }
             }
         }
+    }
+
+    IEnumerator SceneChange()
+    {
+        yield return new WaitUntil(() => fade.FadeOutEnd);
+        async.allowSceneActivation = true;
     }
 }

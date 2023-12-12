@@ -14,6 +14,8 @@ public class BossController : MonoBehaviour
 
     [SerializeField] GameObject bossObj;
 
+    [SerializeField] ParticleSystem explodeEffect;
+
     [SerializeField, Header("初期HP")] float defaultHp;
     float hp;
     float hpRatio = 1;
@@ -343,8 +345,9 @@ public class BossController : MonoBehaviour
         timeCountState = TimeCountState.STOP;
 
         //爆破エフェクト表示　Particle
+        Instantiate(explodeEffect, bossObj.transform.position, Quaternion.identity);
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1f);
 
         //ボス非表示
         bossObj.SetActive(false);
@@ -433,6 +436,13 @@ public class BossController : MonoBehaviour
                     if(bossClone.Length - wave4CloneDestroyCount - 1 >= 0) bossClone[bossClone.Length - wave4CloneDestroyCount - 1].SetActive(false);
                     wave4CloneDestroyCount++;
                     wave4NowHP = hp;
+                }
+                if(hp <= 0)
+                {
+                    foreach (var b in bossClone)
+                    {
+                        b.SetActive(false);
+                    }
                 }
             }
         }
