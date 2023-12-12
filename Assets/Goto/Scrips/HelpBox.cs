@@ -9,7 +9,7 @@ public class HelpBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     [SerializeField] private string _helpMessage;
     [SerializeField] private Text _text;
 
-    [SerializeField] private string helpMessage;
+    [SerializeField,TextArea(3,10)] private string helpMessage;
    [SerializeField] private Text text;
 
     [SerializeField] VideoPlayer videoPlayer;
@@ -23,11 +23,13 @@ public class HelpBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         text.transform.gameObject.SetActive(true); //スキル名表示
 
         _text.text = _helpMessage;
-        _text.transform.gameObject.SetActive(true);　//スキル説明
+        _text.transform.gameObject.SetActive(true); //スキル説明
 
+       // videoPlayer.Play();
         Panel.SetActive(true); //videoPlayerのパネル表示
-        StartCoroutine(Start());
-       
+        videoPlayer.Play();
+       // StartCoroutine(Starts());
+
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -36,16 +38,17 @@ public class HelpBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         text.transform.gameObject.SetActive(false);　//テキスト消す
 
         videoPlayer.Stop();
-        Panel.SetActive(false);　//videoplayerのパネル非表示
-       // StartCoroutine(Stop());
+        Panel.SetActive(false); //videoplayerのパネル非表示
+       
+        // StartCoroutine(Stop());
 
     }
 
-    IEnumerator Start()
-    {
-        yield return new WaitForSeconds(0.5f);
-        videoPlayer.Play();
-    }
+    //IEnumerator Starts()
+    //{
+    //    yield return new WaitForSeconds(0.1f);
+    //    videoPlayer.Play();
+    //}
 
     //IEnumerator Stop()
     //{
