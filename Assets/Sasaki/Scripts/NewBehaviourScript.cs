@@ -8,17 +8,17 @@ public class NewBehaviourScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GlobalVariables.HP = 2;
-        GlobalVariables.AliveTime = 360.0f;
+        GlobalVariables.AliveTime = 9800.0f;
+        //GlobalVariables.HP = 100;
     }
 
     // Update is called once per frame
     void Update()
     {
         
-        GlobalVariables.AliveTime += Time.deltaTime;
+        //GlobalVariables.AliveTime += Time.deltaTime;
 
-        Debug.Log(GlobalVariables.AliveTime);
+        //Debug.Log(GlobalVariables.AliveTime);
         if (Input.GetKeyDown(KeyCode.A))
         {
             SceneManager.LoadScene("ResultScene");
