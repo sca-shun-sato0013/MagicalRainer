@@ -7,6 +7,13 @@ public class GameOver : MonoBehaviour
 {
     [SerializeField, Header("生存タイム")] private Text timeText;
     [SerializeField, Header("生存タイムのpos")] private RectTransform rectTimeText;
+    //TimeMoveText
+    [SerializeField] private float xRectPos = 3f;
+    [SerializeField] private float publicTextSpeed = 0.5f;
+    float textSpeed;
+    Vector2 rPos;
+    bool resetPos = false;
+
     [SerializeField, Header("スコア")] private Text scoreText;
     [SerializeField, Header("HP")] private Text hpText;
     [SerializeField, Header("トータススコア")] private Text TotalScoreText;
@@ -17,15 +24,15 @@ public class GameOver : MonoBehaviour
     float seconds;
     //float comma = 0f;
     float t;
-    bool timeCheck = false;
 
     //TextMove
     [SerializeField, Header("テキストオブジェクト表示の順番")] private GameObject[] totalObjects;
     [SerializeField, Header("表示時間")] private float time = 1.0f;
     float resetTime;
 
-    int textCount = 0;
-    bool tCheck = false;
+    int pushNum = 0;
+    int textNum = 0;
+    bool pushNumCheck = false;
 
     //BadgesImage
     [SerializeField, Header("バッジ表示")] private GameObject[] imaBadges;
@@ -39,41 +46,50 @@ public class GameOver : MonoBehaviour
         TotalScore();
         TotalScoreText.text = "" + (int)totalScore + " pt";
         resetTime = time;
+        BadgesImage();
+        textSpeed = publicTextSpeed;
+        rPos = new Vector2(rectTimeText.anchoredPosition.x, rectTimeText.anchoredPosition.y);
     }
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            pushNum++;
+            pushNumCheck = true;
+        }
 
+        totalObjects[0].gameObject.SetActive(true);
         if (t <= GlobalVariables.AliveTime)
         {
-            Timer();
             TimeMoveText();
+            Timer();
             t++;
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (pushNum == 1)
             {
                 t = GlobalVariables.AliveTime;
                 Timer();
-                textCount += 1;
             }
             //表示
             //timeText.text = ($"{minutes.ToString("00")}:{seconds.ToString("00")}:{comma.ToString("00")}");
             timeText.text = ($"{hours.ToString("00")}:{minutes.ToString("00")}:{seconds.ToString("00")}");
         }
-        if (t == GlobalVariables.AliveTime)
+        if (t >= GlobalVariables.AliveTime)
         {
             MoveText();
-        }
-        switch (textCount)
-        {
-            case 1:
-                Timer();
-                break;
-            case 2:
-                MoveText();
-                break;
-            default:
-                Timer();
-                break;
+            if (!pushNumCheck)
+            {
+                pushNum = 1;
+            }
+
+            if (pushNum >= 2)
+            {
+                for (int i = 0; i < totalObjects.Length; i++)
+                {
+                    totalObjects[i].SetActive(true);
+                }
+            }
+            resetPos = true;
         }
     }
     //切り捨て
@@ -108,33 +124,40 @@ public class GameOver : MonoBehaviour
     //タイム横揺れのアニメーション
     void TimeMoveText()
     {
-        //if (this.rectTimeText.position.x >= 1f)
-        //{
-        //    this.rectTimeText.position += new Vector3(this.rectTimeText.position.x - 1, 0, 0);
-        //}
-        //if (this.rectTimeText.position.x <= 1f)
-        //{
-        //    this.rectTimeText.position += new Vector3(this.rectTimeText.position.x + 1, 0, 0);
-        //}
+        Vector2 pos = new Vector2(rPos.x, 0) * (-textSpeed / 2) * Time.deltaTime;
+        rectTimeText.Translate(pos);
+
+        if (rectTimeText.anchoredPosition.x <= rPos.x - xRectPos)
+        {
+            textSpeed = publicTextSpeed;
+        }
+        if (rectTimeText.anchoredPosition.x >= rPos.x + xRectPos)
+        {
+            textSpeed = -publicTextSpeed;
+        }
+
+        if (resetPos)
+        {
+            rectTimeText.anchoredPosition = rPos;
+        }
     }
     //テキストを順番に表示
     void MoveText()
     {
-        bool c = false;
-        time -= Time.deltaTime;
+        resetTime -= Time.deltaTime;
 
-        if (time <= 0)
+        if (resetTime <= 0)
         {
-            for (int count = 0; count < 4; count++)
+            if (textNum != totalObjects.Length - 1)
             {
-                totalObjects[count].SetActive(true);
-                time = 1;
+                textNum++;
+                totalObjects[textNum].SetActive(true);
+                resetTime = time;
             }
-            c = true;
-        }
-        if (c)
-        {
-            BadgesImage();
+            else
+            {
+                textNum = totalObjects.Length - 1;
+            }
         }
     }
     //総合評価

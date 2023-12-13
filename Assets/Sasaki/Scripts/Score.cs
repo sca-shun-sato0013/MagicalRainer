@@ -9,6 +9,8 @@ public class Score : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        result.gameObject.SetActive(false);
+        gameOver.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -30,7 +32,7 @@ public class Score : MonoBehaviour
 //共有
 public static class GlobalVariables
 {
-    public static float AliveTime = 360f; //生存時間
+    public static float AliveTime = 0f; //生存時間
     public static int Score = 0; //スコア
     public static int HP = 0; //HP
 }
