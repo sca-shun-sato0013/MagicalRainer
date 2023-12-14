@@ -4,17 +4,12 @@ using UnityEngine;
 
 public class TimeScoreCounter : MonoBehaviour
 {
-    [HideInInspector] public enum TimeCountState { COUNT = 0, PAUSE, STOP, }
+    [HideInInspector] public enum TimeCountState { COUNT = 0, STOP, }
     public static TimeCountState timeCountState;
-
-    public static float elapsedTime;
-    public static int score;
 
     void Start()
     {
-        timeCountState = TimeCountState.PAUSE;
-        elapsedTime = 0;
-        score = 0;
+        timeCountState = TimeCountState.STOP;
     }
 
     void Update()
@@ -22,13 +17,9 @@ public class TimeScoreCounter : MonoBehaviour
         switch (timeCountState)
         {
             case TimeCountState.COUNT:
-                elapsedTime += Time.deltaTime;
-                break;
-            case TimeCountState.PAUSE:
+                GlobalVariables.AliveTime += Time.deltaTime;
                 break;
             case TimeCountState.STOP:
-                GlobalVariables.AliveTime = elapsedTime;
-                GlobalVariables.Score = score;
                 break;
         }
     }

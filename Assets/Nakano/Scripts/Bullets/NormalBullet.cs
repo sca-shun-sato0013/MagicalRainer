@@ -43,7 +43,7 @@ public class NormalBullet : MonoBehaviour
             }
         }
 
-        else
+        else if(isAim)
         {
             transform.Translate(direction * speed * Time.deltaTime);
         }
