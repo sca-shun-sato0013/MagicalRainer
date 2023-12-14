@@ -237,8 +237,10 @@ GameObject:
   - component: {fileID: 25289083}
   - component: {fileID: 25289082}
   - component: {fileID: 25289086}
+  - component: {fileID: 25289087}
+  - component: {fileID: 25289088}
   m_Layer: 5
-  m_Name: Image_Enemy2
+  m_Name: Kinoko
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -285,7 +287,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 0a3c67f66b782754e89ea75fe260cc1c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -312,7 +314,7 @@ RectTransform:
   m_GameObject: {fileID: 25289081}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 218734756}
@@ -321,7 +323,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 1200, y: 400}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 595, y: 842}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &25289086
 BoxCollider2D:
@@ -366,8 +368,33 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 50}
+  m_Size: {x: 400, y: 400}
   m_EdgeRadius: 0
+--- !u!114 &25289087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25289081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8934c6a82f911484f831d8bddf02b1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 150
+--- !u!114 &25289088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25289081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &36222186
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,10 +443,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 8349215161844493201, guid: 56038a56807de464b966befd8f594631, type: 3}
+  prefabs: {fileID: 6027155496150843635, guid: 41cea085ad687d64f9d243ba5471dc10, type: 3}
   bulletNum: 4
   coolTime: 0.2
   speed: 50
+  isColumn: 0
+  way: 1
+  distance: 0
+  isAll: 0
+  dis: 0
   isCreate: 0
 --- !u!1 &39214561
 GameObject:
@@ -588,7 +620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a202732a69ce78c4fa1699a319ec8e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 5455741329521793514, guid: 760a4ba66b96b234786d8277b030012e, type: 3}
+  prefabs: {fileID: 5657215318796242319, guid: 618e4dc0e2e11994bb6a2e162ac12bc9, type: 3}
   createTime: 0
   isNum: 1
   bulletNum: 1
@@ -646,10 +678,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 8349215161844493201, guid: 56038a56807de464b966befd8f594631, type: 3}
+  prefabs: {fileID: 6027155496150843635, guid: 41cea085ad687d64f9d243ba5471dc10, type: 3}
   bulletNum: 4
   coolTime: 0.2
   speed: 50
+  isColumn: 0
+  way: 1
+  distance: 0
+  isAll: 0
+  dis: 0
   isCreate: 0
 --- !u!1 &100458717
 GameObject:
@@ -699,7 +736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a202732a69ce78c4fa1699a319ec8e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 1151885615697202143, guid: c1ce22ac3278ef549a95f5073de30219, type: 3}
+  prefabs: {fileID: 1501250913882245020, guid: 7a08923abb569d14aa8e7eca532999fc, type: 3}
   createTime: 20
   isNum: 0
   bulletNum: 0
@@ -806,8 +843,10 @@ GameObject:
   - component: {fileID: 151892109}
   - component: {fileID: 151892108}
   - component: {fileID: 151892112}
+  - component: {fileID: 151892113}
+  - component: {fileID: 151892114}
   m_Layer: 5
-  m_Name: Image_Enemy12
+  m_Name: Kinoko
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -854,7 +893,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 0a3c67f66b782754e89ea75fe260cc1c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -881,7 +920,7 @@ RectTransform:
   m_GameObject: {fileID: 151892107}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2044290561}
@@ -890,7 +929,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -850, y: -800}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 595, y: 842}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &151892112
 BoxCollider2D:
@@ -935,8 +974,33 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 50}
+  m_Size: {x: 400, y: 400}
   m_EdgeRadius: 0
+--- !u!114 &151892113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151892107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8934c6a82f911484f831d8bddf02b1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 150
+--- !u!114 &151892114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151892107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &177908724
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,8 +1014,10 @@ GameObject:
   - component: {fileID: 177908726}
   - component: {fileID: 177908725}
   - component: {fileID: 177908729}
+  - component: {fileID: 177908731}
+  - component: {fileID: 177908730}
   m_Layer: 5
-  m_Name: Image_Enemy22
+  m_Name: Kaeru
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -998,7 +1064,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: bfa3a33a5833664478d1386f1390147a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1025,7 +1091,7 @@ RectTransform:
   m_GameObject: {fileID: 177908724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 582024059}
@@ -1034,7 +1100,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -1100, y: 400}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 595, y: 842}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &177908729
 BoxCollider2D:
@@ -1079,8 +1145,33 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 50}
+  m_Size: {x: 400, y: 400}
   m_EdgeRadius: 0
+--- !u!114 &177908730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177908724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &177908731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177908724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8934c6a82f911484f831d8bddf02b1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 160
 --- !u!1 &179833111
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,10 +1220,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 8349215161844493201, guid: 56038a56807de464b966befd8f594631, type: 3}
+  prefabs: {fileID: 6027155496150843635, guid: 41cea085ad687d64f9d243ba5471dc10, type: 3}
   bulletNum: 4
   coolTime: 0.2
   speed: 50
+  isColumn: 0
+  way: 1
+  distance: 0
+  isAll: 0
+  dis: 0
   isCreate: 0
 --- !u!1 &182022310
 GameObject:
@@ -1221,9 +1317,9 @@ GameObject:
   - component: {fileID: 182794389}
   - component: {fileID: 182794388}
   - component: {fileID: 182794387}
-  - component: {fileID: 182794386}
   - component: {fileID: 182794385}
   - component: {fileID: 182794384}
+  - component: {fileID: 182794390}
   m_Layer: 0
   m_Name: BossClone2
   m_TagString: Untagged
@@ -1323,14 +1419,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!33 &182794386
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 182794382}
-  m_Mesh: {fileID: 0}
 --- !u!114 &182794387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1435,6 +1523,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &182794390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182794382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c31af07ca1ac6f4cba3c5aaf8776f14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossController: {fileID: 912404466}
 --- !u!1 &218734755
 GameObject:
   m_ObjectHideFlags: 0
@@ -1483,10 +1584,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 8349215161844493201, guid: 56038a56807de464b966befd8f594631, type: 3}
+  prefabs: {fileID: 6027155496150843635, guid: 41cea085ad687d64f9d243ba5471dc10, type: 3}
   bulletNum: 4
   coolTime: 0.2
   speed: 50
+  isColumn: 0
+  way: 1
+  distance: 0
+  isAll: 0
+  dis: 0
   isCreate: 0
 --- !u!1 &228779141
 GameObject:
@@ -1536,8 +1642,10 @@ GameObject:
   - component: {fileID: 233332708}
   - component: {fileID: 233332707}
   - component: {fileID: 233332711}
+  - component: {fileID: 233332713}
+  - component: {fileID: 233332712}
   m_Layer: 5
-  m_Name: Image_Enemy24
+  m_Name: Kaeru
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1584,7 +1692,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: bfa3a33a5833664478d1386f1390147a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1611,7 +1719,7 @@ RectTransform:
   m_GameObject: {fileID: 233332706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1495147407}
@@ -1620,7 +1728,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -1300, y: 500}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 595, y: 842}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &233332711
 BoxCollider2D:
@@ -1665,8 +1773,33 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 50}
+  m_Size: {x: 400, y: 400}
   m_EdgeRadius: 0
+--- !u!114 &233332712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233332706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &233332713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233332706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8934c6a82f911484f831d8bddf02b1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 160
 --- !u!1 &284094905
 GameObject:
   m_ObjectHideFlags: 0
@@ -1864,8 +1997,10 @@ GameObject:
   - component: {fileID: 344531017}
   - component: {fileID: 344531016}
   - component: {fileID: 344531020}
+  - component: {fileID: 344531021}
+  - component: {fileID: 344531022}
   m_Layer: 5
-  m_Name: Image_Enemy11
+  m_Name: Kinoko
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1912,7 +2047,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 0a3c67f66b782754e89ea75fe260cc1c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1939,7 +2074,7 @@ RectTransform:
   m_GameObject: {fileID: 344531015}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 36222187}
@@ -1948,7 +2083,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -850, y: -700}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 595, y: 842}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &344531020
 BoxCollider2D:
@@ -1993,8 +2128,33 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 50}
+  m_Size: {x: 400, y: 400}
   m_EdgeRadius: 0
+--- !u!114 &344531021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344531015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8934c6a82f911484f831d8bddf02b1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 150
+--- !u!114 &344531022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344531015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &344961296
 GameObject:
   m_ObjectHideFlags: 0
@@ -2008,8 +2168,10 @@ GameObject:
   - component: {fileID: 344961298}
   - component: {fileID: 344961297}
   - component: {fileID: 344961301}
+  - component: {fileID: 344961303}
+  - component: {fileID: 344961302}
   m_Layer: 5
-  m_Name: Image_Enemy18
+  m_Name: Kinoko
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2083,7 +2245,7 @@ RectTransform:
   m_GameObject: {fileID: 344961296}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 850645835}
@@ -2137,8 +2299,33 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 50}
+  m_Size: {x: 400, y: 400}
   m_EdgeRadius: 0
+--- !u!114 &344961302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344961296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8934c6a82f911484f831d8bddf02b1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 150
+--- !u!114 &344961303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344961296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &356406566
 GameObject:
   m_ObjectHideFlags: 0
@@ -2148,7 +2335,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 356406568}
-  - component: {fileID: 356406567}
+  - component: {fileID: 356406571}
+  - component: {fileID: 356406570}
+  - component: {fileID: 356406569}
   m_Layer: 5
   m_Name: Wave1
   m_TagString: Untagged
@@ -2156,28 +2345,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &356406567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 356406566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caecdd2a2e87deb42b86945aeb0844ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefabs: {fileID: 5781757155451661640, guid: c4c87760dbb50454582e98bdbd7a6cc4, type: 3}
-  bulletNum: 4
-  coolTime: 0.2
-  speed: 30
-  angle: 180
-  way: 2
-  distance: 5
-  isAll: 1
-  dis: 5
-  isCreate: 0
 --- !u!224 &356406568
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2197,6 +2364,68 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.00012207031}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &356406569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356406566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf58156b6598b8240a7733f1cdce0465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabs: {fileID: 2284374655343253916, guid: ffc1712e3d74cf34f9582c9d71546ffd, type: 3}
+  bulletNum: 2
+  coolTime: 0
+  speed: 30
+  trackingTime: 2
+  isColumn: 1
+  way: 4
+  distance: 5
+  isAll: 1
+  dis: 5
+  isCreate: 0
+--- !u!114 &356406570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356406566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3a18d73d13d5f947bc66dbf673a4ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabs: {fileID: 3488932986556820965, guid: c404240dae97d924a8ecfd39fc8017fd, type: 3}
+  bulletNum: 20
+  angle: 80
+  speed: 30
+  isCreate: 0
+--- !u!114 &356406571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356406566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabs: {fileID: 8698346075632887932, guid: b05ae81765dc10b4c8d2c5b9c1bbfe64, type: 3}
+  bulletNum: 2
+  coolTime: 0
+  speed: 30
+  isColumn: 1
+  way: 4
+  distance: 5
+  isAll: 1
+  dis: 5
+  isCreate: 0
 --- !u!1 &362796797
 GameObject:
   m_ObjectHideFlags: 0
@@ -2336,7 +2565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a202732a69ce78c4fa1699a319ec8e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 5455741329521793514, guid: 760a4ba66b96b234786d8277b030012e, type: 3}
+  prefabs: {fileID: 5657215318796242319, guid: 618e4dc0e2e11994bb6a2e162ac12bc9, type: 3}
   createTime: 0
   isNum: 1
   bulletNum: 1
@@ -2359,8 +2588,10 @@ GameObject:
   - component: {fileID: 433851881}
   - component: {fileID: 433851880}
   - component: {fileID: 433851884}
+  - component: {fileID: 433851886}
+  - component: {fileID: 433851885}
   m_Layer: 5
-  m_Name: Image_Enemy17
+  m_Name: Kaeru
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2434,7 +2665,7 @@ RectTransform:
   m_GameObject: {fileID: 433851879}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1770674280}
@@ -2488,8 +2719,33 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 50}
+  m_Size: {x: 400, y: 400}
   m_EdgeRadius: 0
+--- !u!114 &433851885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433851879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8934c6a82f911484f831d8bddf02b1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 160
+--- !u!114 &433851886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433851879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &440552889
 GameObject:
   m_ObjectHideFlags: 0
@@ -2857,10 +3113,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 8349215161844493201, guid: 56038a56807de464b966befd8f594631, type: 3}
+  prefabs: {fileID: 6027155496150843635, guid: 41cea085ad687d64f9d243ba5471dc10, type: 3}
   bulletNum: 4
   coolTime: 0.1
   speed: 50
+  isColumn: 0
+  way: 1
+  distance: 0
+  isAll: 0
+  dis: 0
   isCreate: 0
 --- !u!1 &506596897
 GameObject:
@@ -2910,10 +3171,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 8349215161844493201, guid: 56038a56807de464b966befd8f594631, type: 3}
+  prefabs: {fileID: 5880919269982962538, guid: 7fa68bf0305a99c4abe1bf90167ef92d, type: 3}
   bulletNum: 4
   coolTime: 0.2
   speed: 50
+  isColumn: 0
+  way: 1
+  distance: 0
+  isAll: 0
+  dis: 0
   isCreate: 0
 --- !u!1 &517168643
 GameObject:
@@ -3036,8 +3302,10 @@ GameObject:
   - component: {fileID: 575055163}
   - component: {fileID: 575055162}
   - component: {fileID: 575055166}
+  - component: {fileID: 575055168}
+  - component: {fileID: 575055167}
   m_Layer: 5
-  m_Name: Image_Enemy23
+  m_Name: Kaeru
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3084,7 +3352,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: bfa3a33a5833664478d1386f1390147a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3111,7 +3379,7 @@ RectTransform:
   m_GameObject: {fileID: 575055161}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1162013682}
@@ -3120,7 +3388,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -1200, y: 450}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 595, y: 842}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &575055166
 BoxCollider2D:
@@ -3165,8 +3433,33 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 50}
+  m_Size: {x: 400, y: 400}
   m_EdgeRadius: 0
+--- !u!114 &575055167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575055161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &575055168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575055161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8934c6a82f911484f831d8bddf02b1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 160
 --- !u!1 &582024058
 GameObject:
   m_ObjectHideFlags: 0
@@ -3215,10 +3508,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 8349215161844493201, guid: 56038a56807de464b966befd8f594631, type: 3}
+  prefabs: {fileID: 5880919269982962538, guid: 7fa68bf0305a99c4abe1bf90167ef92d, type: 3}
   bulletNum: 4
   coolTime: 0.1
   speed: 50
+  isColumn: 0
+  way: 1
+  distance: 0
+  isAll: 0
+  dis: 0
   isCreate: 0
 --- !u!1 &594900267
 GameObject:
@@ -3233,8 +3531,10 @@ GameObject:
   - component: {fileID: 594900269}
   - component: {fileID: 594900268}
   - component: {fileID: 594900272}
+  - component: {fileID: 594900273}
+  - component: {fileID: 594900274}
   m_Layer: 5
-  m_Name: Image_Enemy10
+  m_Name: Kinoko
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3281,7 +3581,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 0a3c67f66b782754e89ea75fe260cc1c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3308,7 +3608,7 @@ RectTransform:
   m_GameObject: {fileID: 594900267}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1995970524}
@@ -3317,7 +3617,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -850, y: -600}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 595, y: 842}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &594900272
 BoxCollider2D:
@@ -3362,8 +3662,33 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 50}
+  m_Size: {x: 400, y: 400}
   m_EdgeRadius: 0
+--- !u!114 &594900273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594900267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8934c6a82f911484f831d8bddf02b1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 150
+--- !u!114 &594900274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594900267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &598370598
 GameObject:
   m_ObjectHideFlags: 0
@@ -3599,7 +3924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a202732a69ce78c4fa1699a319ec8e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 5455741329521793514, guid: 760a4ba66b96b234786d8277b030012e, type: 3}
+  prefabs: {fileID: 5657215318796242319, guid: 618e4dc0e2e11994bb6a2e162ac12bc9, type: 3}
   createTime: 0
   isNum: 1
   bulletNum: 1
@@ -3657,10 +3982,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 1442480783202881844, guid: b43d348050867eb429a567b1ca1ba6bb, type: 3}
+  prefabs: {fileID: 4916458508094577308, guid: 3c8dda63384efc842a35bfbe51a52858, type: 3}
   bulletNum: 4
   coolTime: 0.2
   speed: 50
+  isColumn: 0
+  way: 1
+  distance: 0
+  isAll: 0
+  dis: 0
   isCreate: 0
 --- !u!1 &649475961
 GameObject:
@@ -3801,7 +4131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a202732a69ce78c4fa1699a319ec8e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 5455741329521793514, guid: 760a4ba66b96b234786d8277b030012e, type: 3}
+  prefabs: {fileID: 5657215318796242319, guid: 618e4dc0e2e11994bb6a2e162ac12bc9, type: 3}
   createTime: 0
   isNum: 1
   bulletNum: 1
@@ -3859,7 +4189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a202732a69ce78c4fa1699a319ec8e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 1151885615697202143, guid: c1ce22ac3278ef549a95f5073de30219, type: 3}
+  prefabs: {fileID: 1501250913882245020, guid: 7a08923abb569d14aa8e7eca532999fc, type: 3}
   createTime: 20
   isNum: 0
   bulletNum: 0
@@ -4084,8 +4414,10 @@ GameObject:
   - component: {fileID: 689852310}
   - component: {fileID: 689852309}
   - component: {fileID: 689852313}
+  - component: {fileID: 689852315}
+  - component: {fileID: 689852314}
   m_Layer: 5
-  m_Name: Image_Enemy15
+  m_Name: Kaeru
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4159,7 +4491,7 @@ RectTransform:
   m_GameObject: {fileID: 689852308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1151013552}
@@ -4213,8 +4545,33 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 50}
+  m_Size: {x: 400, y: 400}
   m_EdgeRadius: 0
+--- !u!114 &689852314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689852308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8934c6a82f911484f831d8bddf02b1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 160
+--- !u!114 &689852315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689852308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &713501199
 GameObject:
   m_ObjectHideFlags: 0
@@ -4328,10 +4685,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 8349215161844493201, guid: 56038a56807de464b966befd8f594631, type: 3}
+  prefabs: {fileID: 6027155496150843635, guid: 41cea085ad687d64f9d243ba5471dc10, type: 3}
   bulletNum: 4
   coolTime: 0.1
   speed: 50
+  isColumn: 0
+  way: 1
+  distance: 0
+  isAll: 0
+  dis: 0
   isCreate: 0
 --- !u!1 &752558067
 GameObject:
@@ -4346,8 +4708,10 @@ GameObject:
   - component: {fileID: 752558069}
   - component: {fileID: 752558068}
   - component: {fileID: 752558072}
+  - component: {fileID: 752558073}
+  - component: {fileID: 752558074}
   m_Layer: 5
-  m_Name: Image_Enemy8
+  m_Name: Kaeru
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4394,7 +4758,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: bfa3a33a5833664478d1386f1390147a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4421,7 +4785,7 @@ RectTransform:
   m_GameObject: {fileID: 752558067}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1509588497}
@@ -4430,7 +4794,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 850, y: -700}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 595, y: 842}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &752558072
 BoxCollider2D:
@@ -4475,8 +4839,33 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 50}
+  m_Size: {x: 400, y: 400}
   m_EdgeRadius: 0
+--- !u!114 &752558073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752558067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8934c6a82f911484f831d8bddf02b1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 160
+--- !u!114 &752558074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752558067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &754219182
 GameObject:
   m_ObjectHideFlags: 0
@@ -4622,10 +5011,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 8349215161844493201, guid: 56038a56807de464b966befd8f594631, type: 3}
+  prefabs: {fileID: 6027155496150843635, guid: 41cea085ad687d64f9d243ba5471dc10, type: 3}
   bulletNum: 4
   coolTime: 0.1
   speed: 50
+  isColumn: 0
+  way: 1
+  distance: 0
+  isAll: 0
+  dis: 0
   isCreate: 0
 --- !u!1 &858760467
 GameObject:
@@ -4754,10 +5148,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 8349215161844493201, guid: 56038a56807de464b966befd8f594631, type: 3}
+  prefabs: {fileID: 6027155496150843635, guid: 41cea085ad687d64f9d243ba5471dc10, type: 3}
   bulletNum: 4
   coolTime: 0.1
   speed: 50
+  isColumn: 0
+  way: 1
+  distance: 0
+  isAll: 0
+  dis: 0
   isCreate: 0
 --- !u!1 &890763362
 GameObject:
@@ -4847,7 +5246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a202732a69ce78c4fa1699a319ec8e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 5455741329521793514, guid: 760a4ba66b96b234786d8277b030012e, type: 3}
+  prefabs: {fileID: 5657215318796242319, guid: 618e4dc0e2e11994bb6a2e162ac12bc9, type: 3}
   createTime: 0
   isNum: 1
   bulletNum: 1
@@ -4870,8 +5269,10 @@ GameObject:
   - component: {fileID: 893975930}
   - component: {fileID: 893975929}
   - component: {fileID: 893975933}
+  - component: {fileID: 893975935}
+  - component: {fileID: 893975934}
   m_Layer: 5
-  m_Name: Image_Enemy21
+  m_Name: Kinoko
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4918,7 +5319,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 0a3c67f66b782754e89ea75fe260cc1c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4945,7 +5346,7 @@ RectTransform:
   m_GameObject: {fileID: 893975928}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1736938820}
@@ -4954,7 +5355,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 1300, y: 500}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 595, y: 842}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &893975933
 BoxCollider2D:
@@ -4999,8 +5400,33 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 50}
+  m_Size: {x: 400, y: 400}
   m_EdgeRadius: 0
+--- !u!114 &893975934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893975928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &893975935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893975928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8934c6a82f911484f831d8bddf02b1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 150
 --- !u!1 &905625664
 GameObject:
   m_ObjectHideFlags: 0
@@ -5452,7 +5878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a202732a69ce78c4fa1699a319ec8e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 1151885615697202143, guid: c1ce22ac3278ef549a95f5073de30219, type: 3}
+  prefabs: {fileID: 1501250913882245020, guid: 7a08923abb569d14aa8e7eca532999fc, type: 3}
   createTime: 20
   isNum: 0
   bulletNum: 0
@@ -5550,7 +5976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a202732a69ce78c4fa1699a319ec8e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 5455741329521793514, guid: 760a4ba66b96b234786d8277b030012e, type: 3}
+  prefabs: {fileID: 5657215318796242319, guid: 618e4dc0e2e11994bb6a2e162ac12bc9, type: 3}
   createTime: 0
   isNum: 1
   bulletNum: 1
@@ -5573,8 +5999,10 @@ GameObject:
   - component: {fileID: 949835598}
   - component: {fileID: 949835597}
   - component: {fileID: 949835601}
+  - component: {fileID: 949835603}
+  - component: {fileID: 949835602}
   m_Layer: 5
-  m_Name: Image_Enemy20
+  m_Name: Kinoko
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5621,7 +6049,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 0a3c67f66b782754e89ea75fe260cc1c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5648,7 +6076,7 @@ RectTransform:
   m_GameObject: {fileID: 949835596}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 491978767}
@@ -5657,7 +6085,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 1200, y: 450}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 595, y: 842}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &949835601
 BoxCollider2D:
@@ -5702,8 +6130,33 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 50}
+  m_Size: {x: 400, y: 400}
   m_EdgeRadius: 0
+--- !u!114 &949835602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949835596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &949835603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949835596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8934c6a82f911484f831d8bddf02b1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 150
 --- !u!1 &968469903
 GameObject:
   m_ObjectHideFlags: 0
@@ -5775,8 +6228,10 @@ GameObject:
   - component: {fileID: 968553036}
   - component: {fileID: 968553035}
   - component: {fileID: 968553039}
+  - component: {fileID: 968553041}
+  - component: {fileID: 968553040}
   m_Layer: 5
-  m_Name: Image_Enemy13
+  m_Name: Kaeru
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5850,7 +6305,7 @@ RectTransform:
   m_GameObject: {fileID: 968553034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1399620850}
@@ -5904,8 +6359,33 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 50}
+  m_Size: {x: 400, y: 400}
   m_EdgeRadius: 0
+--- !u!114 &968553040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968553034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8934c6a82f911484f831d8bddf02b1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 160
+--- !u!114 &968553041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968553034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &986746185
 GameObject:
   m_ObjectHideFlags: 0
@@ -6124,7 +6604,6 @@ RectTransform:
   m_Children:
   - {fileID: 300643903}
   - {fileID: 912404465}
-  - {fileID: 1566700769}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -6243,8 +6722,10 @@ GameObject:
   - component: {fileID: 1055304837}
   - component: {fileID: 1055304836}
   - component: {fileID: 1055304840}
+  - component: {fileID: 1055304842}
+  - component: {fileID: 1055304841}
   m_Layer: 5
-  m_Name: Image_Enemy16
+  m_Name: Kinoko
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6318,7 +6799,7 @@ RectTransform:
   m_GameObject: {fileID: 1055304835}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 719166749}
@@ -6372,8 +6853,33 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 50}
+  m_Size: {x: 400, y: 400}
   m_EdgeRadius: 0
+--- !u!114 &1055304841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055304835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8934c6a82f911484f831d8bddf02b1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 150
+--- !u!114 &1055304842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055304835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1060059863
 GameObject:
   m_ObjectHideFlags: 0
@@ -6479,8 +6985,10 @@ GameObject:
   - component: {fileID: 1081109656}
   - component: {fileID: 1081109655}
   - component: {fileID: 1081109659}
+  - component: {fileID: 1081109661}
+  - component: {fileID: 1081109660}
   m_Layer: 5
-  m_Name: Image_Enemy14
+  m_Name: Kinoko
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6554,7 +7062,7 @@ RectTransform:
   m_GameObject: {fileID: 1081109654}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1746841846}
@@ -6608,8 +7116,33 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 50}
+  m_Size: {x: 400, y: 400}
   m_EdgeRadius: 0
+--- !u!114 &1081109660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081109654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8934c6a82f911484f831d8bddf02b1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 150
+--- !u!114 &1081109661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081109654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1089107831
 GameObject:
   m_ObjectHideFlags: 0
@@ -6943,10 +7476,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 8349215161844493201, guid: 56038a56807de464b966befd8f594631, type: 3}
+  prefabs: {fileID: 5880919269982962538, guid: 7fa68bf0305a99c4abe1bf90167ef92d, type: 3}
   bulletNum: 4
   coolTime: 0.1
   speed: 50
+  isColumn: 0
+  way: 1
+  distance: 0
+  isAll: 0
+  dis: 0
   isCreate: 0
 --- !u!1 &1162013681
 GameObject:
@@ -6996,10 +7534,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 8349215161844493201, guid: 56038a56807de464b966befd8f594631, type: 3}
+  prefabs: {fileID: 5880919269982962538, guid: 7fa68bf0305a99c4abe1bf90167ef92d, type: 3}
   bulletNum: 4
   coolTime: 0.1
   speed: 50
+  isColumn: 0
+  way: 1
+  distance: 0
+  isAll: 0
+  dis: 0
   isCreate: 0
 --- !u!1 &1173081138
 GameObject:
@@ -7089,7 +7632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a202732a69ce78c4fa1699a319ec8e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 5455741329521793514, guid: 760a4ba66b96b234786d8277b030012e, type: 3}
+  prefabs: {fileID: 5657215318796242319, guid: 618e4dc0e2e11994bb6a2e162ac12bc9, type: 3}
   createTime: 0
   isNum: 1
   bulletNum: 1
@@ -7112,8 +7655,10 @@ GameObject:
   - component: {fileID: 1181204857}
   - component: {fileID: 1181204856}
   - component: {fileID: 1181204860}
+  - component: {fileID: 1181204861}
+  - component: {fileID: 1181204862}
   m_Layer: 5
-  m_Name: Image_Enemy5
+  m_Name: Kinoko
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7160,7 +7705,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 0a3c67f66b782754e89ea75fe260cc1c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7187,7 +7732,7 @@ RectTransform:
   m_GameObject: {fileID: 1181204855}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 179833112}
@@ -7196,7 +7741,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -1200, y: 400}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 595, y: 842}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &1181204860
 BoxCollider2D:
@@ -7241,8 +7786,33 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 50}
+  m_Size: {x: 400, y: 400}
   m_EdgeRadius: 0
+--- !u!114 &1181204861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181204855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8934c6a82f911484f831d8bddf02b1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 150
+--- !u!114 &1181204862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181204855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1194586276
 GameObject:
   m_ObjectHideFlags: 0
@@ -7313,10 +7883,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 8349215161844493201, guid: 56038a56807de464b966befd8f594631, type: 3}
+  prefabs: {fileID: 6027155496150843635, guid: 41cea085ad687d64f9d243ba5471dc10, type: 3}
   bulletNum: 4
   coolTime: 0.2
   speed: 50
+  isColumn: 0
+  way: 1
+  distance: 0
+  isAll: 0
+  dis: 0
   isCreate: 0
 --- !u!1 &1206011955
 GameObject:
@@ -7406,8 +7981,10 @@ GameObject:
   - component: {fileID: 1210752158}
   - component: {fileID: 1210752157}
   - component: {fileID: 1210752161}
+  - component: {fileID: 1210752162}
+  - component: {fileID: 1210752163}
   m_Layer: 5
-  m_Name: Image_Enemy4
+  m_Name: Kinoko
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7454,7 +8031,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 0a3c67f66b782754e89ea75fe260cc1c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7481,7 +8058,7 @@ RectTransform:
   m_GameObject: {fileID: 1210752156}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 79473425}
@@ -7490,7 +8067,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -1100, y: 400}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 595, y: 842}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &1210752161
 BoxCollider2D:
@@ -7535,8 +8112,33 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 50}
+  m_Size: {x: 400, y: 400}
   m_EdgeRadius: 0
+--- !u!114 &1210752162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210752156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8934c6a82f911484f831d8bddf02b1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 150
+--- !u!114 &1210752163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210752156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1219913606
 GameObject:
   m_ObjectHideFlags: 0
@@ -7550,8 +8152,10 @@ GameObject:
   - component: {fileID: 1219913608}
   - component: {fileID: 1219913607}
   - component: {fileID: 1219913611}
+  - component: {fileID: 1219913612}
+  - component: {fileID: 1219913613}
   m_Layer: 5
-  m_Name: Image_Enemy9
+  m_Name: Kaeru
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7598,7 +8202,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: bfa3a33a5833664478d1386f1390147a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7625,7 +8229,7 @@ RectTransform:
   m_GameObject: {fileID: 1219913606}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1805777923}
@@ -7634,7 +8238,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 850, y: -800}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 595, y: 842}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &1219913611
 BoxCollider2D:
@@ -7679,8 +8283,33 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 50}
+  m_Size: {x: 400, y: 400}
   m_EdgeRadius: 0
+--- !u!114 &1219913612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219913606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8934c6a82f911484f831d8bddf02b1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 160
+--- !u!114 &1219913613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219913606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1269825501
 GameObject:
   m_ObjectHideFlags: 0
@@ -7808,10 +8437,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 1442480783202881844, guid: b43d348050867eb429a567b1ca1ba6bb, type: 3}
+  prefabs: {fileID: 4916458508094577308, guid: 3c8dda63384efc842a35bfbe51a52858, type: 3}
   bulletNum: 4
   coolTime: 0.2
   speed: 50
+  isColumn: 0
+  way: 1
+  distance: 0
+  isAll: 0
+  dis: 0
   isCreate: 0
 --- !u!1 &1281829909
 GameObject:
@@ -7826,8 +8460,10 @@ GameObject:
   - component: {fileID: 1281829911}
   - component: {fileID: 1281829910}
   - component: {fileID: 1281829914}
+  - component: {fileID: 1281829915}
+  - component: {fileID: 1281829916}
   m_Layer: 5
-  m_Name: Image_Enemy6
+  m_Name: Kinoko
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7874,7 +8510,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 0a3c67f66b782754e89ea75fe260cc1c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7901,7 +8537,7 @@ RectTransform:
   m_GameObject: {fileID: 1281829909}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1699174790}
@@ -7910,7 +8546,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -1300, y: 400}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 595, y: 842}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &1281829914
 BoxCollider2D:
@@ -7955,8 +8591,33 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 50}
+  m_Size: {x: 400, y: 400}
   m_EdgeRadius: 0
+--- !u!114 &1281829915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281829909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8934c6a82f911484f831d8bddf02b1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 150
+--- !u!114 &1281829916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281829909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1367720479
 GameObject:
   m_ObjectHideFlags: 0
@@ -7974,6 +8635,7 @@ GameObject:
   - component: {fileID: 1367720481}
   - component: {fileID: 1367720487}
   - component: {fileID: 1367720488}
+  - component: {fileID: 1367720489}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -8236,6 +8898,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossController: {fileID: 912404466}
   anim: {fileID: 1367720486}
+--- !u!114 &1367720489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367720479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c31af07ca1ac6f4cba3c5aaf8776f14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossController: {fileID: 912404466}
 --- !u!1 &1381847068
 GameObject:
   m_ObjectHideFlags: 0
@@ -8284,10 +8959,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 8349215161844493201, guid: 56038a56807de464b966befd8f594631, type: 3}
+  prefabs: {fileID: 6027155496150843635, guid: 41cea085ad687d64f9d243ba5471dc10, type: 3}
   bulletNum: 4
   coolTime: 0.2
   speed: 50
+  isColumn: 0
+  way: 1
+  distance: 0
+  isAll: 0
+  dis: 0
   isCreate: 0
 --- !u!1 &1399620849
 GameObject:
@@ -8337,10 +9017,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 8349215161844493201, guid: 56038a56807de464b966befd8f594631, type: 3}
+  prefabs: {fileID: 5880919269982962538, guid: 7fa68bf0305a99c4abe1bf90167ef92d, type: 3}
   bulletNum: 4
   coolTime: 0.1
   speed: 50
+  isColumn: 0
+  way: 1
+  distance: 0
+  isAll: 0
+  dis: 0
   isCreate: 0
 --- !u!1001 &1435000938
 PrefabInstance:
@@ -8536,10 +9221,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 8349215161844493201, guid: 56038a56807de464b966befd8f594631, type: 3}
+  prefabs: {fileID: 5880919269982962538, guid: 7fa68bf0305a99c4abe1bf90167ef92d, type: 3}
   bulletNum: 4
   coolTime: 0.1
   speed: 50
+  isColumn: 0
+  way: 1
+  distance: 0
+  isAll: 0
+  dis: 0
   isCreate: 0
 --- !u!1 &1501492596
 GameObject:
@@ -8553,9 +9243,9 @@ GameObject:
   - component: {fileID: 1501492603}
   - component: {fileID: 1501492602}
   - component: {fileID: 1501492601}
-  - component: {fileID: 1501492600}
   - component: {fileID: 1501492599}
   - component: {fileID: 1501492598}
+  - component: {fileID: 1501492604}
   m_Layer: 0
   m_Name: BossClone1
   m_TagString: Untagged
@@ -8655,14 +9345,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!33 &1501492600
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1501492596}
-  m_Mesh: {fileID: 0}
 --- !u!114 &1501492601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8701,8 +9383,8 @@ MonoBehaviour:
   translator:
     autoReset: 1
     useCustomMixMode: 1
-    layerMixModes: 
-    layerBlendModes: 
+    layerMixModes: 01000000
+    layerBlendModes: 01000000
   updateTiming: 1
 --- !u!23 &1501492602
 MeshRenderer:
@@ -8767,6 +9449,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1501492604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501492596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c31af07ca1ac6f4cba3c5aaf8776f14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossController: {fileID: 912404466}
 --- !u!1 &1509588496
 GameObject:
   m_ObjectHideFlags: 0
@@ -8815,10 +9510,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 8349215161844493201, guid: 56038a56807de464b966befd8f594631, type: 3}
+  prefabs: {fileID: 5880919269982962538, guid: 7fa68bf0305a99c4abe1bf90167ef92d, type: 3}
   bulletNum: 4
   coolTime: 0.2
   speed: 50
+  isColumn: 0
+  way: 1
+  distance: 0
+  isAll: 0
+  dis: 0
   isCreate: 0
 --- !u!1 &1551163145
 GameObject:
@@ -9171,7 +9871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a202732a69ce78c4fa1699a319ec8e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 5455741329521793514, guid: 760a4ba66b96b234786d8277b030012e, type: 3}
+  prefabs: {fileID: 5657215318796242319, guid: 618e4dc0e2e11994bb6a2e162ac12bc9, type: 3}
   createTime: 0
   isNum: 1
   bulletNum: 1
@@ -9181,135 +9881,6 @@ MonoBehaviour:
   way: 10
   adjustmentAngle: 0
   isCreate: 0
---- !u!1001 &1566700768
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1046795018}
-    m_Modifications:
-    - target: {fileID: 903317438090351994, guid: 2ee413043c7d5734eba45636a3947f0a,
-        type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 903317438090351994, guid: 2ee413043c7d5734eba45636a3947f0a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4650987111291170783, guid: 2ee413043c7d5734eba45636a3947f0a,
-        type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4650987111291170783, guid: 2ee413043c7d5734eba45636a3947f0a,
-        type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4650987111291170783, guid: 2ee413043c7d5734eba45636a3947f0a,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4650987111291170783, guid: 2ee413043c7d5734eba45636a3947f0a,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4650987111291170783, guid: 2ee413043c7d5734eba45636a3947f0a,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4650987111291170783, guid: 2ee413043c7d5734eba45636a3947f0a,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4650987111291170783, guid: 2ee413043c7d5734eba45636a3947f0a,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4650987111291170783, guid: 2ee413043c7d5734eba45636a3947f0a,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4650987111291170783, guid: 2ee413043c7d5734eba45636a3947f0a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4650987111291170783, guid: 2ee413043c7d5734eba45636a3947f0a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4650987111291170783, guid: 2ee413043c7d5734eba45636a3947f0a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4650987111291170783, guid: 2ee413043c7d5734eba45636a3947f0a,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4650987111291170783, guid: 2ee413043c7d5734eba45636a3947f0a,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4650987111291170783, guid: 2ee413043c7d5734eba45636a3947f0a,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4650987111291170783, guid: 2ee413043c7d5734eba45636a3947f0a,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4650987111291170783, guid: 2ee413043c7d5734eba45636a3947f0a,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4650987111291170783, guid: 2ee413043c7d5734eba45636a3947f0a,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -300
-      objectReference: {fileID: 0}
-    - target: {fileID: 4650987111291170783, guid: 2ee413043c7d5734eba45636a3947f0a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4650987111291170783, guid: 2ee413043c7d5734eba45636a3947f0a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4650987111291170783, guid: 2ee413043c7d5734eba45636a3947f0a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2ee413043c7d5734eba45636a3947f0a, type: 3}
---- !u!224 &1566700769 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4650987111291170783, guid: 2ee413043c7d5734eba45636a3947f0a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1566700768}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1579153858
 GameObject:
   m_ObjectHideFlags: 0
@@ -9637,10 +10208,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 1442480783202881844, guid: b43d348050867eb429a567b1ca1ba6bb, type: 3}
+  prefabs: {fileID: 4916458508094577308, guid: 3c8dda63384efc842a35bfbe51a52858, type: 3}
   bulletNum: 4
   coolTime: 0.2
   speed: 50
+  isColumn: 0
+  way: 1
+  distance: 0
+  isAll: 0
+  dis: 0
   isCreate: 0
 --- !u!1 &1653834121
 GameObject:
@@ -9760,10 +10336,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 1442480783202881844, guid: b43d348050867eb429a567b1ca1ba6bb, type: 3}
+  prefabs: {fileID: 4916458508094577308, guid: 3c8dda63384efc842a35bfbe51a52858, type: 3}
   bulletNum: 4
   coolTime: 0.2
   speed: 50
+  isColumn: 0
+  way: 1
+  distance: 0
+  isAll: 0
+  dis: 0
   isCreate: 0
 --- !u!1 &1699174789
 GameObject:
@@ -9813,10 +10394,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 8349215161844493201, guid: 56038a56807de464b966befd8f594631, type: 3}
+  prefabs: {fileID: 6027155496150843635, guid: 41cea085ad687d64f9d243ba5471dc10, type: 3}
   bulletNum: 4
   coolTime: 0.2
   speed: 50
+  isColumn: 0
+  way: 1
+  distance: 0
+  isAll: 0
+  dis: 0
   isCreate: 0
 --- !u!1 &1711351354
 GameObject:
@@ -9901,10 +10487,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 8349215161844493201, guid: 56038a56807de464b966befd8f594631, type: 3}
+  prefabs: {fileID: 6027155496150843635, guid: 41cea085ad687d64f9d243ba5471dc10, type: 3}
   bulletNum: 4
   coolTime: 0.1
   speed: 50
+  isColumn: 0
+  way: 1
+  distance: 0
+  isAll: 0
+  dis: 0
   isCreate: 0
 --- !u!1 &1746841845
 GameObject:
@@ -9954,10 +10545,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 8349215161844493201, guid: 56038a56807de464b966befd8f594631, type: 3}
+  prefabs: {fileID: 6027155496150843635, guid: 41cea085ad687d64f9d243ba5471dc10, type: 3}
   bulletNum: 4
   coolTime: 0.1
   speed: 50
+  isColumn: 0
+  way: 1
+  distance: 0
+  isAll: 0
+  dis: 0
   isCreate: 0
 --- !u!1 &1748609828
 GameObject:
@@ -9971,9 +10567,9 @@ GameObject:
   - component: {fileID: 1748609835}
   - component: {fileID: 1748609834}
   - component: {fileID: 1748609833}
-  - component: {fileID: 1748609832}
   - component: {fileID: 1748609831}
   - component: {fileID: 1748609830}
+  - component: {fileID: 1748609836}
   m_Layer: 0
   m_Name: BossClone3
   m_TagString: Untagged
@@ -10073,14 +10669,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!33 &1748609832
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1748609828}
-  m_Mesh: {fileID: 0}
 --- !u!114 &1748609833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10119,8 +10707,8 @@ MonoBehaviour:
   translator:
     autoReset: 1
     useCustomMixMode: 1
-    layerMixModes: 
-    layerBlendModes: 
+    layerMixModes: 01000000
+    layerBlendModes: 01000000
   updateTiming: 1
 --- !u!23 &1748609834
 MeshRenderer:
@@ -10185,6 +10773,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1748609836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748609828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c31af07ca1ac6f4cba3c5aaf8776f14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossController: {fileID: 912404466}
 --- !u!1 &1770674279
 GameObject:
   m_ObjectHideFlags: 0
@@ -10233,10 +10834,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 8349215161844493201, guid: 56038a56807de464b966befd8f594631, type: 3}
+  prefabs: {fileID: 5880919269982962538, guid: 7fa68bf0305a99c4abe1bf90167ef92d, type: 3}
   bulletNum: 4
   coolTime: 0.1
   speed: 50
+  isColumn: 0
+  way: 1
+  distance: 0
+  isAll: 0
+  dis: 0
   isCreate: 0
 --- !u!1 &1779006484
 GameObject:
@@ -10446,10 +11052,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 8349215161844493201, guid: 56038a56807de464b966befd8f594631, type: 3}
+  prefabs: {fileID: 5880919269982962538, guid: 7fa68bf0305a99c4abe1bf90167ef92d, type: 3}
   bulletNum: 4
   coolTime: 0.2
   speed: 50
+  isColumn: 0
+  way: 1
+  distance: 0
+  isAll: 0
+  dis: 0
   isCreate: 0
 --- !u!1 &1810243274
 GameObject:
@@ -10539,8 +11150,10 @@ GameObject:
   - component: {fileID: 1862442467}
   - component: {fileID: 1862442466}
   - component: {fileID: 1862442470}
+  - component: {fileID: 1862442472}
+  - component: {fileID: 1862442471}
   m_Layer: 5
-  m_Name: Image_Enemy19
+  m_Name: Kinoko
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10587,7 +11200,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 0a3c67f66b782754e89ea75fe260cc1c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10614,7 +11227,7 @@ RectTransform:
   m_GameObject: {fileID: 1862442465}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 880025808}
@@ -10623,7 +11236,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 1100, y: 400}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 595, y: 842}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &1862442470
 BoxCollider2D:
@@ -10668,8 +11281,33 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 50}
+  m_Size: {x: 400, y: 400}
   m_EdgeRadius: 0
+--- !u!114 &1862442471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862442465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1862442472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862442465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8934c6a82f911484f831d8bddf02b1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 150
 --- !u!1 &1883024587
 GameObject:
   m_ObjectHideFlags: 0
@@ -10784,8 +11422,10 @@ GameObject:
   - component: {fileID: 1905101113}
   - component: {fileID: 1905101112}
   - component: {fileID: 1905101116}
+  - component: {fileID: 1905101117}
+  - component: {fileID: 1905101118}
   m_Layer: 5
-  m_Name: Image_Enemy7
+  m_Name: Kaeru
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10832,7 +11472,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: bfa3a33a5833664478d1386f1390147a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10859,7 +11499,7 @@ RectTransform:
   m_GameObject: {fileID: 1905101111}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 506596898}
@@ -10868,7 +11508,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 850, y: -600}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 595, y: 842}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &1905101116
 BoxCollider2D:
@@ -10913,8 +11553,33 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 50}
+  m_Size: {x: 400, y: 400}
   m_EdgeRadius: 0
+--- !u!114 &1905101117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905101111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8934c6a82f911484f831d8bddf02b1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 160
+--- !u!114 &1905101118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905101111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1953721446
 GameObject:
   m_ObjectHideFlags: 0
@@ -10928,8 +11593,10 @@ GameObject:
   - component: {fileID: 1953721448}
   - component: {fileID: 1953721447}
   - component: {fileID: 1953721451}
+  - component: {fileID: 1953721452}
+  - component: {fileID: 1953721453}
   m_Layer: 5
-  m_Name: Image_Enemy3
+  m_Name: Kinoko
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10976,7 +11643,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 0a3c67f66b782754e89ea75fe260cc1c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11003,7 +11670,7 @@ RectTransform:
   m_GameObject: {fileID: 1953721446}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1381847069}
@@ -11012,7 +11679,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 1300, y: 400}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 595, y: 842}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &1953721451
 BoxCollider2D:
@@ -11057,8 +11724,33 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 50}
+  m_Size: {x: 400, y: 400}
   m_EdgeRadius: 0
+--- !u!114 &1953721452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953721446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8934c6a82f911484f831d8bddf02b1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 150
+--- !u!114 &1953721453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953721446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1995970523
 GameObject:
   m_ObjectHideFlags: 0
@@ -11107,10 +11799,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 8349215161844493201, guid: 56038a56807de464b966befd8f594631, type: 3}
+  prefabs: {fileID: 6027155496150843635, guid: 41cea085ad687d64f9d243ba5471dc10, type: 3}
   bulletNum: 4
   coolTime: 0.2
   speed: 50
+  isColumn: 0
+  way: 1
+  distance: 0
+  isAll: 0
+  dis: 0
   isCreate: 0
 --- !u!1 &2006666400
 GameObject:
@@ -11160,7 +11857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a202732a69ce78c4fa1699a319ec8e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 1151885615697202143, guid: c1ce22ac3278ef549a95f5073de30219, type: 3}
+  prefabs: {fileID: 1501250913882245020, guid: 7a08923abb569d14aa8e7eca532999fc, type: 3}
   createTime: 20
   isNum: 0
   bulletNum: 0
@@ -11183,8 +11880,10 @@ GameObject:
   - component: {fileID: 2031477834}
   - component: {fileID: 2031477832}
   - component: {fileID: 2031477837}
+  - component: {fileID: 2031477838}
+  - component: {fileID: 2031477839}
   m_Layer: 5
-  m_Name: Image_Enemy1
+  m_Name: Kinoko
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11231,7 +11930,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 0a3c67f66b782754e89ea75fe260cc1c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11258,7 +11957,7 @@ RectTransform:
   m_GameObject: {fileID: 2031477831}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1194586277}
@@ -11267,7 +11966,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 1100, y: 400}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 595, y: 842}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &2031477837
 BoxCollider2D:
@@ -11312,8 +12011,33 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 50}
+  m_Size: {x: 400, y: 400}
   m_EdgeRadius: 0
+--- !u!114 &2031477838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031477831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8934c6a82f911484f831d8bddf02b1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 150
+--- !u!114 &2031477839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031477831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2044290560
 GameObject:
   m_ObjectHideFlags: 0
@@ -11362,10 +12086,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 8349215161844493201, guid: 56038a56807de464b966befd8f594631, type: 3}
+  prefabs: {fileID: 6027155496150843635, guid: 41cea085ad687d64f9d243ba5471dc10, type: 3}
   bulletNum: 4
   coolTime: 0.2
   speed: 50
+  isColumn: 0
+  way: 1
+  distance: 0
+  isAll: 0
+  dis: 0
   isCreate: 0
 --- !u!1 &2097064067
 GameObject:

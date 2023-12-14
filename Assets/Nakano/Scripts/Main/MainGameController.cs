@@ -35,7 +35,7 @@ public class MainGameController : MonoBehaviour
 
     IEnumerator GameStart()
     {
-        timeCountState = TimeCountState.PAUSE;
+        timeCountState = TimeCountState.STOP;
 
         //フェードが終わったら
         yield return new WaitUntil(() => fade.FadeInEnd);
@@ -74,7 +74,22 @@ public class MainGameController : MonoBehaviour
             GameOverDirection();
         }
 
-        timer.text = elapsedTime.ToString("f2");
+        TimeDisp();
+        ScoreDisp();
+    }
+
+    void TimeDisp()
+    {
+        int hours = Mathf.FloorToInt(GlobalVariables.AliveTime / 3600);
+        int mitutes = Mathf.FloorToInt((GlobalVariables.AliveTime - hours * 3600) / 60);
+        int seconds = Mathf.FloorToInt(GlobalVariables.AliveTime - hours * 3600 - mitutes * 60);
+
+        timer.text = hours.ToString("d2") + ":" + mitutes.ToString("d2") + ":" + seconds.ToString("d2");
+    }
+
+    void ScoreDisp()
+    {
+        score.text = GlobalVariables.Score.ToString();
     }
 
     /// <summary>
@@ -84,7 +99,7 @@ public class MainGameController : MonoBehaviour
     /// <param name="WaveNumber"></param>
     public void WaveDirection(bool bgScroll, int WaveNumber)
     {
-        timeCountState = TimeCountState.PAUSE;
+        timeCountState = TimeCountState.STOP;
         waveDirectionEnd = false;
         waveDirectionText.text = "WAVE" + (WaveNumber).ToString();
 

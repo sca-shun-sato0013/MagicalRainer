@@ -53,7 +53,12 @@ public class BossController : MonoBehaviour
 
     [SerializeField, Header("ボス タイムライン数")] int timelineNum = 5;
 
-    bool toWave2 = false, toWave3 = false, toWave4 = false; //残HP以外のWAVE移行条件用 条件達成時にtrueにしてWave移行する
+    //残HP以外のWAVE移行条件用 条件達成時にtrueにしてWave移行する
+    bool toWave2 = false, toWave3 = false, toWave4 = false;
+
+    //無敵状態
+    bool isInvincible = true;
+    public bool Invincible { get { return isInvincible; } }
 
     //Stage1用
     [SerializeField, Header("ボスの分身")] GameObject[] bossClone;
@@ -105,7 +110,7 @@ public class BossController : MonoBehaviour
         //Debug
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            hp -= 200;
+            if(!isInvincible) hp -= 200;
         }
 
         //HPが一定以下になったら初期位置に戻る
@@ -178,10 +183,12 @@ public class BossController : MonoBehaviour
     //ボス戦移行
     IEnumerator BossReach()
     {
+        isInvincible = true;
+
         //WAVEが全て終わったら
         yield return new WaitUntil(() => waveController.WaveCompleted);
 
-        timeCountState = TimeCountState.PAUSE;
+        timeCountState = TimeCountState.STOP;
 
         yield return new WaitForSeconds(3f);
 
@@ -220,26 +227,41 @@ public class BossController : MonoBehaviour
         else if(hpRatio < 1.0f / 3.0f) { hpBar.sprite = hpBars[2]; }
 
         //残りHpに応じてWAVE変更 wave2やwave3などのフラグはWaveChange()を一度だけ呼び出すためのもの
-        if (hpRatio <= hpLimit[0] && !wave2 && toWave2)
+        if (hpRatio <= hpLimit[0] && !wave2)
         {
-            wave2 = true;
-            WaveChange(); 
+            hpRatio = hpLimit[0];
+            isInvincible = true; //Wave移行条件を達成していない、かつHPが一定量まで下がっている場合はそれ以上HPの減少をしない
+            if(toWave2)
+            {
+                wave2 = true;
+                WaveChange();
+            }
         }
-        else if (hpRatio <= hpLimit[1] && !wave3 && toWave3) 
-        { 
-            wave3 = true; 
-            WaveChange();
+        else if (hpRatio <= hpLimit[1] && !wave3) 
+        {
+            hpRatio = hpLimit[1];
+            isInvincible = true;
+            if (toWave3)
+            {
+                wave3 = true;
+                WaveChange();
+            }
         }
-        else if (hpRatio <= hpLimit[2] && !wave4 && toWave4) 
-        { 
-            wave4 = true;
-            WaveChange();
+        else if (hpRatio <= hpLimit[2] && !wave4) 
+        {
+            hpRatio = hpLimit[2];
+            isInvincible = true;
+            if (toWave4)
+            {
+                wave4 = true;
+                WaveChange();
 
-            if(stageNum == 1) { wave4NowHP = hp; }
+                if (stageNum == 1) { wave4NowHP = hp; }
+            }
         }
         else if (hp <= 0 && !end) 
         { 
-            hp = 0; 
+            hp = 0;
             end = true;
             WaveChange();
             StartCoroutine(ClearDirection());
@@ -276,7 +298,8 @@ public class BossController : MonoBehaviour
     {
         isPosIni = true;
         screenInitialize = true;
-        timeCountState = TimeCountState.PAUSE;
+        timeCountState = TimeCountState.STOP;
+        isInvincible = true;
     }
 
     //画面から弾を全削除 
@@ -327,6 +350,7 @@ public class BossController : MonoBehaviour
         yield return new WaitUntil(() => mainGameController.WaveDirectionEnd);
 
         timeCountState = TimeCountState.COUNT;
+        isInvincible = false;
 
         //Stage1 Boss Wave4
         if (stageNum == 1 && currentTrackIndex == 4 && hp > 0)
