@@ -120,16 +120,19 @@ public class MainGameController : MonoBehaviour
     /// <param name="WaveNumber"></param>
     public void WaveDirection(bool bgScroll, int WaveNumber)
     {
-        timeCountState = TimeCountState.STOP;
-        waveDirectionEnd = false;
-        waveDirectionText.text = "WAVE" + (WaveNumber).ToString();
+        if(!isGameover)
+        {
+            timeCountState = TimeCountState.STOP;
+            waveDirectionEnd = false;
+            waveDirectionText.text = "WAVE" + (WaveNumber).ToString();
 
-        //「WAVE」のテキストを画面内へ
-        waveDirection.SetTrigger("In");
+            //「WAVE」のテキストを画面内へ
+            waveDirection.SetTrigger("In");
 
-        StartCoroutine(WaveWait(bgScroll));
+            StartCoroutine(WaveWait(bgScroll));
 
-        //プレイヤーの動きを止める
+            //プレイヤーの動きを止める
+        }
     }
 
     IEnumerator WaveWait(bool bgScroll)
@@ -165,6 +168,8 @@ public class MainGameController : MonoBehaviour
 
     public void GameClearDirection()
     {
+        timeCountState = TimeCountState.STOP;
+
         endDirectionText.text = "Game Clear";
         endDirection.SetTrigger("End");
 
@@ -198,7 +203,6 @@ public class MainGameController : MonoBehaviour
                         case "Easy":
                             break;
                         case "Normal":
-                            //StartCoroutine(ResultWindow("clear")); //Debug
                             SceneManager.LoadScene("Stage2-Normal");
                             break;
                         case "Hard":
