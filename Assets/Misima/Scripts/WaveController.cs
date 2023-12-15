@@ -44,8 +44,11 @@ public class WaveController : MonoBehaviour
             mainGameController.WaveDirection(true, WaveNum); //WAVEˆÚs‰‰oÄ¶
 
             //playableDirector.playableAsset = waveTimelines[currentWaveIndex];
-            
-            StartCoroutine(WaveChange());
+
+            if (game_stat != GameStat.DETH)
+            {
+                StartCoroutine(WaveChange());
+            }
         }
         else
         {

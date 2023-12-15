@@ -28,6 +28,17 @@ public class MainGameController : MonoBehaviour
     [SerializeField, Header("タイム")] Text timer;
     [SerializeField, Header("スコア")] Text score;
 
+    [SerializeField] GameObject scoreWindow;
+    [SerializeField] GameObject resultWindow;
+    [SerializeField] GameObject gameoverWindow;
+    [SerializeField] Result resultScript;
+    [SerializeField] GameOver gameoverScript;
+
+    [SerializeField] GameObject maingameUI;
+
+    bool isGameover = false;
+    bool gameoverDir = true;
+
     public bool WaveDirectionEnd
     {
         get { return waveDirectionEnd;}
@@ -64,14 +75,24 @@ public class MainGameController : MonoBehaviour
         fade.FadeInStart();
         StartCoroutine(GameStart());
 
-        level = Difficultylevel.difficulty;
+        resultScript.enabled = false;
+        gameoverScript.enabled = false;
+
+        //level = Difficultylevel.difficulty;
+        level = "Normal";
     }
 
     void Update()
     {
-        if (game_stat == GameStat.DETH)
+        if (game_stat == GameStat.DETH && !isGameover)
+        {
+            isGameover = true;
+        }
+
+        if(isGameover && gameoverDir)
         {
             GameOverDirection();
+            gameoverDir = false;
         }
 
         TimeDisp();
@@ -147,39 +168,7 @@ public class MainGameController : MonoBehaviour
         endDirectionText.text = "Game Clear";
         endDirection.SetTrigger("End");
 
-        StartCoroutine(ToNextScene());
-    }
-
-    IEnumerator ToNextScene()
-    {
-        yield return new WaitForSeconds(3);
-
-        fade.FadeOutStart();
-
-        yield return new WaitUntil(() => fade.FadeOutEnd);
-
-        switch (stageNum)
-        {
-            case 1:
-                switch (level)
-                {
-                    case "Easy":
-                        break;
-                    case "Normal":
-                        SceneManager.LoadScene("ResultScene");
-                        //SceneManager.LoadScene("Stage2-Normal");
-                        break;
-                    case "Hard":
-                        //SceneManager.LoadScene("Stage2-Hard");
-                        break;
-                    case "Galaxy":
-                        break;
-                }
-                break;
-            case 2:
-                //リザルトWindow表示
-                break;
-        }
+        StartCoroutine(ToNextScene(true));
     }
 
     void GameOverDirection()
@@ -188,12 +177,69 @@ public class MainGameController : MonoBehaviour
         endDirectionText.text = "Game Over";
         endDirection.SetTrigger("End");
 
-        StartCoroutine(GameOver());
+        StartCoroutine(ToNextScene(false));
     }
 
-    IEnumerator GameOver()
+    IEnumerator ToNextScene(bool isClear)
+    {
+        yield return new WaitForSeconds(3);
+
+        fade.FadeOutStart();
+
+        yield return new WaitUntil(() => fade.FadeOutEnd);
+
+        if(isClear)
+        {
+            switch (stageNum)
+            {
+                case 1:
+                    switch (level)
+                    {
+                        case "Easy":
+                            break;
+                        case "Normal":
+                            //StartCoroutine(ResultWindow("clear")); //Debug
+                            SceneManager.LoadScene("Stage2-Normal");
+                            break;
+                        case "Hard":
+                            SceneManager.LoadScene("Stage2-Hard");
+                            break;
+                        case "Galaxy":
+                            break;
+                    }
+                    break;
+                case 2:
+                    StartCoroutine(ResultWindow("clear"));
+                    break;
+            }
+        }
+        else { StartCoroutine(ResultWindow("gameover")); }
+    }
+
+    IEnumerator ResultWindow(string s)
     {
         yield return new WaitForSeconds(1);
-        //ゲームオーバーWindow表示
+
+        maingameUI.SetActive(false);
+        scoreWindow.SetActive(true);
+
+        fade.FadeInStart();
+
+        yield return new WaitUntil(() => fade.FadeInEnd);
+
+        switch(s)
+        {
+            case "clear":
+                resultWindow.SetActive(true);
+                yield return new WaitForSeconds(1);
+                resultScript.enabled = true;
+            break;
+            case "gameover":
+                gameoverWindow.SetActive(true);
+                yield return new WaitForSeconds(1);
+                gameoverScript.enabled = true;
+                break;
+        }
+        
     }
 }
