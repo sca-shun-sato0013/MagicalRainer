@@ -3779,7 +3779,7 @@ MonoBehaviour:
   resultWindow: {fileID: 1578425278}
   gameoverWindow: {fileID: 761177003}
   resultScript: {fileID: 527945787}
-  gameoverScript: {fileID: 2087408623}
+  gameoverScript: {fileID: 915929656}
   maingameUI: {fileID: 1553397815}
 --- !u!4 &792284881
 Transform:
@@ -4671,6 +4671,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36c57802f2424bd4ab08db2edf2b4669, type: 3}
+--- !u!114 &915929656 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4818872125632281687, guid: 36c57802f2424bd4ab08db2edf2b4669,
+    type: 3}
+  m_PrefabInstance: {fileID: 915929655}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28672330668695e4eac6f2c10bbc9c91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &953979035
 GameObject:
   m_ObjectHideFlags: 0
@@ -11289,18 +11301,6 @@ MonoBehaviour:
   PlayableDirector: {fileID: 1342395381}
   maxPlayCount: 1
   waveController: {fileID: 1436545590}
---- !u!114 &2087408623 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1206257141628233275, guid: 36c57802f2424bd4ab08db2edf2b4669,
-    type: 3}
-  m_PrefabInstance: {fileID: 915929655}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 279a3acf092f02a44bbca1d2d8cd02ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2091995733
 GameObject:
   m_ObjectHideFlags: 0
