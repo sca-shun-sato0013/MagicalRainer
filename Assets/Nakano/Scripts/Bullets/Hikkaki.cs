@@ -117,21 +117,21 @@ public class Hikkaki : MonoBehaviour
         for(int i = 0; i < upNum; i++)
         {
             Vector3 pos = upPosList[Random.Range(0, upPosList.Count)];
-            GameObject obj = Instantiate(prefabs, new Vector3(pos.x * 10, pos.y * 10, 90), Quaternion.identity);
+            GameObject obj = Instantiate(prefabs, pos, Quaternion.identity);
             obj.GetComponent<NormalBullet>().angle = Random.Range(0, 361);
         }
 
         for (int i = 0; i < middleNum; i++)
         {
             Vector3 pos = middlePosList[Random.Range(0, middlePosList.Count)];
-            GameObject obj = Instantiate(prefabs, new Vector3(pos.x * 10, pos.y * 10, 90), Quaternion.identity);
+            GameObject obj = Instantiate(prefabs, pos, Quaternion.identity);
             obj.GetComponent<NormalBullet>().angle = Random.Range(0, 361);
         }
 
         for (int i = 0; i < downNum; i++)
         {
             Vector3 pos = downPosList[Random.Range(0, downPosList.Count)];
-            GameObject obj = Instantiate(prefabs, new Vector3(pos.x * 10, pos.y * 10, 90), Quaternion.identity);
+            GameObject obj = Instantiate(prefabs, pos, Quaternion.identity);
             obj.GetComponent<NormalBullet>().angle = Random.Range(0, 361);
         }
 
