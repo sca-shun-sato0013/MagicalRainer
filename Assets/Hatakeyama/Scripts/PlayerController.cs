@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
                     if (waitDethEffect<=0)
                     {
-                        Destroy(gameObject);
+                        //Destroy(gameObject);
                     }
                 }
                 break;

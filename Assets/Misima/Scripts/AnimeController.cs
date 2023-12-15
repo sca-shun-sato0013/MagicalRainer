@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using static PlayerManager;
 
 public class AnimeController : MonoBehaviour
 {
@@ -46,6 +47,9 @@ public class AnimeController : MonoBehaviour
     {
         yield return new WaitForSeconds(coolTime);
 
-        PlayableDirector.Play();
+        if (game_stat != GameStat.DETH)
+        {
+            PlayableDirector.Play();
+        }
     }
 }
