@@ -17,7 +17,9 @@ public class Result : MonoBehaviour
 
     [SerializeField, Header("タイムボーナス")] private Text TimeBonusText;
     [SerializeField,Header("スコア")] private Text scoreText;
+    private int score;
     [SerializeField, Header("HP")] private Text hpText;
+    private int hp;
     [SerializeField, Header("トータススコア")] private Text TotalScoreText;
 
     private float bonus;
@@ -43,20 +45,22 @@ public class Result : MonoBehaviour
     void Start()
     {
         t = 0.0f;
-        Timer();
-        BonusScore();
-        scoreText.text ="" + GlobalVariables.Score;
-        hpText.text = "" + GlobalVariables.HP;
-        TotalScore();
-        TotalScoreText.text = "" + (int)totalScore + " pt";
         resetTime = time;
-        BadgesImage();
         textSpeed = publicTextSpeed;
         rPos = new Vector2(rectTimeText.anchoredPosition.x,rectTimeText.anchoredPosition.y);
     }
 
     private void Update()
     {
+        scoreText.text = "" + GlobalVariables.Score;
+        hpText.text = "" + GlobalVariables.HP;
+        TotalScore();
+        BadgesImage();
+
+        if (GlobalVariables.HP >= 0)
+        {
+            BonusScore();
+        }
         if (Input.GetKeyDown(KeyCode.Return))
         {
             pushNum++;
@@ -96,7 +100,6 @@ public class Result : MonoBehaviour
             resetPos = true;
         }
     }
-
     //切り捨て
     void Timer()
     {
@@ -163,7 +166,17 @@ public class Result : MonoBehaviour
 
         const int clearScore = 360000;
         //totalScore = ((minutes * 60 + seconds) + comma / 100)* 100 * bonus + GlobalVariables.Score + GlobalVariables.HP;
+        if (GlobalVariables.HP <= 0)
+        {
+            bonus = 1.0f;
+        }
+
         totalScore = (clearScore - (s * 10)) * bonus + ( GlobalVariables.Score + GlobalVariables.HP);
+        if (totalScore < 0)
+        {
+            totalScore = 0;
+        }
+        TotalScoreText.text = "" + (int)totalScore + " pt";
     }
     //タイム横揺れのアニメーション(仮案-> 座標を範囲内でランダム表示)
     void TimeMoveText()
