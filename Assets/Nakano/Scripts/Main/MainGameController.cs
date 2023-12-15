@@ -32,7 +32,7 @@ public class MainGameController : MonoBehaviour
     [SerializeField] GameObject resultWindow;
     [SerializeField] GameObject gameoverWindow;
     [SerializeField] Result resultScript;
-    [SerializeField] GameOver gameoverScript;
+    [SerializeField] Result gameoverScript;
 
     [SerializeField] GameObject maingameUI;
 
