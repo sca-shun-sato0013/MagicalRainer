@@ -690,7 +690,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: -2752906281941144794}
-    m_Duration: 7
+    m_Duration: 8
     m_TimeScale: 1
     m_ParentTrack: {fileID: 1494469301240312667}
     m_EaseInDuration: 0
@@ -783,7 +783,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: -6958824274958891445}
-    m_Duration: 7
+    m_Duration: 8
     m_TimeScale: 1
     m_ParentTrack: {fileID: 5416837856955462562}
     m_EaseInDuration: 0

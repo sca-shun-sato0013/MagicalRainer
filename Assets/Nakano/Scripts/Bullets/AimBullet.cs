@@ -29,4 +29,12 @@ public class AimBullet : MonoBehaviour
     {
         transform.Translate(direction * speed * Time.deltaTime);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Mirror")
+        {
+            direction = Vector3.Reflect(direction, Vector3.right);
+        }
+    }
 }

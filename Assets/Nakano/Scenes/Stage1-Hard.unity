@@ -239,6 +239,7 @@ GameObject:
   - component: {fileID: 25289086}
   - component: {fileID: 25289087}
   - component: {fileID: 25289088}
+  - component: {fileID: 25289089}
   m_Layer: 5
   m_Name: Kinoko
   m_TagString: Enemy
@@ -332,7 +333,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 25289081}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -395,6 +396,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &25289089
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25289081}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &36222186
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,6 +975,7 @@ GameObject:
   - component: {fileID: 151892112}
   - component: {fileID: 151892113}
   - component: {fileID: 151892114}
+  - component: {fileID: 151892115}
   m_Layer: 5
   m_Name: Kinoko
   m_TagString: Enemy
@@ -1103,6 +1132,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &151892115
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151892107}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &177908724
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,6 +1174,7 @@ GameObject:
   - component: {fileID: 177908729}
   - component: {fileID: 177908731}
   - component: {fileID: 177908730}
+  - component: {fileID: 177908732}
   m_Layer: 5
   m_Name: Kaeru
   m_TagString: Enemy
@@ -1274,6 +1331,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 160
+--- !u!50 &177908732
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177908724}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &179833111
 GameObject:
   m_ObjectHideFlags: 0
@@ -1422,9 +1506,10 @@ GameObject:
   - component: {fileID: 182794385}
   - component: {fileID: 182794384}
   - component: {fileID: 182794390}
+  - component: {fileID: 182794391}
   m_Layer: 0
   m_Name: BossClone2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1638,6 +1723,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossController: {fileID: 912404466}
+--- !u!114 &182794391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182794382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8934c6a82f911484f831d8bddf02b1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 300
 --- !u!1 &218734755
 GameObject:
   m_ObjectHideFlags: 0
@@ -1746,6 +1844,7 @@ GameObject:
   - component: {fileID: 233332711}
   - component: {fileID: 233332713}
   - component: {fileID: 233332712}
+  - component: {fileID: 233332714}
   m_Layer: 5
   m_Name: Kaeru
   m_TagString: Enemy
@@ -1902,6 +2001,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 160
+--- !u!50 &233332714
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233332706}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &284094905
 GameObject:
   m_ObjectHideFlags: 0
@@ -2101,6 +2227,7 @@ GameObject:
   - component: {fileID: 344531020}
   - component: {fileID: 344531021}
   - component: {fileID: 344531022}
+  - component: {fileID: 344531023}
   m_Layer: 5
   m_Name: Kinoko
   m_TagString: Enemy
@@ -2257,6 +2384,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &344531023
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344531015}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &344961296
 GameObject:
   m_ObjectHideFlags: 0
@@ -2272,6 +2426,7 @@ GameObject:
   - component: {fileID: 344961301}
   - component: {fileID: 344961303}
   - component: {fileID: 344961302}
+  - component: {fileID: 344961304}
   m_Layer: 5
   m_Name: Kinoko
   m_TagString: Enemy
@@ -2320,7 +2475,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 0a3c67f66b782754e89ea75fe260cc1c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2356,7 +2511,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -1300, y: 400}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 595, y: 842}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &344961301
 BoxCollider2D:
@@ -2428,6 +2583,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &344961304
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344961296}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &356406566
 GameObject:
   m_ObjectHideFlags: 0
@@ -2478,7 +2660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf58156b6598b8240a7733f1cdce0465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 2284374655343253916, guid: ffc1712e3d74cf34f9582c9d71546ffd, type: 3}
+  prefabs: {fileID: 7769151490946118343, guid: 71cc163839ce89d4ba8276441d4a0d0f, type: 3}
   bulletNum: 2
   coolTime: 0
   speed: 30
@@ -2501,7 +2683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3a18d73d13d5f947bc66dbf673a4ef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 3488932986556820965, guid: c404240dae97d924a8ecfd39fc8017fd, type: 3}
+  prefabs: {fileID: 3271762442401824454, guid: 1d1e1271b5f28024395e23fe45f3733c, type: 3}
   bulletNum: 20
   angle: 80
   speed: 30
@@ -2518,7 +2700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51736c7ef43a93841a3fab89363fe498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 8698346075632887932, guid: b05ae81765dc10b4c8d2c5b9c1bbfe64, type: 3}
+  prefabs: {fileID: 8314786421703978007, guid: 4dc9a2ba901c99941bc1db2c5bedc306, type: 3}
   bulletNum: 2
   coolTime: 0
   speed: 30
@@ -2849,6 +3031,7 @@ GameObject:
   - component: {fileID: 433851884}
   - component: {fileID: 433851886}
   - component: {fileID: 433851885}
+  - component: {fileID: 433851887}
   m_Layer: 5
   m_Name: Kaeru
   m_TagString: Enemy
@@ -2897,7 +3080,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: bfa3a33a5833664478d1386f1390147a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2933,7 +3116,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -1200, y: 400}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 595, y: 842}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &433851884
 BoxCollider2D:
@@ -3005,6 +3188,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &433851887
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433851879}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &440552889
 GameObject:
   m_ObjectHideFlags: 0
@@ -3563,6 +3773,7 @@ GameObject:
   - component: {fileID: 575055166}
   - component: {fileID: 575055168}
   - component: {fileID: 575055167}
+  - component: {fileID: 575055169}
   m_Layer: 5
   m_Name: Kaeru
   m_TagString: Enemy
@@ -3719,6 +3930,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 160
+--- !u!50 &575055169
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575055161}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &582024058
 GameObject:
   m_ObjectHideFlags: 0
@@ -3792,6 +4030,7 @@ GameObject:
   - component: {fileID: 594900272}
   - component: {fileID: 594900273}
   - component: {fileID: 594900274}
+  - component: {fileID: 594900275}
   m_Layer: 5
   m_Name: Kinoko
   m_TagString: Enemy
@@ -3948,6 +4187,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &594900275
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594900267}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &598370598
 GameObject:
   m_ObjectHideFlags: 0
@@ -4675,6 +4941,7 @@ GameObject:
   - component: {fileID: 689852313}
   - component: {fileID: 689852315}
   - component: {fileID: 689852314}
+  - component: {fileID: 689852316}
   m_Layer: 5
   m_Name: Kaeru
   m_TagString: Enemy
@@ -4723,7 +4990,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: bfa3a33a5833664478d1386f1390147a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4759,7 +5026,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 1300, y: 400}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 595, y: 842}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &689852313
 BoxCollider2D:
@@ -4831,6 +5098,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &689852316
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689852308}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &713501199
 GameObject:
   m_ObjectHideFlags: 0
@@ -4969,6 +5263,7 @@ GameObject:
   - component: {fileID: 752558072}
   - component: {fileID: 752558073}
   - component: {fileID: 752558074}
+  - component: {fileID: 752558075}
   m_Layer: 5
   m_Name: Kaeru
   m_TagString: Enemy
@@ -5125,6 +5420,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &752558075
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752558067}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &754219182
 GameObject:
   m_ObjectHideFlags: 0
@@ -5530,6 +5852,7 @@ GameObject:
   - component: {fileID: 893975933}
   - component: {fileID: 893975935}
   - component: {fileID: 893975934}
+  - component: {fileID: 893975936}
   m_Layer: 5
   m_Name: Kinoko
   m_TagString: Enemy
@@ -5686,6 +6009,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 150
+--- !u!50 &893975936
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893975928}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &905625664
 GameObject:
   m_ObjectHideFlags: 0
@@ -5831,7 +6181,7 @@ MonoBehaviour:
   bossObj: {fileID: 1367720479}
   explodeEffect: {fileID: 2188834302468991503, guid: 5b6efbfaf54284447a5205abe897e1b7,
     type: 3}
-  defaultHp: 150000
+  defaultHp: 20000
   hpBar: {fileID: 473126760}
   bossUI: {fileID: 2097064067}
   bossUIAnim: {fileID: 2097064069}
@@ -6260,6 +6610,7 @@ GameObject:
   - component: {fileID: 949835601}
   - component: {fileID: 949835603}
   - component: {fileID: 949835602}
+  - component: {fileID: 949835604}
   m_Layer: 5
   m_Name: Kinoko
   m_TagString: Enemy
@@ -6416,6 +6767,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 150
+--- !u!50 &949835604
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949835596}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &968469903
 GameObject:
   m_ObjectHideFlags: 0
@@ -6489,6 +6867,7 @@ GameObject:
   - component: {fileID: 968553039}
   - component: {fileID: 968553041}
   - component: {fileID: 968553040}
+  - component: {fileID: 968553042}
   m_Layer: 5
   m_Name: Kaeru
   m_TagString: Enemy
@@ -6537,7 +6916,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: bfa3a33a5833664478d1386f1390147a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6645,6 +7024,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &968553042
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968553034}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &986746185
 GameObject:
   m_ObjectHideFlags: 0
@@ -6983,6 +7389,7 @@ GameObject:
   - component: {fileID: 1055304840}
   - component: {fileID: 1055304842}
   - component: {fileID: 1055304841}
+  - component: {fileID: 1055304843}
   m_Layer: 5
   m_Name: Kinoko
   m_TagString: Enemy
@@ -7031,7 +7438,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 0a3c67f66b782754e89ea75fe260cc1c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7067,7 +7474,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -1100, y: 400}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 595, y: 842}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &1055304840
 BoxCollider2D:
@@ -7139,6 +7546,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &1055304843
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055304835}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1060059863
 GameObject:
   m_ObjectHideFlags: 0
@@ -7246,6 +7680,7 @@ GameObject:
   - component: {fileID: 1081109659}
   - component: {fileID: 1081109661}
   - component: {fileID: 1081109660}
+  - component: {fileID: 1081109662}
   m_Layer: 5
   m_Name: Kinoko
   m_TagString: Enemy
@@ -7294,7 +7729,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 0a3c67f66b782754e89ea75fe260cc1c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7330,7 +7765,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 1200, y: 400}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 595, y: 842}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &1081109659
 BoxCollider2D:
@@ -7402,6 +7837,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &1081109662
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081109654}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1089107831
 GameObject:
   m_ObjectHideFlags: 0
@@ -7915,6 +8377,7 @@ GameObject:
   - component: {fileID: 1181204860}
   - component: {fileID: 1181204861}
   - component: {fileID: 1181204862}
+  - component: {fileID: 1181204863}
   m_Layer: 5
   m_Name: Kinoko
   m_TagString: Enemy
@@ -8008,7 +8471,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1181204855}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -8071,6 +8534,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &1181204863
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181204855}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1194586276
 GameObject:
   m_ObjectHideFlags: 0
@@ -8241,6 +8731,7 @@ GameObject:
   - component: {fileID: 1210752161}
   - component: {fileID: 1210752162}
   - component: {fileID: 1210752163}
+  - component: {fileID: 1210752164}
   m_Layer: 5
   m_Name: Kinoko
   m_TagString: Enemy
@@ -8334,7 +8825,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1210752156}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -8397,6 +8888,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &1210752164
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210752156}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1219913606
 GameObject:
   m_ObjectHideFlags: 0
@@ -8412,6 +8930,7 @@ GameObject:
   - component: {fileID: 1219913611}
   - component: {fileID: 1219913612}
   - component: {fileID: 1219913613}
+  - component: {fileID: 1219913614}
   m_Layer: 5
   m_Name: Kaeru
   m_TagString: Enemy
@@ -8568,6 +9087,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &1219913614
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219913606}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1269825501
 GameObject:
   m_ObjectHideFlags: 0
@@ -8720,6 +9266,7 @@ GameObject:
   - component: {fileID: 1281829914}
   - component: {fileID: 1281829915}
   - component: {fileID: 1281829916}
+  - component: {fileID: 1281829917}
   m_Layer: 5
   m_Name: Kinoko
   m_TagString: Enemy
@@ -8813,7 +9360,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1281829909}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -8876,6 +9423,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &1281829917
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281829909}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1367720479
 GameObject:
   m_ObjectHideFlags: 0
@@ -8894,9 +9468,10 @@ GameObject:
   - component: {fileID: 1367720487}
   - component: {fileID: 1367720488}
   - component: {fileID: 1367720489}
+  - component: {fileID: 1367720490}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9169,6 +9744,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossController: {fileID: 912404466}
+--- !u!114 &1367720490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367720479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8934c6a82f911484f831d8bddf02b1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 300
 --- !u!1 &1381847068
 GameObject:
   m_ObjectHideFlags: 0
@@ -9358,9 +9946,10 @@ GameObject:
   - component: {fileID: 1501492599}
   - component: {fileID: 1501492598}
   - component: {fileID: 1501492604}
+  - component: {fileID: 1501492605}
   m_Layer: 0
   m_Name: BossClone1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9574,6 +10163,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossController: {fileID: 912404466}
+--- !u!114 &1501492605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501492596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8934c6a82f911484f831d8bddf02b1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 300
 --- !u!1 &1509588496
 GameObject:
   m_ObjectHideFlags: 0
@@ -10688,9 +11290,10 @@ GameObject:
   - component: {fileID: 1748609831}
   - component: {fileID: 1748609830}
   - component: {fileID: 1748609836}
+  - component: {fileID: 1748609837}
   m_Layer: 0
   m_Name: BossClone3
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10904,6 +11507,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossController: {fileID: 912404466}
+--- !u!114 &1748609837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748609828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8934c6a82f911484f831d8bddf02b1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 300
 --- !u!1 &1770674279
 GameObject:
   m_ObjectHideFlags: 0
@@ -11431,6 +12047,7 @@ GameObject:
   - component: {fileID: 1862442470}
   - component: {fileID: 1862442472}
   - component: {fileID: 1862442471}
+  - component: {fileID: 1862442473}
   m_Layer: 5
   m_Name: Kinoko
   m_TagString: Enemy
@@ -11587,6 +12204,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 150
+--- !u!50 &1862442473
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862442465}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1883024587
 GameObject:
   m_ObjectHideFlags: 0
@@ -11703,6 +12347,7 @@ GameObject:
   - component: {fileID: 1905101116}
   - component: {fileID: 1905101117}
   - component: {fileID: 1905101118}
+  - component: {fileID: 1905101119}
   m_Layer: 5
   m_Name: Kaeru
   m_TagString: Enemy
@@ -11859,6 +12504,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &1905101119
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905101111}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1953721446
 GameObject:
   m_ObjectHideFlags: 0
@@ -11874,6 +12546,7 @@ GameObject:
   - component: {fileID: 1953721451}
   - component: {fileID: 1953721452}
   - component: {fileID: 1953721453}
+  - component: {fileID: 1953721454}
   m_Layer: 5
   m_Name: Kinoko
   m_TagString: Enemy
@@ -11967,7 +12640,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1953721446}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -12030,6 +12703,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &1953721454
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953721446}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1995970523
 GameObject:
   m_ObjectHideFlags: 0
@@ -12161,6 +12861,7 @@ GameObject:
   - component: {fileID: 2031477837}
   - component: {fileID: 2031477838}
   - component: {fileID: 2031477839}
+  - component: {fileID: 2031477840}
   m_Layer: 5
   m_Name: Kinoko
   m_TagString: Enemy
@@ -12317,6 +13018,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ec9cafd49fc4546886fcc53795c544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &2031477840
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031477831}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2044290560
 GameObject:
   m_ObjectHideFlags: 0
@@ -12583,9 +13311,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'BossName
-
-'
+  m_Text: "\u30B9\u30E9\u30A4\u30E0\u5A18\n"
 --- !u!222 &2133356550
 CanvasRenderer:
   m_ObjectHideFlags: 0

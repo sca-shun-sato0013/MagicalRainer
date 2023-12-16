@@ -13,10 +13,10 @@ public class NormalBullet : MonoBehaviour
 
     public bool isReflect = false;
     bool reflect = false;
+    bool mirrorReflect = false;
 
     [HideInInspector] public int num = 0;
 
-    public bool isAim = false;
     GameObject player;
     Vector3 playerPos;
     Vector3 bulletPos;
@@ -29,24 +29,13 @@ public class NormalBullet : MonoBehaviour
 
     void Update()
     {
-        if (!isAim)
+        if(!reflect && !mirrorReflect)
         {
             //角度を単位ベクトルに変える
             direction = AngleToVector3(angle);
-            if(reflect)
-            {
-                transform.Translate(-direction * speed * Time.deltaTime);
-            }
-            else
-            {
-                transform.Translate(direction * speed * Time.deltaTime);
-            }
         }
-
-        else if(isAim)
-        {
-            transform.Translate(direction * speed * Time.deltaTime);
-        }
+        
+        transform.Translate(direction * speed * Time.deltaTime);
     }
 
     /// <summary>
@@ -64,16 +53,13 @@ public class NormalBullet : MonoBehaviour
         {
             reflect = true;
             isReflect = false;
+            direction *= -1;
         }
 
         if(collision.gameObject.tag == "Mirror")
         {
-            isAim = true;
-            player = GameObject.FindWithTag("Player");
-            playerPos = player.transform.position;
-            bulletPos = this.transform.position;
-
-            direction = (playerPos - bulletPos).normalized;
+            mirrorReflect = true;
+            direction = Vector3.Reflect(direction, Vector3.right);
         }
     }
 }

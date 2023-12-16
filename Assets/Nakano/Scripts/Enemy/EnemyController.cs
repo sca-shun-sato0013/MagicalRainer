@@ -10,5 +10,10 @@ public class EnemyController : MonoBehaviour
         {
             Destroy(this);
         }
+
+        if(collision.CompareTag("Bullets"))
+        {
+            Debug.Log("test");
+        }
     }
 }
