@@ -36,4 +36,12 @@ public class TrackingBullet : MonoBehaviour
 
         transform.Translate(direction * speed * Time.deltaTime);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Mirror" && time > trackingTime)
+        {
+            direction = Vector3.Reflect(direction, Vector3.right);
+        }
+    }
 }
