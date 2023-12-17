@@ -22,6 +22,6 @@ public class ButtonMove : MonoBehaviour
     IEnumerator fade()
     {
         yield return new WaitUntil(() => horizonFade.FadeOutEnd);
-        SceneManager.LoadScene("Title");
+        SceneManager.LoadScene("TitleScene");
     }
 }

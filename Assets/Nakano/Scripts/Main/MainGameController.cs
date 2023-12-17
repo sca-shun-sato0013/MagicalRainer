@@ -78,8 +78,8 @@ public class MainGameController : MonoBehaviour
         resultScript.enabled = false;
         gameoverScript.enabled = false;
 
-        //level = Difficultylevel.difficulty;
-        level = "Normal";
+        level = Difficultylevel.difficulty;    
+        //level = "Normal";
     }
 
     void Update()
