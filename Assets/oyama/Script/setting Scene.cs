@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class settingScene: MonoBehaviour
 {
-    public void SwitchScene()
+    public void OnClickStartButton()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("SoundScene");
 
-    }
+        }
 }
