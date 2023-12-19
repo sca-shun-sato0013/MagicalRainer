@@ -39,6 +39,9 @@ EditorBuildSettings:
     path: Assets/Nakano/Scenes/Stage2-Hard.unity
     guid: 0b2944f8c09308e41bbddaf59664de52
   - enabled: 1
+    path: Assets/Minegishi/Scenes/SoundScene.unity
+    guid: ad0baddc1fa386f478c6247d989cf25d
+  - enabled: 1
     path: Assets/oyama/Scene/TitleScene.unity
     guid: 71af86c08aa6bd9499f5a9829dc50fc4
   m_configObjects:
