@@ -34,5 +34,5 @@ public static class GlobalVariables
 {
     public static float AliveTime = 0f; //¶‘¶ŠÔ
     public static int Score = 0; //ƒXƒRƒA
-    public static int HP = 0; //HP
+    public static int HP = 100; //HP
 }
