@@ -2045,6 +2045,7 @@ GameObject:
   - component: {fileID: 102613482}
   - component: {fileID: 102613486}
   - component: {fileID: 102613487}
+  - component: {fileID: 102613488}
   m_Layer: 5
   m_Name: Movemain2
   m_TagString: Untagged
@@ -2164,6 +2165,18 @@ MonoBehaviour:
           m_StringArgument: Play
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 102613488}
+        m_TargetAssemblyTypeName: CharaSelect, Assembly-CSharp
+        m_MethodName: ButtonClick
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Chara2
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &102613483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2238,6 +2251,18 @@ MonoBehaviour:
   Panel: {fileID: 2107199937}
   Panel2: {fileID: 1168127400}
   statusWindow: {fileID: 2107199937}
+--- !u!114 &102613488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102613479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aafce48306fd7574e8b33b4a72ffcf1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &109779554
 GameObject:
   m_ObjectHideFlags: 0
@@ -10984,6 +11009,7 @@ GameObject:
   - component: {fileID: 795963735}
   - component: {fileID: 795963734}
   - component: {fileID: 795963736}
+  - component: {fileID: 795963737}
   m_Layer: 5
   m_Name: Movemain1
   m_TagString: Untagged
@@ -11101,6 +11127,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Ded
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 795963737}
+        m_TargetAssemblyTypeName: CharaSelect, Assembly-CSharp
+        m_MethodName: ButtonClick
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Chara1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &795963731
@@ -11248,6 +11286,18 @@ PolygonCollider2D:
       - {x: 523.84155, y: -1927.4266}
       - {x: 1279.8137, y: -1132.6716}
   m_UseDelaunayMesh: 0
+--- !u!114 &795963737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795963727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aafce48306fd7574e8b33b4a72ffcf1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &805875235
 GameObject:
   m_ObjectHideFlags: 0
