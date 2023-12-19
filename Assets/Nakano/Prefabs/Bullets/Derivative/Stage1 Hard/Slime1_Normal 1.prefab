@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1671813448695585211}
   - component: {fileID: 5999860129621795026}
   - component: {fileID: 6689731239222647934}
+  - component: {fileID: 5466074584461966613}
   m_Layer: 0
   m_Name: Slime1_Normal 1
   m_TagString: Bullets
@@ -167,3 +168,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 200
+--- !u!114 &5466074584461966613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3271762442401824454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c31af323f154b24abd31e8d075bdfd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ripplesEffect: {fileID: 3457727734451795526, guid: 734dd3f5263b05a4b85360fcd14bad0d,
+    type: 3}
+  createPos: {x: -3, y: 0, z: 0}

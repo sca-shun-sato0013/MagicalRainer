@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2613164631557234609}
   - component: {fileID: 1027364190005293776}
   - component: {fileID: 1935128916041357634}
+  - component: {fileID: -5064974044422866315}
   m_Layer: 0
   m_Name: Slime1_Tracking 1
   m_TagString: Bullets
@@ -100,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbbfe6151f7f28d41a9d4935316783c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackingTime: 1.5
+  trackingTime: 2
   speed: 30
 --- !u!58 &2613164631557234609
 CircleCollider2D:
@@ -165,3 +166,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 200
+--- !u!114 &-5064974044422866315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7769151490946118343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c31af323f154b24abd31e8d075bdfd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ripplesEffect: {fileID: 3457727734451795526, guid: 734dd3f5263b05a4b85360fcd14bad0d,
+    type: 3}
+  createPos: {x: -3, y: 0, z: 0}
