@@ -9,6 +9,8 @@ using static TimeScoreCounter;
 public class MainGameController : MonoBehaviour
 {
     [SerializeField] int stageNum;
+    public int StageNumber { get { return stageNum; } }
+
     string level;
 
     [SerializeField] HorizonFade fade;
@@ -97,11 +99,6 @@ public class MainGameController : MonoBehaviour
 
         TimeDisp();
         ScoreDisp();
-
-        if(Input.GetKeyDown(KeyCode.O))
-        {
-            GameClearDirection();
-        }
     }
 
     void TimeDisp()
@@ -175,7 +172,9 @@ public class MainGameController : MonoBehaviour
     {
         timeCountState = TimeCountState.STOP;
 
-        endDirectionText.text = "Game Clear";
+        if(stageNum == 1) { endDirectionText.text = "Stage Clear"; }
+        if(stageNum == 2) { endDirectionText.text = "Game Clear"; }
+        
         endDirection.SetTrigger("End");
 
         StartCoroutine(ToNextScene(true));

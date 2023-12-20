@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2457920481629295081}
   m_Layer: 0
   m_Name: Slime2_Normal
-  m_TagString: Bullets
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,7 +104,6 @@ MonoBehaviour:
   speed: 0
   isReflect: 1
   num: 0
-  isAim: 0
 --- !u!58 &4125497723016882381
 CircleCollider2D:
   m_ObjectHideFlags: 0

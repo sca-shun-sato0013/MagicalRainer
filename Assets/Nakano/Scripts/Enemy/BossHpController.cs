@@ -11,7 +11,6 @@ public class BossHpController : MonoBehaviour
 
     int damage;
 
-    LevelParam selectCharaParam;
     PlayerParam selectLevelParam;
 
     [SerializeField] PlayerParams playerParam;
@@ -24,25 +23,26 @@ public class BossHpController : MonoBehaviour
         //chara‚ðŽæ“¾
         selectChara = "CharaA";
 
-        foreach (var c in playerParam.character)
+        foreach (var p in playerParam.character)
         {
-            if(c.charaName == selectChara) { selectCharaParam = c; }
-        }
-
-        switch (level)
-        {
-            case "Easy":
-                selectLevelParam = selectCharaParam.easy;
-                break;
-            case "Normal":
-                selectLevelParam = selectCharaParam.normal;
-                break;
-            case "Hard":
-                selectLevelParam = selectCharaParam.hard;
-                break;
-            case "Galaxy":
-                selectLevelParam = selectCharaParam.galaxy;
-                break;
+            if(p.charaName == selectChara)
+            {
+                switch (level)
+                {
+                    case "Easy":
+                        selectLevelParam = p.easy;
+                        break;
+                    case "Normal":
+                        selectLevelParam = p.normal;
+                        break;
+                    case "Hard":
+                        selectLevelParam = p.hard;
+                        break;
+                    case "Galaxy":
+                        selectLevelParam = p.galaxy;
+                        break;
+                }
+            }
         }
     }
 
