@@ -15,6 +15,9 @@ TagManager:
   - SingleAttack
   - LightAttack
   - HeavyAttack
+  - Enemy1
+  - Enemy2
+  - Boss
   layers:
   - Default
   - TransparentFX

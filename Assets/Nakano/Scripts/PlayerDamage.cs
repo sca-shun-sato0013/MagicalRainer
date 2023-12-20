@@ -2,22 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSample : MonoBehaviour
+public class PlayerDamage : MonoBehaviour
 {
-    [SerializeField] float speed;
     MainGameController mainGameController;
     BossController bossController;
+
+    [SerializeField] EnemyParams enemyParams;
 
     int stageNum;
     string levelString;
     int bossWaveNum;
 
-    [SerializeField] EnemyParams enemyParams;
-
     Enemy enemy;
     Boss boss;
 
-    void Start()
+    void Awake()
     {
         mainGameController = GameObject.FindObjectOfType<MainGameController>();
         bossController = GameObject.FindObjectOfType<BossController>();
@@ -29,7 +28,7 @@ public class PlayerSample : MonoBehaviour
 
         foreach (var e in enemyParams.stage)
         {
-            if(e.stageNum == stageNum)
+            if (e.stageNum == stageNum)
             {
                 switch (levelString)
                 {
@@ -54,25 +53,8 @@ public class PlayerSample : MonoBehaviour
         }
     }
 
-    void Update()
+    private void Update()
     {
-        if(Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(Vector3.right * speed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(Vector3.left * speed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.Translate(Vector3.up * speed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.Translate(Vector3.down * speed * Time.deltaTime);
-        }
-
         bossWaveNum = bossController.BossWaveNum;
     }
 
@@ -80,9 +62,9 @@ public class PlayerSample : MonoBehaviour
     {
         int atk = 0;
 
-        foreach(var v in enemy.enemy)
+        foreach (var v in enemy.enemy)
         {
-            if(v.enemyID == EnemyID) { atk = v.atk; }
+            if (v.enemyID == EnemyID) { atk = v.atk; }
         }
 
         return atk;
@@ -111,16 +93,38 @@ public class PlayerSample : MonoBehaviour
         return atk;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void Damage(string objTag)
     {
-        if (other.gameObject.tag == "Enemy1" || other.gameObject.tag == "Enemy2")
+        int damage = 0;
+
+        if(objTag == "Enemy1" || objTag == "Enemy2")
         {
-            Debug.Log(EnemyAtk(other.gameObject.tag));
+            damage = EnemyAtk(objTag);
+        }
+        else if(objTag == "Boss")
+        {
+            damage = BossAtk(bossWaveNum);
+        }
+        else
+        {
+            Debug.Log("想定外の値が入っています。");
+            damage = 0;
         }
 
-        if (other.gameObject.tag == "Boss")
+        UIManager.HP -= damage;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Enemy1" || collision.gameObject.tag == "Enemy2" || collision.gameObject.tag == "Boss")
         {
-            Debug.Log(BossAtk(bossWaveNum));
+            if(PlayerManager.game_stat == PlayerManager.GameStat.PLAY)
+            {
+                if(!PlayerController.damageFlag)
+                {
+                    Damage(collision.gameObject.tag);
+                }
+            }
         }
     }
 }

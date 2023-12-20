@@ -9,14 +9,16 @@ using static TimeScoreCounter;
 public class BossController : MonoBehaviour
 {
     [SerializeField] MainGameController mainGameController;
+    [SerializeField] EnemyParams enemyParams;
 
     [SerializeField] int stageNum;
+    string level;
 
     [SerializeField] GameObject bossObj;
 
     [SerializeField] ParticleSystem explodeEffect;
 
-    [SerializeField, Header("èâä˙HP")] float defaultHp;
+    float defaultHp;
     float hp;
     float hpRatio = 1;
 
@@ -85,6 +87,11 @@ public class BossController : MonoBehaviour
 
     void Start()
     {
+        if (Difficultylevel.difficulty == null) { level = "Normal"; }
+        else level = Difficultylevel.difficulty;
+
+        DefaultHpSet();
+
         hpBar.sprite = hpBars[0];
         hp = defaultHp;
         hpBar.fillAmount = 1;
@@ -178,6 +185,32 @@ public class BossController : MonoBehaviour
                 isPosIni = false;
             }
         }
+    }
+
+    void DefaultHpSet()
+    {
+        foreach (var i in enemyParams.stage)
+        {
+            if (i.stageNum == stageNum)
+            {
+                switch (level)
+                {
+                    case "Easy":
+                        defaultHp = i.boss.easyBoss.bossHp;
+                        break;
+                    case "Normal":
+                        defaultHp = i.boss.normalBoss.bossHp;
+                        break;
+                    case "Hard":
+                        defaultHp = i.boss.hardBoss.bossHp;
+                        break;
+                    case "Galaxy":
+                        defaultHp = i.boss.galaxyBoss.bossHp;
+                        break;
+                }
+            }
+        }
+        Debug.Log(defaultHp);
     }
 
     //É{ÉXêÌà⁄çs
