@@ -106,17 +106,17 @@ public class BulletManager : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             yield return new WaitForSeconds(0.2f);
-            Instantiate(bullet[0], PlayerController.pos+new Vector3(0,300,0), Quaternion.identity, transform);
+            Instantiate(bullet[0], PlayerController.pos+new Vector3(0,30,0), Quaternion.identity, transform);
         }
     }
 
     private void ShotBulletTwo()
     {
-        Instantiate(bullet[1], PlayerController.pos + new Vector3(0, 300, 0), Quaternion.identity, transform);
+        Instantiate(bullet[1], PlayerController.pos + new Vector3(0, 30, 0), Quaternion.identity, transform);
     }
 
     private void ShotBulletThree()
     {
-        Instantiate(bullet[2], PlayerController.pos + new Vector3(0, 300, 0), Quaternion.identity, transform);
+        Instantiate(bullet[2], PlayerController.pos + new Vector3(0, 30, 0), Quaternion.identity, transform);
     }
 }
