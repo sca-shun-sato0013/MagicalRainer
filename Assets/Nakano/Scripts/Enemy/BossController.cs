@@ -108,10 +108,10 @@ public class BossController : MonoBehaviour
         //Stage1のHP以外のWAVE移行条件判定用 他ステージでもHP以外のWAVE移行条件を加える場合、switch文で纏めるのが良いかも
 
         //Debug
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if(!isInvincible) hp -= 200;
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    if(!isInvincible) hp -= 200;
+        //}
 
         //HPが一定以下になったら初期位置に戻る
         if (isPosIni)
@@ -142,7 +142,7 @@ public class BossController : MonoBehaviour
                     break;
             }
 
-            if(Vector3.Distance(bossObj.transform.localPosition, p.transform.localPosition) > 1)
+            if(Vector3.Distance(bossObj.transform.localPosition, p.transform.localPosition) > 10)
             {
                 if (stageNum == 1 && currentTrackIndex == 1 && mirror != null)
                 {
@@ -456,8 +456,10 @@ public class BossController : MonoBehaviour
             {
                 if(wave4NowHP - hp >= cloneDestroyHP / 100 * defaultHp)
                 {
-                    //消失演出を再生
-                    if(bossClone.Length - wave4CloneDestroyCount - 1 >= 0) bossClone[bossClone.Length - wave4CloneDestroyCount - 1].SetActive(false);
+                    var pos =  bossClone[bossClone.Length - wave4CloneDestroyCount - 1].transform.position;
+                    Instantiate(explodeEffect, pos, Quaternion.identity);
+
+                    if (bossClone.Length - wave4CloneDestroyCount - 1 >= 0) bossClone[bossClone.Length - wave4CloneDestroyCount - 1].SetActive(false);
                     wave4CloneDestroyCount++;
                     wave4NowHP = hp;
                 }
