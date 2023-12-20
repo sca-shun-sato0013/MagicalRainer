@@ -1003,7 +1003,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoadingUI: {fileID: 6128711622611389511}
-  NextSceneName: 
   Character: {fileID: 7321868540627122007}
   charaSpeed: 500
   charaPosX: 1300

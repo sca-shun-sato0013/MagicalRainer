@@ -18,8 +18,8 @@ public class BossHpController : MonoBehaviour
 
     private void Start()
     {
-        level = Difficultylevel.difficulty;
         if(Difficultylevel.difficulty == null) { level = "Normal"; }
+        else level = Difficultylevel.difficulty;
 
         //chara‚ðŽæ“¾
         selectChara = "CharaA";
