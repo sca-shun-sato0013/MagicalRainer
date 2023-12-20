@@ -44,6 +44,19 @@ public class MainGameController : MonoBehaviour
         get { return waveDirectionEnd;}
     }
 
+    void Start()
+    {
+        waveController.enabled = false;
+        fade.FadeInStart();
+        StartCoroutine(GameStart());
+
+        resultScript.enabled = false;
+        gameoverScript.enabled = false;
+
+        if(Difficultylevel.difficulty == null) { level = "Normal"; }
+        else level = Difficultylevel.difficulty;
+    }
+
     IEnumerator GameStart()
     {
         timeCountState = TimeCountState.STOP;
@@ -68,19 +81,6 @@ public class MainGameController : MonoBehaviour
 
         timeCountState = TimeCountState.COUNT;
     }
-    
-    void Start()
-    {
-        waveController.enabled = false;
-        fade.FadeInStart();
-        StartCoroutine(GameStart());
-
-        resultScript.enabled = false;
-        gameoverScript.enabled = false;
-
-        level = Difficultylevel.difficulty;    
-        //level = "Normal";
-    }
 
     void Update()
     {
@@ -97,6 +97,11 @@ public class MainGameController : MonoBehaviour
 
         TimeDisp();
         ScoreDisp();
+
+        if(Input.GetKeyDown(KeyCode.O))
+        {
+            GameClearDirection();
+        }
     }
 
     void TimeDisp()

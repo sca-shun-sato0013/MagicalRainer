@@ -34,7 +34,7 @@ public class CircleFade : MonoBehaviour
         get { return fadeInEnd; }
     }
 
-    void Start()
+    void Awake()
     {
         rt = unMask.GetComponent<RectTransform>();
         this.gameObject.SetActive(false);

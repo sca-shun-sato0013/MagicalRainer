@@ -27,7 +27,7 @@ public class Tips : MonoBehaviour
     [SerializeField, Header("テキストを変える間隔")] float changeTime;
     float time = 0;
 
-    void Start()
+    void Awake()
     {
         AsyncOperationHandle handle = csvData.LoadAssetAsync<TextAsset>();
         handle.Completed += OnCompletedHandler;
