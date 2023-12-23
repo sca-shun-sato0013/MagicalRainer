@@ -93,7 +93,13 @@ public class PlayerDamage : MonoBehaviour
         return atk;
     }
 
-    public void Damage(string objTag)
+    /// <summary>
+    /// 引数に当たったオブジェクトのタグを入れる
+    /// 例 => Damage(collision.gameObject.tag)
+    /// </summary>
+    /// <param name="objTag"></param>
+    /// <returns></returns>
+    public int Damage(string objTag)
     {
         int damage = 0;
 
@@ -111,20 +117,15 @@ public class PlayerDamage : MonoBehaviour
             damage = 0;
         }
 
-        UIManager.HP -= damage;
+        return damage;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "Enemy1" || collision.gameObject.tag == "Enemy2" || collision.gameObject.tag == "Boss")
-        {
-            if(PlayerManager.game_stat == PlayerManager.GameStat.PLAY)
-            {
-                if(!PlayerController.damageFlag)
-                {
-                    Damage(collision.gameObject.tag);
-                }
-            }
-        }
-    }
+    //Sample
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if(collision.gameObject.tag == "Enemy1" || collision.gameObject.tag == "Enemy2" || collision.gameObject.tag == "Boss")
+    //    {
+    //        int damage =  PlayerDamage.Damage(collision.gameObject.tag);
+    //    }
+    //}
 }
