@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 21201067}
   m_Layer: 5
   m_Name: Yamaneko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -575,7 +575,7 @@ GameObject:
   - component: {fileID: 43081847}
   m_Layer: 5
   m_Name: RockMonster
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -762,7 +762,7 @@ GameObject:
   - component: {fileID: 50035899}
   m_Layer: 5
   m_Name: RockMonster
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -949,7 +949,7 @@ GameObject:
   - component: {fileID: 51480097}
   m_Layer: 5
   m_Name: Yamaneko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1136,7 +1136,7 @@ GameObject:
   - component: {fileID: 53865194}
   m_Layer: 5
   m_Name: Yamaneko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1666,7 +1666,7 @@ GameObject:
   - component: {fileID: 106678710}
   m_Layer: 5
   m_Name: RockMonster
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1928,7 +1928,7 @@ GameObject:
   - component: {fileID: 138656122}
   m_Layer: 5
   m_Name: Yamaneko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2115,7 +2115,7 @@ GameObject:
   - component: {fileID: 160535033}
   m_Layer: 5
   m_Name: Rock_Monster
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2413,7 +2413,7 @@ GameObject:
   - component: {fileID: 207745003}
   m_Layer: 5
   m_Name: RockMonster
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2701,7 +2701,7 @@ GameObject:
   - component: {fileID: 223259911}
   m_Layer: 5
   m_Name: RockMonster
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3022,7 +3022,7 @@ GameObject:
   - component: {fileID: 251896162}
   m_Layer: 5
   m_Name: Yamaneko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3262,7 +3262,7 @@ GameObject:
   - component: {fileID: 288266475}
   m_Layer: 5
   m_Name: Yamaneko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3859,7 +3859,7 @@ GameObject:
   - component: {fileID: 437947237}
   m_Layer: 5
   m_Name: Yamaneko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4046,7 +4046,7 @@ GameObject:
   - component: {fileID: 451268705}
   m_Layer: 5
   m_Name: Yamaneko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4233,7 +4233,7 @@ GameObject:
   - component: {fileID: 470060581}
   m_Layer: 5
   m_Name: Yamaneko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4420,7 +4420,7 @@ GameObject:
   - component: {fileID: 496627991}
   m_Layer: 5
   m_Name: RockMonster
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4702,7 +4702,7 @@ GameObject:
   - component: {fileID: 516583555}
   m_Layer: 5
   m_Name: Yamaneko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5084,7 +5084,7 @@ GameObject:
   - component: {fileID: 592292330}
   m_Layer: 5
   m_Name: RockMonster
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5491,7 +5491,7 @@ GameObject:
   - component: {fileID: 659710021}
   m_Layer: 5
   m_Name: Yamaneko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5678,7 +5678,7 @@ GameObject:
   - component: {fileID: 701138432}
   m_Layer: 5
   m_Name: RockMonster
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5923,7 +5923,7 @@ GameObject:
   - component: {fileID: 724399456}
   m_Layer: 5
   m_Name: Yamaneko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6110,7 +6110,7 @@ GameObject:
   - component: {fileID: 733326180}
   m_Layer: 5
   m_Name: RockMonster
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6350,7 +6350,7 @@ GameObject:
   - component: {fileID: 741246016}
   m_Layer: 5
   m_Name: RockMonster
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6537,7 +6537,7 @@ GameObject:
   - component: {fileID: 747575527}
   m_Layer: 5
   m_Name: Yamaneko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6826,7 +6826,7 @@ GameObject:
   - component: {fileID: 763401682}
   m_Layer: 5
   m_Name: RockMonster
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7254,7 +7254,7 @@ GameObject:
   - component: {fileID: 840832092}
   m_Layer: 5
   m_Name: Rock_Monster
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7607,7 +7607,7 @@ GameObject:
   - component: {fileID: 854036709}
   m_Layer: 5
   m_Name: RockMoster
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7794,7 +7794,7 @@ GameObject:
   - component: {fileID: 859439140}
   m_Layer: 5
   m_Name: Yamaneko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8195,7 +8195,7 @@ GameObject:
   - component: {fileID: 863049900}
   m_Layer: 5
   m_Name: Rock_Monster
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8419,7 +8419,7 @@ MonoBehaviour:
   HPGauge: {fileID: 1457587321}
   SPGauge: {fileID: 1534801217}
   SPText: {fileID: 1944065195}
-  maxHP: 100
+  maxHP: 18000
   setSkillsNumber: 00000000010000000200000003000000
   skillSprite:
   - {fileID: 21300000, guid: 641764f94f852b24e8d41252bda743f4, type: 3}
@@ -8591,7 +8591,7 @@ GameObject:
   - component: {fileID: 906985020}
   m_Layer: 5
   m_Name: Yamaneko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9132,7 +9132,7 @@ GameObject:
   - component: {fileID: 993722867}
   m_Layer: 5
   m_Name: RockMonster
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9319,7 +9319,7 @@ GameObject:
   - component: {fileID: 995990296}
   m_Layer: 5
   m_Name: Yamaneko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9564,7 +9564,7 @@ GameObject:
   - component: {fileID: 1012889998}
   m_Layer: 5
   m_Name: Rock_Monster
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9860,7 +9860,7 @@ GameObject:
   - component: {fileID: 1037216335}
   m_Layer: 5
   m_Name: RockMonster
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10047,7 +10047,7 @@ GameObject:
   - component: {fileID: 1043385300}
   m_Layer: 5
   m_Name: Yamaneko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10234,7 +10234,7 @@ GameObject:
   - component: {fileID: 1045461395}
   m_Layer: 5
   m_Name: Yamaneko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10912,7 +10912,7 @@ GameObject:
   - component: {fileID: 1091947456}
   m_Layer: 5
   m_Name: Yamaneko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11392,7 +11392,7 @@ GameObject:
   - component: {fileID: 1184693151}
   m_Layer: 5
   m_Name: RockMonster
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11680,7 +11680,7 @@ GameObject:
   - component: {fileID: 1215640209}
   m_Layer: 5
   m_Name: Yamaneko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11925,7 +11925,7 @@ GameObject:
   - component: {fileID: 1252914139}
   m_Layer: 5
   m_Name: Yamaneko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12357,7 +12357,7 @@ GameObject:
   - component: {fileID: 1309065837}
   m_Layer: 5
   m_Name: Yamaneko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12866,7 +12866,7 @@ GameObject:
   - component: {fileID: 1398294185}
   m_Layer: 5
   m_Name: RockMonster
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13190,7 +13190,7 @@ GameObject:
   - component: {fileID: 1418541691}
   m_Layer: 5
   m_Name: RockMonster
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13537,7 +13537,7 @@ GameObject:
   - component: {fileID: 1439325592}
   m_Layer: 5
   m_Name: RockMonster
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13724,7 +13724,7 @@ GameObject:
   - component: {fileID: 1456052869}
   m_Layer: 5
   m_Name: Yamaneko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13987,7 +13987,7 @@ GameObject:
   - component: {fileID: 1468192983}
   m_Layer: 5
   m_Name: Boss
-  m_TagString: Enemy
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14190,7 +14190,7 @@ GameObject:
   - component: {fileID: 1476678379}
   m_Layer: 5
   m_Name: Yamaneko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15037,7 +15037,7 @@ GameObject:
   - component: {fileID: 1594738311}
   m_Layer: 5
   m_Name: RockMonster
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15566,7 +15566,7 @@ GameObject:
   - component: {fileID: 1688441402}
   m_Layer: 5
   m_Name: Rock_Monster
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15753,7 +15753,7 @@ GameObject:
   - component: {fileID: 1706788117}
   m_Layer: 5
   m_Name: RockMonster
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15940,7 +15940,7 @@ GameObject:
   - component: {fileID: 1730857748}
   m_Layer: 5
   m_Name: RockMonster
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16127,7 +16127,7 @@ GameObject:
   - component: {fileID: 1752174634}
   m_Layer: 5
   m_Name: RockMonster
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16564,7 +16564,7 @@ GameObject:
   - component: {fileID: 1806320620}
   m_Layer: 5
   m_Name: Yamaneko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16885,7 +16885,7 @@ GameObject:
   - component: {fileID: 1821093175}
   m_Layer: 5
   m_Name: Yamaneko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17125,7 +17125,7 @@ GameObject:
   - component: {fileID: 1880960228}
   m_Layer: 5
   m_Name: Yamaneko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17312,7 +17312,7 @@ GameObject:
   - component: {fileID: 1884685348}
   m_Layer: 5
   m_Name: Yamaneko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17558,7 +17558,7 @@ GameObject:
   - component: {fileID: 1901836263}
   m_Layer: 5
   m_Name: Rock_Monster
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18894,7 +18894,7 @@ GameObject:
   - component: {fileID: 2127182134}
   m_Layer: 5
   m_Name: Yamaneko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19139,7 +19139,7 @@ GameObject:
   - component: {fileID: 2140588360}
   m_Layer: 5
   m_Name: RockMonster
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

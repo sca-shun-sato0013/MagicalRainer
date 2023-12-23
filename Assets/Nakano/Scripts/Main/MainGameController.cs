@@ -185,6 +185,7 @@ public class MainGameController : MonoBehaviour
         timeCountState = TimeCountState.STOP;
         endDirectionText.text = "Game Over";
         endDirection.SetTrigger("End");
+        UIManager.HP = 0;
 
         StartCoroutine(ToNextScene(false));
     }
@@ -197,7 +198,9 @@ public class MainGameController : MonoBehaviour
 
         yield return new WaitUntil(() => fade.FadeOutEnd);
 
-        if(isClear)
+        yield return new WaitForSeconds(1);
+
+        if (isClear)
         {
             switch (stageNum)
             {
@@ -226,24 +229,24 @@ public class MainGameController : MonoBehaviour
 
     IEnumerator ResultWindow(string s)
     {
-        yield return new WaitForSeconds(1);
-
-        maingameUI.SetActive(false);
         scoreWindow.SetActive(true);
+        maingameUI.SetActive(false);
+        
+        yield return new WaitForSeconds(1f);
 
         fade.FadeInStart();
 
-        yield return new WaitUntil(() => fade.FadeInEnd);
-
-        switch(s)
+        switch (s)
         {
             case "clear":
                 resultWindow.SetActive(true);
+                yield return new WaitUntil(() => fade.FadeInEnd);
                 yield return new WaitForSeconds(1);
                 resultScript.enabled = true;
             break;
             case "gameover":
                 gameoverWindow.SetActive(true);
+                yield return new WaitUntil(() => fade.FadeInEnd);
                 yield return new WaitForSeconds(1);
                 gameoverScript.enabled = true;
                 break;

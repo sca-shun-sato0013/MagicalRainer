@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 25289089}
   m_Layer: 5
   m_Name: Kinoko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -980,7 +980,7 @@ GameObject:
   - component: {fileID: 151892115}
   m_Layer: 5
   m_Name: Kinoko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1181,7 +1181,7 @@ GameObject:
   - component: {fileID: 177908732}
   m_Layer: 5
   m_Name: Kaeru
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1515,7 +1515,7 @@ GameObject:
   - component: {fileID: 182794391}
   m_Layer: 0
   m_Name: BossClone2
-  m_TagString: Enemy
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1854,7 +1854,7 @@ GameObject:
   - component: {fileID: 233332714}
   m_Layer: 5
   m_Name: Kaeru
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2239,7 +2239,7 @@ GameObject:
   - component: {fileID: 344531023}
   m_Layer: 5
   m_Name: Kinoko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2440,7 +2440,7 @@ GameObject:
   - component: {fileID: 344961304}
   m_Layer: 5
   m_Name: Kinoko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3047,7 +3047,7 @@ GameObject:
   - component: {fileID: 433851887}
   m_Layer: 5
   m_Name: Kaeru
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3791,7 +3791,7 @@ GameObject:
   - component: {fileID: 575055169}
   m_Layer: 5
   m_Name: Kaeru
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4050,7 +4050,7 @@ GameObject:
   - component: {fileID: 594900275}
   m_Layer: 5
   m_Name: Kinoko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4963,7 +4963,7 @@ GameObject:
   - component: {fileID: 689852316}
   m_Layer: 5
   m_Name: Kaeru
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5287,7 +5287,7 @@ GameObject:
   - component: {fileID: 752558075}
   m_Layer: 5
   m_Name: Kaeru
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5878,7 +5878,7 @@ GameObject:
   - component: {fileID: 893975936}
   m_Layer: 5
   m_Name: Kinoko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6638,7 +6638,7 @@ GameObject:
   - component: {fileID: 949835604}
   m_Layer: 5
   m_Name: Kinoko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6897,7 +6897,7 @@ GameObject:
   - component: {fileID: 968553042}
   m_Layer: 5
   m_Name: Kaeru
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7166,7 +7166,7 @@ GameObject:
   - component: {fileID: 989272450}
   - component: {fileID: 989272451}
   m_Layer: 5
-  m_Name: UI
+  m_Name: PlayerUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7209,7 +7209,7 @@ MonoBehaviour:
   HPGauge: {fileID: 669877358}
   SPGauge: {fileID: 440552891}
   SPText: {fileID: 1091111710}
-  maxHP: 100
+  maxHP: 18000
   setSkillsNumber: 00000000010000000200000003000000
   skillSprite:
   - {fileID: 21300000, guid: 641764f94f852b24e8d41252bda743f4, type: 3}
@@ -7421,7 +7421,7 @@ GameObject:
   - component: {fileID: 1055304843}
   m_Layer: 5
   m_Name: Kinoko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7759,7 +7759,7 @@ GameObject:
   - component: {fileID: 1081109662}
   m_Layer: 5
   m_Name: Kinoko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8458,7 +8458,7 @@ GameObject:
   - component: {fileID: 1181204863}
   m_Layer: 5
   m_Name: Kinoko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8814,7 +8814,7 @@ GameObject:
   - component: {fileID: 1210752164}
   m_Layer: 5
   m_Name: Kinoko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9015,7 +9015,7 @@ GameObject:
   - component: {fileID: 1219913614}
   m_Layer: 5
   m_Name: Kaeru
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9353,7 +9353,7 @@ GameObject:
   - component: {fileID: 1281829917}
   m_Layer: 5
   m_Name: Kinoko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9557,7 +9557,7 @@ GameObject:
   - component: {fileID: 1367720490}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Enemy
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10034,9 +10034,10 @@ GameObject:
   - component: {fileID: 1501492598}
   - component: {fileID: 1501492604}
   - component: {fileID: 1501492605}
+  - component: {fileID: 1501492606}
   m_Layer: 0
   m_Name: BossClone1
-  m_TagString: Enemy
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10264,6 +10265,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 300
+--- !u!33 &1501492606
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501492596}
+  m_Mesh: {fileID: 0}
 --- !u!1 &1509588496
 GameObject:
   m_ObjectHideFlags: 0
@@ -11381,7 +11390,7 @@ GameObject:
   - component: {fileID: 1748609837}
   m_Layer: 0
   m_Name: BossClone3
-  m_TagString: Enemy
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12144,7 +12153,7 @@ GameObject:
   - component: {fileID: 1862442473}
   m_Layer: 5
   m_Name: Kinoko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12446,7 +12455,7 @@ GameObject:
   - component: {fileID: 1905101119}
   m_Layer: 5
   m_Name: Kaeru
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12647,7 +12656,7 @@ GameObject:
   - component: {fileID: 1953721454}
   m_Layer: 5
   m_Name: Kinoko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12964,7 +12973,7 @@ GameObject:
   - component: {fileID: 2031477840}
   m_Layer: 5
   m_Name: Kinoko
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

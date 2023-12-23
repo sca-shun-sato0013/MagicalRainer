@@ -53,11 +53,11 @@ public class Result : MonoBehaviour
     private void Update()
     {
         scoreText.text = "" + GlobalVariables.Score;
-        hpText.text = "" + GlobalVariables.HP;
+        hpText.text = "" + UIManager.HP;
         TotalScore();
         BadgesImage();
 
-        if (GlobalVariables.HP >= 0)
+        if (UIManager.HP >= 0)
         {
             BonusScore();
         }
@@ -164,14 +164,14 @@ public class Result : MonoBehaviour
         s = GlobalVariables.AliveTime;
         s = Mathf.Floor(s);
 
-        const int clearScore = 360000;
-        //totalScore = ((minutes * 60 + seconds) + comma / 100)* 100 * bonus + GlobalVariables.Score + GlobalVariables.HP;
-        if (GlobalVariables.HP <= 0)
+        int clearScore = 360000;
+        //totalScore = ((minutes * 60 + seconds) + comma / 100)* 100 * bonus + GlobalVariables.Score + UIManager.HP;
+        if (UIManager.HP <= 0)
         {
             bonus = 1.0f;
         }
+        totalScore = (clearScore - (s * 10)) * bonus + (GlobalVariables.Score + UIManager.HP);
 
-        totalScore = (clearScore - (s * 10)) * bonus + ( GlobalVariables.Score + GlobalVariables.HP);
         if (totalScore < 0)
         {
             totalScore = 0;

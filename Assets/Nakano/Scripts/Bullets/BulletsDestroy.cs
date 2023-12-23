@@ -29,12 +29,6 @@ public class BulletsDestroy : MonoBehaviour
         }
     }
 
-    //âÊñ äOÇ…èoÇΩÇÁ
-    //private void OnBecameInvisible()
-    //{
-    //    Destroy(this.gameObject);
-    //}
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))

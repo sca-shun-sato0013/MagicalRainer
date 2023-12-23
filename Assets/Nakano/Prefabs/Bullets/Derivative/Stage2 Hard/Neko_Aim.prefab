@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8902655241130580863}
   m_Layer: 0
   m_Name: Neko_Aim
-  m_TagString: Bullets
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

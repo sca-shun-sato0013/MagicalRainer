@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8185402423289845400}
   m_Layer: 0
   m_Name: Rock_Tracking
-  m_TagString: Bullets
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
