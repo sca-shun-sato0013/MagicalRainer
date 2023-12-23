@@ -19,6 +19,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Sprite[] skillSprite =new Sprite[6];
     [SerializeField] private Image[] setSkills=new Image[4];
 
+    private UI gauge;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,8 @@ public class UIManager : MonoBehaviour
             setSkills[i].sprite= skillSprite[(int)SkillDefine.skillSets[i]];
             //setSkills[i].sprite = skillSprite[setSkillsNumber[i]];
         }
+
+        gauge = GameObject.Find("Skills").GetComponent<UI>();
     }
 
     // Update is called once per frame
@@ -88,14 +92,14 @@ public class UIManager : MonoBehaviour
 
             for(int i = 0; i < setSkillsNumber.Length; ++i)
             {
-                setSkills[setSkillsNumber[i]].color=new Color(1,1,1);
+                setSkills[setSkillsNumber[i]].color=new Color(1,1,1,gauge.alpha);
             }
         }
         else
         {
             for (int i = 0; i < setSkillsNumber.Length; ++i)
             {
-                setSkills[i].color = new Color(0.5f, 0.5f, 0.5f);
+                setSkills[i].color = new Color(0.5f, 0.5f, 0.5f,gauge.alpha);
             }
         }
     }
