@@ -16,16 +16,7 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GlobalVariables.HP != 0)
-        {
-            result.gameObject.SetActive(true);
-            gameOver.gameObject.SetActive(false);
-        }
-        else
-        {
-            result.gameObject.SetActive(false);
-            gameOver.gameObject.SetActive(true);
-        }
+        
     }
 }
 
@@ -34,5 +25,4 @@ public static class GlobalVariables
 {
     public static float AliveTime = 0f; //ê∂ë∂éûä‘
     public static int Score = 0; //ÉXÉRÉA
-    public static int HP = 100; //HP
 }

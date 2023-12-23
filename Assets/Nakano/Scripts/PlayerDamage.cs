@@ -6,6 +6,7 @@ public class PlayerDamage : MonoBehaviour
 {
     MainGameController mainGameController;
     BossController bossController;
+    PlayerController playerController;
 
     [SerializeField] EnemyParams enemyParams;
 
@@ -20,6 +21,7 @@ public class PlayerDamage : MonoBehaviour
     {
         mainGameController = GameObject.FindObjectOfType<MainGameController>();
         bossController = GameObject.FindObjectOfType<BossController>();
+        playerController = GameObject.FindObjectOfType<PlayerController>();
         stageNum = mainGameController.StageNumber;
         bossWaveNum = bossController.BossWaveNum;
 
@@ -120,12 +122,16 @@ public class PlayerDamage : MonoBehaviour
         return damage;
     }
 
-    //Sample
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if(collision.gameObject.tag == "Enemy1" || collision.gameObject.tag == "Enemy2" || collision.gameObject.tag == "Boss")
-    //    {
-    //        int damage =  PlayerDamage.Damage(collision.gameObject.tag);
-    //    }
-    //}
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(!PlayerController.damageFlag)
+        {
+            if (collision.gameObject.tag == "Enemy1" || collision.gameObject.tag == "Enemy2" || collision.gameObject.tag == "Boss")
+            {
+                int damage = Damage(collision.gameObject.tag);
+                UIManager.HP -= damage;
+                playerController.IsDamage = true;
+            }
+        }
+    }
 }

@@ -49,7 +49,7 @@ public class NormalBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "BigBullets" && isReflect)
+        if(collision.gameObject.name == "Wolf3_BigNormal" && isReflect)
         {
             reflect = true;
             isReflect = false;

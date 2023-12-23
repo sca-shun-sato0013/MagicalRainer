@@ -23,6 +23,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Material playerMaterial;
     private float playerAlpha=1.0f;
     // Start is called before the first frame update
+
+    bool isDamage = false;
+    public bool IsDamage { get { return isDamage; } set { isDamage = value; } }
+
     void Start()
     {
         halfSpeed = speed / 2;
@@ -52,10 +56,15 @@ public class PlayerController : MonoBehaviour
                     PlayerMove();
                     if (!damageFlag)
                     {
-                        if (Input.GetKeyDown(KeyCode.LeftShift))
+                        //if (Input.GetKeyDown(KeyCode.LeftShift))
+                        //{
+                        //    UIManager.HP -= 10;
+                        //    StartCoroutine(Invisible());
+                        //}
+                        if(isDamage)
                         {
-                            UIManager.HP -= 10;
                             StartCoroutine(Invisible());
+                            isDamage = false;
                         }
                     }
                 }
@@ -68,6 +77,7 @@ public class PlayerController : MonoBehaviour
                     if (waitDethEffect<=0)
                     {
                         //Destroy(gameObject);
+                        this.gameObject.GetComponent<Collider2D>().enabled = false; //ìñÇΩÇËîªíËè¡ãé
                     }
                 }
                 break;
