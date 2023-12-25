@@ -30,7 +30,7 @@ public class Skillname : MonoBehaviour
     {
         
     }
-    private void OnTriggerStay2D(Collider2D collision)
+    /*private void OnTriggerStay2D(Collider2D collision)
     {
 
         GameObject obj = collision.gameObject;
@@ -85,6 +85,6 @@ public class Skillname : MonoBehaviour
         }
 
 
-    }
+    }*/
 
 }

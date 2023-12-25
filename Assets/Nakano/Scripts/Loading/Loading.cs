@@ -31,7 +31,9 @@ public class Loading : MonoBehaviour
     [SerializeField] GameObject fadeOut;
     HorizonFade fade;
 
+    [SerializeField]
     CanvasGroup loadingWindow;
+
     [SerializeField, Header("‘JˆÚ‘O‚É•\Ž¦‚µ‚Ä‚¢‚éCanvas")] CanvasGroup lastWindow;
 
     bool isChange = true;
@@ -39,9 +41,9 @@ public class Loading : MonoBehaviour
     void Start()
     {
         LoadingUI.SetActive(false);
-        fade = fadeOut.GetComponent<HorizonFade>();
 
-        loadingWindow = LoadingUI.GetComponent<CanvasGroup>();
+        fade = fadeOut.GetComponent<HorizonFade>();
+        
 
         NextSceneName = "Stage1-Normal";
     }

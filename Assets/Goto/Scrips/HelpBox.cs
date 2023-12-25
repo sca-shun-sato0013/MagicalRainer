@@ -18,17 +18,17 @@ public class HelpBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-      
+
         text.text = helpMessage;
         text.transform.gameObject.SetActive(true); //スキル名表示
 
-        _text.text = _helpMessage;
+        //_text.text = _helpMessage;
         _text.transform.gameObject.SetActive(true); //スキル説明
 
-       // videoPlayer.Play();
+        // videoPlayer.Play();
         Panel.SetActive(true); //videoPlayerのパネル表示
         videoPlayer.Play();
-       // StartCoroutine(Starts());
+        // StartCoroutine(Starts());
 
     }
 
@@ -39,20 +39,8 @@ public class HelpBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
         videoPlayer.Stop();
         Panel.SetActive(false); //videoplayerのパネル非表示
-       
+
         // StartCoroutine(Stop());
 
     }
-
-    //IEnumerator Starts()
-    //{
-    //    yield return new WaitForSeconds(0.1f);
-    //    videoPlayer.Play();
-    //}
-
-    //IEnumerator Stop()
-    //{
-    //    yield return new WaitForSeconds(0.5f);
-    //    Panel.SetActive(false);
-    //}
 }

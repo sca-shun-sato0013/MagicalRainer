@@ -10,7 +10,6 @@ public class SettingButton : MonoBehaviour
 
     public void OnClick()
     {
-        Debug.Log("sdf");
         settingCanvas.SetActive(true);
     }
 }

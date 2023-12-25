@@ -16,7 +16,67 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 2c859f4528d0531498cf2cb01a94ac0a
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: a0b15c73bb0f0ec428f664ed0e9c83c3
+    m_Address: Stargazer
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 08efa7de0c90e01459e4e8d830e5d914
+    m_Address: Pentagram
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 14ab76157ed9a3144bc2756f5b6ef10c
+    m_Address: EnergyFunnnel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bee9de48fa52a5b4c93f27d1c9ac23e7
+    m_Address: MysticField
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 68248f32591746c4596573a214a0668f
+    m_Address: LightingFlush
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7a0bbccc973b6474cb73320522bd21b9
+    m_Address: BlueThunder
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c4d23e773c98b474e83f712c421438ca
+    m_Address: CharacterTextBox_B
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3113ebf0de053fc4b8f127695c17e2bc
+    m_Address: CharacterTextBox_A
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8bcbd59dfe609ed4bb1eb3b015a63f60
+    m_Address: SkillPreview_Blue
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 49c4b8e72f6f6ea4b8f21ecada7c848c
+    m_Address: SkillPreview_Pink
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 279dbb8241be5514289cacfb6063eba6
+    m_Address: SkillInfo_Pink
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 25a21d6af31bddd449641c5c3a03236f
+    m_Address: SkillInfo_Blue
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ed1ac22397660ac4aa9f7746985fb50d, type: 2}
   m_SchemaSet:

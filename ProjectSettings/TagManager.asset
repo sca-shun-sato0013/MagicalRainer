@@ -18,6 +18,8 @@ TagManager:
   - Enemy1
   - Enemy2
   - Boss
+  - SkillIcon
+  - SkillSrot
   layers:
   - Default
   - TransparentFX
