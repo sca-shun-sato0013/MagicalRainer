@@ -7,7 +7,6 @@ public class StartController : MonoBehaviour
 {
     public void SwitchScene()
     {
-        SceneManager.LoadScene("character selection");
-        
+        SceneManager.LoadScene("02_CharacterSelect");
     }
 }

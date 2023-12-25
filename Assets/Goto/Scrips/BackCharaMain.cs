@@ -20,7 +20,7 @@ public class BackCharaMain : MonoBehaviour
         var isActivee = Panel2.activeInHierarchy; // Panelがアクティブか取得
         Panel2.SetActive(true);
 
-        SceneManager.LoadScene("character selection");
+        SceneManager.LoadScene("02_CharacterSelect");
 
     }
 }

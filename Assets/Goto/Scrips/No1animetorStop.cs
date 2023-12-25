@@ -11,6 +11,9 @@ public class No1animetorStop : MonoBehaviour
     [SerializeField]
     private GameObject statusWindow;
 
+    [SerializeField]
+    CharaSelectData charaSelect;
+
    // [SerializeField] Animator anim;
 
     //AnimatorÇanimÇ∆Ç¢Ç§ïœêîÇ≈íËã`Ç∑ÇÈ
@@ -35,7 +38,6 @@ public class No1animetorStop : MonoBehaviour
         Panel2.SetActive(true);
         //GetComponent<Button>().interactable = false;
         //GetComponent<Button>().interactable = true;
-        Cursor.lockState = CursorLockMode.None;
         Moveanim();
 
 
@@ -43,10 +45,11 @@ public class No1animetorStop : MonoBehaviour
 
     public void OnClick()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+  
         StartCoroutine(Stop());
 
-   
+        charaSelect.CharaName = GetComponent<Image>().sprite.name;
+
        // GetComponent<Button>().interactable = true;
         //anim.Play("idle");
 

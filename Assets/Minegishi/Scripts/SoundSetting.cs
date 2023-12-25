@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CloseButton : MonoBehaviour
+public class SoundSetting : MonoBehaviour
 {
     [SerializeField] GameObject canvas;
 
     void Start()
     {
-        
+        DontDestroyOnLoad(gameObject);
     }
 
     void Update()
