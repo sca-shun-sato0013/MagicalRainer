@@ -1,15 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using DesignPattern;
 
 public class SettingButton : MonoBehaviour
 {
-    [SerializeField]
-    GameObject settingCanvas;
-
     public void OnClick()
     {
-        settingCanvas.SetActive(true);
+        Singleton<SoundSetting>.Instance.OpenWindow("UICamera");
     }
 }

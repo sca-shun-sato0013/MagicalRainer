@@ -37,18 +37,9 @@ public class SkillDragAndDrop : MonoBehaviour,IPointerDownHandler,IPointerUpHand
 
     public SkillState SkillState => skillState;
 
-
-    float screenCorrectionX;
-    float screenCorrectionY;
-
     // Start is called before the first frame update
     void Start()
     {
-        screenCorrectionX = Screen.width/1920.0f;
-        screenCorrectionY = Screen.height - 1080.0f;
-
-        Debug.Log(screenCorrectionX);
-        Debug.Log(screenCorrectionY);
         startPos = rectTransform.anchoredPosition3D;
         skillReset.skillRelease += ResetPos;
     }

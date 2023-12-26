@@ -18,16 +18,16 @@ EditorBuildSettings:
     path: Assets/Hatakeyama/Scene/Player.unity
     guid: dfbe38121064d094e9feab76e6776070
   - enabled: 1
-    path: Assets/Nakano/Scenes/Stage1-Normal.unity
+    path: Assets/Nakano/Scenes/Normal/Stage1-Normal.unity
     guid: 4d96230c21792cb4183882cabbf0ad46
   - enabled: 1
-    path: Assets/Nakano/Scenes/Stage1-Hard.unity
+    path: Assets/Nakano/Scenes/Hard/Stage1-Hard.unity
     guid: 80cc091b64566d34e84b28bd8b40eb0b
   - enabled: 1
-    path: Assets/Nakano/Scenes/Stage2-Normal.unity
+    path: Assets/Nakano/Scenes/Normal/Stage2-Normal.unity
     guid: 58d23286a98d7364eafbc5385991afd3
   - enabled: 1
-    path: Assets/Nakano/Scenes/Stage2-Hard.unity
+    path: Assets/Nakano/Scenes/Hard/Stage2-Hard.unity
     guid: 0b2944f8c09308e41bbddaf59664de52
   - enabled: 1
     path: Assets/Minegishi/Scenes/SoundScene.unity

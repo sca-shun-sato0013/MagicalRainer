@@ -196,6 +196,7 @@ GameObject:
   - component: {fileID: 4543374}
   - component: {fileID: 4543376}
   - component: {fileID: 4543375}
+  - component: {fileID: 4543377}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -354,6 +355,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 8258916702348128007, guid: eb658c50638ce3c47a8d4b6d5eb93e14,
     type: 3}
+--- !u!50 &4543377
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4543369}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6218614
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,6 +448,7 @@ GameObject:
   - component: {fileID: 6469712}
   - component: {fileID: 6469714}
   - component: {fileID: 6469713}
+  - component: {fileID: 6469715}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -578,6 +607,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 100
+--- !u!50 &6469715
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6469707}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &20703395
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,6 +649,7 @@ GameObject:
   - component: {fileID: 20703400}
   - component: {fileID: 20703402}
   - component: {fileID: 20703401}
+  - component: {fileID: 20703403}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -751,6 +808,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 8258916702348128007, guid: eb658c50638ce3c47a8d4b6d5eb93e14,
     type: 3}
+--- !u!50 &20703403
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20703395}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &28415115
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,6 +1024,7 @@ GameObject:
   - component: {fileID: 52186351}
   - component: {fileID: 52186353}
   - component: {fileID: 52186352}
+  - component: {fileID: 52186354}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -1098,6 +1183,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 100
+--- !u!50 &52186354
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52186346}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &53703088
 GameObject:
   m_ObjectHideFlags: 0
@@ -1368,6 +1480,7 @@ GameObject:
   - component: {fileID: 83210400}
   - component: {fileID: 83210402}
   - component: {fileID: 83210401}
+  - component: {fileID: 83210403}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -1526,6 +1639,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 8258916702348128007, guid: eb658c50638ce3c47a8d4b6d5eb93e14,
     type: 3}
+--- !u!50 &83210403
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83210395}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &101278479
 GameObject:
   m_ObjectHideFlags: 0
@@ -1735,6 +1875,7 @@ GameObject:
   - component: {fileID: 122236778}
   - component: {fileID: 122236780}
   - component: {fileID: 122236779}
+  - component: {fileID: 122236781}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -1893,6 +2034,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 100
+--- !u!50 &122236781
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122236773}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &129254869
 GameObject:
   m_ObjectHideFlags: 0
@@ -1908,6 +2076,7 @@ GameObject:
   - component: {fileID: 129254874}
   - component: {fileID: 129254876}
   - component: {fileID: 129254875}
+  - component: {fileID: 129254877}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -2066,6 +2235,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 100
+--- !u!50 &129254877
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129254869}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &156176887
 GameObject:
   m_ObjectHideFlags: 0
@@ -2139,6 +2335,7 @@ GameObject:
   - component: {fileID: 165745307}
   - component: {fileID: 165745309}
   - component: {fileID: 165745308}
+  - component: {fileID: 165745310}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -2297,6 +2494,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 8258916702348128007, guid: eb658c50638ce3c47a8d4b6d5eb93e14,
     type: 3}
+--- !u!50 &165745310
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165745302}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &171772468
 GameObject:
   m_ObjectHideFlags: 0
@@ -2518,6 +2742,7 @@ MonoBehaviour:
   bossObj: {fileID: 1839213464}
   explodeEffect: {fileID: 2188834302468991503, guid: 5b6efbfaf54284447a5205abe897e1b7,
     type: 3}
+  hp: 0
   hpBar: {fileID: 1278032046}
   bossUI: {fileID: 2090132618}
   bossUIAnim: {fileID: 2090132619}
@@ -2699,6 +2924,7 @@ GameObject:
   - component: {fileID: 215029354}
   - component: {fileID: 215029356}
   - component: {fileID: 215029355}
+  - component: {fileID: 215029357}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -2857,6 +3083,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 100
+--- !u!50 &215029357
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215029349}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &221600973
 GameObject:
   m_ObjectHideFlags: 0
@@ -2872,6 +3125,7 @@ GameObject:
   - component: {fileID: 221600978}
   - component: {fileID: 221600980}
   - component: {fileID: 221600979}
+  - component: {fileID: 221600981}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -3030,6 +3284,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 8258916702348128007, guid: eb658c50638ce3c47a8d4b6d5eb93e14,
     type: 3}
+--- !u!50 &221600981
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221600973}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &227528098
 GameObject:
   m_ObjectHideFlags: 0
@@ -3045,6 +3326,7 @@ GameObject:
   - component: {fileID: 227528103}
   - component: {fileID: 227528105}
   - component: {fileID: 227528104}
+  - component: {fileID: 227528106}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -3203,6 +3485,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 100
+--- !u!50 &227528106
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227528098}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &238628629
 GameObject:
   m_ObjectHideFlags: 0
@@ -3218,6 +3527,7 @@ GameObject:
   - component: {fileID: 238628634}
   - component: {fileID: 238628636}
   - component: {fileID: 238628635}
+  - component: {fileID: 238628637}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -3376,6 +3686,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 110
+--- !u!50 &238628637
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238628629}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &240656202
 GameObject:
   m_ObjectHideFlags: 0
@@ -3449,6 +3786,7 @@ GameObject:
   - component: {fileID: 245152815}
   - component: {fileID: 245152817}
   - component: {fileID: 245152816}
+  - component: {fileID: 245152818}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -3607,6 +3945,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 110
+--- !u!50 &245152818
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245152810}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &251989883
 GameObject:
   m_ObjectHideFlags: 0
@@ -3622,6 +3987,7 @@ GameObject:
   - component: {fileID: 251989888}
   - component: {fileID: 251989890}
   - component: {fileID: 251989889}
+  - component: {fileID: 251989891}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -3780,6 +4146,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 100
+--- !u!50 &251989891
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251989883}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &259999982
 GameObject:
   m_ObjectHideFlags: 0
@@ -3795,6 +4188,7 @@ GameObject:
   - component: {fileID: 259999987}
   - component: {fileID: 259999989}
   - component: {fileID: 259999988}
+  - component: {fileID: 259999990}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -3953,6 +4347,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 110
+--- !u!50 &259999990
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259999982}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &266957828
 GameObject:
   m_ObjectHideFlags: 0
@@ -4026,6 +4447,7 @@ GameObject:
   - component: {fileID: 289547705}
   - component: {fileID: 289547707}
   - component: {fileID: 289547706}
+  - component: {fileID: 289547708}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -4184,6 +4606,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 8258916702348128007, guid: eb658c50638ce3c47a8d4b6d5eb93e14,
     type: 3}
+--- !u!50 &289547708
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289547700}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &367158650
 GameObject:
   m_ObjectHideFlags: 0
@@ -4569,6 +5018,7 @@ GameObject:
   - component: {fileID: 386051600}
   - component: {fileID: 386051602}
   - component: {fileID: 386051601}
+  - component: {fileID: 386051603}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -4727,6 +5177,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 100
+--- !u!50 &386051603
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386051595}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &401961728
 GameObject:
   m_ObjectHideFlags: 0
@@ -4800,6 +5277,7 @@ GameObject:
   - component: {fileID: 404037348}
   - component: {fileID: 404037350}
   - component: {fileID: 404037349}
+  - component: {fileID: 404037351}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -4958,6 +5436,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 100
+--- !u!50 &404037351
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404037343}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &406967680
 GameObject:
   m_ObjectHideFlags: 0
@@ -5317,6 +5822,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 468492192}
+  - component: {fileID: 468492193}
+  - component: {fileID: 468492194}
   m_Layer: 5
   m_Name: Skills
   m_TagString: Untagged
@@ -5347,6 +5854,36 @@ RectTransform:
   m_AnchoredPosition: {x: 1200, y: -800}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &468492193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468492191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e67c9e0703d6ccb4f8ea9ed5c950b48a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ui: []
+--- !u!114 &468492194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468492191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56a52bb7728441e43a9bbb6ceda05389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillImages:
+  - {fileID: 657065525}
+  - {fileID: 1308565243}
+  - {fileID: 723463295}
+  - {fileID: 608376624}
 --- !u!1 &486482902
 GameObject:
   m_ObjectHideFlags: 0
@@ -5362,6 +5899,7 @@ GameObject:
   - component: {fileID: 486482907}
   - component: {fileID: 486482909}
   - component: {fileID: 486482908}
+  - component: {fileID: 486482910}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -5520,6 +6058,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 100
+--- !u!50 &486482910
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486482902}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &521740387
 GameObject:
   m_ObjectHideFlags: 0
@@ -5535,6 +6100,7 @@ GameObject:
   - component: {fileID: 521740392}
   - component: {fileID: 521740394}
   - component: {fileID: 521740393}
+  - component: {fileID: 521740395}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -5693,6 +6259,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 110
+--- !u!50 &521740395
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521740387}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &522822712
 GameObject:
   m_ObjectHideFlags: 0
@@ -5766,6 +6359,7 @@ GameObject:
   - component: {fileID: 525561574}
   - component: {fileID: 525561576}
   - component: {fileID: 525561575}
+  - component: {fileID: 525561577}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -5924,6 +6518,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 110
+--- !u!50 &525561577
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525561569}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &544073844
 GameObject:
   m_ObjectHideFlags: 0
@@ -5997,6 +6618,7 @@ GameObject:
   - component: {fileID: 551463267}
   - component: {fileID: 551463269}
   - component: {fileID: 551463268}
+  - component: {fileID: 551463270}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -6155,6 +6777,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 8258916702348128007, guid: eb658c50638ce3c47a8d4b6d5eb93e14,
     type: 3}
+--- !u!50 &551463270
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551463262}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &554268379
 GameObject:
   m_ObjectHideFlags: 0
@@ -6691,6 +7340,7 @@ GameObject:
   - component: {fileID: 641697460}
   - component: {fileID: 641697462}
   - component: {fileID: 641697461}
+  - component: {fileID: 641697463}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -6849,6 +7499,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 110
+--- !u!50 &641697463
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641697455}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &646451654
 GameObject:
   m_ObjectHideFlags: 0
@@ -7267,6 +7944,7 @@ GameObject:
   - component: {fileID: 736586174}
   - component: {fileID: 736586176}
   - component: {fileID: 736586175}
+  - component: {fileID: 736586177}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -7425,6 +8103,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 110
+--- !u!50 &736586177
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736586169}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &749524936
 GameObject:
   m_ObjectHideFlags: 0
@@ -7995,6 +8700,7 @@ GameObject:
   - component: {fileID: 803118536}
   - component: {fileID: 803118538}
   - component: {fileID: 803118537}
+  - component: {fileID: 803118539}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -8153,6 +8859,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 100
+--- !u!50 &803118539
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803118531}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &830588903
 GameObject:
   m_ObjectHideFlags: 0
@@ -8226,6 +8959,7 @@ GameObject:
   - component: {fileID: 850530633}
   - component: {fileID: 850530635}
   - component: {fileID: 850530634}
+  - component: {fileID: 850530636}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -8384,6 +9118,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 100
+--- !u!50 &850530636
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850530628}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &851950572
 GameObject:
   m_ObjectHideFlags: 0
@@ -8399,6 +9160,7 @@ GameObject:
   - component: {fileID: 851950577}
   - component: {fileID: 851950579}
   - component: {fileID: 851950578}
+  - component: {fileID: 851950580}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -8557,6 +9319,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 8258916702348128007, guid: eb658c50638ce3c47a8d4b6d5eb93e14,
     type: 3}
+--- !u!50 &851950580
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851950572}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &852845655
 GameObject:
   m_ObjectHideFlags: 0
@@ -8782,6 +9571,7 @@ GameObject:
   - component: {fileID: 941741983}
   - component: {fileID: 941741985}
   - component: {fileID: 941741984}
+  - component: {fileID: 941741986}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -8940,6 +9730,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 100
+--- !u!50 &941741986
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941741978}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &941896822
 GameObject:
   m_ObjectHideFlags: 0
@@ -8955,6 +9772,7 @@ GameObject:
   - component: {fileID: 941896827}
   - component: {fileID: 941896829}
   - component: {fileID: 941896828}
+  - component: {fileID: 941896830}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -9113,6 +9931,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 100
+--- !u!50 &941896830
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941896822}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &972702430
 GameObject:
   m_ObjectHideFlags: 0
@@ -9128,6 +9973,7 @@ GameObject:
   - component: {fileID: 972702435}
   - component: {fileID: 972702437}
   - component: {fileID: 972702436}
+  - component: {fileID: 972702438}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -9286,6 +10132,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 110
+--- !u!50 &972702438
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972702430}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &985297087
 GameObject:
   m_ObjectHideFlags: 0
@@ -9336,6 +10209,7 @@ GameObject:
   - component: {fileID: 996522869}
   - component: {fileID: 996522871}
   - component: {fileID: 996522870}
+  - component: {fileID: 996522872}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -9494,6 +10368,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 110
+--- !u!50 &996522872
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996522864}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1009698811
 GameObject:
   m_ObjectHideFlags: 0
@@ -9509,6 +10410,7 @@ GameObject:
   - component: {fileID: 1009698816}
   - component: {fileID: 1009698818}
   - component: {fileID: 1009698817}
+  - component: {fileID: 1009698819}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -9667,6 +10569,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 100
+--- !u!50 &1009698819
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009698811}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1017009417
 GameObject:
   m_ObjectHideFlags: 0
@@ -9841,6 +10770,7 @@ GameObject:
   - component: {fileID: 1051910894}
   - component: {fileID: 1051910896}
   - component: {fileID: 1051910895}
+  - component: {fileID: 1051910897}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -9999,6 +10929,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 8258916702348128007, guid: eb658c50638ce3c47a8d4b6d5eb93e14,
     type: 3}
+--- !u!50 &1051910897
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051910889}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1053014416
 GameObject:
   m_ObjectHideFlags: 0
@@ -10049,6 +11006,7 @@ GameObject:
   - component: {fileID: 1064099812}
   - component: {fileID: 1064099814}
   - component: {fileID: 1064099813}
+  - component: {fileID: 1064099815}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -10207,6 +11165,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 8258916702348128007, guid: eb658c50638ce3c47a8d4b6d5eb93e14,
     type: 3}
+--- !u!50 &1064099815
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064099807}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1068158966
 GameObject:
   m_ObjectHideFlags: 0
@@ -10599,6 +11584,7 @@ GameObject:
   - component: {fileID: 1086883173}
   - component: {fileID: 1086883175}
   - component: {fileID: 1086883174}
+  - component: {fileID: 1086883176}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -10757,6 +11743,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 8258916702348128007, guid: eb658c50638ce3c47a8d4b6d5eb93e14,
     type: 3}
+--- !u!50 &1086883176
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086883168}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1088509845
 GameObject:
   m_ObjectHideFlags: 0
@@ -10772,6 +11785,7 @@ GameObject:
   - component: {fileID: 1088509850}
   - component: {fileID: 1088509852}
   - component: {fileID: 1088509851}
+  - component: {fileID: 1088509853}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -10930,6 +11944,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 110
+--- !u!50 &1088509853
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088509845}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1090257257
 GameObject:
   m_ObjectHideFlags: 0
@@ -10945,6 +11986,7 @@ GameObject:
   - component: {fileID: 1090257262}
   - component: {fileID: 1090257264}
   - component: {fileID: 1090257263}
+  - component: {fileID: 1090257265}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -11103,6 +12145,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 110
+--- !u!50 &1090257265
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090257257}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1094283601
 GameObject:
   m_ObjectHideFlags: 0
@@ -11118,6 +12187,7 @@ GameObject:
   - component: {fileID: 1094283606}
   - component: {fileID: 1094283608}
   - component: {fileID: 1094283607}
+  - component: {fileID: 1094283609}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -11276,6 +12346,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 100
+--- !u!50 &1094283609
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094283601}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1099272497
 GameObject:
   m_ObjectHideFlags: 0
@@ -11291,6 +12388,7 @@ GameObject:
   - component: {fileID: 1099272502}
   - component: {fileID: 1099272504}
   - component: {fileID: 1099272503}
+  - component: {fileID: 1099272505}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -11449,6 +12547,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 110
+--- !u!50 &1099272505
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099272497}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1100162966
 GameObject:
   m_ObjectHideFlags: 0
@@ -11464,6 +12589,7 @@ GameObject:
   - component: {fileID: 1100162971}
   - component: {fileID: 1100162973}
   - component: {fileID: 1100162972}
+  - component: {fileID: 1100162974}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -11622,6 +12748,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 110
+--- !u!50 &1100162974
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100162966}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1109808860
 GameObject:
   m_ObjectHideFlags: 0
@@ -11637,6 +12790,7 @@ GameObject:
   - component: {fileID: 1109808865}
   - component: {fileID: 1109808867}
   - component: {fileID: 1109808866}
+  - component: {fileID: 1109808868}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -11795,6 +12949,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 100
+--- !u!50 &1109808868
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109808860}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1118649170
 GameObject:
   m_ObjectHideFlags: 0
@@ -11868,6 +13049,7 @@ GameObject:
   - component: {fileID: 1133526944}
   - component: {fileID: 1133526946}
   - component: {fileID: 1133526945}
+  - component: {fileID: 1133526947}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -12026,6 +13208,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 8258916702348128007, guid: eb658c50638ce3c47a8d4b6d5eb93e14,
     type: 3}
+--- !u!50 &1133526947
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133526939}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1136609150
 GameObject:
   m_ObjectHideFlags: 0
@@ -12283,6 +13492,7 @@ GameObject:
   - component: {fileID: 1187946432}
   - component: {fileID: 1187946434}
   - component: {fileID: 1187946433}
+  - component: {fileID: 1187946435}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -12441,6 +13651,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 100
+--- !u!50 &1187946435
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187946427}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1201810872
 GameObject:
   m_ObjectHideFlags: 0
@@ -12590,6 +13827,7 @@ GameObject:
   - component: {fileID: 1234854800}
   - component: {fileID: 1234854802}
   - component: {fileID: 1234854801}
+  - component: {fileID: 1234854803}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -12748,6 +13986,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 100
+--- !u!50 &1234854803
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234854795}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1236567383
 GameObject:
   m_ObjectHideFlags: 0
@@ -13457,6 +14722,7 @@ GameObject:
   - component: {fileID: 1350101506}
   - component: {fileID: 1350101508}
   - component: {fileID: 1350101507}
+  - component: {fileID: 1350101509}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -13615,6 +14881,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 8258916702348128007, guid: eb658c50638ce3c47a8d4b6d5eb93e14,
     type: 3}
+--- !u!50 &1350101509
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350101501}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1370375467
 GameObject:
   m_ObjectHideFlags: 0
@@ -13731,6 +15024,7 @@ GameObject:
   - component: {fileID: 1395896345}
   - component: {fileID: 1395896347}
   - component: {fileID: 1395896346}
+  - component: {fileID: 1395896348}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -13889,6 +15183,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 100
+--- !u!50 &1395896348
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395896340}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1412966898
 GameObject:
   m_ObjectHideFlags: 0
@@ -14043,6 +15364,7 @@ GameObject:
   - component: {fileID: 1432091271}
   - component: {fileID: 1432091273}
   - component: {fileID: 1432091272}
+  - component: {fileID: 1432091274}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -14201,6 +15523,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 8258916702348128007, guid: eb658c50638ce3c47a8d4b6d5eb93e14,
     type: 3}
+--- !u!50 &1432091274
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432091266}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1433673444
 GameObject:
   m_ObjectHideFlags: 0
@@ -14216,6 +15565,7 @@ GameObject:
   - component: {fileID: 1433673449}
   - component: {fileID: 1433673451}
   - component: {fileID: 1433673450}
+  - component: {fileID: 1433673452}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -14374,6 +15724,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 8258916702348128007, guid: eb658c50638ce3c47a8d4b6d5eb93e14,
     type: 3}
+--- !u!50 &1433673452
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433673444}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1450251458
 GameObject:
   m_ObjectHideFlags: 0
@@ -14389,6 +15766,7 @@ GameObject:
   - component: {fileID: 1450251463}
   - component: {fileID: 1450251465}
   - component: {fileID: 1450251464}
+  - component: {fileID: 1450251466}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -14547,6 +15925,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 8258916702348128007, guid: eb658c50638ce3c47a8d4b6d5eb93e14,
     type: 3}
+--- !u!50 &1450251466
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450251458}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1476026829
 GameObject:
   m_ObjectHideFlags: 0
@@ -14832,6 +16237,7 @@ GameObject:
   - component: {fileID: 1526009887}
   - component: {fileID: 1526009889}
   - component: {fileID: 1526009888}
+  - component: {fileID: 1526009890}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -14990,6 +16396,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 110
+--- !u!50 &1526009890
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526009882}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1547539036
 GameObject:
   m_ObjectHideFlags: 0
@@ -15005,6 +16438,7 @@ GameObject:
   - component: {fileID: 1547539041}
   - component: {fileID: 1547539043}
   - component: {fileID: 1547539042}
+  - component: {fileID: 1547539044}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -15163,6 +16597,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 100
+--- !u!50 &1547539044
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547539036}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1562754683
 GameObject:
   m_ObjectHideFlags: 0
@@ -15338,6 +16799,7 @@ GameObject:
   - component: {fileID: 1572121536}
   - component: {fileID: 1572121538}
   - component: {fileID: 1572121537}
+  - component: {fileID: 1572121539}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -15496,6 +16958,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 110
+--- !u!50 &1572121539
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572121531}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1588120605
 GameObject:
   m_ObjectHideFlags: 0
@@ -15587,6 +17076,7 @@ GameObject:
   - component: {fileID: 1598228478}
   - component: {fileID: 1598228480}
   - component: {fileID: 1598228479}
+  - component: {fileID: 1598228481}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -15745,6 +17235,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 100
+--- !u!50 &1598228481
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598228473}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1605658405
 GameObject:
   m_ObjectHideFlags: 0
@@ -15760,6 +17277,7 @@ GameObject:
   - component: {fileID: 1605658410}
   - component: {fileID: 1605658412}
   - component: {fileID: 1605658411}
+  - component: {fileID: 1605658413}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -15918,6 +17436,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 110
+--- !u!50 &1605658413
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605658405}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1611821240
 GameObject:
   m_ObjectHideFlags: 0
@@ -15991,6 +17536,7 @@ GameObject:
   - component: {fileID: 1613068360}
   - component: {fileID: 1613068362}
   - component: {fileID: 1613068361}
+  - component: {fileID: 1613068363}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -16149,6 +17695,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 8258916702348128007, guid: eb658c50638ce3c47a8d4b6d5eb93e14,
     type: 3}
+--- !u!50 &1613068363
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613068355}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1626087631
 GameObject:
   m_ObjectHideFlags: 0
@@ -16751,6 +18324,7 @@ GameObject:
   - component: {fileID: 1703213549}
   - component: {fileID: 1703213551}
   - component: {fileID: 1703213550}
+  - component: {fileID: 1703213552}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -16909,6 +18483,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 8258916702348128007, guid: eb658c50638ce3c47a8d4b6d5eb93e14,
     type: 3}
+--- !u!50 &1703213552
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703213544}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1709903716
 GameObject:
   m_ObjectHideFlags: 0
@@ -16982,6 +18583,7 @@ GameObject:
   - component: {fileID: 1721323708}
   - component: {fileID: 1721323710}
   - component: {fileID: 1721323709}
+  - component: {fileID: 1721323711}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -17140,6 +18742,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 100
+--- !u!50 &1721323711
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721323703}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1788874879
 GameObject:
   m_ObjectHideFlags: 0
@@ -17404,7 +19033,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 100, y: 100}
   m_EdgeRadius: 0
 --- !u!50 &1839213470
 Rigidbody2D:
@@ -17712,6 +19341,7 @@ GameObject:
   - component: {fileID: 1888320905}
   - component: {fileID: 1888320907}
   - component: {fileID: 1888320906}
+  - component: {fileID: 1888320908}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -17870,6 +19500,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 110
+--- !u!50 &1888320908
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888320900}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1895404064
 GameObject:
   m_ObjectHideFlags: 0
@@ -17885,6 +19542,7 @@ GameObject:
   - component: {fileID: 1895404069}
   - component: {fileID: 1895404071}
   - component: {fileID: 1895404070}
+  - component: {fileID: 1895404072}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -18043,6 +19701,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 110
+--- !u!50 &1895404072
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895404064}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1906947924
 GameObject:
   m_ObjectHideFlags: 0
@@ -18116,6 +19801,7 @@ GameObject:
   - component: {fileID: 1915579119}
   - component: {fileID: 1915579121}
   - component: {fileID: 1915579120}
+  - component: {fileID: 1915579122}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -18274,6 +19960,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 8258916702348128007, guid: eb658c50638ce3c47a8d4b6d5eb93e14,
     type: 3}
+--- !u!50 &1915579122
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915579114}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1927293813
 GameObject:
   m_ObjectHideFlags: 0
@@ -18347,6 +20060,7 @@ GameObject:
   - component: {fileID: 1951892427}
   - component: {fileID: 1951892429}
   - component: {fileID: 1951892428}
+  - component: {fileID: 1951892430}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -18505,6 +20219,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 110
+--- !u!50 &1951892430
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951892422}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1954287604
 GameObject:
   m_ObjectHideFlags: 0
@@ -18653,6 +20394,7 @@ GameObject:
   - component: {fileID: 1960956773}
   - component: {fileID: 1960956775}
   - component: {fileID: 1960956774}
+  - component: {fileID: 1960956776}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -18811,6 +20553,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 8258916702348128007, guid: eb658c50638ce3c47a8d4b6d5eb93e14,
     type: 3}
+--- !u!50 &1960956776
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960956768}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1973129127
 GameObject:
   m_ObjectHideFlags: 0
@@ -18826,6 +20595,7 @@ GameObject:
   - component: {fileID: 1973129132}
   - component: {fileID: 1973129134}
   - component: {fileID: 1973129133}
+  - component: {fileID: 1973129135}
   m_Layer: 0
   m_Name: Yamaneko
   m_TagString: Enemy1
@@ -18984,6 +20754,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 100
+--- !u!50 &1973129135
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973129127}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1985039455
 GameObject:
   m_ObjectHideFlags: 0
@@ -18999,6 +20796,7 @@ GameObject:
   - component: {fileID: 1985039460}
   - component: {fileID: 1985039462}
   - component: {fileID: 1985039461}
+  - component: {fileID: 1985039463}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -19157,6 +20955,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 110
+--- !u!50 &1985039463
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985039455}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1991930593
 GameObject:
   m_ObjectHideFlags: 0
@@ -19172,6 +20997,7 @@ GameObject:
   - component: {fileID: 1991930598}
   - component: {fileID: 1991930600}
   - component: {fileID: 1991930599}
+  - component: {fileID: 1991930601}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -19330,6 +21156,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 110
+--- !u!50 &1991930601
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991930593}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1999628712
 GameObject:
   m_ObjectHideFlags: 0
@@ -19520,6 +21373,7 @@ GameObject:
   - component: {fileID: 2047265476}
   - component: {fileID: 2047265478}
   - component: {fileID: 2047265477}
+  - component: {fileID: 2047265479}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -19678,6 +21532,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 110
+--- !u!50 &2047265479
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047265471}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2048797944
 GameObject:
   m_ObjectHideFlags: 0
@@ -19751,6 +21632,7 @@ GameObject:
   - component: {fileID: 2080760460}
   - component: {fileID: 2080760462}
   - component: {fileID: 2080760461}
+  - component: {fileID: 2080760463}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -19909,6 +21791,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 110
+--- !u!50 &2080760463
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080760455}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2083503618
 GameObject:
   m_ObjectHideFlags: 0
@@ -19924,6 +21833,7 @@ GameObject:
   - component: {fileID: 2083503623}
   - component: {fileID: 2083503625}
   - component: {fileID: 2083503624}
+  - component: {fileID: 2083503626}
   m_Layer: 0
   m_Name: RockMonster
   m_TagString: Enemy2
@@ -20082,6 +21992,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 110
+--- !u!50 &2083503626
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083503618}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2088760140
 GameObject:
   m_ObjectHideFlags: 0

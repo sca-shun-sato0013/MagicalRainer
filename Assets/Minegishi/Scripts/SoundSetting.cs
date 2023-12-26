@@ -1,26 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using DesignPattern;
 
-public class SoundSetting : MonoBehaviour
+public class SoundSetting : Singleton<SoundSetting>
 {
-    [SerializeField] GameObject canvas;
+    [SerializeField] GameObject SettingCanvas;
+
+    [SerializeField]
+    Canvas canvas;
+
+    public override bool DestroyTragetGameObject => true;
 
     void Start()
     {
         DontDestroyOnLoad(gameObject);
     }
 
-    void Update()
-    {
-        
-    }
-
     public void OnClick()
     {
-        Debug.Log("•Â‚¶‚é");
-        canvas.SetActive(false);
-        //SceneManager.LoadScene("testScene");
+        SettingCanvas.SetActive(false);
+    }
+
+    public void OpenWindow(string tagName)
+    {
+        canvas.worldCamera = GameObject.FindGameObjectWithTag(tagName).GetComponent<Camera>();
+        SettingCanvas.SetActive(true);
     }
 }
