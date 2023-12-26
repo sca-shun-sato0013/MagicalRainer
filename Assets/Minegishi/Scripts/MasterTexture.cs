@@ -33,6 +33,5 @@ public class MasterTexture : MonoBehaviour
         {
             image.sprite = Icon[3];
         }
-        Debug.Log(MasterSlider.value);
     }
 }

@@ -5,11 +5,18 @@ using DesignPattern;
 
 public class SkillData : Singleton<SkillData>
 {
-    string[] selectSkillData = new string[4];
+    public override bool DestroyTragetGameObject => true;
 
+    string[] selectSkillData = new string[4];
+  
     public string[] SelectSkillData
     { 
         get { return selectSkillData; }
         set { selectSkillData = value; }
+    }
+
+    private void Start()
+    {
+        DontDestroyOnLoad(gameObject);
     }
 }

@@ -6207,6 +6207,7 @@ MonoBehaviour:
   bossObj: {fileID: 1367720479}
   explodeEffect: {fileID: 2188834302468991503, guid: 5b6efbfaf54284447a5205abe897e1b7,
     type: 3}
+  hp: 0
   hpBar: {fileID: 473126760}
   bossUI: {fileID: 2097064067}
   bossUIAnim: {fileID: 2097064069}
@@ -7233,6 +7234,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1041260630}
+  - component: {fileID: 1041260631}
+  - component: {fileID: 1041260632}
   m_Layer: 5
   m_Name: Skills
   m_TagString: Untagged
@@ -7263,6 +7266,36 @@ RectTransform:
   m_AnchoredPosition: {x: 1200, y: -800}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1041260631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041260629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e67c9e0703d6ccb4f8ea9ed5c950b48a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ui: []
+--- !u!114 &1041260632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041260629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56a52bb7728441e43a9bbb6ceda05389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillImages:
+  - {fileID: 1810243276}
+  - {fileID: 986746187}
+  - {fileID: 182022312}
+  - {fileID: 1206011957}
 --- !u!1 &1046795017
 GameObject:
   m_ObjectHideFlags: 0

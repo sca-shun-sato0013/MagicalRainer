@@ -19,7 +19,10 @@ public class BossController : MonoBehaviour
     [SerializeField] ParticleSystem explodeEffect;
 
     float defaultHp;
+
+    [SerializeField,Header("BossHp")]
     float hp;
+    
     float hpRatio = 1;
 
     [SerializeField, Header("HPƒo[‚Ì’†g")] Image hpBar;
