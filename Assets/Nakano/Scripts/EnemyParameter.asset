@@ -50,7 +50,7 @@ MonoBehaviour:
         wave4:
           atk: 160
       normalBoss:
-        bossHp: 100000
+        bossHp: 10000
         wave1:
           atk: 200
         wave2:
@@ -116,7 +116,7 @@ MonoBehaviour:
         wave4:
           atk: 170
       normalBoss:
-        bossHp: 120000
+        bossHp: 12000
         wave1:
           atk: 210
         wave2:

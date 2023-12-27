@@ -112,7 +112,7 @@ public class MainGameController : MonoBehaviour
 
     void ScoreDisp()
     {
-        score.text = GlobalVariables.Score.ToString();
+        score.text =  $"{GlobalVariables.Score.ToString()} ‘Ì";
     }
 
     /// <summary>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using CommonlyUsed;
+using DesignPattern;
 
 public class CharaSelectData : MonoBehaviour
 {
@@ -23,12 +24,23 @@ public class CharaSelectData : MonoBehaviour
     [SerializeField,Header("スキル情報フレーム")]
     Image skillInfoImage;
 
+    [SerializeField]
+    GameObject magicalGirlText;
+
+    [SerializeField]
+    GameObject magicSwordsManText;
+
     public string CharaName { get; set; } = "";
 
     public void CharaSelect(Button button)
     {
+        Singleton<CharaData>.Instance.CharaName = CharaName;
+
         if (CharaName == "MagicalGirl")
         {
+            magicalGirlText.SetActive(true);
+            magicSwordsManText.SetActive(false);
+
             MagicalGirlImage.SetActive(true);
             MagicSwordsMan.SetActive(false);
             button.onClick.AddListener(loadingA.LoadNextScene);
@@ -38,6 +50,9 @@ public class CharaSelectData : MonoBehaviour
         //スプライトがSwordではなくSowrd
         if (CharaName == "MagicSowrdsMan")
         {
+            magicalGirlText.SetActive(false);
+            magicSwordsManText.SetActive(true);
+
             MagicalGirlImage.SetActive(false);
             MagicSwordsMan.SetActive(true);
             button.onClick.AddListener(loadingB.LoadNextScene);
