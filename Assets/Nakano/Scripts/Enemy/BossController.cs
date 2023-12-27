@@ -403,6 +403,7 @@ public class BossController : MonoBehaviour
         //時間計測停止
         timeCountState = TimeCountState.STOP;
 
+        GlobalVariables.Score++;
         //爆破エフェクト表示　Particle
         Instantiate(explodeEffect, bossObj.transform.position, Quaternion.identity);
 

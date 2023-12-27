@@ -21,6 +21,7 @@ TagManager:
   - SkillIcon
   - SkillSrot
   - UICamera
+  - MagicalPower
   layers:
   - Default
   - TransparentFX

@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        pos =transform.position;
+        pos = transform.position;
         playerMaterial.SetFloat("_Range", playerAlpha);
         switch (game_stat)
         {
@@ -110,10 +110,22 @@ public class PlayerController : MonoBehaviour
             anim.AnimationName = "move right";
         }
 
-        if (!Input.anyKey||(Input.GetKey(KeyCode.A)&&Input.GetKey(KeyCode.D)))
+
+        if(gameObject.name != "MagicSwordsMan(Clone)")
         {
-            anim.AnimationName = "nomaol";
+            if (!Input.anyKey || (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D)))
+            {
+                anim.AnimationName = "nomaol";
+            }
         }
+        else
+        {
+            if (!Input.anyKey || (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D)))
+            {
+                anim.AnimationName = "nolmal";
+            }
+        }
+
     }
 
     IEnumerator Invisible()
