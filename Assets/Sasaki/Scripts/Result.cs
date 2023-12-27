@@ -170,7 +170,7 @@ public class Result : MonoBehaviour
         {
             bonus = 1.0f;
         }
-        totalScore = (clearScore - (s * 10)) * bonus + (GlobalVariables.Score + UIManager.HP);
+        totalScore = (clearScore - (s * 5)) * bonus + (GlobalVariables.Score*1000 + UIManager.HP * 50);
 
         if (totalScore < 0)
         {

@@ -18,6 +18,9 @@ public class WaveController : MonoBehaviour
 
     [SerializeField] MainGameController mainGameController;
 
+    [SerializeField]
+    OnStageMagicalPower onStageMagicalPower;
+
     public bool WaveCompleted { get { return waveCompleted; } }
 
     public int WaveNum { get { return currentWaveIndex + 1; } }
@@ -65,5 +68,6 @@ public class WaveController : MonoBehaviour
         playableDirector = waveObject[currentWaveIndex].GetComponent<PlayableDirector>();
         playableDirector.Play();
         currentWaveIndex++;
+        onStageMagicalPower.waveCallBack?.Invoke();
     }
 }

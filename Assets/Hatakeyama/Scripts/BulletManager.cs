@@ -19,6 +19,12 @@ public class BulletManager : MonoBehaviour
 
     public float intervalCount;
 
+    public GameObject[] Bullets
+    {   
+        get { return bullet; }
+        set { bullet = value; }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +36,7 @@ public class BulletManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bs=bulletSpeed;
+        bs = bulletSpeed;
         switch (game_stat)
         {
             case GameStat.PLAY:
@@ -103,20 +109,48 @@ public class BulletManager : MonoBehaviour
 
     IEnumerator ShotBulletOne()
     {
-        for (int i = 0; i < 3; i++)
+        if(UIManager.isEnergyFunnel)
         {
-            yield return new WaitForSeconds(0.2f);
-            Instantiate(bullet[0], PlayerController.pos+new Vector3(0,30,0), Quaternion.identity, transform);
+            for (int i = 0; i < 3; i++)
+            {
+                yield return new WaitForSeconds(0.2f);
+                Instantiate(bullet[0], PlayerController.pos + new Vector3(-10, 30, 0), Quaternion.identity, transform);
+                Instantiate(bullet[0], PlayerController.pos + new Vector3(10, 30, 0), Quaternion.identity, transform);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                yield return new WaitForSeconds(0.2f);
+                Instantiate(bullet[0], PlayerController.pos + new Vector3(0, 30, 0), Quaternion.identity, transform);
+            }
         }
     }
 
     private void ShotBulletTwo()
     {
-        Instantiate(bullet[1], PlayerController.pos + new Vector3(0, 30, 0), Quaternion.identity, transform);
+        if(UIManager.isEnergyFunnel)
+        {
+            Instantiate(bullet[1], PlayerController.pos + new Vector3(-10, 30, 0), Quaternion.identity, transform);
+            Instantiate(bullet[1], PlayerController.pos + new Vector3(10, 30, 0), Quaternion.identity, transform);
+        }
+        else
+        {
+            Instantiate(bullet[1], PlayerController.pos + new Vector3(0, 30, 0), Quaternion.identity, transform);
+        }
     }
 
     private void ShotBulletThree()
     {
-        Instantiate(bullet[2], PlayerController.pos + new Vector3(0, 30, 0), Quaternion.identity, transform);
+        if(UIManager.isEnergyFunnel)
+        {
+            Instantiate(bullet[2], PlayerController.pos + new Vector3(-10, 30, 0), Quaternion.identity, transform);
+            Instantiate(bullet[2], PlayerController.pos + new Vector3(10, 30, 0), Quaternion.identity, transform);
+        }
+        else
+        {
+            Instantiate(bullet[2], PlayerController.pos + new Vector3(0, 30, 0), Quaternion.identity, transform);
+        }
     }
 }

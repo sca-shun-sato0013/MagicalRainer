@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    [SerializeField]
+    public string stageName;
+    
     public static Canvas canvas;
     public enum GameStat
     {
@@ -12,11 +15,17 @@ public class PlayerManager : MonoBehaviour
         DETH,
         //REPOP
     }
-    [SerializeField]private GameObject Player;
+    [SerializeField]private GameObject player;
     public static GameStat game_stat;
     public static Vector3 startPos;
     public static bool isNewGame;
     public static bool isPlayerBroken;
+
+    public GameObject Player
+    {   
+        get { return player;  }
+        set { player = value; }
+    }
 
     // Start is called before the first frame update
     void OnEnable()
@@ -24,11 +33,19 @@ public class PlayerManager : MonoBehaviour
         canvas = GetComponent<Canvas>();
         Debug.Log(canvas.transform.position);
         isNewGame = true;
-        startPos = new Vector3(0,-550, 0);
+
+        if(player.name != "MagicSwordsMan")
+        {
+            startPos = new Vector3(0, -550, 0);
+        }
+        else
+        {
+            startPos = new Vector3(0, -400, 0);
+        }
         game_stat = GameStat.START;
         isPlayerBroken = true;
 
-        GameObject obj = Instantiate(Player);
+        GameObject obj = Instantiate(player);
         obj.transform.SetParent(gameObject.transform);
 //        GameObject obj = Instantiate(Player, /*startPos*/canvas.transform.position, Quaternion.identity, transform);
         RectTransform rect = obj.GetComponent<RectTransform>();

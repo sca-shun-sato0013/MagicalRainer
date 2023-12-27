@@ -11,12 +11,14 @@ public class BulletsDestroy : MonoBehaviour
     public Vector3 enemyPos = new Vector3(0, 0, 0); //“G‚ÌˆÊ’u
     public float dis = 0; //“G‚Æ‚Ì‹——£
 
-    void Start()
-    {
-    }
 
     void Update()
     {
+        if(UIManager.isPentagram)
+        {
+            Destroy(gameObject);
+        }
+
         var pos = this.transform.position;
         if (pos.x < -150 || pos.x > 150 || pos.y < -150 || pos.y > 150)
         {

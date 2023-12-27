@@ -10,9 +10,14 @@ public class PlayerDamage : MonoBehaviour
 
     [SerializeField] EnemyParams enemyParams;
 
+    [SerializeField]
+    GameObject MysticField;
+
     int stageNum;
     string levelString;
     int bossWaveNum;
+
+    int damageCount = 0;
 
     Enemy enemy;
     Boss boss;
@@ -126,11 +131,26 @@ public class PlayerDamage : MonoBehaviour
     {
         if(!PlayerController.damageFlag)
         {
-            if (collision.gameObject.tag == "Enemy1" || collision.gameObject.tag == "Enemy2" || collision.gameObject.tag == "Boss")
+            if(!UIManager.isMysticField)
             {
-                int damage = Damage(collision.gameObject.tag);
-                UIManager.HP -= damage;
-                playerController.IsDamage = true;
+                if (collision.gameObject.tag == "Enemy1" || collision.gameObject.tag == "Enemy2" || collision.gameObject.tag == "Boss")
+                {
+                    int damage = Damage(collision.gameObject.tag);
+                    UIManager.HP -= damage;
+                    playerController.IsDamage = true;
+                }
+            }
+            else
+            {
+                MysticField.SetActive(true);
+                damageCount++;
+
+                if(damageCount >= 10)
+                {
+                    UIManager.isMysticField = false;
+                    MysticField.SetActive(false);
+                    damageCount = 0;
+                }
             }
         }
     }
