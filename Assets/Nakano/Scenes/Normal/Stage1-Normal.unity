@@ -11240,6 +11240,7 @@ MonoBehaviour:
   resultBGImage: {fileID: 915929658}
   gameOverBGImage: {fileID: 915929657}
   charaIconImage: {fileID: 1673671893}
+  audioClip: {fileID: 8300000, guid: 8816da9804fb79a4392cf2c9b1f6921d, type: 3}
 --- !u!4 &1786427140
 Transform:
   m_ObjectHideFlags: 0
@@ -13091,6 +13092,7 @@ MonoBehaviour:
   - {fileID: 75852088440962607, guid: 1af5d6220b9328045ad8128be33516ff, type: 3}
   - {fileID: 3297416768743079678, guid: b1420b7786d39cd408e71dcffd7c8071, type: 3}
   bulletSpeed: 120
+  audioClip: {fileID: 8300000, guid: d601eecaf3c4e1b4ea4c1e3cbedec077, type: 3}
   intervalCount: 0
 --- !u!114 &1972043053
 MonoBehaviour:

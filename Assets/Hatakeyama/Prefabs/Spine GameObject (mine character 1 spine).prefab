@@ -224,6 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 200
   invisibleTime: 1
+  rectTransform: {fileID: 7768313991344761913}
   playerMaterial: {fileID: 2100000, guid: 27551dc84e94a144f978a4e77bbd7636, type: 2}
 --- !u!222 &921477764669621234
 CanvasRenderer:

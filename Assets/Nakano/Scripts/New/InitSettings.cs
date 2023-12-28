@@ -40,6 +40,10 @@ public class InitSettings : MonoBehaviour
     [SerializeField]
     Image charaIconImage;
 
+    [SerializeField]
+    AudioClip audioClip;
+
+    AudioSource audioSource;
     // Start is called before the first frame update
     void Awake()
     {
@@ -78,5 +82,13 @@ public class InitSettings : MonoBehaviour
             ImageLoading.ImageLoadingAsync(resultBGImage, "Stage2");
             ImageLoading.ImageLoadingAsync(gameOverBGImage, "Stage2");
         }
+    }
+
+    private void Start()
+    {
+        audioSource = GameObject.Find("BGM").GetComponent<AudioSource>();
+
+        audioSource.clip = audioClip;
+        audioSource.Play();
     }
 }

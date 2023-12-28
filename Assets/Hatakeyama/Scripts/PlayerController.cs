@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour
     private float waitDethEffect = 1.0f;
     [SerializeField] private float invisibleTime;
 
+    [SerializeField]
+    RectTransform rectTransform;
+
     public static Vector3 pos;
 
     [SerializeField] private Material playerMaterial;
@@ -86,46 +89,72 @@ public class PlayerController : MonoBehaviour
 
     private void PlayerMove()
     {
-        float moveSpeed;
-        if (Input.GetKey(KeyCode.LeftShift)) moveSpeed = halfSpeed;
-        else moveSpeed = speed;
+        if (TimeScoreCounter.timeCountState != TimeScoreCounter.TimeCountState.STOP)
+        {
+            float moveSpeed;
+            if (Input.GetKey(KeyCode.LeftShift)) moveSpeed = halfSpeed;
+            else moveSpeed = speed;
 
-        gameObject.transform.position = pPos;
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
-        {
-            pPos.y += moveSpeed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
-        {
-            pPos.y -= moveSpeed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-        {
-            pPos.x -= moveSpeed * Time.deltaTime;
-            anim.AnimationName = "move left";
-        }
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-        {
-            pPos.x += moveSpeed * Time.deltaTime;
-            anim.AnimationName = "move right";
-        }
-
-
-        if(gameObject.name != "MagicSwordsMan(Clone)")
-        {
-            if (!Input.anyKey || (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D)))
+            gameObject.transform.position = pPos;
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             {
-                anim.AnimationName = "nomaol";
+                if(gameObject.name != "MagicSwordsMan(Clone)")
+                {
+                    if (rectTransform.anchoredPosition3D.y < Screen.height / 2 - 230f)
+                        pPos.y += moveSpeed * Time.deltaTime;
+                }
+                else
+                {
+                    if (rectTransform.anchoredPosition3D.y < Screen.height / 2 - 120f)
+                        pPos.y += moveSpeed * Time.deltaTime;
+                }
             }
-        }
-        else
-        {
-            if (!Input.anyKey || (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D)))
+            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
             {
-                anim.AnimationName = "nolmal";
+                if(gameObject.name != "MagicSwordsMan(Clone)")
+                {
+                    if (rectTransform.anchoredPosition3D.y > -Screen.height / 2)
+                        pPos.y -= moveSpeed * Time.deltaTime;
+                }
+                else
+                {
+                    if (rectTransform.anchoredPosition3D.y > -Screen.height / 2 + 120f)
+                        pPos.y -= moveSpeed * Time.deltaTime;
+                }
             }
-        }
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            {                
+                if (rectTransform.anchoredPosition3D.x > -Screen.width / 2 +50f)
+                {
+                    pPos.x -= moveSpeed * Time.deltaTime;
+                }
+                anim.AnimationName = "move left";
+            }
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            {
+                if (rectTransform.anchoredPosition3D.x < Screen.width / 2 -50f)
+                {
+                    pPos.x += moveSpeed * Time.deltaTime;
+                }
+                anim.AnimationName = "move right";
+            }
 
+
+            if (gameObject.name != "MagicSwordsMan(Clone)")
+            {
+                if (!Input.anyKey || (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D)))
+                {
+                    anim.AnimationName = "nomaol";
+                }
+            }
+            else
+            {
+                if (!Input.anyKey || (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D)))
+                {
+                    anim.AnimationName = "nolmal";
+                }
+            }            
+        }
     }
 
     IEnumerator Invisible()

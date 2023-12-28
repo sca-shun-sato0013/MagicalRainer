@@ -5418,7 +5418,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 939652574}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 7406df58175b9804b90129628d39a732, type: 3}
+  m_VideoClip: {fileID: 0}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -6359,7 +6359,7 @@ MonoBehaviour:
   initialSkinName: default
   initialFlipX: 0
   initialFlipY: 0
-  startingAnimation: 
+  startingAnimation: breathing
   startingLoop: 1
   timeScale: 1
   freeze: 0
@@ -8969,6 +8969,8 @@ MonoBehaviour:
   skillInfoImage: {fileID: 1709354080}
   magicalGirlText: {fileID: 833960686}
   magicSwordsManText: {fileID: 1007742504}
+  charaSelect: {fileID: 8300000, guid: 3a010244d30d7304b9587a8e8e4537a7, type: 3}
+  skillSelect: {fileID: 8300000, guid: c01bb434fbf0a7e4ead3f23e468099ba, type: 3}
 --- !u!1 &2058522922
 GameObject:
   m_ObjectHideFlags: 0

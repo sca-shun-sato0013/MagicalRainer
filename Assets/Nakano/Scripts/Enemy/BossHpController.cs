@@ -75,18 +75,21 @@ public class BossHpController : MonoBehaviour
             {
                 damage = Atk("SingleAttack");
                 bossController.BossHp -= damage;
+                Destroy(collision.gameObject);
             }
 
             if (collision.gameObject.CompareTag("LightAttack"))
             {
                 damage = Atk("LightAttack");
                 bossController.BossHp -= damage;
+                Destroy(collision.gameObject);
             }
 
             if (collision.gameObject.CompareTag("HeavyAttack"))
             {
                 damage = Atk("HeavyAttack");
                 bossController.BossHp -= damage;
+                Destroy(collision.gameObject);
             }
         }
     }

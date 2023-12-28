@@ -808,6 +808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c490cca721accf34989f8eeaf254c33f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioClip: {fileID: 0}
 --- !u!114 &953244190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -990,6 +991,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1991687723250916444, guid: 4a5a42e2c6987a24d88f2df1efc76fd1,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c8378a2efa35a3342b61fbcea038e150, type: 3}
     - target: {fileID: 2464829325571102743, guid: 4a5a42e2c6987a24d88f2df1efc76fd1,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1608,6 +1614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c490cca721accf34989f8eeaf254c33f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: c8378a2efa35a3342b61fbcea038e150, type: 3}
 --- !u!114 &1683405590
 MonoBehaviour:
   m_ObjectHideFlags: 0
