@@ -11,9 +11,8 @@ public class CharacterSelect_Init : MonoBehaviour
     [SerializeField]
     Button button;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
-        charaSelect.CharaSelect(button);    
+        charaSelect.CharaSelect(button);
     }
 }

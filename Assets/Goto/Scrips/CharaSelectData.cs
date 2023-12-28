@@ -30,11 +30,26 @@ public class CharaSelectData : MonoBehaviour
     [SerializeField]
     GameObject magicSwordsManText;
 
+    [SerializeField]
+    AudioClip charaSelect,skillSelect;
+
     public string CharaName { get; set; } = "";
+
+    AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GameObject.Find("BGM").GetComponent<AudioSource>();
+        audioSource.clip = charaSelect;
+        audioSource.Play();
+    }
 
     public void CharaSelect(Button button)
     {
         Singleton<CharaData>.Instance.CharaName = CharaName;
+
+        audioSource.clip = charaSelect;
+        audioSource.Play();
 
         if (CharaName == "MagicalGirl")
         {
@@ -62,6 +77,9 @@ public class CharaSelectData : MonoBehaviour
 
     public void SkillSelect()
     {
+        audioSource.clip = skillSelect;
+        audioSource.Play();
+
         if (CharaName == "MagicalGirl")
         {
             ImageLoading.ImageLoadingAsync(skillInfoImage, "SkillInfo_Pink");
